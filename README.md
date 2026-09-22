@@ -1,8 +1,10 @@
 # Singlish POC
 
 Proof of concept for Singapore English accent classification.
-The repository contains code and beginner Colab notebooks. Audio, feature
-caches, trained models and notebook outputs stay in each member's Google
+
+The repository contains simple Colab notebooks for each experiments. 
+
+Audio, feature caches, trained models and notebook outputs stay in each member's Google
 Drive.
 
 ## Colab notebooks
@@ -35,6 +37,9 @@ Use the same audio for every experiment. E1 uses acoustic features, E2 creates
 Whisper embeddings, E3 clusters the embeddings, and E4 combines the
 supervised model probabilities. The beginner notebooks create their own
 speaker-disjoint split with the same random seed.
+
+'Singlish' folder shared at following Google drive link:
+  https://drive.google.com/drive/folders/1rg_NL97iBC9lwSBO9bz7idZ2tkMJHWqi?usp=drive_link
 
 ## Simple team workflow
 
