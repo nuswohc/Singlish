@@ -2,7 +2,7 @@
 
 Proof of concept for Singapore English accent classification.
 
-The repository contains simple Colab notebooks for each experiments. 
+The repository contains simple Colab notebooks for each experiments.
 
 Audio, feature caches, trained models and notebook outputs stay in each member's Google
 Drive.
@@ -11,6 +11,9 @@ Drive.
 
 - `notebooks/E1_01_svm_beginner.ipynb`
 - `notebooks/E1_02_random_forest_beginner.ipynb`
+- `notebooks/E1_03_logistic_regression_beginner.ipynb`
+- `notebooks/E2_01_whisper_classifier_beginner.ipynb`
+- `notebooks/E3_01_unsupervised_learning_beginner.ipynb`
 
 Open a notebook in Colab and configure only:
 

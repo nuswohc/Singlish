@@ -1,7 +1,25 @@
+# Local secrets and environment files
 .env
-.ipynb_checkpoints/
+.env.*
+!.env.example
+.venv/
+venv/
+
+# Python and notebook-generated files
 __pycache__/
 *.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Temporary files, logs, and local editor settings
+tmp/
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
 
 # Audio and generated artifacts stay in Google Drive.
 data/
@@ -13,4 +31,8 @@ outputs/
 *.flac
 *.npz
 *.joblib
-
+*.pkl
+*.pickle
+*.pt
+*.pth
+*.onnx
