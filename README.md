@@ -15,11 +15,19 @@ Drive.
 - `notebooks/E2_01_whisper_classifier_beginner.ipynb`
 - `notebooks/E3_01_unsupervised_learning_beginner.ipynb`
 
-Open a notebook in Colab and configure only:
+Open a notebook in Colab and configure the Drive path and audio limit:
 
 ```python
 PROJECT_ROOT = Path('/content/drive/MyDrive/Singlish')
+MAX_CLIPS_PER_CLASS = None  # Use all audio, or set a positive limit such as 100.
 ```
+
+The E1 and E2 notebooks choose up to this many clips from each class, spreading
+the selection across speakers with a fixed random seed. Use the same value in
+each notebook to compare the same recordings. E3 reads the E2 embedding cache
+for the matching limit, so run E2 through its cache cell first. If you add or
+remove audio that changes E2's selected file list, set `REBUILD_CACHE = True`
+in E2 for that run.
 
 ## Google Drive layout
 
