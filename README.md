@@ -19,7 +19,7 @@ Open a notebook in Colab and configure the Drive path and audio limit:
 
 ```python
 PROJECT_ROOT = Path('/content/drive/MyDrive/Singlish')
-MAX_CLIPS_PER_CLASS = None  # Use all audio, or set a positive limit such as 100.
+MAX_CLIPS_PER_CLASS = 100  # Set None to use all audio.
 ```
 
 The E1 and E2 notebooks choose up to this many clips from each class, spreading
