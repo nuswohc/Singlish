@@ -20,7 +20,7 @@ The draft compares classical models using handcrafted acoustic features. The i-v
 | [Logistic Regression](notebooks/E1_03_logistic_regression_beginner.ipynb) | Train a scaled logistic-regression classifier on acoustic features. | Check whether a simpler linear model is competitive |
 | [i-vectors](notebooks/E1_04_ivector_beginner.ipynb) | Fit an MFCC-based UBM and total-variability model, then classify i-vectors. | Explore whether a traditional speech embedding captures accent information beyond E1's clip-level acoustic features. |
 
-### E2 — Deep Learning
+### E2 — Transfer Learning
 
 The draft uses frozen Whisper embeddings. The x-vector and ECAPA-TDNN notebooks test other pretrained speech encoders.
 
