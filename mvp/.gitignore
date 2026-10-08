@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.pytest_cache/
+models/*.joblib
+models/*.npz
+
+# Browser recordings saved during development
+/recordings/
+*.webm
+*.m4a
+*.ogg
+
+# Generated local evaluation and deployment reports
+/verification.json
+/deploy/azure/verification.json
