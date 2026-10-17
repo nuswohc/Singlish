@@ -8,7 +8,7 @@ A web demo that records microphone audio or accepts a PCM WAV upload and returns
 
 Python 3.12 or later is required; Python 3.14 matches the deployment environment. Dependencies are pinned in `mvp/requirements.txt`; the model manifest records the artifact's serving environment. The commands below use Bash on Linux or macOS.
 
-The trained model binary is not included in Git. Obtain the trusted `svm_39.joblib` artifact from the project maintainers and place it at `mvp/models/svm_39.joblib`. It must match the checksum and model contract in `mvp/models/manifest.json`. Startup rejects a missing, incompatible or mismatched artifact.
+The trained model binary is distributed through [GitHub release `e1-svm39-mvp-1`](https://github.com/nuswohc/Singlish/releases/tag/e1-svm39-mvp-1). Download the svm_39.joblib artifact and place it at mvp/models/svm_39.joblib
 
 ## Setup
 
