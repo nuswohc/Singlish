@@ -1,4 +1,9 @@
 const $ = (id) => document.getElementById(id);
+function formatScore(score) {
+  // Keep tiny nonzero margins visible rather than rounding them to zero.
+  const value = score !== 0 && Math.abs(score) < 0.0005 ? score.toExponential(2) : score.toFixed(3);
+  return score > 0 ? `+${value}` : value;
+}
 let selectedFile = null;
 let previewURL = null;
 let busy = false;
@@ -121,7 +126,14 @@ $('upload-form').addEventListener('submit', async (e) => {
     const data = await response.json();
     if (!response.ok) throw new Error(data.error?.message || 'Classification failed. Try again.');
     $('prediction-label').textContent = data.prediction.display_label;
-    $('prediction-probability').textContent = `${Math.round(data.prediction.probability * 100)}%`;
+    const ml = data.models.ml;
+    const ensemble = data.models.ensemble;
+    $('ml-label').textContent = ml.prediction.display_label;
+    $('ml-score').textContent = formatScore(ml.prediction.decision_score);
+    $('ensemble-label').textContent = ensemble.prediction.display_label;
+    $('ensemble-score').textContent = formatScore(ensemble.prediction.decision_score);
+    $('ml-version').textContent = ml.version;
+    $('model-agreement').textContent = `Model agreement: ${data.agreement === 'agree' ? 'Agree' : 'Disagree'}`;
     $('duration').textContent = `${data.audio.duration_seconds.toFixed(2)} s`;
     $('classified-duration').textContent = `${data.audio.classified_duration_seconds.toFixed(2)} s`;
     $('model-version').textContent = data.model_version;

@@ -47,14 +47,15 @@ for path in sorted((args.study_root / 'data').glob('*subset/*.parquet')):
 assert set(audio) == wanted
 records = []
 with TestClient(app) as client:
+    ml = client.app.state.models.ml
     for row in selected:
         y, rate = sf.read(BytesIO(audio[row['clip_id']]), dtype='float32')
         assert rate == 16000 and y.ndim == 1
         vector = extract_features(y)
         cached = features[ids.index(row['clip_id'])]
         np.testing.assert_allclose(vector, cached, rtol=1e-5, atol=1e-6)
-        expected = int(client.app.state.model.pipeline.predict(cached[client.app.state.model.columns].reshape(1, -1))[0])
-        actual = client.app.state.model.predict(vector)['class_id']
+        expected = int(ml.decision_estimator.predict(cached[ml.columns].reshape(1, -1))[0])
+        actual = ml.predict(vector)['class_id']
         assert actual == expected
         stream = BytesIO()
         sf.write(stream, y, rate, format='WAV', subtype='PCM_16')
@@ -62,19 +63,19 @@ with TestClient(app) as client:
         # The public API processes raw uploads; these inputs are deliberately
         # reprocessed here, so their API features need not equal the study cache.
         processed, _, _ = decode_audio(data)
-        api_prediction = client.app.state.model.predict(extract_features(processed))
+        api_prediction = ml.predict(extract_features(processed))
         api_expected = api_prediction['class_id']
         started = perf_counter()
         response = client.post('/api/classify', files={'audio': ('study.wav', data)})
         elapsed = perf_counter() - started
         assert response.status_code == 200, response.text
-        assert response.json()['prediction'] == api_prediction
+        assert response.json()['models']['ml']['prediction'] == api_prediction
         records.append({'clip_id': row['clip_id'], 'true_class': int(row['label']),
             'cached_prediction': expected, 'api_prediction': api_expected,
             'api_probability': api_prediction['probability'],
             'feature_max_abs_difference': float(np.max(np.abs(vector - cached))),
             'warm_request_seconds': round(elapsed, 4)})
-report = {'model_version': client.app.state.model.manifest['model_version'],
+report = {'model_version': ml.manifest['model_version'],
     'checked_recordings': len(records), 'feature_rtol': 1e-5, 'feature_atol': 1e-6,
     'api_note': 'API reprocesses uploads; cache parity uses decoded study audio directly.',
     'records': records}

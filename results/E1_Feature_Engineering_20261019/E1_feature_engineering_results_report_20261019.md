@@ -148,9 +148,9 @@ All features displayed in Figures 4 and 5 belong to the selected sets in the tra
 | 39 | LR | `spectral_rolloff_mean`, `spectral_bandwidth_mean`, `spectral_centroid_mean` | 35 |
 | 39 | SVM | `mfcc_6_mean`, `mfcc_2_std`, `spectral_rolloff_mean` | 39 |
 | 39 | RF | `mfcc_2_std`, `mfcc_6_mean`, `mfcc_11_std` | 39 |
-| 91 | LR | `spectral_rolloff_mean`, `spectral_bandwidth_mean`, `mfcc_delta_delta_1_std` | 30 |
-| 91 | SVM | `mfcc_delta_delta_1_std`, `mfcc_2_std`, `mfcc_delta_delta_5_std` | 25 |
-| 91 | RF | `mfcc_delta_delta_1_mean`, `mfcc_6_mean`, `mfcc_2_std` | 25 |
+| 91 | LR | `spectral_rolloff_mean`, `spectral_bandwidth_mean`, `mfcc_delta_delta_1_std` | 91 |
+| 91 | SVM | `mfcc_delta_delta_1_std`, `mfcc_2_std`, `mfcc_delta_delta_5_std` | 35 |
+| 91 | RF | `mfcc_delta_delta_1_mean`, `mfcc_6_mean`, `mfcc_2_std` | 91 |
 
 
 LR gives high importance to spectral measurements in both pools. The 91-feature LR also uses delta-delta measurements. The original-pool SVM and RF give high importance to MFCC measurements. The 91-feature SVM and RF also give high importance to delta-delta measurements.
@@ -162,9 +162,9 @@ The final models use a new feature ranking from training and validation data tog
 | 39 | LR | 35 | 0 | 0 | 35 |
 | 39 | SVM | 39 | 0 | 0 | 39 |
 | 39 | RF | 39 | 0 | 0 | 39 |
-| 91 | LR | 21 | 3 | 6 | 30 |
-| 91 | SVM | 19 | 1 | 5 | 25 |
-| 91 | RF | 19 | 2 | 4 | 25 |
+| 91 | LR | 39 | 26 | 26 | 91 |
+| 91 | SVM | 23 | 5 | 7 | 35 |
+| 91 | RF | 39 | 26 | 26 | 91 |
 
 
 All selected 91-pool models keep features that measure change with time. Appendix A gives the feature names in the saved order.
@@ -248,7 +248,7 @@ The [calibration notebook](E1_svm_35_91_calibrated_probability.ipynb) exports `s
 
 ## Appendix A. Final saved feature lists
 
-These lists show the feature order in the final saved selected models. The final ranking uses training and validation data together. It can differ from the training ranking. Full models keep the feature order in their corresponding caches.
+These lists show the feature order in the final saved selected models. The final ranking uses training and validation data together. It can differ from the training ranking. The 35-feature SVM list follows the `feature_names` order in `svm_35.joblib`. Full models keep the feature order in their corresponding caches.
 
 ### 39-feature pool
 
@@ -272,20 +272,20 @@ Feature counts: original 39, delta 0, delta-delta 0.
 
 ### 91-feature pool
 
-**LR: 30 features.**
+**LR: 91 features.**
 
-`spectral_rolloff_mean`, `spectral_bandwidth_mean`, `mfcc_delta_delta_1_std`, `mfcc_2_std`, `spectral_centroid_mean`, `zcr_mean`, `spectral_centroid_std`, `mfcc_delta_delta_1_mean`, `spectral_rolloff_std`, `zcr_std`, `spectral_bandwidth_std`, `mfcc_delta_delta_5_std`, `mfcc_delta_1_std`, `mfcc_4_mean`, `mfcc_1_mean`, `mfcc_delta_delta_2_std`, `mfcc_3_mean`, `mfcc_6_mean`, `rms_mean`, `mfcc_8_std`, `mfcc_delta_5_std`, `mfcc_2_mean`, `mfcc_5_std`, `mfcc_12_std`, `mfcc_delta_1_mean`, `mfcc_delta_delta_7_std`, `f0_mean`, `mfcc_11_mean`, `mfcc_delta_delta_13_std`, `mfcc_3_std`.
+`mfcc_1_mean`, `mfcc_2_mean`, `mfcc_3_mean`, `mfcc_4_mean`, `mfcc_5_mean`, `mfcc_6_mean`, `mfcc_7_mean`, `mfcc_8_mean`, `mfcc_9_mean`, `mfcc_10_mean`, `mfcc_11_mean`, `mfcc_12_mean`, `mfcc_13_mean`, `mfcc_1_std`, `mfcc_2_std`, `mfcc_3_std`, `mfcc_4_std`, `mfcc_5_std`, `mfcc_6_std`, `mfcc_7_std`, `mfcc_8_std`, `mfcc_9_std`, `mfcc_10_std`, `mfcc_11_std`, `mfcc_12_std`, `mfcc_13_std`, `f0_mean`, `f0_std`, `voiced_ratio`, `spectral_centroid_mean`, `spectral_centroid_std`, `spectral_bandwidth_mean`, `spectral_bandwidth_std`, `spectral_rolloff_mean`, `spectral_rolloff_std`, `zcr_mean`, `zcr_std`, `rms_mean`, `rms_std`, `mfcc_delta_1_mean`, `mfcc_delta_2_mean`, `mfcc_delta_3_mean`, `mfcc_delta_4_mean`, `mfcc_delta_5_mean`, `mfcc_delta_6_mean`, `mfcc_delta_7_mean`, `mfcc_delta_8_mean`, `mfcc_delta_9_mean`, `mfcc_delta_10_mean`, `mfcc_delta_11_mean`, `mfcc_delta_12_mean`, `mfcc_delta_13_mean`, `mfcc_delta_1_std`, `mfcc_delta_2_std`, `mfcc_delta_3_std`, `mfcc_delta_4_std`, `mfcc_delta_5_std`, `mfcc_delta_6_std`, `mfcc_delta_7_std`, `mfcc_delta_8_std`, `mfcc_delta_9_std`, `mfcc_delta_10_std`, `mfcc_delta_11_std`, `mfcc_delta_12_std`, `mfcc_delta_13_std`, `mfcc_delta_delta_1_mean`, `mfcc_delta_delta_2_mean`, `mfcc_delta_delta_3_mean`, `mfcc_delta_delta_4_mean`, `mfcc_delta_delta_5_mean`, `mfcc_delta_delta_6_mean`, `mfcc_delta_delta_7_mean`, `mfcc_delta_delta_8_mean`, `mfcc_delta_delta_9_mean`, `mfcc_delta_delta_10_mean`, `mfcc_delta_delta_11_mean`, `mfcc_delta_delta_12_mean`, `mfcc_delta_delta_13_mean`, `mfcc_delta_delta_1_std`, `mfcc_delta_delta_2_std`, `mfcc_delta_delta_3_std`, `mfcc_delta_delta_4_std`, `mfcc_delta_delta_5_std`, `mfcc_delta_delta_6_std`, `mfcc_delta_delta_7_std`, `mfcc_delta_delta_8_std`, `mfcc_delta_delta_9_std`, `mfcc_delta_delta_10_std`, `mfcc_delta_delta_11_std`, `mfcc_delta_delta_12_std`, `mfcc_delta_delta_13_std`.
 
-Feature counts: original 21, delta 3, delta-delta 6.
+Feature counts: original 39, delta 26, delta-delta 26.
 
-**SVM: 25 features.**
+**SVM: 35 features.**
 
-`mfcc_delta_delta_1_std`, `mfcc_6_mean`, `mfcc_2_std`, `spectral_rolloff_mean`, `mfcc_delta_delta_5_std`, `zcr_mean`, `zcr_std`, `mfcc_11_mean`, `mfcc_4_mean`, `mfcc_delta_delta_1_mean`, `mfcc_8_mean`, `spectral_bandwidth_mean`, `mfcc_1_mean`, `spectral_centroid_std`, `mfcc_delta_delta_2_std`, `rms_mean`, `mfcc_9_mean`, `mfcc_10_mean`, `spectral_centroid_mean`, `mfcc_delta_delta_4_std`, `mfcc_13_mean`, `rms_std`, `mfcc_delta_4_std`, `mfcc_4_std`, `mfcc_11_std`.
+`mfcc_delta_delta_1_std`, `mfcc_6_mean`, `mfcc_2_std`, `spectral_rolloff_mean`, `mfcc_delta_delta_5_std`, `zcr_mean`, `zcr_std`, `mfcc_11_mean`, `mfcc_4_mean`, `mfcc_delta_delta_1_mean`, `mfcc_8_mean`, `spectral_bandwidth_mean`, `mfcc_1_mean`, `spectral_centroid_std`, `mfcc_delta_delta_2_std`, `rms_mean`, `mfcc_9_mean`, `mfcc_10_mean`, `spectral_centroid_mean`, `mfcc_delta_delta_4_std`, `mfcc_13_mean`, `rms_std`, `mfcc_delta_4_std`, `mfcc_4_std`, `mfcc_11_std`, `voiced_ratio`, `mfcc_delta_delta_2_mean`, `mfcc_delta_13_mean`, `mfcc_3_std`, `mfcc_delta_3_mean`, `mfcc_delta_delta_9_std`, `mfcc_delta_1_mean`, `mfcc_12_mean`, `mfcc_1_std`, `mfcc_delta_11_mean`.
 
-Feature counts: original 19, delta 1, delta-delta 5.
+Feature counts: original 23, delta 5, delta-delta 7.
 
-**RF: 25 features.**
+**RF: 91 features.**
 
-`mfcc_delta_delta_1_mean`, `mfcc_6_mean`, `mfcc_2_std`, `mfcc_11_std`, `mfcc_7_std`, `mfcc_13_std`, `mfcc_8_mean`, `mfcc_12_std`, `f0_std`, `spectral_bandwidth_mean`, `mfcc_delta_2_mean`, `mfcc_12_mean`, `mfcc_delta_delta_1_std`, `mfcc_delta_delta_2_mean`, `mfcc_10_std`, `mfcc_9_std`, `mfcc_11_mean`, `mfcc_10_mean`, `spectral_rolloff_mean`, `mfcc_8_std`, `mfcc_delta_delta_5_std`, `mfcc_9_mean`, `mfcc_delta_1_mean`, `mfcc_4_mean`, `voiced_ratio`.
+`mfcc_1_mean`, `mfcc_2_mean`, `mfcc_3_mean`, `mfcc_4_mean`, `mfcc_5_mean`, `mfcc_6_mean`, `mfcc_7_mean`, `mfcc_8_mean`, `mfcc_9_mean`, `mfcc_10_mean`, `mfcc_11_mean`, `mfcc_12_mean`, `mfcc_13_mean`, `mfcc_1_std`, `mfcc_2_std`, `mfcc_3_std`, `mfcc_4_std`, `mfcc_5_std`, `mfcc_6_std`, `mfcc_7_std`, `mfcc_8_std`, `mfcc_9_std`, `mfcc_10_std`, `mfcc_11_std`, `mfcc_12_std`, `mfcc_13_std`, `f0_mean`, `f0_std`, `voiced_ratio`, `spectral_centroid_mean`, `spectral_centroid_std`, `spectral_bandwidth_mean`, `spectral_bandwidth_std`, `spectral_rolloff_mean`, `spectral_rolloff_std`, `zcr_mean`, `zcr_std`, `rms_mean`, `rms_std`, `mfcc_delta_1_mean`, `mfcc_delta_2_mean`, `mfcc_delta_3_mean`, `mfcc_delta_4_mean`, `mfcc_delta_5_mean`, `mfcc_delta_6_mean`, `mfcc_delta_7_mean`, `mfcc_delta_8_mean`, `mfcc_delta_9_mean`, `mfcc_delta_10_mean`, `mfcc_delta_11_mean`, `mfcc_delta_12_mean`, `mfcc_delta_13_mean`, `mfcc_delta_1_std`, `mfcc_delta_2_std`, `mfcc_delta_3_std`, `mfcc_delta_4_std`, `mfcc_delta_5_std`, `mfcc_delta_6_std`, `mfcc_delta_7_std`, `mfcc_delta_8_std`, `mfcc_delta_9_std`, `mfcc_delta_10_std`, `mfcc_delta_11_std`, `mfcc_delta_12_std`, `mfcc_delta_13_std`, `mfcc_delta_delta_1_mean`, `mfcc_delta_delta_2_mean`, `mfcc_delta_delta_3_mean`, `mfcc_delta_delta_4_mean`, `mfcc_delta_delta_5_mean`, `mfcc_delta_delta_6_mean`, `mfcc_delta_delta_7_mean`, `mfcc_delta_delta_8_mean`, `mfcc_delta_delta_9_mean`, `mfcc_delta_delta_10_mean`, `mfcc_delta_delta_11_mean`, `mfcc_delta_delta_12_mean`, `mfcc_delta_delta_13_mean`, `mfcc_delta_delta_1_std`, `mfcc_delta_delta_2_std`, `mfcc_delta_delta_3_std`, `mfcc_delta_delta_4_std`, `mfcc_delta_delta_5_std`, `mfcc_delta_delta_6_std`, `mfcc_delta_delta_7_std`, `mfcc_delta_delta_8_std`, `mfcc_delta_delta_9_std`, `mfcc_delta_delta_10_std`, `mfcc_delta_delta_11_std`, `mfcc_delta_delta_12_std`, `mfcc_delta_delta_13_std`.
 
-Feature counts: original 19, delta 2, delta-delta 4.
+Feature counts: original 39, delta 26, delta-delta 26.

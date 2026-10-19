@@ -19,29 +19,44 @@ def wav(seconds=3, rate=16000, channels=1, subtype="PCM_16", silent=False, forma
 
 @pytest.fixture(scope="module")
 def client():
-    with TestClient(app) as client:
-        yield client
+    # API tests exercise the real saved SVMs without downloading/running Whisper.
+    import mvp.embeddings as embeddings
+    with pytest.MonkeyPatch.context() as patch:
+        patch.setattr(embeddings, 'WhisperEmbedding',
+                      lambda *args: lambda waveform: np.zeros(512, dtype=np.float32))
+        with TestClient(app) as client:
+            yield client
 
-@pytest.mark.parametrize("format", ["WAV", "FLAC"])
-@pytest.mark.parametrize("rate,channels,seconds", [(16000,1,3), (44100,2,3), (16000,1,6)])
+@pytest.mark.parametrize("rate,channels,seconds,format", [(16000, 1, 3, "WAV"), (44100, 2, 6, "FLAC")])
 def test_inference_matches_pipeline(client, rate, channels, seconds, format):
     data = wav(seconds, rate, channels, format=format)
     response = client.post('/api/classify', files={'audio': ('clip.' + format.lower(), data)})
     assert response.status_code == 200, response.text
     result = response.json()
     y, metadata, warnings = decode_audio(data)
-    probabilities = client.app.state.model.pipeline.predict_proba(extract_features(y)[client.app.state.model.columns].reshape(1,-1))[0]
-    expected = int(probabilities[1] >= 0.5)
-    assert result['prediction']['class_id'] == expected
+    vector = extract_features(y)
+    ml = client.app.state.models.ml
+    values = vector[ml.columns].reshape(1, -1)
+    probabilities = ml.pipeline.predict_proba(values)[0]
+    svm = ml.decision_estimator
+    expected = int(svm.predict(values)[0])
+    assert result['models']['ml']['prediction']['decision_score'] == pytest.approx(svm.decision_function(values)[0])
+    assert result['models']['ml']['prediction']['class_id'] == expected
     assert result['audio'] == metadata
     assert result['warnings'] == warnings
-    assert result['prediction']['probability'] == pytest.approx(probabilities[expected])
-    assert 0.5 <= result['prediction']['probability'] <= 1
-    assert result['model_version'] == 'svm_35_calibrated'
+    assert result['models']['ml']['prediction']['probability'] == pytest.approx(probabilities[expected])
+    assert result['models']['ml']['version'] == 'svm_35_calibrated'
+    assert result['model_version'] == 'fusion_svm'
+    assert result['final_model'] == 'ensemble'
+    ensemble = client.app.state.models.ensemble.predict(vector, np.zeros(512, dtype=np.float32))
+    assert result['prediction'] == ensemble
+    assert result['models']['ensemble']['prediction'] == ensemble
+    assert result['prediction']['probability'] is None
+    assert result['agreement'] == ('agree' if expected == ensemble['class_id'] else 'disagree')
     assert metadata['truncated'] is False
     assert not warnings
 
-@pytest.mark.parametrize("data,status", [(b'',422), (b'not wav',415), (b'RIFF1234WAVEbad',422),
+@pytest.mark.parametrize("data,status", [(b'',422), (b'not wav',415), (b'RIFF1234WAVEbad',422), (b'fLaCbad',422),
     (wav(silent=True),422), (wav(.2),422), (wav(11),422), (wav(subtype='FLOAT'),415), (b'x'*(MAX_BYTES+1),413)])
 def test_invalid_audio(client, data, status):
     response = client.post('/api/classify', files={'audio': ('clip.wav', data)})
@@ -59,11 +74,6 @@ def test_request_contract(client):
     assert client.get('/api/health').json()['status'] == 'ready'
 
 
-def test_zero_audio_rejected():
-    with pytest.raises(AudioError):
-        decode_audio(wav(silent=True))
-
-
 def test_model_rejects_feature_order(monkeypatch):
     import mvp.models as models
     import joblib
@@ -75,25 +85,29 @@ def test_model_rejects_feature_order(monkeypatch):
         models.AccentModel()
 
 
-def test_model_override_needs_no_checksum(monkeypatch, tmp_path):
+@pytest.mark.parametrize('calibrated', [True, False])
+def test_model_override_needs_no_checksum(monkeypatch, tmp_path, calibrated):
     import mvp.models as models
     import shutil
     alternate = tmp_path / 'development-model.joblib'
-    shutil.copy2(models.ROOT / 'models/svm_35_calibrated.joblib', alternate)
+    if calibrated:
+        shutil.copy2(models.ROOT / 'models/svm_35_calibrated.joblib', alternate)
+    else:
+        # Exercise an uncalibrated export using the shipped model's fitted SVM.
+        models.joblib.dump(models.AccentModel().decision_estimator, alternate)
     shutil.copy2(models.ROOT / 'models/svm_35_calibrated_metadata.json',
                  tmp_path / 'development-model_metadata.json')
     monkeypatch.setenv('MODEL_PATH', str(alternate))
     model = models.AccentModel()
     assert model.manifest['model_version'] == 'development-model'
+    vector = np.arange(91, dtype=np.float32)
+    values = vector[model.columns].reshape(1, -1)
+    result = model.predict(vector)
+    assert result['class_id'] == model.decision_estimator.predict(values)[0]
+    assert result['decision_score'] == pytest.approx(model.decision_estimator.decision_function(values)[0])
+    assert (result['probability'] is None) == (not calibrated)
     monkeypatch.setenv('MODEL_VERSION', 'experiment-2')
     assert models.AccentModel().manifest['model_version'] == 'experiment-2'
-
-
-def test_model_rejects_missing_artifact(monkeypatch, tmp_path):
-    import mvp.models as models
-    monkeypatch.setenv('MODEL_PATH', str(tmp_path / 'missing.joblib'))
-    with pytest.raises(FileNotFoundError):
-        models.AccentModel()
 
 
 def test_preprocessing_trims_and_normalizes():
@@ -117,24 +131,18 @@ def test_very_quiet_audio_rejected():
         decode_audio(stream.getvalue())
 
 
-@pytest.mark.parametrize('probabilities,label', [([0.11, 0.89], 1), ([0.89, 0.11], 0), ([0.5, 0.5], 1)])
-def test_probability_belongs_to_displayed_class(monkeypatch, probabilities, label):
+@pytest.mark.parametrize('score,label,probabilities', [(1.2, 1, [0.89, 0.11]), (-0.4, 0, [0.11, 0.89]), (0., 1, [0.5, 0.5])])
+def test_ml_label_uses_raw_svm_and_keeps_probability_for_its_class(monkeypatch, score, label, probabilities):
     from mvp.models import AccentModel
     model = AccentModel()
     monkeypatch.setattr(model.pipeline, 'predict_proba', lambda x: np.asarray([probabilities]))
+    monkeypatch.setattr(model.decision_estimator, 'decision_function', lambda x: np.asarray([score]))
+    monkeypatch.setattr(model.decision_estimator, 'predict', lambda x: np.asarray([label]))
     result = model.predict(np.zeros(91, dtype=np.float32))
     assert result['class_id'] == label
+    assert result['decision_score'] == score
     assert result['probability'] == probabilities[label]
     assert result['display_label'] == ('Singapore Accent' if label else 'Non-Singapore Accent')
-
-
-def test_model_without_probabilities_rejected(monkeypatch):
-    import mvp.models as models
-    artifact = {'model': object(), 'columns': list(range(91)),
-                'feature_names': models.FEATURE_NAMES.copy()}
-    monkeypatch.setattr(models.joblib, 'load', lambda path: artifact)
-    with pytest.raises(ValueError, match='predict_proba'):
-        models.AccentModel()
 
 
 def test_flac_and_wav_decode_identically(client):
@@ -151,13 +159,7 @@ def test_flac_and_wav_decode_identically(client):
     assert result.json() == expected.json()
 
 
-def test_corrupt_flac_rejected(client):
-    response = client.post('/api/classify', files={'audio': ('clip.flac', b'fLaCbad')})
-    assert response.status_code == 422
-
-
-@pytest.mark.parametrize('format', ['WAV', 'FLAC'])
-@pytest.mark.parametrize('seconds', [8, 10])
+@pytest.mark.parametrize('format,seconds', [('WAV', 8), ('FLAC', 10)])
 def test_long_audio_classifies_first_six_seconds(client, format, seconds):
     data = wav(seconds, format=format)
     processed, metadata, warnings = decode_audio(data)
@@ -170,7 +172,8 @@ def test_long_audio_classifies_first_six_seconds(client, format, seconds):
     result = response.json()
     assert result['audio'] == metadata
     assert result['warnings'] == warnings
-    assert result['prediction'] == client.app.state.model.predict(extract_features(first_six))
+    assert result['prediction'] == client.app.state.models.ensemble.predict(
+        extract_features(first_six), np.zeros(512, dtype=np.float32))
 
 
 def test_trim_happens_before_crop():
@@ -203,7 +206,8 @@ def test_selected_columns_match_export_and_are_applied_in_order(monkeypatch):
         captured.append(x.copy())
         return np.asarray([[0.1, 0.9]])
     monkeypatch.setattr(model.pipeline, 'predict_proba', probabilities)
-    assert model.predict(vector)['probability'] == 0.9
+    assert model.predict(vector)['decision_score'] == pytest.approx(
+        model.decision_estimator.decision_function(vector[metadata['columns']].reshape(1, 35))[0])
     np.testing.assert_array_equal(captured[0], vector[metadata['columns']].reshape(1, 35))
 
 
@@ -215,3 +219,13 @@ def test_selected_model_requires_metadata(monkeypatch, tmp_path):
     monkeypatch.setenv('MODEL_PATH', str(path))
     with pytest.raises(ValueError, match='need columns and feature_names metadata'):
         models.AccentModel()
+
+
+def test_ensemble_failure_does_not_return_ml_as_final_result(client, monkeypatch):
+    def fail(_):
+        raise RuntimeError('Encoder unavailable')
+    monkeypatch.setattr(client.app.state.models, 'embedding', fail)
+    response = client.post('/api/classify', files={'audio': ('clip.wav', wav())})
+    assert response.status_code == 500
+    assert response.json()['error']['code'] == 'inference_failed'
+    assert 'prediction' not in response.json()

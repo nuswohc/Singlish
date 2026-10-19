@@ -12,15 +12,17 @@ def main():
     templates = Path(__file__).resolve().parent
     mvp = templates.parents[1]
     manifest = json.loads((mvp / "models/manifest.json").read_text())
-    model_name = Path(manifest["model_file"])
-    if model_name.is_absolute() or ".." in model_name.parts or model_name.parts[0] != "models":
-        raise ValueError("model_file must be a relative path inside models/")
-    names = ["__init__.py", "app.py", "audio.py", "features.py", "models.py",
-             "requirements.txt", "models/manifest.json", str(model_name),
+    names = ["__init__.py", "app.py", "audio.py", "features.py", "models.py", "embeddings.py",
+             "requirements.txt", "models/manifest.json",
              "static/index.html", "static/app.js", "static/recorder.js", "static/styles.css"]
-    metadata_name = model_name.with_name(model_name.stem + "_metadata.json")
-    if (mvp / metadata_name).is_file():
-        names.append(str(metadata_name))
+    for key in ("model_file", "ensemble_file"):
+        model_name = Path(manifest[key])
+        if model_name.is_absolute() or ".." in model_name.parts or model_name.parts[0] != "models":
+            raise ValueError(f"{key} must be a relative path inside models/")
+        names.append(str(model_name))
+        metadata_name = model_name.with_name(model_name.stem + "_metadata.json")
+        if (mvp / metadata_name).is_file():
+            names.append(str(metadata_name))
     for name in names:
         if not (mvp / name).is_file():
             raise FileNotFoundError(mvp / name)
@@ -37,7 +39,7 @@ def main():
         shutil.copy2(templates / name, destination / name)
     (destination / ".dockerignore").write_text(
         "**/__pycache__/\n**/.venv/\n**/.pytest_cache/\n.git/\n")
-    print(f"Prepared {destination}; model: {model_name}.")
+    print(f"Prepared {destination}; ML and Ensemble artifacts included.")
 
 
 if __name__ == "__main__":

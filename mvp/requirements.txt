@@ -10,3 +10,5 @@ fastapi==0.142.2
 uvicorn==0.54.0
 python-multipart==0.0.32
 starlette==1.7.0
+torch==2.14.0
+transformers==4.57.6

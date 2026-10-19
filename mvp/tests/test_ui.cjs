@@ -23,8 +23,11 @@ function setup(fetch) {
   return {elements,select,submit};
 }
 const file = {name:'test.wav',size:1000};
-const success = {prediction:{display_label:'Singapore Accent',probability:0.89},audio:{duration_seconds:3,classified_duration_seconds:3},
-  model_version:'svm_35_calibrated',warnings:[]};
+const ml = {display_label:'Singapore Accent',decision_score:0.8765};
+const ensemble = {display_label:'Singapore Accent',probability:null,decision_score:1.2345};
+const success = {prediction:ensemble, models:{ml:{name:'ML',version:'svm_35_calibrated',prediction:ml},
+  ensemble:{name:'Ensemble',version:'fusion_svm',prediction:ensemble}},agreement:'agree',
+  audio:{duration_seconds:3,classified_duration_seconds:3},model_version:'fusion_svm',warnings:[]};
 
 test('selection clears stale result and validates file', () => {
   const {elements,select} = setup();
@@ -37,6 +40,9 @@ test('selection clears stale result and validates file', () => {
   assert.equal(elements.error.hidden,false);
   select(file);
   assert.equal(elements.error.hidden,true);
+  select({name:'speech.FLAC',size:1000});
+  assert.equal(elements.submit.disabled,false);
+  assert.equal(elements.filename.textContent,'speech.FLAC');
 });
 
 test('loading prevents selection changes; success renders label and restores controls', async () => {
@@ -52,7 +58,10 @@ test('loading prevents selection changes; success renders label and restores con
   resolve({ok:true,json:async()=>success});
   await request;
   assert.equal(elements['prediction-label'].textContent,'Singapore Accent');
-  assert.equal(elements['prediction-probability'].textContent,'89%');
+  assert.equal(elements['ml-score'].textContent,'+0.876');
+  assert.equal(elements['ensemble-label'].textContent,'Singapore Accent');
+  assert.equal(elements['ensemble-score'].textContent,'+1.234');
+  assert.equal(elements['model-agreement'].textContent,'Model agreement: Agree');
   assert.equal(elements.result.hidden,false);
   assert.equal(elements['result-card'].scrolledIntoView,true);
   assert.equal(elements.loading.hidden,true);
@@ -86,21 +95,37 @@ test('network failure produces readable error', async () => {
 });
 
 
-test('FLAC uploads are accepted alongside WAV, including uppercase extensions', () => {
-  const {elements,select} = setup();
-  select({name:'speech.FLAC',size:1000});
-  assert.equal(elements.submit.disabled,false);
-  assert.equal(elements.filename.textContent,'speech.FLAC');
-  select({name:'speech.mp3',size:1000});
-  assert.equal(elements.submit.disabled,true);
-  assert.match(elements.error.textContent,/wav or .flac/);
+test('ML and Ensemble display signed scores when they disagree', async () => {
+  const {elements,select,submit} = setup(async () => ({ok:true,json:async () => ({...success,
+    prediction:ensemble,agreement:'disagree',
+    models:{...success.models,ml:{...success.models.ml,prediction:{display_label:'Non-Singapore Accent',decision_score:-0.876}},
+      ensemble:success.models.ensemble}})}));
+  select(file);
+  await submit();
+  assert.equal(elements['prediction-label'].textContent,'Singapore Accent');
+  assert.equal(elements['ml-label'].textContent,'Non-Singapore Accent');
+  assert.equal(elements['ml-score'].textContent,'-0.876');
+  assert.equal(elements['ensemble-label'].textContent,'Singapore Accent');
+  assert.equal(elements['model-agreement'].textContent,'Model agreement: Disagree');
 });
 
-test('non-Singapore result shows its own rounded probability', async () => {
+test('non-Singapore Ensemble result has no percentage and keeps its signed score', async () => {
+  const prediction = {display_label:'Non-Singapore Accent',probability:null,decision_score:-1.2};
   const {elements,select,submit} = setup(async () => ({ok:true,json:async () => ({...success,
-    prediction:{display_label:'Non-Singapore Accent',probability:0.876}})}));
+    prediction,agreement:'disagree',models:{...success.models,
+      ensemble:{...success.models.ensemble,prediction}}})}));
   select(file);
   await submit();
   assert.equal(elements['prediction-label'].textContent,'Non-Singapore Accent');
-  assert.equal(elements['prediction-probability'].textContent,'88%');
+  assert.equal(elements['ensemble-score'].textContent,'-1.200');
+});
+
+test('tiny margins retain their sign instead of rounding to zero', async () => {
+  const {elements,select,submit} = setup(async () => ({ok:true,json:async () => ({...success,
+    models:{ml:{...success.models.ml,prediction:{...ml,decision_score:0.00001}},
+      ensemble:{...success.models.ensemble,prediction:{...ensemble,decision_score:-0.00001}}}})}));
+  select(file);
+  await submit();
+  assert.equal(elements['ml-score'].textContent,'+1.00e-5');
+  assert.equal(elements['ensemble-score'].textContent,'-1.00e-5');
 });

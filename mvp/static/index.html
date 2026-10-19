@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Singapore English Accent Classification</title>
-  <link rel="stylesheet" href="/static/styles.css?v=20261019b">
-  <script src="/static/recorder.js?v=20261019b" defer></script>
-  <script src="/static/app.js?v=20261019b" defer></script>
+  <link rel="stylesheet" href="/static/styles.css?v=20261019e">
+  <script src="/static/recorder.js?v=20261019e" defer></script>
+  <script src="/static/app.js?v=20261019e" defer></script>
 </head>
 <body>
   <main class="demo">
     <header class="page-header">
       <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Singapore English · Research demo</p>
       <h1>Singapore English Accent Classification</h1>
-      <p class="intro">Record or upload a short English clip to explore its accent classification.</p>
+      <p class="intro">Record or upload a short English clip to compare ML and Ensemble predictions.</p>
     </header>
 
     <div class="workspace">
@@ -60,45 +60,34 @@
         <div id="loading" class="empty-state" hidden>
           <span class="spinner" aria-hidden="true"></span>
           <h3>Analysing your recording…</h3>
-          <p class="placeholder">Please wait while the classifier processes your audio.</p>
+          <p class="placeholder">Please wait while ML and Ensemble process your audio.</p>
         </div>
         <div id="result" class="completed-state" hidden>
-          <p class="result-caption">Predicted accent</p>
-          <h3 id="prediction"><span id="prediction-label"></span> <span id="prediction-probability"></span></h3>
-          <p class="probability-caption">Estimated probability of this accent</p>
+          <p class="result-caption">Final result · Ensemble</p>
+          <h3 id="prediction"><span id="prediction-label"></span></h3>
+          <div class="model-comparison" aria-label="Model predictions">
+            <div><h4>ML</h4><p id="ml-label"></p><strong id="ml-score"></strong><span>Decision score</span></div>
+            <div class="ensemble-result"><h4>Ensemble</h4><p id="ensemble-label"></p><strong id="ensemble-score"></strong><span>Decision score</span></div>
+          </div>
+          <p class="score-guide">Positive: Singapore · Negative: Non-Singapore · Near zero: decision boundary. Score magnitudes are not directly comparable across models.</p>
+          <p id="model-agreement" class="model-agreement"></p>
           <dl class="result-summary"><div><dt>Recording duration</dt><dd id="duration">—</dd></div></dl>
           <div id="warnings" class="warnings" hidden></div>
           <details class="model-details">
             <summary>Model details</summary>
             <dl class="result-details">
-              <div><dt>Classifier</dt><dd>E1 · Calibrated 35-feature SVM</dd></div>
+              <div><dt>ML</dt><dd>E1 · Acoustic SVM</dd></div>
+              <div><dt>Ensemble</dt><dd>E4 · Acoustic + Whisper fusion SVM</dd></div>
               <div><dt>Audio classified</dt><dd id="classified-duration"></dd></div>
-              <div><dt>Model version</dt><dd id="model-version"></dd></div>
+              <div><dt>ML version</dt><dd id="ml-version"></dd></div>
+              <div><dt>Ensemble version</dt><dd id="model-version"></dd></div>
             </dl>
-            <p class="detail-note">The percentage estimates the probability of the displayed accent. Speech detection and audio quality scoring are not available.</p>
+            <p class="detail-note">Decision scores are raw SVM outputs, not probabilities. Agreement compares the two predicted classes. Speech detection and audio quality scoring are not available.</p>
           </details>
         </div>
         <p class="result-note">Experimental result. It does not determine nationality or identity.</p>
       </section>
     </div>
-
-    <details class="upcoming">
-      <summary><span>Upcoming features</span><span class="upcoming-tag">In development</span></summary>
-      <div class="upcoming-content">
-        <p class="upcoming-intro">These features are planned and are not part of the current result.</p>
-        <div class="transcript-grid">
-          <section class="future-panel original-panel" aria-labelledby="original-title">
-            <h2 id="original-title">Original transcript</h2>
-            <p>Whisper transcription of the recording.</p>
-          </section>
-          <section class="future-panel updated-panel" aria-labelledby="updated-title">
-            <h2 id="updated-title">Context-assisted transcript</h2>
-            <p>An optional second transcription using Singapore vocabulary context.</p>
-          </section>
-        </div>
-        <p class="future-models">Also planned: a deep accent model and an ensemble.</p>
-      </div>
-    </details>
 
     <footer>
       <p class="privacy-note"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> Audio is processed for this request and not retained.</p>

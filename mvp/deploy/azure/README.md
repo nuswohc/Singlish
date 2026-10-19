@@ -6,7 +6,7 @@ The MVP runs on an Azure Linux VM using Docker Compose. The app container runs F
 
 ## Prerequisites
 
-- Complete the [MVP prerequisites and setup](../../README.md#prerequisites), including the trusted development model artifact.
+- Complete the [MVP setup](../../README.md#setup), including both trusted SVM artifacts and their matching metadata.
 - An Azure Linux VM with Docker Engine and Docker Compose v2 installed.
 - A public hostname pointing to the VM and inbound TCP ports 80 and 443 enabled.
 - SSH access for deployment, restricted to authorised administrators.
@@ -15,7 +15,7 @@ Microphone access requires HTTPS for a hosted demo. Use the HTTPS URL when openi
 
 The included `cloud-init.yaml` is an Ubuntu VM bootstrap template. It installs Docker, prepares `/opt/singlish` for the `azureuser` account, and configures 2 GB of swap. Adjust the account and swap settings for your VM before provisioning.
 
-The current SVM demo uses 2 burstable vCPUs, 1 GB RAM, a 32 GB Standard SSD and 2 GB swap. Resource availability and free allowances depend on the subscription and region; check quotas, credits and costs before provisioning.
+The two-model demo needs more memory than the earlier ML-only host. Use at least 2 vCPUs and 4 GB RAM, with sufficient disk space for the PyTorch image and Whisper weights. The previous 1 GB VM / 600 MB container budget is insufficient. Resource availability and costs depend on the subscription and region.
 
 ## Prepare the deployment package
 
@@ -25,7 +25,7 @@ From the repository root:
 mvp/.venv/bin/python mvp/deploy/azure/prepare_deployment.py tmp/azure-mvp
 ```
 
-The destination must not already exist. The script copies only serving code, static assets (including the microphone recorder), pinned dependencies, the model artifact and deployment configuration. It excludes recordings, credentials, research data, tests and virtual environments.
+The destination must not already exist. The script copies only serving code, static assets (including the microphone recorder), pinned dependencies, both model artifacts, matching metadata and deployment configuration. The Docker build installs CPU PyTorch and caches the pinned Whisper base.en weights; it needs network access to PyPI, the PyTorch CPU index and Hugging Face. Runtime uses those cached weights offline. It excludes recordings, credentials, research data, tests and virtual environments.
 
 Edit `tmp/azure-mvp/Caddyfile` to use your VM's public hostname. The deployment package contains the model binary and should remain outside Git; `tmp/` is ignored by the repository.
 
@@ -48,13 +48,13 @@ docker compose ps
 
 Caddy obtains a certificate for the configured hostname and redirects HTTP to HTTPS. Only Caddy publishes web ports; port 8000 remains internal to the Docker network. Containers restart automatically after a VM reboot.
 
-The Compose configuration limits app memory to 600 MB and proxy memory to 128 MB. Adjust these limits if you change the VM size or application requirements.
+The Compose configuration limits app memory to 3 GB and proxy memory to 128 MB. Whisper inference runs one request at a time to bound memory. Adjust these limits if you change the VM size or application requirements.
 
 ## Check the deployment
 
 Open the configured HTTPS URL and check both input methods:
 
-- Upload a valid PCM WAV, preview it, and confirm that classification succeeds.
+- Upload a valid PCM WAV, preview it, and confirm that both ML and Ensemble results appear, with Ensemble as the final result and Agree/Disagree beneath the comparison. Both model cards must show signed decision scores and no percentages.
 - Allow microphone access, record 3–6 seconds, stop, preview, and classify. Check that cancelling a new take preserves previously selected audio and that recording stops at 10 seconds.
 - Deny microphone access and confirm that WAV upload remains available.
 
@@ -88,10 +88,14 @@ and rebuild the app on the VM. For a different filename, update `model_file` in
 must select their inputs from the current 91-feature pool using their matching
 column metadata and retain the current preprocessing. The API reports the
 filename stem unless `MODEL_VERSION` is set. Compose passes through optional
-`MODEL_PATH` and `MODEL_VERSION` values from the VM environment or `.env` file;
-a path override must exist inside the container. Only the manifest-selected
-model is included in a generated package. Use a unique `MODEL_VERSION` when
+`MODEL_PATH`, `MODEL_VERSION`, `ENSEMBLE_MODEL_PATH` and `ENSEMBLE_MODEL_VERSION` values from the VM environment or `.env` file;
+a path override must exist inside the container. Both manifest-selected
+models are included in a generated package. Use a unique `MODEL_VERSION` when
 replacing a file under the same name so deployments are easy to distinguish.
+
+For Ensemble, replace `fusion_svm.joblib` and `fusion_svm_metadata.json` together,
+or update `ensemble_file` in the manifest for a new filename. The metadata must
+match the raw acoustic + Whisper input contract described in the MVP README.
 
 Before deploying, back up `/opt/singlish` and tag the current app image. Keep the
 Caddy data volumes when updating so the existing HTTPS certificate is preserved.

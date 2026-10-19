@@ -3,7 +3,6 @@ from contextlib import asynccontextmanager
 import logging
 from pathlib import Path
 from fastapi import FastAPI, Request
-from fastapi.exceptions import RequestValidationError
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.concurrency import run_in_threadpool
@@ -11,14 +10,14 @@ from starlette.datastructures import UploadFile
 from starlette.exceptions import HTTPException
 from .audio import AudioError, MAX_BYTES, decode_audio
 from .features import extract_features
-from .models import AccentModel
+from .models import AccentModels
 
 ROOT = Path(__file__).resolve().parent
 logger = logging.getLogger(__name__)
 
 @asynccontextmanager
 async def lifespan(app):
-    app.state.model = AccentModel()
+    app.state.models = AccentModels()
     yield
 
 app = FastAPI(title="Singapore Accent MVP", lifespan=lifespan)
@@ -28,23 +27,20 @@ app.mount("/static", StaticFiles(directory=ROOT / "static"), name="static")
 async def audio_error(request, error):
     return JSONResponse({"error": {"code": error.code, "message": error.message}}, status_code=error.status)
 
-@app.exception_handler(RequestValidationError)
-async def validation_error(request, error):
-    return JSONResponse({"error": {"code": "invalid_request", "message": "Upload one WAV or FLAC file in the audio field."}}, status_code=422)
-
 @app.get("/")
 def index():
     return FileResponse(ROOT / "static/index.html")
 
 @app.get("/api/health")
 def health(request: Request):
-    return {"status": "ready", "model_version": request.app.state.model.manifest["model_version"]}
+    models = request.app.state.models
+    return {"status": "ready", "model_version": models.ensemble.version, "models": models.versions()}
 
 
-def classify(model, data):
+def classify(models, data):
     waveform, metadata, warnings = decode_audio(data)
-    return {"prediction": model.predict(extract_features(waveform)), "audio": metadata,
-            "warnings": warnings, "model_version": model.manifest["model_version"]}
+    return {**models.predict(extract_features(waveform), waveform),
+            "audio": metadata, "warnings": warnings}
 
 @app.post("/api/classify")
 async def classify_upload(request: Request):
@@ -63,7 +59,7 @@ async def classify_upload(request: Request):
                 raise AudioError("Upload exactly one WAV or FLAC file in the audio field.", "invalid_request")
             upload = items[0][1]
             data = await upload.read(MAX_BYTES + 1)
-            return await run_in_threadpool(classify, request.app.state.model, data)
+            return await run_in_threadpool(classify, request.app.state.models, data)
     except AudioError:
         raise
     except HTTPException as error:
