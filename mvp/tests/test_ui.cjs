@@ -23,8 +23,8 @@ function setup(fetch) {
   return {elements,select,submit};
 }
 const file = {name:'test.wav',size:1000};
-const success = {prediction:{display_label:'Singapore accent'},audio:{duration_seconds:3,classified_duration_seconds:3},
-  model_version:'e1-svm39-mvp-1',warnings:[]};
+const success = {prediction:{display_label:'Singapore Accent',probability:0.89},audio:{duration_seconds:3,classified_duration_seconds:3},
+  model_version:'svm_35_calibrated',warnings:[]};
 
 test('selection clears stale result and validates file', () => {
   const {elements,select} = setup();
@@ -51,7 +51,8 @@ test('loading prevents selection changes; success renders label and restores con
   assert.equal(elements.filename.textContent,'test.wav');
   resolve({ok:true,json:async()=>success});
   await request;
-  assert.equal(elements.prediction.textContent,'Singapore accent');
+  assert.equal(elements['prediction-label'].textContent,'Singapore Accent');
+  assert.equal(elements['prediction-probability'].textContent,'89%');
   assert.equal(elements.result.hidden,false);
   assert.equal(elements['result-card'].scrolledIntoView,true);
   assert.equal(elements.loading.hidden,true);
@@ -82,4 +83,24 @@ test('network failure produces readable error', async () => {
   assert.match(elements.error.textContent,/Cannot reach the server/);
   assert.equal(elements.loading.hidden,true);
   assert.equal(elements.submit.disabled,false);
+});
+
+
+test('FLAC uploads are accepted alongside WAV, including uppercase extensions', () => {
+  const {elements,select} = setup();
+  select({name:'speech.FLAC',size:1000});
+  assert.equal(elements.submit.disabled,false);
+  assert.equal(elements.filename.textContent,'speech.FLAC');
+  select({name:'speech.mp3',size:1000});
+  assert.equal(elements.submit.disabled,true);
+  assert.match(elements.error.textContent,/wav or .flac/);
+});
+
+test('non-Singapore result shows its own rounded probability', async () => {
+  const {elements,select,submit} = setup(async () => ({ok:true,json:async () => ({...success,
+    prediction:{display_label:'Non-Singapore Accent',probability:0.876}})}));
+  select(file);
+  await submit();
+  assert.equal(elements['prediction-label'].textContent,'Non-Singapore Accent');
+  assert.equal(elements['prediction-probability'].textContent,'88%');
 });

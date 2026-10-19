@@ -1,6 +1,5 @@
 """Prepare an allowlisted container context for Azure without research data or secrets."""
 import argparse
-import hashlib
 import json
 from pathlib import Path
 import shutil
@@ -13,12 +12,15 @@ def main():
     templates = Path(__file__).resolve().parent
     mvp = templates.parents[1]
     manifest = json.loads((mvp / "models/manifest.json").read_text())
-    model = mvp / "models/svm_39.joblib"
-    if hashlib.sha256(model.read_bytes()).hexdigest() != manifest["sha256"]:
-        raise ValueError("Model checksum mismatch; refusing to package")
+    model_name = Path(manifest["model_file"])
+    if model_name.is_absolute() or ".." in model_name.parts or model_name.parts[0] != "models":
+        raise ValueError("model_file must be a relative path inside models/")
     names = ["__init__.py", "app.py", "audio.py", "features.py", "models.py",
-             "requirements.txt", "models/manifest.json", "models/svm_39.joblib",
+             "requirements.txt", "models/manifest.json", str(model_name),
              "static/index.html", "static/app.js", "static/recorder.js", "static/styles.css"]
+    metadata_name = model_name.with_name(model_name.stem + "_metadata.json")
+    if (mvp / metadata_name).is_file():
+        names.append(str(metadata_name))
     for name in names:
         if not (mvp / name).is_file():
             raise FileNotFoundError(mvp / name)
@@ -35,7 +37,7 @@ def main():
         shutil.copy2(templates / name, destination / name)
     (destination / ".dockerignore").write_text(
         "**/__pycache__/\n**/.venv/\n**/.pytest_cache/\n.git/\n")
-    print(f"Prepared {destination}; model SHA-256 verified.")
+    print(f"Prepared {destination}; model: {model_name}.")
 
 
 if __name__ == "__main__":

@@ -6,7 +6,7 @@ The MVP runs on an Azure Linux VM using Docker Compose. The app container runs F
 
 ## Prerequisites
 
-- Complete the [MVP prerequisites and setup](../../README.md#prerequisites), including the trusted model artifact.
+- Complete the [MVP prerequisites and setup](../../README.md#prerequisites), including the trusted development model artifact.
 - An Azure Linux VM with Docker Engine and Docker Compose v2 installed.
 - A public hostname pointing to the VM and inbound TCP ports 80 and 443 enabled.
 - SSH access for deployment, restricted to authorised administrators.
@@ -25,7 +25,7 @@ From the repository root:
 mvp/.venv/bin/python mvp/deploy/azure/prepare_deployment.py tmp/azure-mvp
 ```
 
-The destination must not already exist. The script verifies the model checksum and copies only serving code, static assets (including the microphone recorder), pinned dependencies, the model artifact and deployment configuration. It excludes recordings, credentials, research data, tests and virtual environments.
+The destination must not already exist. The script copies only serving code, static assets (including the microphone recorder), pinned dependencies, the model artifact and deployment configuration. It excludes recordings, credentials, research data, tests and virtual environments.
 
 Edit `tmp/azure-mvp/Caddyfile` to use your VM's public hostname. The deployment package contains the model binary and should remain outside Git; `tmp/` is ignored by the repository.
 
@@ -78,3 +78,20 @@ Regenerate the package in a new directory, copy the updated files to the VM, and
 To migrate, deploy the same package to another VM, update the hostname and firewall settings, and check readiness and classification before retiring the previous deployment. The MVP retains no recordings or database, so there is no application data to migrate.
 
 The hosted demo runs continuously. VM scheduling is managed separately from Compose. Deallocating a VM stops compute usage, but disks and public IP resources may continue to incur charges.
+
+## Development model swaps
+
+No checksum is required. Replace `mvp/models/svm_35_calibrated.joblib` and its matching
+`svm_35_calibrated_metadata.json`, regenerate the package,
+and rebuild the app on the VM. For a different filename, update `model_file` in
+`mvp/models/manifest.json`; the packager includes that file automatically. Models
+must select their inputs from the current 91-feature pool using their matching
+column metadata and retain the current preprocessing. The API reports the
+filename stem unless `MODEL_VERSION` is set. Compose passes through optional
+`MODEL_PATH` and `MODEL_VERSION` values from the VM environment or `.env` file;
+a path override must exist inside the container. Only the manifest-selected
+model is included in a generated package. Use a unique `MODEL_VERSION` when
+replacing a file under the same name so deployments are easy to distinguish.
+
+Before deploying, back up `/opt/singlish` and tag the current app image. Keep the
+Caddy data volumes when updating so the existing HTTPS certificate is preserved.

@@ -11,7 +11,7 @@ const recorder = new MicrophoneRecorder({
     $('record-button').setAttribute('aria-pressed', String(state === 'recording'));
     $('recording-live').hidden = state !== 'recording';
     const messages = { requesting: 'Allow microphone access in your browser to start.',
-      recording: 'Recording… speak clearly, then select Stop recording.', processing: 'Preparing your recording…' };
+      recording: 'Read “They tried to keep it a secret” slowly, then select Stop recording.', processing: 'Preparing your recording…' };
     if (messages[state]) $('recording-status').textContent = messages[state];
     updateControls();
   },
@@ -22,12 +22,12 @@ const recorder = new MicrophoneRecorder({
   },
   onError(error) {
     const messages = {
-      NotAllowedError: 'Microphone access was denied. Allow microphone access in your browser settings, or upload a WAV file.',
-      SecurityError: 'Microphone access is blocked by the browser. Check the site permissions or upload a WAV file.',
-      NotFoundError: 'No microphone was found. Connect one or upload a WAV file.',
-      NotReadableError: 'The microphone could not be opened. Check whether another app is using it, or upload a WAV file.'
+      NotAllowedError: 'Microphone access was denied. Allow microphone access in your browser settings, or upload a WAV or FLAC file.',
+      SecurityError: 'Microphone access is blocked by the browser. Check the site permissions or upload a WAV or FLAC file.',
+      NotFoundError: 'No microphone was found. Connect one or upload a WAV or FLAC file.',
+      NotReadableError: 'The microphone could not be opened. Check whether another app is using it, or upload a WAV or FLAC file.'
     };
-    $('error').textContent = messages[error.name] || error.message || 'Recording failed. Please try again or upload a WAV file.';
+    $('error').textContent = messages[error.name] || error.message || 'Recording failed. Please try again or upload a WAV or FLAC file.';
     $('error').hidden = false;
     $('recording-status').textContent = 'Recording did not complete. You can retry or upload audio.';
   }
@@ -62,8 +62,8 @@ function selectFile(file) {
   if (!selectedFile) return;
   $('filename').textContent = selectedFile.name;
   $('filesize').textContent = `${(selectedFile.size / 1024 / 1024).toFixed(2)} MiB`;
-  if (selectedFile.size > 10 * 1024 * 1024 || !selectedFile.name.toLowerCase().endsWith('.wav')) {
-    $('error').textContent = 'Choose a .wav file up to 10 MiB.';
+  if (selectedFile.size > 10 * 1024 * 1024 || !/\.(wav|flac)$/i.test(selectedFile.name)) {
+    $('error').textContent = 'Choose a .wav or .flac file up to 10 MiB.';
     $('error').hidden = false;
     $('submit').disabled = true;
     $('preview').hidden = true;
@@ -85,7 +85,7 @@ $('record-button').addEventListener('click', () => {
 $('cancel-recording').addEventListener('click', () => {
   recorder.cancel();
   $('recording-status').textContent = validFile ? 'Recording cancelled. Your previous audio is still available.' :
-    'Recording cancelled. Record again or upload a WAV file.';
+    'Recording cancelled. Record again or upload a WAV or FLAC file.';
 });
 function cancelForPageLeave() {
   if (recorder.state !== 'idle') {
@@ -98,7 +98,7 @@ document.addEventListener('visibilitychange', () => {
   if (document.hidden) cancelForPageLeave();
 });
 updateControls();
-if (!microphoneSupported) $('recording-status').textContent = 'Microphone recording requires a supported browser on HTTPS or localhost. You can still upload a WAV file.';
+if (!microphoneSupported) $('recording-status').textContent = 'Microphone recording requires a supported browser on HTTPS or localhost. You can still upload a WAV or FLAC file.';
 $('audio-file').addEventListener('change', (e) => selectFile(e.target.files[0]));
 for (const event of ['dragenter', 'dragover']) $('dropzone').addEventListener(event, (e) => {
   e.preventDefault(); if (!busy && recorder.state === 'idle') $('dropzone').classList.add('dragging');
@@ -114,12 +114,14 @@ $('upload-form').addEventListener('submit', async (e) => {
   $('empty-result').hidden = true;
   $('loading').hidden = false;
   $('result-card').setAttribute('aria-busy', 'true');
+  $('result-card').scrollIntoView({ block: 'start' });
   const form = new FormData(); form.append('audio', selectedFile);
   try {
     const response = await fetch('/api/classify', { method: 'POST', body: form });
     const data = await response.json();
     if (!response.ok) throw new Error(data.error?.message || 'Classification failed. Try again.');
-    $('prediction').textContent = data.prediction.display_label;
+    $('prediction-label').textContent = data.prediction.display_label;
+    $('prediction-probability').textContent = `${Math.round(data.prediction.probability * 100)}%`;
     $('duration').textContent = `${data.audio.duration_seconds.toFixed(2)} s`;
     $('classified-duration').textContent = `${data.audio.classified_duration_seconds.toFixed(2)} s`;
     $('model-version').textContent = data.model_version;
@@ -135,6 +137,6 @@ $('upload-form').addEventListener('submit', async (e) => {
     $('loading').hidden = true;
     updateControls();
     $('result-card').setAttribute('aria-busy', 'false');
-    if (!$('result').hidden) $('result-card').scrollIntoView({ block: 'nearest' });
+    if (!$('result').hidden) $('result-card').scrollIntoView({ block: 'start' });
   }
 });

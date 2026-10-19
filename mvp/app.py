@@ -1,4 +1,4 @@
-"""Local WAV-upload accent classifier."""
+"""Local WAV/FLAC-upload accent classifier."""
 from contextlib import asynccontextmanager
 import logging
 from pathlib import Path
@@ -30,7 +30,7 @@ async def audio_error(request, error):
 
 @app.exception_handler(RequestValidationError)
 async def validation_error(request, error):
-    return JSONResponse({"error": {"code": "invalid_request", "message": "Upload one WAV file in the audio field."}}, status_code=422)
+    return JSONResponse({"error": {"code": "invalid_request", "message": "Upload one WAV or FLAC file in the audio field."}}, status_code=422)
 
 @app.get("/")
 def index():
@@ -60,14 +60,14 @@ async def classify_upload(request: Request):
         async with request.form(max_files=1, max_fields=0, max_part_size=MAX_BYTES) as form:
             items = form.multi_items()
             if len(items) != 1 or items[0][0] != "audio" or not isinstance(items[0][1], UploadFile):
-                raise AudioError("Upload exactly one WAV file in the audio field.", "invalid_request")
+                raise AudioError("Upload exactly one WAV or FLAC file in the audio field.", "invalid_request")
             upload = items[0][1]
             data = await upload.read(MAX_BYTES + 1)
             return await run_in_threadpool(classify, request.app.state.model, data)
     except AudioError:
         raise
     except HTTPException as error:
-        raise AudioError("Upload exactly one WAV file as multipart form data.", "invalid_request") from error
+        raise AudioError("Upload exactly one WAV or FLAC file as multipart form data.", "invalid_request") from error
     except Exception:
         logger.exception("Accent inference failed")
-        return JSONResponse({"error": {"code": "inference_failed", "message": "Classification failed. Please try another WAV file."}}, status_code=500)
+        return JSONResponse({"error": {"code": "inference_failed", "message": "Classification failed. Please try another WAV or FLAC file."}}, status_code=500)

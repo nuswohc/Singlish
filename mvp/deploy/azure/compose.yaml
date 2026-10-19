@@ -2,6 +2,9 @@ services:
   app:
     build: .
     restart: unless-stopped
+    environment:
+      MODEL_PATH: ${MODEL_PATH:-}
+      MODEL_VERSION: ${MODEL_VERSION:-}
     mem_limit: 600m
     expose:
       - "8000"

@@ -1,13 +1,15 @@
-"""Exact librosa39-v1 features from the E1 39-feature study."""
+"""Exact 91-feature extraction for the upstream-preprocessed E1 study."""
 import librosa
 import numpy as np
 
 SAMPLE_RATE = 16_000
+MIN_SECONDS = 3
 MAX_SECONDS = 6
+DELTA_WIDTH = 9
 N_MFCC = 13
 N_FFT = 1024
 HOP_LENGTH = 256
-EXTRACTION_VERSION = "librosa39-v1"
+EXTRACTION_VERSION = "librosa91-parquet-upstream-v2"
 
 FEATURE_NAMES = (
     [f'mfcc_{i + 1}_mean' for i in range(N_MFCC)]
@@ -19,18 +21,40 @@ FEATURE_NAMES = (
         for stat in ('mean', 'std')
     ]
 )
-assert len(FEATURE_NAMES) == 39
+FEATURE_NAMES += [
+    f'{family}_{i}_{stat}'
+    for family in ('mfcc_delta', 'mfcc_delta_delta')
+    for stat in ('mean', 'std')
+    for i in range(1, N_MFCC + 1)
+]
+assert len(FEATURE_NAMES) == 91
 
 
-def prepare_waveform(y):
-    y, _ = librosa.effects.trim(y, top_db=30)
-    if y.size == 0:
-        raise ValueError('No audible signal')
-    peak = np.max(np.abs(y))
-    if peak > 0:
-        y = y / peak
-    y = librosa.util.fix_length(y, size=max(len(y), SAMPLE_RATE))
-    return y[:SAMPLE_RATE * MAX_SECONDS].astype(np.float32)
+def trim_silence(y):
+    """Match upstream 25 ms RMS frames, 10 ms hop, and 100 ms padding."""
+    frame, hop = 400, 160
+    if not len(y):
+        return y
+    frames = y[None, :] if len(y) < frame else np.lib.stride_tricks.sliding_window_view(y, frame)[::hop]
+    rms = np.sqrt(np.mean(frames.astype(np.float64) ** 2, axis=1))
+    ref = rms.max()
+    if ref <= 0:
+        return y
+    with np.errstate(divide='ignore'):
+        db = 20.0 * np.log10(np.maximum(rms, 1e-20) / ref)
+    active = np.nonzero(db > -40.0)[0]
+    return y[max(0, active[0] * hop - 1600):min(len(y), active[-1] * hop + frame + 1600)]
+
+
+def normalize_loudness(y):
+    rms = float(np.sqrt(np.mean(y.astype(np.float64) ** 2))) if len(y) else 0.0
+    if rms < 1e-5:
+        raise ValueError('The recording is silent or too quiet. Record clear English speech.')
+    y = y * (10.0 ** (-20.0 / 20.0) / rms)
+    peak = float(np.max(np.abs(y)))
+    if peak > 0.99:
+        y = y * (0.99 / peak)
+    return y.astype(np.float32)
 
 
 def mean_and_std(feature):
@@ -62,7 +86,11 @@ def extract_features(y):
         librosa.feature.zero_crossing_rate(y, frame_length=N_FFT, hop_length=HOP_LENGTH),
         rms,
     ]
-    vector = np.concatenate([mean_and_std(mfcc), pitch_stats] + [mean_and_std(x) for x in time_features])
+    delta = librosa.feature.delta(mfcc, order=1, width=DELTA_WIDTH)
+    delta_delta = librosa.feature.delta(mfcc, order=2, width=DELTA_WIDTH)
+    vector = np.concatenate([mean_and_std(mfcc), pitch_stats]
+                            + [mean_and_std(x) for x in time_features]
+                            + [mean_and_std(delta), mean_and_std(delta_delta)])
     vector = np.nan_to_num(vector, nan=0.0, posinf=0.0, neginf=0.0).astype(np.float32)
     assert vector.shape == (len(FEATURE_NAMES),)
     return vector
