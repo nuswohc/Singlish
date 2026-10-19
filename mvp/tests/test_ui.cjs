@@ -5,7 +5,10 @@ const vm = require('node:vm');
 const path = require('node:path');
 function setup(fetch) {
   const elements = {};
+  const html = fs.readFileSync(path.join(__dirname, '../static/index.html'), 'utf8');
+  const ids = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]));
   const document = { addEventListener() {}, getElementById(id) {
+    if (!ids.has(id)) return null;
     if (!elements[id]) elements[id] = { hidden: false, disabled: false, textContent: '',
       listeners: {}, attributes: {}, classList: { add() {}, remove() {} },
       addEventListener(type, handler) { this.listeners[type] = handler; },

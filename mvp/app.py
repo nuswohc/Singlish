@@ -29,7 +29,8 @@ async def audio_error(request, error):
 
 @app.get("/")
 def index():
-    return FileResponse(ROOT / "static/index.html")
+    # Revalidate the entry page so returning browsers discover new asset URLs.
+    return FileResponse(ROOT / "static/index.html", headers={"Cache-Control": "no-cache"})
 
 @app.get("/api/health")
 def health(request: Request):

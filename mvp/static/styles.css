@@ -75,12 +75,13 @@ h3 { margin: 0; font-size: 24px; font-weight: 650; line-height: 1.35; letter-spa
 #prediction-label { flex: 1 1 12ch; min-width: 0; }
 .score-guide { margin: 12px 0 0; color: var(--muted); font-size: 13px; line-height: 1.6; }
 .model-comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 20px; }
-.model-comparison > div { min-width: 0; border: 1px solid var(--line); border-top: 4px solid #8bc5b4; border-radius: 7px; padding: 14px; }
+.model-card { min-width: 0; border: 1px solid var(--line); border-top: 4px solid #8bc5b4; border-radius: 7px; padding: 14px; }
 .model-comparison .ensemble-result { background: #f0f8f4; }
 .model-comparison h4 { margin: 0 0 8px; font-size: 15px; color: var(--teal); }
-.model-comparison p { margin: 0 0 8px; font-size: 15px; font-weight: 600; line-height: 1.5; }
-.model-comparison strong { display: block; font-size: 24px; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
-.model-comparison span { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.model-comparison p { margin: 0; font-size: 15px; font-weight: 600; line-height: 1.5; }
+.model-score { margin-top: 12px; }
+.model-score strong { display: block; font-size: 24px; line-height: 1.4; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.model-score span { display: block; color: var(--muted); font-size: 12px; line-height: 1.5; }
 .model-agreement { color: var(--teal); font-size: 14px; font-weight: 600; }
 dd { margin: 0; }
 .result-summary { margin: 20px 0; font-size: 15px; line-height: 1.6; }
@@ -132,6 +133,11 @@ footer p { margin: 0; }
   .result-details > div { display: block; padding: 8px 0; }
   .result-details dd { margin-top: 2px; }
   #prediction { font-size: 26px; gap: 6px 12px; }
+  .model-comparison { grid-template-columns: minmax(0, 1fr); gap: 10px; margin-top: 16px; }
+  .model-card { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding: 12px; border-top-width: 1px; border-left: 4px solid #8bc5b4; }
+  .model-identity { flex: 1 1 120px; min-width: 0; }
+  .model-comparison h4 { margin-bottom: 4px; }
+  .model-score { flex: 0 0 auto; margin: 0 0 0 auto; text-align: right; }
   #submit { margin-top: 20px; }
   .drop-hint { font-size: 13px; }
   .empty-state { display: block; padding: 0 0 24px; }

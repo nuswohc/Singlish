@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Singapore English Accent Classification</title>
-  <link rel="stylesheet" href="/static/styles.css?v=20261019e">
-  <script src="/static/recorder.js?v=20261019e" defer></script>
-  <script src="/static/app.js?v=20261019e" defer></script>
+  <link rel="stylesheet" href="/static/styles.css?v=20261019f">
+  <script src="/static/recorder.js?v=20261019f" defer></script>
+  <script src="/static/app.js?v=20261019f" defer></script>
 </head>
 <body>
   <main class="demo">
@@ -65,11 +65,11 @@
         <div id="result" class="completed-state" hidden>
           <p class="result-caption">Final result · Ensemble</p>
           <h3 id="prediction"><span id="prediction-label"></span></h3>
-          <div class="model-comparison" aria-label="Model predictions">
-            <div><h4>ML</h4><p id="ml-label"></p><strong id="ml-score"></strong><span>Decision score</span></div>
-            <div class="ensemble-result"><h4>Ensemble</h4><p id="ensemble-label"></p><strong id="ensemble-score"></strong><span>Decision score</span></div>
+          <div class="model-comparison" role="group" aria-label="Model predictions" aria-describedby="score-guide">
+            <div class="model-card"><div class="model-identity"><h4>ML</h4><p id="ml-label"></p></div><div class="model-score"><span>Decision score</span><strong id="ml-score"></strong></div></div>
+            <div class="model-card ensemble-result"><div class="model-identity"><h4>Ensemble</h4><p id="ensemble-label"></p></div><div class="model-score"><span>Decision score</span><strong id="ensemble-score"></strong></div></div>
           </div>
-          <p class="score-guide">Positive: Singapore · Negative: Non-Singapore · Near zero: decision boundary. Score magnitudes are not directly comparable across models.</p>
+          <p class="score-guide" id="score-guide">Positive: Singapore · Negative: Non-Singapore · Near zero: decision boundary. Scores are not probabilities and their magnitudes cannot be compared across models.</p>
           <p id="model-agreement" class="model-agreement"></p>
           <dl class="result-summary"><div><dt>Recording duration</dt><dd id="duration">—</dd></div></dl>
           <div id="warnings" class="warnings" hidden></div>

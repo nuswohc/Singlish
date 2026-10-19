@@ -69,7 +69,9 @@ def test_request_contract(client):
         assert client.post('/api/classify', files=files).status_code == 422
     assert client.post('/api/classify', content=b'bad', headers={'Content-Type':'application/json'}).status_code == 422
     assert client.post('/api/classify', content=b'x'*(MAX_BYTES+65537)).status_code == 413
-    assert client.get('/').status_code == 200
+    page = client.get('/')
+    assert page.status_code == 200
+    assert page.headers['cache-control'] == 'no-cache'
     assert client.get('/static/app.js').status_code == 200
     assert client.get('/api/health').json()['status'] == 'ready'
 
