@@ -8,7 +8,8 @@ compares two test release candidates:
 | **ML** | `svm_65_calibrated.joblib` | 65 selected acoustic features |
 | **Ensemble** | `fusion_svm_calibrated.joblib` | The same 65 features + 512 Whisper values |
 
-Ensemble supplies the final result. Both cards show the predicted accent and its
+The page shows the shared prediction when both models agree, or **Inconclusive**
+with a retry prompt when they disagree. Both cards show the predicted accent and its
 calibrated probability, with **Agree** or **Disagree** based on their class labels.
 Both follow the notebooks' rule: Singapore when `p_singapore >= 0.50`, including
 ties. Agreement is not a confidence measure.
@@ -111,7 +112,7 @@ The deployment packager includes both artifacts and their metadata.
 curl -F 'audio=@recording.wav' http://127.0.0.1:8000/api/classify
 ```
 
-Success returns `prediction` (the final Ensemble result), `final_model: "ensemble"`,
+Success returns `prediction` (the Ensemble result), `final_model: "ensemble"`,
 `models.ml`, `models.ensemble`, `agreement`, `model_version`, `audio` and `warnings`.
 Each prediction contains `class_id`, `label`, `display_label`, `probability` (of
 the predicted class) and the original `decision_score`. Labels now follow the

@@ -5,8 +5,8 @@
    acoustic features followed by a 512-value Whisper base.en embedding.
 3. Run both saved pipelines without fitting. Select Singapore when its calibrated
    probability is at least 0.50, matching both calibration notebooks.
-4. Use Ensemble as the final result, show both predicted-class probabilities,
-   and report whether their labels agree. Keep raw decision scores in the API.
+4. Show the shared label when models agree, or Inconclusive with a retry prompt
+   when they disagree. Show both probabilities. Keep raw decision scores in the API.
 5. Keep recording/upload and preview. Ask users to retry when fewer than three
    seconds remain after silence trimming, before feature extraction or inference.
 

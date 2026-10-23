@@ -54,7 +54,7 @@ The Compose configuration limits app memory to 3 GB and proxy memory to 128 MB. 
 
 Open the configured HTTPS URL and check both input methods:
 
-- Upload a valid PCM WAV, preview it, and confirm that both ML and Ensemble results appear, with Ensemble as the final result and Agree/Disagree beneath the comparison. Both model cards must show calibrated probabilities.
+- Upload a valid PCM WAV, preview it, and confirm that both model cards show calibrated probabilities. The final result shows their shared prediction when they agree, or Inconclusive with a retry prompt when they disagree.
 - Allow microphone access, record 3–6 seconds, stop, preview, and classify. Check that cancelling a new take preserves previously selected audio and that recording stops at 10 seconds.
 - Deny microphone access and confirm that WAV upload remains available.
 

@@ -123,7 +123,8 @@ $('upload-form').addEventListener('submit', async (e) => {
     const response = await fetch('/api/classify', { method: 'POST', body: form });
     const data = await response.json();
     if (!response.ok) throw new Error(data.error?.message || 'Classification failed. Try again.');
-    $('prediction-label').textContent = data.prediction.display_label;
+    const agreed = data.agreement === 'agree';
+    $('prediction-label').textContent = agreed ? data.prediction.display_label : 'Inconclusive';
     const ml = data.models.ml;
     const ensemble = data.models.ensemble;
     $('ml-label').textContent = ml.prediction.display_label;
@@ -131,7 +132,7 @@ $('upload-form').addEventListener('submit', async (e) => {
     $('ensemble-label').textContent = ensemble.prediction.display_label;
     $('ensemble-score').textContent = formatProbability(ensemble.prediction.probability);
     $('ml-version').textContent = ml.version;
-    $('model-agreement').textContent = `Model agreement: ${data.agreement === 'agree' ? 'Agree' : 'Disagree'}`;
+    $('model-agreement').textContent = agreed ? 'Model agreement: Agree' : 'Model agreement: Disagree. Please record again.';
     $('duration').textContent = `${data.audio.duration_seconds.toFixed(2)} s`;
     $('classified-duration').textContent = `${data.audio.classified_duration_seconds.toFixed(2)} s`;
     $('model-version').textContent = data.model_version;

@@ -98,18 +98,18 @@ test('network failure produces readable error', async () => {
 });
 
 
-test('ML and Ensemble display calibrated probabilities when they disagree', async () => {
+test('disagreement shows Inconclusive and keeps both model predictions', async () => {
   const {elements,select,submit} = setup(async () => ({ok:true,json:async () => ({...success,
     prediction:ensemble,agreement:'disagree',
     models:{...success.models,ml:{...success.models.ml,prediction:{display_label:'Non-Singapore Accent',probability:0.876,decision_score:-0.876}},
       ensemble:success.models.ensemble}})}));
   select(file);
   await submit();
-  assert.equal(elements['prediction-label'].textContent,'Singapore Accent');
+  assert.equal(elements['prediction-label'].textContent,'Inconclusive');
   assert.equal(elements['ml-label'].textContent,'Non-Singapore Accent');
   assert.equal(elements['ml-score'].textContent,'87.6%');
   assert.equal(elements['ensemble-label'].textContent,'Singapore Accent');
-  assert.equal(elements['model-agreement'].textContent,'Model agreement: Disagree');
+  assert.equal(elements['model-agreement'].textContent,'Model agreement: Disagree. Please record again.');
 });
 
 test('non-Singapore Ensemble result shows its predicted-class probability', async () => {
@@ -119,7 +119,7 @@ test('non-Singapore Ensemble result shows its predicted-class probability', asyn
       ensemble:{...success.models.ensemble,prediction}}})}));
   select(file);
   await submit();
-  assert.equal(elements['prediction-label'].textContent,'Non-Singapore Accent');
+  assert.equal(elements['prediction-label'].textContent,'Inconclusive');
   assert.equal(elements['ensemble-score'].textContent,'91.2%');
 });
 
