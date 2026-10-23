@@ -44,12 +44,12 @@ chunk_recording): frame RMS (25 ms / 10 ms, as the silence trim), frames
 below --silence_db relative to the loudest frame are "silent"; runs of
 silent frames lasting >= --min_pause are pause candidates and a cut is
 placed at the pause centre. Greedily, each chunk ends at the longest pause
-within [--chunk_target_min, --chunk_target_max] s (default 6-10 s) of its
+within [--chunk_target_min, --chunk_target_max] s (default 4-5.5 s) of its
 start, else within [min_duration + 0.5, max_duration - 0.5] s, else
 ("fallback") at the quietest frame within the target window. A final
 chunk shorter than --min_duration is merged into the previous one (if the
 result stays <= --max_duration) or dropped. Every chunk then goes through
-cv_utils.preprocess_waveform exactly like Common Voice (trim, 3-16 s
+cv_utils.preprocess_waveform exactly like Common Voice (trim, 3-6 s
 filter, -20 dBFS RMS + peak limit). All chunks of one recording share the
 speaker_id "saa_<id>", so the speaker-disjoint split keeps them together.
 
@@ -517,15 +517,15 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     p.add_argument("--native_languages", nargs="+", default=["korean"],
                    help="Native languages to keep (default: korean).")
     p.add_argument("--min_duration", type=float, default=3.0)
-    p.add_argument("--max_duration", type=float, default=16.0)
-    p.add_argument("--chunk_target_min", type=float, default=6.0)
-    p.add_argument("--chunk_target_max", type=float, default=10.0)
+    p.add_argument("--max_duration", type=float, default=6.0)
+    p.add_argument("--chunk_target_min", type=float, default=4.0)
+    p.add_argument("--chunk_target_max", type=float, default=5.5)
     p.add_argument("--silence_db", type=float, default=-35.0,
                    help="Frames below this (dB re loudest frame) count as silence.")
     p.add_argument("--min_pause", type=float, default=0.15,
                    help="Minimum pause length (s) to cut at.")
     p.add_argument("--max_clips_per_speaker", type=int, default=15)
-    p.add_argument("--clips_per_accent", type=int, default=800)
+    p.add_argument("--clips_per_accent", type=int, default=329)
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--val_fraction", type=float, default=0.15)
     p.add_argument("--test_fraction", type=float, default=0.15)

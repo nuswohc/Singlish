@@ -29,7 +29,7 @@ Purpose
 2. Keep ADULT speakers only (age >= --min_age, default 18). Child speech
    would let the classifier learn "child voice" instead of accent.
 3. Every adult clip goes through cv_utils.preprocess_waveform, the same
-   chain as Common Voice (mono, 16 kHz soxr, silence trim, 3-16 s filter on
+   chain as Common Voice (mono, 16 kHz soxr, silence trim, 3-6 s filter on
    the trimmed length, -20 dBFS RMS + 0.99 peak limit), then FLAC in memory.
    Many utterances are short (median raw ~3.5 s), so the 3 s minimum drops
    a large share; that is expected and reported.
@@ -260,7 +260,7 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     p.add_argument("--clips_per_accent", type=int, default=800)
     p.add_argument("--max_clips_per_speaker", type=int, default=15)
     p.add_argument("--min_duration", type=float, default=3.0)
-    p.add_argument("--max_duration", type=float, default=16.0)
+    p.add_argument("--max_duration", type=float, default=6.0)
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--val_fraction", type=float, default=0.15)
     p.add_argument("--test_fraction", type=float, default=0.15)

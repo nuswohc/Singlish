@@ -22,7 +22,6 @@ Usage
 -----
     python download_common_voice.py                  # full English (~95 GB)
     python download_common_voice.py --list_segments  # known accent segments
-    python download_common_voice.py --slug common-voice-scripted-speech-26-0-malays-80cb1833
 
 Downloads resume automatically if interrupted: the SDK keeps
 <archive>.part and <archive>.checksum next to the target file and
@@ -53,10 +52,6 @@ KNOWN_SEGMENTS = {
         "~95 GB",
         "Full English 27.0. Most Asian accents (Chinese, Korean, Filipino, "
         "Japanese, Hong Kong, ...) are ONLY here, filtered on accent metadata.",
-    ),
-    "common-voice-scripted-speech-26-0-malays-80cb1833": (
-        "0.09 GB",
-        "Malaysian English accent segment (26.0).",
     ),
     "common-voice-scripted-speech-26-0-south-9d6029b6": (
         "4.1 GB",

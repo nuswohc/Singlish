@@ -1,115 +1,10 @@
-"""
-prepare_mnsc_singaporean.py
+"""Prepare Singaporean clips from MNSC PART1-Train and PART2-Train.
 
-Build the "Singaporean" POSITIVE class from MNSC (Multitask National
-Speech Corpus, extended) as FLAC-in-parquet shards with exactly the Common
-Voice subset schema. No audio file is ever written to disk.
-
-Why this source
----------------
-Common Voice English has only ~88 Singaporean speakers, and that group is
-reserved as an out-of-domain check. MNSC is derived from IMDA Singapore's
-National Speech Corpus: ~1,000 Singaporean speakers in PART1 alone.
-
-Which configs
--------------
-Hugging Face dataset "AudioLLMs/Multitask-National-Speech-Corpus-v1-extend",
-one folder per config, layout <config>/train-NNNNN-of-MMMMM.parquet with
-columns context (struct<bytes, path>: the audio), instruction, answer
-(transcript) and other_attributes (struct; may also be a JSON string).
-
-    - Default: ASR-PART1-Train (prompted read speech, like Common Voice /
-      speechocean762; 16 kHz; raw clips ~3-8 s).
-    - ASR-PART3-Train can be added (--configs ASR-PART1-Train ASR-PART3-Train),
-      but its conversational clips are mostly 25-30 s raw, so almost all of
-      them are rejected by the 3-16 s filter.
-    - ASR-*-Test configs are REFUSED unless --allow_test_configs is passed:
-      the sibling project (whisper_fine-tuned_transcription) uses
-      ASR-PART1-Test / ASR-PART3-Test as its fixed evaluation set.
-      NOTE: the HF Train/Test split is NOT speaker-disjoint (most PART1-Test
-      speakers also occur in PART1-Train). Our own train/val/test split is
-      by speaker id, so this does not leak inside this subset.
-
-Speaker id
-----------
-other_attributes["speaker1"]["speaker_id"], falling back to
-["speaker2"]["speaker_id"] (PART3 layout), then ["speaker"]["speaker_id"]
-(PART1 layout, which has no speaker1/speaker2). Every level may be a dict or
-a JSON string. Rows without any id are dropped. Rows repeating a
-(speaker, normalised transcript) pair (same utterance on another mic
-channel) are dropped.
-
-How the data is obtained (download only what is needed)
--------------------------------------------------------
-ASR-PART1-Train is 772 shards / ~377 GB, far too big to download. Its rows
-are shuffled across speakers (each shard holds ~970 of the ~1,037 speakers),
-so a few shards already cover almost every speaker:
-  1. List the config's shards + sizes on the Hub (printed).
-  2. Scan shards in order, range-reading ONLY the small metadata columns
-     (answer + other_attributes speaker ids) via HfFileSystem. After each
-     shard, stop once the pool can fill ceil(clips_total * oversample)
-     clips (respecting --max_clips_per_speaker) AND the last shard added
-     < --saturation new speakers, or after --max_shards shards.
-  3. Round-robin selection across speakers (extract_common_voice_subset.
-     select_clips), then download only the scanned shards that hold
-     selected rows into the shared Hugging Face cache
-     (~/.cache/huggingface/hub; nothing is ever deleted there), after
-     checking free disk space. Shards already cached are read locally.
-  4. Decode the selected rows in memory, cv_utils.preprocess_waveform
-     (same chain as Common Voice), FLAC-encode, trim to --clips_total by
-     selection rank, speaker-disjoint split.
---source_dir <folder> uses a local copy laid out like the Hub
-(<folder>/<config>/*.parquet) with no network access at all.
-
-Exclude speakers (sibling Whisper project)
-------------------------------------------
---exclude_speakers_json (default ../whisper_fine-tuned_transcription/data/
-speaker_split_info.json if it exists; "" disables) lists the speakers the
-sibling Whisper model was trained on (key split.train_speakers). Any of
-them found here is FORCED INTO TRAIN, so val/test only contain speakers the
-sibling model never saw. The overlap count is printed.
-
-Columns
--------
-    source="mnsc", accent_group="Singaporean", is_singaporean=True,
-    accent_raw="Singaporean (MNSC PART1)" (PARTn from the config),
-    speaker_id="mnsc_<id>", clip_id="mnsc_<part1-train>_<shard>_<row>",
-    sentence = transcript normalised with the sibling project's
-    normalize_transcript rules (speaker labels removed, annotation
-    brackets unwrapped, whitespace collapsed, lowercase).
-
-The Common Voice "Singaporean" group (source="common_voice") is NOT merged
-here: train positives with source == "mnsc" and keep the CV Singaporean
-clips as the out-of-domain check.
-
-License
--------
-    MNSC is derived from IMDA Singapore's National Speech Corpus
-    (https://www.imda.gov.sg/how-we-can-help/national-speech-corpus) and
-    redistributed on Hugging Face by AudioLLMs. The HF card states no
-    license; check IMDA's NSC terms. Used here for a non-commercial school
-    project.
-
-Usage
------
-    python prepare_mnsc_singaporean.py
-    python prepare_mnsc_singaporean.py --max_duration 6
-    python prepare_mnsc_singaporean.py --configs ASR-PART1-Train ASR-PART3-Train
-    python prepare_mnsc_singaporean.py --no_download        # cached shards only
-
-Outputs (written to <project root>/data/)
------------------------------------------
-    data/mnsc_subset/part-XXXX.parquet   -- cv_utils.SUBSET_SCHEMA
-    data/mnsc_subset_summary.csv         -- clips / speakers / hours per split
-    data/mnsc_subset_split_info.json     -- args, dataset, license, speaker lists
-
-Loading
--------
-    from cv_utils import load_accent_data
-    df = load_accent_data(sources=["mnsc"], split="train")
+Downloads only needed audio; saves 16 kHz, 3–6 s FLAC-in-parquet shards.
 """
 
 import argparse
+import hashlib
 import json
 import math
 import re
@@ -117,7 +12,7 @@ import sys
 import time
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Dict, List, Optional, Set, Tuple
+from typing import Dict, List, Optional, Tuple
 
 import numpy as np
 import pandas as pd
@@ -127,7 +22,6 @@ import pyarrow.parquet as pq
 from cv_utils import (
     AUDIO_PROCESSING,
     DATA_DIR,
-    PROJECT_ROOT,
     SHARD_ROWS,
     SUBSET_SCHEMA,
     TARGET_SR,
@@ -152,13 +46,12 @@ SUBSET_NAME = "mnsc_subset"
 ACCENT_GROUP = "Singaporean"
 ID_PREFIX = "mnsc_"
 HF_REPO_DEFAULT = "AudioLLMs/Multitask-National-Speech-Corpus-v1-extend"
-DEFAULT_CONFIGS = ["ASR-PART1-Train"]
+DEFAULT_CONFIGS = ["ASR-PART1-Train", "ASR-PART2-Train"]
+EXTRA_MANIFEST = Path(__file__).with_name("mnsc_part1_extra.csv")
 MIN_SPEAKERS_WARNING = 300
 RANGE_READ_BLOCK_SIZE = 256 * 1024
 SPEAKER_KEYS = ("speaker1", "speaker2", "speaker")
 EMPTY_IDS = ("", "none", "null", "nan")
-DEFAULT_EXCLUDE_JSON = (PROJECT_ROOT.parent / "whisper_fine-tuned_transcription"
-                        / "data" / "speaker_split_info.json")
 LICENSE_NOTE = (
     "MNSC is derived from IMDA Singapore's National Speech Corpus "
     "(https://www.imda.gov.sg/how-we-can-help/national-speech-corpus) and "
@@ -167,14 +60,10 @@ LICENSE_NOTE = (
     "non-commercial school project."
 )
 TEST_CONFIGS_POLICY = (
-    "ASR-*-Test configs are refused by default: the sibling project "
-    "whisper_fine-tuned_transcription uses ASR-PART1-Test / ASR-PART3-Test as "
-    "its fixed evaluation set (pass --allow_test_configs to override)."
+    "ASR-*-Test configs are excluded by default to keep evaluation data separate "
+    "(pass --allow_test_configs to override)."
 )
-OOD_NOTE = (
-    "accent_group 'Singaporean' also exists in common_voice (reserved "
-    "out-of-domain check). Train positives with source == 'mnsc'."
-)
+
 
 LAST_STATS: Dict = {}
 
@@ -197,12 +86,7 @@ class ShardRef:
 # ============================================================
 
 def normalize_transcript(text) -> str:
-    r"""
-    Sibling normalize_transcript rules (whisper_fine-tuned_transcription/
-    scripts/preprocess_mnsc_data.py), copied verbatim: remove <Speaker\d+>:
-    labels, unwrap [..] (nested-safe), {..}, (..) and #..#, collapse
-    whitespace, lowercase.
-    """
+    """Remove speaker labels and annotation brackets; lowercase and collapse whitespace."""
     if not text:
         return ""
     text = str(text)
@@ -214,6 +98,10 @@ def normalize_transcript(text) -> str:
     text = re.sub(r"#([^#]+)#", r"\1", text)
     text = re.sub(r"\s+", " ", text).strip()
     return text.lower()
+
+
+def transcript_key(text):
+    return " ".join(re.findall(r"\w+(?:'\w+)?", normalize_transcript(text)))
 
 
 def _as_dict(value) -> dict:
@@ -310,18 +198,6 @@ def scan_should_stop(capacity: int, target: int, new_speakers: int,
     if scanned >= max_shards:
         return True, "max_shards"
     return False, ""
-
-
-def load_exclude_speakers(path: Path) -> Set[str]:
-    """Raw speaker ids from split.train_speakers of the sibling JSON."""
-    try:
-        data = json.loads(Path(path).read_text(encoding="utf-8"))
-    except (OSError, ValueError) as exc:
-        raise SourceError(f"cannot read --exclude_speakers_json {path}: {exc}")
-    speakers = data.get("split", {}).get("train_speakers") if isinstance(data, dict) else None
-    if not isinstance(speakers, list):
-        raise SourceError(f"{Path(path).name} has no split.train_speakers list.")
-    return {str(s).strip() for s in speakers if str(s).strip()}
 
 
 # ============================================================
@@ -445,10 +321,11 @@ def scan_metadata(shards: List[ShardRef], args: argparse.Namespace, repo: str,
             if not sentence:
                 stats["empty_transcript"] += 1
                 continue
-            if (raw_id, sentence) in seen_pairs:
+            pair = (raw_id, transcript_key(sentence))
+            if pair in seen_pairs:
                 stats["duplicate_utterance"] += 1
                 continue
-            seen_pairs.add((raw_id, sentence))
+            seen_pairs.add(pair)
             counts[raw_id] = counts.get(raw_id, 0) + 1
             kept += 1
             meta_rows.append({
@@ -487,7 +364,7 @@ def scan_metadata(shards: List[ShardRef], args: argparse.Namespace, repo: str,
 def download_needed(needed: List[ShardRef], repo: str, sha: str,
                     cache_dir: Optional[Path], no_download: bool, stats: Dict) -> None:
     missing = [r for r in needed if r.local_path is None]
-    stats["download_bytes"] = sum(r.size for r in missing)
+    stats["download_bytes"] += sum(r.size for r in missing)
     if not missing:
         print("All needed shards are already in the local HF cache.")
         return
@@ -496,7 +373,7 @@ def download_needed(needed: List[ShardRef], repo: str, sha: str,
                           f"{[r.name for r in missing]}")
     from huggingface_hub import constants, hf_hub_download
     cache_root = Path(cache_dir) if cache_dir else Path(constants.HF_HUB_CACHE)
-    total = stats["download_bytes"]
+    total = sum(r.size for r in missing)
     print(f"Downloading {len(missing)} shard(s), {total / 1e9:.2f} GB -> {cache_root}")
     ensure_free_space(cache_root, total)
     for r in missing:
@@ -553,6 +430,81 @@ def process_selected(selected: pd.DataFrame, shards: Dict[str, ShardRef],
     return rows
 
 
+def load_extension(args, shards, sha):
+    if not args.extra_manifest or "ASR-PART1-Train" not in args.configs:
+        return []
+    manifest = pd.read_csv(args.extra_manifest, dtype={"speaker_id": str})
+    if manifest.clip_id.duplicated().any():
+        raise SourceError("Duplicate PART1 addition IDs.")
+    files = sorted(args.part1_extension.glob("part-*.parquet"))
+    if files:
+        rows = [r for f in files for r in pq.read_table(f, schema=SUBSET_SCHEMA).to_pylist()]
+    else:
+        rows = []
+        for shard, group in manifest.groupby("source_shard", sort=True):
+            ref = shards.get(shard)
+            if ref is None:
+                raise SourceError(f"Extension shard unavailable: {shard}")
+            if args.no_download and ref.local_path is None:
+                raise SourceError("PART1 additions are not cached; rerun without --no_download.")
+            revisions = group.source_revision.unique()
+            if len(revisions) != 1 or (sha is not None and revisions[0] != sha):
+                raise SourceError("PART1 addition revision differs from --hf_revision.")
+            pf, fh = _open_parquet(ref, args.hf_repo, sha, {})
+            try:
+                for index, entries in group.groupby("source_row_group", sort=True):
+                    records = pf.read_row_group(int(index), columns=["context", "answer", "other_attributes"]).to_pylist()
+                    for entry in entries.itertuples(index=False):
+                        record = records[int(entry.row_in_group)]
+                        speaker = extract_speaker_id(record["other_attributes"])
+                        if f"mnsc_{speaker}" != entry.speaker_id or transcript_key(record["answer"]) != transcript_key(entry.sentence):
+                            raise SourceError(f"PART1 addition identity mismatch: {entry.clip_id}")
+                        x, sr = decode_audio_bytes(record["context"]["bytes"])
+                        y, reason = preprocess_waveform(x, sr, args.min_duration, args.max_duration)
+                        if y is None:
+                            raise SourceError(f"PART1 addition {entry.clip_id}: {reason}")
+                        rows.append({"clip_id": entry.clip_id, "source": SOURCE,
+                                     "speaker_id": entry.speaker_id, "accent_raw": accent_raw_for("ASR-PART1-Train"),
+                                     "accent_group": ACCENT_GROUP, "is_singaporean": True,
+                                     "duration_sec": len(y) / TARGET_SR, "sentence": normalize_transcript(entry.sentence),
+                                     "sampling_rate": TARGET_SR, "audio_flac": encode_flac(y), "split": "train"})
+            finally:
+                if fh is not None:
+                    fh.close()
+            print(f"  Prepared {len(rows):,}/{len(manifest):,} PART1 additions", flush=True)
+        write_subset_shards(pa.Table.from_pylist(rows, schema=SUBSET_SCHEMA), args.part1_extension)
+    if len(rows) != len(manifest) or {r["clip_id"] for r in rows} != set(manifest.clip_id):
+        raise SourceError("Prepared PART1 additions differ from the manifest.")
+    for row in rows:
+        if (row["source"] != SOURCE or row["accent_raw"] != accent_raw_for("ASR-PART1-Train")
+                or row["sampling_rate"] != TARGET_SR
+                or not args.min_duration <= row["duration_sec"] <= args.max_duration):
+            raise SourceError("Invalid prepared PART1 addition.")
+        row["raw_speaker_id"] = row["speaker_id"].removeprefix(ID_PREFIX)
+        row["sentence"] = normalize_transcript(row["sentence"])
+    return rows
+
+
+def choose_rows(extra, rows, target, cap, seen_pairs, seen_audio, counts):
+    chosen = []
+    for row in extra + sorted(rows, key=lambda r: r["selection_rank"]):
+        pair = (row["speaker_id"], transcript_key(row["sentence"]))
+        audio = hashlib.sha256(decode_audio_bytes(row["audio_flac"])[0].tobytes()).digest()
+        if pair in seen_pairs or audio in seen_audio or counts.get(row["speaker_id"], 0) >= cap:
+            continue
+        seen_pairs.add(pair)
+        seen_audio.add(audio)
+        counts[row["speaker_id"]] = counts.get(row["speaker_id"], 0) + 1
+        chosen.append(row)
+        if len(chosen) == target:
+            break
+    if len(chosen) != target:
+        raise SourceError(f"Only {len(chosen):,}/{target:,} clips survived. Increase --oversample, --max_shards or --max_clips_per_speaker.")
+    if not {r["clip_id"] for r in extra} <= {r["clip_id"] for r in chosen}:
+        raise SourceError("PART1 additions exceed the quota or contain duplicates.")
+    return chosen
+
+
 def print_summary_table(summary: pd.DataFrame) -> None:
     print()
     print("=" * 70)
@@ -575,40 +527,41 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
                     "FLAC-in-parquet shards (no audio files written)."
     )
     p.add_argument("--configs", nargs="+", default=list(DEFAULT_CONFIGS),
-                   help="MNSC configs (default: ASR-PART1-Train; ASR-PART3-Train may be added).")
+                   help="MNSC configs (default: ASR-PART1-Train and ASR-PART2-Train).")
     p.add_argument("--allow_test_configs", action="store_true",
-                   help="Allow ASR-*-Test configs (the sibling project's eval set).")
+                   help="Allow ASR-*-Test configs.")
     p.add_argument("--source_dir", type=Path, default=None,
                    help="Local copy laid out like the Hub (<dir>/<config>/*.parquet); "
                         "no network access.")
     p.add_argument("--data_dir", type=Path, default=DATA_DIR,
                    help="Data folder (default: <project root>/data).")
     p.add_argument("--hf_repo", default=HF_REPO_DEFAULT)
-    p.add_argument("--hf_revision", default="main")
+    p.add_argument("--hf_revision", default="fb35c8c24be1056293c511ae47177e915a3ed757")
     p.add_argument("--cache_dir", type=Path, default=None,
                    help="HF cache dir (default: the shared ~/.cache/huggingface/hub).")
     p.add_argument("--no_download", action="store_true",
                    help="Never download shards; fail if a needed shard is not cached "
                         "(metadata is still range-read remotely).")
-    p.add_argument("--clips_total", type=int, default=5000)
-    p.add_argument("--max_clips_per_speaker", type=int, default=15)
-    p.add_argument("--oversample", type=float, default=1.25)
+    p.add_argument("--clips_total", type=int, default=15000)
+    p.add_argument("--max_clips_per_speaker", type=int, default=30)
+    p.add_argument("--oversample", type=float, default=3.0)
     p.add_argument("--min_duration", type=float, default=3.0)
-    p.add_argument("--max_duration", type=float, default=16.0)
+    p.add_argument("--max_duration", type=float, default=6.0)
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--val_fraction", type=float, default=0.15)
     p.add_argument("--test_fraction", type=float, default=0.15)
-    p.add_argument("--max_shards", type=int, default=8,
-                   help="Scan at most this many shards (default 8, ~3.9 GB for PART1).")
+    p.add_argument("--max_shards", type=int, default=16,
+                   help="Maximum metadata shards scanned per config.")
     p.add_argument("--saturation", type=float, default=0.01,
                    help="Stop scanning when a shard adds < this fraction of new speakers.")
-    p.add_argument("--exclude_speakers_json",
-                   default=str(DEFAULT_EXCLUDE_JSON) if DEFAULT_EXCLUDE_JSON.is_file() else "",
-                   help="JSON with split.train_speakers; those speakers are forced into "
-                        "train ('' disables).")
+    p.add_argument("--part1_extension", type=Path, default=None,
+                   help="Prepared PART1 additions; downloaded automatically if absent.")
+    p.add_argument("--extra_manifest", default=str(EXTRA_MANIFEST),
+                   help="PART1 addition manifest (empty string disables additions).")
     p.add_argument("--shard_rows", type=int, default=SHARD_ROWS)
     args = p.parse_args(argv)
     args.configs = list(dict.fromkeys(c.strip() for c in args.configs if c.strip()))
+    args.part1_extension = args.part1_extension or args.data_dir / "mnsc_part1_extra"
     return args
 
 
@@ -619,6 +572,8 @@ def validate_args(args: argparse.Namespace) -> Optional[str]:
             return f"--{name} must be in [0, 1) (got {v})"
     if args.val_fraction + args.test_fraction >= 1.0:
         return "--val_fraction + --test_fraction must be < 1"
+    if args.clips_total < len(args.configs):
+        return "--clips_total must be at least the number of configs"
     if args.min_duration >= args.max_duration:
         return "--min_duration must be smaller than --max_duration"
     for name in ("clips_total", "max_clips_per_speaker", "shard_rows", "max_shards"):
@@ -660,7 +615,6 @@ def main(argv: Optional[List[str]] = None) -> int:
     print(f"Duration range        : {args.min_duration} - {args.max_duration} s (after trim)")
     print(f"Split (val/test)      : {args.val_fraction} / {args.test_fraction} by speaker")
     print(f"Seed                  : {args.seed}")
-    print(f"Exclude speakers JSON : {args.exclude_speakers_json or '-'}")
     print(f"License               : {LICENSE_NOTE}")
 
     stats: Dict = {
@@ -670,11 +624,8 @@ def main(argv: Optional[List[str]] = None) -> int:
         "skips": {"too_short": 0, "too_long": 0, "silent": 0,
                   "decode_error": 0, "missing_audio": 0},
     }
-    exclude: Set[str] = set()
     sha, card_license, config_sizes = None, None, {}
     try:
-        if args.exclude_speakers_json:
-            exclude = load_exclude_speakers(Path(args.exclude_speakers_json))
         print()
         print("=" * 70)
         print("SHARDS")
@@ -695,34 +646,35 @@ def main(argv: Optional[List[str]] = None) -> int:
         print("=" * 70)
         print("METADATA SCAN (answer + speaker ids only)")
         print("=" * 70)
-        meta = scan_metadata(shards, args, args.hf_repo, sha, stats)
-        print(f"Stop reason          : {stats['stop_reason']}")
-        print(f"Rows scanned         : {stats['rows_scanned']:,}")
-        print(f"Dropped no speaker id: {stats['no_speaker_id']:,}")
-        print(f"Dropped empty text   : {stats['empty_transcript']:,}")
-        print(f"Dropped duplicates   : {stats['duplicate_utterance']:,}")
-        print(f"Speakers seen        : {stats['speakers_seen']:,}")
-        if meta.empty:
-            raise SourceError("no usable rows (speaker id + transcript) in the scanned shards.")
-
-        selected, plan = select_clips(
-            meta, [ACCENT_GROUP], args.clips_total, args.max_clips_per_speaker,
-            args.min_duration, args.max_duration, args.oversample, args.seed,
-        )
-        print_plan(plan, args.clips_total)
         by_name = {r.name: r for r in shards}
-        needed = [by_name[n] for n in dict.fromkeys(selected["shard_key"])]
-        print(f"PLAN: {selected['speaker_id'].nunique():,} speakers, {len(selected):,} clips "
-              f"selected from {len(needed)} shard(s) "
-              f"({sum(r.size for r in needed) / 1e9:.2f} GB)")
-        if selected["speaker_id"].nunique() < MIN_SPEAKERS_WARNING:
-            print(f"  WARNING: only {selected['speaker_id'].nunique()} speakers "
-                  f"(< {MIN_SPEAKERS_WARNING}).")
-
-        if mode == "hf":
-            print()
-            download_needed(needed, args.hf_repo, sha, args.cache_dir,
-                            args.no_download, stats)
+        extra = load_extension(args, by_name, sha)
+        rows, seen_pairs, seen_audio, speaker_counts = [], set(), set(), {}
+        plans, used_shards = [], []
+        for i, config in enumerate(args.configs):
+            quota = args.clips_total // len(args.configs) + (i < args.clips_total % len(args.configs))
+            scan_args = argparse.Namespace(**{**vars(args), "clips_total": quota})
+            meta = scan_metadata([r for r in shards if r.config == config], scan_args,
+                                 args.hf_repo, sha, stats)
+            if meta.empty:
+                raise SourceError(f"No usable rows in {config}.")
+            selected, plan = select_clips(
+                meta, [ACCENT_GROUP], quota, args.max_clips_per_speaker,
+                args.min_duration, args.max_duration, args.oversample, args.seed,
+            )
+            plans.extend(plan)
+            print_plan(plan, quota)
+            needed = [by_name[n] for n in dict.fromkeys(selected["shard_key"])]
+            used_shards.extend(r.name for r in needed)
+            if mode == "hf":
+                download_needed(needed, args.hf_repo, sha, args.cache_dir,
+                                args.no_download, stats)
+            processed = process_selected(selected, by_name, args, stats)
+            additions = extra if config == "ASR-PART1-Train" else []
+            chosen = choose_rows(additions, processed, quota, args.max_clips_per_speaker,
+                                 seen_pairs, seen_audio, speaker_counts)
+            rows.extend(chosen)
+            print(f"{config}: {len(chosen):,} clips")
+        plan = plans
     except SourceError as exc:
         print(f"ERROR: {ascii_safe(exc)}")
         return 1
@@ -732,37 +684,11 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     print()
     print("=" * 70)
-    print("DECODE + PREPROCESS (selected rows, in memory)")
-    print("=" * 70)
-    rows = process_selected(selected, by_name, args, stats)
-    print(f"Kept after filters   : {len(rows):,} / {len(selected):,}")
-    for k, v in stats["skips"].items():
-        print(f"Skipped ({k:<13}): {v:,}")
-    if not rows:
-        print("ERROR: no clips survived processing.")
-        return 1
-
-    rows.sort(key=lambda r: r["selection_rank"])
-    rows = rows[:args.clips_total]
-    if len(rows) < args.clips_total:
-        print(f"  WARNING: only {len(rows):,} clips (< {args.clips_total:,}); "
-              "try a larger --oversample or --max_shards.")
-
-    print()
-    print("=" * 70)
     print("SPEAKER-DISJOINT SPLIT")
     print("=" * 70)
     kept = pd.DataFrame([{k: v for k, v in r.items() if k != "audio_flac"} for r in rows])
-    overlap_mask = kept["raw_speaker_id"].isin(exclude)
-    overlap_ids = sorted(kept.loc[overlap_mask, "speaker_id"].unique().tolist())
-    name = Path(args.exclude_speakers_json).name if args.exclude_speakers_json else "-"
-    print(f"  Speakers overlapping {name} train_speakers: {len(overlap_ids)} "
-          "(forced into train)")
-    split_map = {s: "train" for s in overlap_ids}
-    eligible = kept[~overlap_mask]
-    if len(eligible):
-        split_map.update(assign_splits(eligible, ACCENT_GROUP, args.val_fraction,
-                                       args.test_fraction, args.seed))
+    split_map = assign_splits(kept, ACCENT_GROUP, args.val_fraction,
+                              args.test_fraction, args.seed)
     kept["split"] = kept["speaker_id"].map(split_map)
     n_speakers = kept["speaker_id"].nunique()
     if n_speakers < MIN_SPEAKERS_WARNING:
@@ -785,7 +711,8 @@ def main(argv: Optional[List[str]] = None) -> int:
                          "speakers": sorted(s["speaker_id"].unique().tolist())}
                  for split, s in kept.groupby("split")}
     run_args = {k: v for k, v in vars(args).items()
-                if k not in ("source_dir", "data_dir", "cache_dir", "exclude_speakers_json")}
+                if k not in ("source_dir", "data_dir", "cache_dir",
+                              "part1_extension", "extra_manifest")}
     info = {
         "source":           SOURCE,
         "dataset":          {"mode": mode,
@@ -795,10 +722,11 @@ def main(argv: Optional[List[str]] = None) -> int:
                              "configs": args.configs,
                              "config_sizes": config_sizes,
                              "shards_scanned": stats["shards_scanned"],
-                             "shards_used": [r.name for r in needed],
+                             "shards_used": used_shards,
                              "download_bytes": stats["download_bytes"]},
         "license":          {"note": LICENSE_NOTE, "card_license": card_license},
         "args":             run_args,
+        "part1_additions":  len(extra),
         "accent_group":     ACCENT_GROUP,
         "accent_raw":       sorted(kept["accent_raw"].unique().tolist()),
         "speaker_id_source": "other_attributes.speaker1 -> speaker2 -> speaker",
@@ -806,17 +734,12 @@ def main(argv: Optional[List[str]] = None) -> int:
                                                    "empty_transcript", "duplicate_utterance",
                                                    "stop_reason", "speakers_seen")},
         "test_configs_policy": TEST_CONFIGS_POLICY,
-        "exclude_speakers": {"file": name if args.exclude_speakers_json else None,
-                             "n_listed": len(exclude), "n_overlap": len(overlap_ids),
-                             "overlapping": overlap_ids},
         "audio_processing": AUDIO_PROCESSING,
         "skips":            stats["skips"],
         "selection_plan":   plan,
-        "sentence_column":  "normalised transcript (sibling normalize_transcript rules)",
-        "split_strategy":   "speaker-disjoint, greedy clip-weighted, seeded; speakers in "
-                            "exclude_speakers forced into train",
+        "sentence_column":  "normalised transcript",
+        "split_strategy":   "speaker-disjoint, greedy clip-weighted, seeded",
         "groups":           {ACCENT_GROUP: per_split},
-        "ood_note":         OOD_NOTE,
     }
     with open(paths["split_info_json"], "w", encoding="utf-8") as fh:
         json.dump(info, fh, indent=2)
@@ -832,7 +755,6 @@ def main(argv: Optional[List[str]] = None) -> int:
     print("Load in other scripts with:")
     print("  from cv_utils import load_accent_data")
     print("  df = load_accent_data(sources=['mnsc'], split='train')")
-    print(f"NOTE: {OOD_NOTE}")
 
     LAST_STATS = {
         "mode":           mode,
@@ -841,9 +763,8 @@ def main(argv: Optional[List[str]] = None) -> int:
         "scan":           info["scan"],
         "skips":          stats["skips"],
         "plan":           plan,
-        "n_selected":     int(len(selected)),
+        "n_selected":     sum(p["selected_clips"] for p in plans),
         "n_kept":         len(out_rows),
-        "n_overlap":      len(overlap_ids),
         "n_shards":       n_shards,
         "download_bytes": stats["download_bytes"],
     }

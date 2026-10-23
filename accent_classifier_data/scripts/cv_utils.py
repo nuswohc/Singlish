@@ -57,10 +57,6 @@ Sources and their subset folders (SOURCE_SUBSETS)
 
 Every subset uses exactly SUBSET_SCHEMA, so they concatenate directly.
 
-NOTE: accent_group "Singaporean" exists in two sources. common_voice
-Singaporean is the reserved out-of-domain check; mnsc Singaporean holds the
-training positives. Filter by the "source" column to tell them apart.
-
 Outputs
 -------
     This module writes nothing on its own.
@@ -174,7 +170,7 @@ AUDIO_PROCESSING = {
 }
 
 # Groups that are never used as default negatives.
-SPECIAL_GROUPS = ("Singaporean", "Ambiguous", "Unmapped", "Unlabelled")
+SPECIAL_GROUPS = ("Singaporean", "Malaysian", "Ambiguous", "Unmapped", "Unlabelled")
 
 SHARD_ROWS = 2000
 
@@ -552,8 +548,8 @@ def load_cv_subset(
                              cv_utils.decode_flac(row.audio_flac)
     data_dir      : defaults to <project root>/data
 
-    Memory: decoded audio is ~64 KB per second. The full default subset
-    (up to 15 groups x 800 clips) is several GB decoded, so prefer
+    Memory: decoded audio is ~64 KB per second. The 30,000-clip dataset
+    needs several GB decoded, so prefer
     split="train" / a few accent_groups, or decode_audio=False.
 
     Example

@@ -28,7 +28,7 @@ Purpose
 Usage
 -----
     python extract_common_voice_subset.py
-    python extract_common_voice_subset.py --accent_groups Malaysian Korean "Hong Kong"
+    python extract_common_voice_subset.py --accent_groups American British "Hong Kong"
     python extract_common_voice_subset.py --clips_per_accent 1500 --max_clips_per_speaker 20
 
 Outputs (written to <project root>/data/)
@@ -84,6 +84,8 @@ from cv_utils import (
 PREFILTER_SLACK_SEC = 2.0
 MIN_SPEAKERS_WARNING = 50
 SOURCE = "common_voice"
+CLIP_TARGETS = {"American": 2369, "Australian": 2369, "British": 2369,
+                "Filipino": 2368, "Hong Kong": 2028, "South Asian": 2368}
 
 LAST_STATS: Dict = {}
 
@@ -103,11 +105,12 @@ def select_clips(
     seed: int,
 ) -> Tuple[pd.DataFrame, List[dict]]:
     """Round-robin selection across speakers. Returns (selected, plan)."""
-    target = int(math.ceil(clips_per_accent * oversample))
     selected = []
     plan = []
 
     for group in groups:
+        count = clips_per_accent[group] if isinstance(clips_per_accent, dict) else clips_per_accent
+        target = int(math.ceil(count * oversample))
         sub = meta[meta["accent_group"] == group]
         n_available_raw = len(sub)
         known = sub["duration_sec"].notna()
@@ -175,9 +178,10 @@ def print_plan(plan: List[dict], clips_per_accent: int) -> None:
             print(f"  WARNING: {p['accent_group']} has only "
                   f"{p['selected_speakers']} speakers (< {MIN_SPEAKERS_WARNING}); "
                   "results for this group may not generalise.")
-        if p["selected_clips"] < clips_per_accent:
+        count = clips_per_accent[p["accent_group"]] if isinstance(clips_per_accent, dict) else clips_per_accent
+        if p["selected_clips"] < count:
             print(f"  WARNING: {p['accent_group']} cannot reach "
-                  f"{clips_per_accent} clips (selected {p['selected_clips']}).")
+                  f"{count} clips (selected {p['selected_clips']}).")
 
 
 # ============================================================
@@ -369,7 +373,8 @@ def finalise(
     keep_parts = []
     for group in groups:
         g = meta[meta["accent_group"] == group].sort_values("selection_rank")
-        g = g.head(clips_per_accent).copy()
+        count = clips_per_accent[group] if isinstance(clips_per_accent, dict) else clips_per_accent
+        g = g.head(count).copy()
         if g.empty:
             print(f"  WARNING: {group}: no clips kept.")
             continue
@@ -448,15 +453,15 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     p.add_argument("--data_dir", type=Path, default=DATA_DIR,
                    help="Data folder (default: <project root>/data).")
     p.add_argument("--accent_groups", nargs="+", default=None,
-                   help="Accent groups to extract (default: every mapped group "
-                        "except Singaporean/Ambiguous/Unmapped/Unlabelled).")
-    p.add_argument("--clips_per_accent", type=int, default=800)
-    p.add_argument("--max_clips_per_speaker", type=int, default=15)
+                   help="Accent groups to extract (default: the six Common Voice training groups).")
+    p.add_argument("--clips_per_accent", type=int, default=None,
+                   help="Override the default per-accent targets (13,871 clips total).")
+    p.add_argument("--max_clips_per_speaker", type=int, default=200)
     p.add_argument("--min_duration", type=float, default=3.0)
-    p.add_argument("--max_duration", type=float, default=16.0)
-    p.add_argument("--oversample", type=float, default=1.25,
+    p.add_argument("--max_duration", type=float, default=6.0)
+    p.add_argument("--oversample", type=float, default=3.0,
                    help="Select this many times clips_per_accent to absorb "
-                        "clips lost to filters (default 1.25).")
+                        "clips lost to filters (default 3.0).")
     p.add_argument("--seed", type=int, default=42)
     p.add_argument("--val_fraction", type=float, default=0.15)
     p.add_argument("--test_fraction", type=float, default=0.15)
@@ -476,7 +481,7 @@ def validate_args(args: argparse.Namespace) -> Optional[str]:
     if args.min_duration >= args.max_duration:
         return "--min_duration must be smaller than --max_duration"
     for name in ("clips_per_accent", "max_clips_per_speaker", "shard_rows"):
-        if getattr(args, name) <= 0:
+        if getattr(args, name) is not None and getattr(args, name) <= 0:
             return f"--{name} must be positive"
     if args.oversample < 1.0:
         return "--oversample must be >= 1.0"
@@ -512,7 +517,14 @@ def main(argv: Optional[List[str]] = None) -> int:
 
     meta = pq.read_table(str(paths["validated_parquet"])).to_pandas()
     meta = meta.drop_duplicates(subset="path").reset_index(drop=True)
+    conflicts = meta.groupby("speaker_id")["accent_group"].nunique()
+    meta = meta[~meta["speaker_id"].isin(conflicts[conflicts > 1].index)].reset_index(drop=True)
     available = sorted(meta["accent_group"].unique())
+    if args.accent_groups is None and args.clips_per_accent is None:
+        missing = sorted(set(CLIP_TARGETS) - set(available))
+        if missing:
+            print(f"ERROR: missing Common Voice groups: {missing}")
+            return 1
     if args.accent_groups:
         unknown = [g for g in args.accent_groups if g not in available]
         if unknown:
@@ -521,7 +533,12 @@ def main(argv: Optional[List[str]] = None) -> int:
             return 1
         groups = list(dict.fromkeys(args.accent_groups))
     else:
-        groups = [g for g in available if g not in SPECIAL_GROUPS]
+        groups = [g for g in available if g not in SPECIAL_GROUPS
+                  and (args.clips_per_accent is not None or g in CLIP_TARGETS)]
+    if args.clips_per_accent is None and any(g not in CLIP_TARGETS for g in groups):
+        print("ERROR: use --clips_per_accent for custom accent groups.")
+        return 1
+    targets = args.clips_per_accent if args.clips_per_accent is not None else CLIP_TARGETS
     if not groups:
         print("ERROR: no accent groups to extract.")
         return 1
@@ -531,7 +548,7 @@ def main(argv: Optional[List[str]] = None) -> int:
     print("=" * 70)
     print(f"Archive               : {archive.name}")
     print(f"Accent groups         : {groups}")
-    print(f"Clips per accent      : {args.clips_per_accent}")
+    print(f"Clips per accent      : {targets}")
     print(f"Max clips per speaker : {args.max_clips_per_speaker}")
     print(f"Duration range        : {args.min_duration} - {args.max_duration} s (after trim)")
     print(f"Oversample            : {args.oversample}")
@@ -539,10 +556,10 @@ def main(argv: Optional[List[str]] = None) -> int:
     print(f"Seed                  : {args.seed}")
 
     selected, plan = select_clips(
-        meta, groups, args.clips_per_accent, args.max_clips_per_speaker,
+        meta, groups, targets, args.max_clips_per_speaker,
         args.min_duration, args.max_duration, args.oversample, args.seed,
     )
-    print_plan(plan, args.clips_per_accent)
+    print_plan(plan, targets)
     if selected.empty:
         print("ERROR: nothing selected.")
         return 1
@@ -564,8 +581,16 @@ def main(argv: Optional[List[str]] = None) -> int:
         print("ERROR: no clips survived processing.")
         return 1
 
-    kept = finalise(staging_dir, subset_dir, groups, args.clips_per_accent,
+    kept = finalise(staging_dir, subset_dir, groups, targets,
                     args.val_fraction, args.test_fraction, args.seed, args.shard_rows)
+
+    if args.clips_per_accent is None:
+        counts = kept.groupby("accent_group").size().to_dict()
+        expected = {g: targets[g] for g in groups}
+        if counts != expected:
+            print(f"ERROR: clip shortfall: got {counts}, expected {expected}. "
+                  "Increase --oversample or --max_clips_per_speaker and rerun.")
+            return 1
 
     summary = summarise(kept)
     summary.to_csv(paths["subset_summary_csv"], index=False)
