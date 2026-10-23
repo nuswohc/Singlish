@@ -1,8 +1,6 @@
 const $ = (id) => document.getElementById(id);
-function formatScore(score) {
-  // Keep tiny nonzero margins visible rather than rounding them to zero.
-  const value = score !== 0 && Math.abs(score) < 0.0005 ? score.toExponential(2) : score.toFixed(3);
-  return score > 0 ? `+${value}` : value;
+function formatProbability(probability) {
+  return probability == null ? '—' : `${(probability * 100).toFixed(1)}%`;
 }
 let selectedFile = null;
 let previewURL = null;
@@ -16,7 +14,7 @@ const recorder = new MicrophoneRecorder({
     $('record-button').setAttribute('aria-pressed', String(state === 'recording'));
     $('recording-live').hidden = state !== 'recording';
     const messages = { requesting: 'Allow microphone access in your browser to start.',
-      recording: 'Read “They tried to keep it a secret” slowly, then select Stop recording.', processing: 'Preparing your recording…' };
+      recording: 'Read “They tried to keep it a secret but he was able to figure out everything”, then select Stop recording.', processing: 'Preparing your recording…' };
     if (messages[state]) $('recording-status').textContent = messages[state];
     updateControls();
   },
@@ -129,9 +127,9 @@ $('upload-form').addEventListener('submit', async (e) => {
     const ml = data.models.ml;
     const ensemble = data.models.ensemble;
     $('ml-label').textContent = ml.prediction.display_label;
-    $('ml-score').textContent = formatScore(ml.prediction.decision_score);
+    $('ml-score').textContent = formatProbability(ml.prediction.probability);
     $('ensemble-label').textContent = ensemble.prediction.display_label;
-    $('ensemble-score').textContent = formatScore(ensemble.prediction.decision_score);
+    $('ensemble-score').textContent = formatProbability(ensemble.prediction.probability);
     $('ml-version').textContent = ml.version;
     $('model-agreement').textContent = `Model agreement: ${data.agreement === 'agree' ? 'Agree' : 'Disagree'}`;
     $('duration').textContent = `${data.audio.duration_seconds.toFixed(2)} s`;

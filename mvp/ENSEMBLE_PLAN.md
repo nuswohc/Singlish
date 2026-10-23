@@ -1,38 +1,20 @@
 # Two-model MVP
 
-1. Keep the existing calibrated E1 classifier and display it as **ML**.
-2. Add **Ensemble** from E4_02's `fusion_svm.joblib`: 35 raw acoustic
-   features followed by a 512-value Whisper base.en embedding. Use the saved
-   scaling, PCA and SVM pipeline without training or averaging predictions.
-3. Classify each recording with both models. Use Ensemble as the final result,
-   show both predictions and report whether their class labels agree.
-4. Keep the recording/upload flow. Transcription stays outside the MVP interface
-   as future work from Appendix B; there is no separate deep accent classifier.
-5. Verify saved-pipeline parity, input ordering, Whisper pooling, API/UI behavior
-   and deployment packaging.
+1. Use calibrated E1 `svm_65_calibrated.joblib` as **ML**.
+2. Use calibrated E4 `fusion_svm_calibrated.joblib` as **Ensemble**: 65 raw
+   acoustic features followed by a 512-value Whisper base.en embedding.
+3. Run both saved pipelines without fitting. Select Singapore when its calibrated
+   probability is at least 0.50, matching both calibration notebooks.
+4. Use Ensemble as the final result, show both predicted-class probabilities,
+   and report whether their labels agree. Keep raw decision scores in the API.
+5. Keep recording/upload and preview. Ask users to retry when fewer than three
+   seconds remain after silence trimming, before feature extraction or inference.
 
-The E4 export is uncalibrated and has no `predict_proba`. Show its class label;
-display signed raw SVM decision scores for both models in the comparison cards.
-Positive means Singapore, negative means Non-Singapore, and near zero means the
-decision boundary. Magnitudes are not directly comparable across models. ML uses
-the fitted SVM inside its calibration wrapper and follows its raw class decision;
-its calibrated probability remains available only in the API.
+Artifacts come from `E1_Feature_EngineeringV2/outputs/`:
 
-Local artifacts come from
-`/home/mh/nusproj/E1_Feature_Engineering/outputs/svm35_fusion_comparison_upstream`.
-Binaries remain outside Git. Deployment needs both SVM artifacts and cached
-Whisper weights, with more memory than the previous ML-only demo.
+- `e1_feature_study_accent_30000/svm_calibrated_probability_testing/`
+- `svm65_fusion_comparison_30000/calibrated_probability_testing/`
 
-## Verification completed
-
-- Backend and UI/recorder checks cover both model outputs, signed scores,
-  input limits and microphone cleanup. Duplicate cases and redundant format
-  combinations are omitted to keep the MVP suite small.
-- Two held-out speech clips (MNSC and Speech Accent Archive) reproduce the
-  notebook's decisions and scores using cached embeddings. Fresh CPU embeddings
-  preserve both class labels; scores differ slightly from GPU bfloat16.
-- Both clips succeed through the running upload API with the actual Whisper encoder.
-- The generated deployment package starts and reports both models ready.
-  Docker is unavailable locally, so an image build was not tested.
-- The hosted app has not been redeployed. Its earlier 1 GB VM needs a memory
-  upgrade before running this version; deployment guidance now specifies 4 GB.
+Binaries remain outside Git and are attached to the test candidate release.
+Deployment packages both classifiers and their metadata; Whisper weights are
+cached separately. See the [MVP README](README.md) for setup and verification.

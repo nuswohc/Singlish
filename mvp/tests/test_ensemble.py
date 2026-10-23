@@ -9,19 +9,20 @@ def test_ensemble_concatenates_raw_features_before_saved_preprocessing(monkeypat
     model = EnsembleModel()
     vector = np.arange(91, dtype=np.float32)
     embedding = np.linspace(-1, 1, 512, dtype=np.float32)
-    expected = np.concatenate([vector[model.columns], embedding]).reshape(1, 547)
-    label = int(model.pipeline.predict(expected)[0])
-    score = float(model.pipeline.decision_function(expected)[0])
+    expected = np.concatenate([vector[model.columns], embedding]).reshape(1, 577)
+    probabilities = model.pipeline.predict_proba(expected)[0]
+    label = int(probabilities[1] >= 0.5)
+    score = float(model.decision_estimator.decision_function(expected)[0])
     result = model.predict(vector, embedding)
     assert result['class_id'] == label
     assert result['decision_score'] == pytest.approx(score)
-    assert result['probability'] is None
-    # Capture both calls so an accidental feature reorder cannot pass on labels alone.
+    assert result['probability'] == pytest.approx(probabilities[label])
+    # Capture probability inputs so an accidental feature reorder cannot pass on labels alone.
     captured = []
-    def predict(values):
+    def predict_proba(values):
         captured.append(values)
-        return np.array([label])
-    monkeypatch.setattr(model.pipeline, 'predict', predict)
+        return probabilities.reshape(1, 2)
+    monkeypatch.setattr(model.pipeline, 'predict_proba', predict_proba)
     model.predict(vector, embedding)
     np.testing.assert_array_equal(captured[0], expected)
 
@@ -36,9 +37,9 @@ def test_ensemble_rejects_feature_order(monkeypatch, tmp_path):
     from mvp.models import ROOT
     import shutil
     path = tmp_path / 'fusion.joblib'
-    shutil.copy2(ROOT / 'models/fusion_svm.joblib', path)
-    metadata = json.loads((ROOT / 'models/fusion_svm_metadata.json').read_text())
-    metadata['feature_names'].reverse()
+    shutil.copy2(ROOT / 'models/fusion_svm_calibrated.joblib', path)
+    metadata = json.loads((ROOT / 'models/fusion_svm_calibrated_metadata.json').read_text())
+    metadata['acoustic_feature_names'].reverse()
     path.with_name('fusion_metadata.json').write_text(json.dumps(metadata))
     monkeypatch.setenv('ENSEMBLE_MODEL_PATH', str(path))
     with pytest.raises(ValueError, match='feature names/order'):

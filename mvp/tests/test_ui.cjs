@@ -26,11 +26,11 @@ function setup(fetch) {
   return {elements,select,submit};
 }
 const file = {name:'test.wav',size:1000};
-const ml = {display_label:'Singapore Accent',decision_score:0.8765};
-const ensemble = {display_label:'Singapore Accent',probability:null,decision_score:1.2345};
-const success = {prediction:ensemble, models:{ml:{name:'ML',version:'svm_35_calibrated',prediction:ml},
-  ensemble:{name:'Ensemble',version:'fusion_svm',prediction:ensemble}},agreement:'agree',
-  audio:{duration_seconds:3,classified_duration_seconds:3},model_version:'fusion_svm',warnings:[]};
+const ml = {display_label:'Singapore Accent',probability:0.8765,decision_score:0.8765};
+const ensemble = {display_label:'Singapore Accent',probability:0.9234,decision_score:1.2345};
+const success = {prediction:ensemble, models:{ml:{name:'ML',version:'svm_65_calibrated',prediction:ml},
+  ensemble:{name:'Ensemble',version:'fusion_svm_calibrated',prediction:ensemble}},agreement:'agree',
+  audio:{duration_seconds:3,classified_duration_seconds:3},model_version:'fusion_svm_calibrated',warnings:[]};
 
 test('selection clears stale result and validates file', () => {
   const {elements,select} = setup();
@@ -61,9 +61,9 @@ test('loading prevents selection changes; success renders label and restores con
   resolve({ok:true,json:async()=>success});
   await request;
   assert.equal(elements['prediction-label'].textContent,'Singapore Accent');
-  assert.equal(elements['ml-score'].textContent,'+0.876');
+  assert.equal(elements['ml-score'].textContent,'87.6%');
   assert.equal(elements['ensemble-label'].textContent,'Singapore Accent');
-  assert.equal(elements['ensemble-score'].textContent,'+1.234');
+  assert.equal(elements['ensemble-score'].textContent,'92.3%');
   assert.equal(elements['model-agreement'].textContent,'Model agreement: Agree');
   assert.equal(elements.result.hidden,false);
   assert.equal(elements['result-card'].scrolledIntoView,true);
@@ -79,9 +79,9 @@ test('loading prevents selection changes; success renders label and restores con
 test('API failure hides result and permits retry', async () => {
   let count=0;
   const {elements,select,submit}=setup(async()=> ++count === 1 ?
-    {ok:false,json:async()=>({error:{message:'The recording is silent.'}})} : {ok:true,json:async()=>success});
+    {ok:false,json:async()=>({error:{code:'invalid_duration',message:'The clip is less than 3 seconds after silence trimming. Please retry with a longer recording.'}})} : {ok:true,json:async()=>success});
   select(file); await submit();
-  assert.equal(elements.error.textContent,'The recording is silent.');
+  assert.match(elements.error.textContent,/less than 3 seconds after silence trimming.*Please retry/);
   assert.equal(elements.result.hidden,true);
   assert.equal(elements.submit.disabled,false);
   await submit();
@@ -98,37 +98,36 @@ test('network failure produces readable error', async () => {
 });
 
 
-test('ML and Ensemble display signed scores when they disagree', async () => {
+test('ML and Ensemble display calibrated probabilities when they disagree', async () => {
   const {elements,select,submit} = setup(async () => ({ok:true,json:async () => ({...success,
     prediction:ensemble,agreement:'disagree',
-    models:{...success.models,ml:{...success.models.ml,prediction:{display_label:'Non-Singapore Accent',decision_score:-0.876}},
+    models:{...success.models,ml:{...success.models.ml,prediction:{display_label:'Non-Singapore Accent',probability:0.876,decision_score:-0.876}},
       ensemble:success.models.ensemble}})}));
   select(file);
   await submit();
   assert.equal(elements['prediction-label'].textContent,'Singapore Accent');
   assert.equal(elements['ml-label'].textContent,'Non-Singapore Accent');
-  assert.equal(elements['ml-score'].textContent,'-0.876');
+  assert.equal(elements['ml-score'].textContent,'87.6%');
   assert.equal(elements['ensemble-label'].textContent,'Singapore Accent');
   assert.equal(elements['model-agreement'].textContent,'Model agreement: Disagree');
 });
 
-test('non-Singapore Ensemble result has no percentage and keeps its signed score', async () => {
-  const prediction = {display_label:'Non-Singapore Accent',probability:null,decision_score:-1.2};
+test('non-Singapore Ensemble result shows its predicted-class probability', async () => {
+  const prediction = {display_label:'Non-Singapore Accent',probability:0.912,decision_score:-1.2};
   const {elements,select,submit} = setup(async () => ({ok:true,json:async () => ({...success,
     prediction,agreement:'disagree',models:{...success.models,
       ensemble:{...success.models.ensemble,prediction}}})}));
   select(file);
   await submit();
   assert.equal(elements['prediction-label'].textContent,'Non-Singapore Accent');
-  assert.equal(elements['ensemble-score'].textContent,'-1.200');
+  assert.equal(elements['ensemble-score'].textContent,'91.2%');
 });
 
-test('tiny margins retain their sign instead of rounding to zero', async () => {
+test('uncalibrated model overrides show no probability', async () => {
   const {elements,select,submit} = setup(async () => ({ok:true,json:async () => ({...success,
-    models:{ml:{...success.models.ml,prediction:{...ml,decision_score:0.00001}},
-      ensemble:{...success.models.ensemble,prediction:{...ensemble,decision_score:-0.00001}}}})}));
+    models:{...success.models,ml:{...success.models.ml,prediction:{...ml,probability:null}}}})}));
   select(file);
   await submit();
-  assert.equal(elements['ml-score'].textContent,'+1.00e-5');
-  assert.equal(elements['ensemble-score'].textContent,'-1.00e-5');
+  assert.equal(elements['ml-score'].textContent,'—');
+  assert.equal(elements['ensemble-score'].textContent,'92.3%');
 });

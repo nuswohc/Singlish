@@ -39,19 +39,19 @@ def test_inference_matches_pipeline(client, rate, channels, seconds, format):
     values = vector[ml.columns].reshape(1, -1)
     probabilities = ml.pipeline.predict_proba(values)[0]
     svm = ml.decision_estimator
-    expected = int(svm.predict(values)[0])
+    expected = int(probabilities[1] >= 0.5)
     assert result['models']['ml']['prediction']['decision_score'] == pytest.approx(svm.decision_function(values)[0])
     assert result['models']['ml']['prediction']['class_id'] == expected
     assert result['audio'] == metadata
     assert result['warnings'] == warnings
     assert result['models']['ml']['prediction']['probability'] == pytest.approx(probabilities[expected])
-    assert result['models']['ml']['version'] == 'svm_35_calibrated'
-    assert result['model_version'] == 'fusion_svm'
+    assert result['models']['ml']['version'] == 'svm_65_calibrated'
+    assert result['model_version'] == 'fusion_svm_calibrated'
     assert result['final_model'] == 'ensemble'
     ensemble = client.app.state.models.ensemble.predict(vector, np.zeros(512, dtype=np.float32))
     assert result['prediction'] == ensemble
     assert result['models']['ensemble']['prediction'] == ensemble
-    assert result['prediction']['probability'] is None
+    assert result['prediction']['probability'] >= 0.5
     assert result['agreement'] == ('agree' if expected == ensemble['class_id'] else 'disagree')
     assert metadata['truncated'] is False
     assert not warnings
@@ -62,6 +62,23 @@ def test_invalid_audio(client, data, status):
     response = client.post('/api/classify', files={'audio': ('clip.wav', data)})
     assert response.status_code == status
     assert response.json()['error']['message']
+
+
+@pytest.mark.parametrize('seconds,status', [(2.5, 422), (3, 200)])
+def test_minimum_duration_is_checked_after_trimming(client, monkeypatch, seconds, status):
+    # A long upload can still be too short once its silent edges are removed.
+    samples, rate = sf.read(BytesIO(wav(seconds)), dtype='float32')
+    stream = BytesIO()
+    sf.write(stream, np.pad(samples, (rate, rate)), rate, format='WAV', subtype='PCM_16')
+    if status == 422:
+        def unexpected_inference(*args):
+            pytest.fail('Short clips must be rejected before model inference')
+        monkeypatch.setattr(client.app.state.models, 'predict', unexpected_inference)
+    response = client.post('/api/classify', files={'audio': ('padded.wav', stream.getvalue())})
+    assert response.status_code == status, response.text
+    if status == 422:
+        assert response.json()['error']['code'] == 'invalid_duration'
+        assert 'Please retry' in response.json()['error']['message']
 
 
 def test_request_contract(client):
@@ -79,7 +96,7 @@ def test_request_contract(client):
 def test_model_rejects_feature_order(monkeypatch):
     import mvp.models as models
     import joblib
-    artifact = {'model': joblib.load(models.ROOT / 'models/svm_35_calibrated.joblib'),
+    artifact = {'model': joblib.load(models.ROOT / 'models/svm_65_calibrated.joblib'),
                 'columns': list(range(91)), 'feature_names': models.FEATURE_NAMES.copy()}
     artifact['feature_names'] = list(reversed(artifact['feature_names']))
     monkeypatch.setattr(models.joblib, 'load', lambda path: artifact)
@@ -93,11 +110,11 @@ def test_model_override_needs_no_checksum(monkeypatch, tmp_path, calibrated):
     import shutil
     alternate = tmp_path / 'development-model.joblib'
     if calibrated:
-        shutil.copy2(models.ROOT / 'models/svm_35_calibrated.joblib', alternate)
+        shutil.copy2(models.ROOT / 'models/svm_65_calibrated.joblib', alternate)
     else:
         # Exercise an uncalibrated export using the shipped model's fitted SVM.
         models.joblib.dump(models.AccentModel().decision_estimator, alternate)
-    shutil.copy2(models.ROOT / 'models/svm_35_calibrated_metadata.json',
+    shutil.copy2(models.ROOT / 'models/svm_65_calibrated_metadata.json',
                  tmp_path / 'development-model_metadata.json')
     monkeypatch.setenv('MODEL_PATH', str(alternate))
     model = models.AccentModel()
@@ -105,7 +122,8 @@ def test_model_override_needs_no_checksum(monkeypatch, tmp_path, calibrated):
     vector = np.arange(91, dtype=np.float32)
     values = vector[model.columns].reshape(1, -1)
     result = model.predict(vector)
-    assert result['class_id'] == model.decision_estimator.predict(values)[0]
+    assert result['class_id'] == (int(model.pipeline.predict_proba(values)[0, 1] >= 0.5)
+                                  if calibrated else model.decision_estimator.predict(values)[0])
     assert result['decision_score'] == pytest.approx(model.decision_estimator.decision_function(values)[0])
     assert (result['probability'] is None) == (not calibrated)
     monkeypatch.setenv('MODEL_VERSION', 'experiment-2')
@@ -133,14 +151,16 @@ def test_very_quiet_audio_rejected():
         decode_audio(stream.getvalue())
 
 
-@pytest.mark.parametrize('score,label,probabilities', [(1.2, 1, [0.89, 0.11]), (-0.4, 0, [0.11, 0.89]), (0., 1, [0.5, 0.5])])
-def test_ml_label_uses_raw_svm_and_keeps_probability_for_its_class(monkeypatch, score, label, probabilities):
-    from mvp.models import AccentModel
-    model = AccentModel()
+@pytest.mark.parametrize('score,label,probabilities', [(1.2, 0, [0.89, 0.11]), (-0.4, 1, [0.11, 0.89]), (0., 1, [0.5, 0.5])])
+@pytest.mark.parametrize('ensemble', [False, True])
+def test_label_uses_calibrated_threshold_and_keeps_raw_score(monkeypatch, score, label, probabilities, ensemble):
+    from mvp.models import AccentModel, EnsembleModel
+    model = EnsembleModel() if ensemble else AccentModel()
     monkeypatch.setattr(model.pipeline, 'predict_proba', lambda x: np.asarray([probabilities]))
     monkeypatch.setattr(model.decision_estimator, 'decision_function', lambda x: np.asarray([score]))
     monkeypatch.setattr(model.decision_estimator, 'predict', lambda x: np.asarray([label]))
-    result = model.predict(np.zeros(91, dtype=np.float32))
+    vector = np.zeros(91, dtype=np.float32)
+    result = model.predict(vector, np.zeros(512, dtype=np.float32)) if ensemble else model.predict(vector)
     assert result['class_id'] == label
     assert result['decision_score'] == score
     assert result['probability'] == probabilities[label]
@@ -198,10 +218,10 @@ def test_trim_happens_before_crop():
 def test_selected_columns_match_export_and_are_applied_in_order(monkeypatch):
     import json
     import mvp.models as models
-    metadata = json.loads((models.ROOT / 'models/svm_35_calibrated_metadata.json').read_text())
+    metadata = json.loads((models.ROOT / 'models/svm_65_calibrated_metadata.json').read_text())
     model = models.AccentModel()
     assert model.columns == metadata['columns']
-    assert len(model.columns) == model.pipeline.n_features_in_ == 35
+    assert len(model.columns) == model.pipeline.n_features_in_ == 65
     vector = np.arange(91, dtype=np.float32)
     captured = []
     def probabilities(x):
@@ -209,15 +229,15 @@ def test_selected_columns_match_export_and_are_applied_in_order(monkeypatch):
         return np.asarray([[0.1, 0.9]])
     monkeypatch.setattr(model.pipeline, 'predict_proba', probabilities)
     assert model.predict(vector)['decision_score'] == pytest.approx(
-        model.decision_estimator.decision_function(vector[metadata['columns']].reshape(1, 35))[0])
-    np.testing.assert_array_equal(captured[0], vector[metadata['columns']].reshape(1, 35))
+        model.decision_estimator.decision_function(vector[metadata['columns']].reshape(1, 65))[0])
+    np.testing.assert_array_equal(captured[0], vector[metadata['columns']].reshape(1, 65))
 
 
 def test_selected_model_requires_metadata(monkeypatch, tmp_path):
     import shutil
     import mvp.models as models
     path = tmp_path / 'missing_metadata.joblib'
-    shutil.copy2(models.ROOT / 'models/svm_35_calibrated.joblib', path)
+    shutil.copy2(models.ROOT / 'models/svm_65_calibrated.joblib', path)
     monkeypatch.setenv('MODEL_PATH', str(path))
     with pytest.raises(ValueError, match='need columns and feature_names metadata'):
         models.AccentModel()

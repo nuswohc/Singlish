@@ -17,6 +17,34 @@ def prediction(label, score, probability=None):
             "probability": probability, "decision_score": score}
 
 
+def fitted_svm(pipeline):
+    if callable(getattr(pipeline, "decision_function", None)):
+        return pipeline
+    calibrated = getattr(pipeline, "calibrated_classifiers_", [])
+    if len(calibrated) != 1:
+        raise ValueError("Expected one fitted SVM inside the calibration wrapper")
+    return calibrated[0].estimator
+
+
+def predict_values(pipeline, svm, values):
+    score = float(svm.decision_function(values)[0])
+    probability = None
+    if callable(getattr(pipeline, "predict_proba", None)):
+        probabilities = np.asarray(pipeline.predict_proba(values))[0]
+        if (probabilities.shape != (2,) or not np.isfinite(probabilities).all()
+                or np.any(probabilities < 0) or np.any(probabilities > 1)
+                or not np.isclose(probabilities.sum(), 1)):
+            raise ValueError("Expected two valid class probabilities")
+        # Match both notebooks, including Singapore at an exact 0.50 tie.
+        label = int(probabilities[1] >= 0.5)
+        probability = float(probabilities[label])
+    else:
+        label = int(svm.predict(values)[0])
+    if label not in (0, 1) or not np.isfinite(score):
+        raise ValueError("Invalid SVM decision score or class")
+    return prediction(label, score, probability)
+
+
 class AccentModel:
     def __init__(self):
         self.manifest = json.loads((ROOT / "models/manifest.json").read_text())
@@ -48,14 +76,7 @@ class AccentModel:
                 raise ValueError("Model feature names/order do not match the 91-feature extractor")
         if self.pipeline.n_features_in_ != len(self.columns) or not np.array_equal(self.pipeline.classes_, [0, 1]):
             raise ValueError("Invalid fitted input width or class mapping")
-        self.decision_estimator = self.pipeline
-        if not callable(getattr(self.decision_estimator, "decision_function", None)):
-            # The E1 export wraps one refitted SVM in sigmoid calibration.
-            # Use that fitted SVM, including its scaler, for its original margin.
-            calibrated = getattr(self.pipeline, "calibrated_classifiers_", [])
-            if len(calibrated) != 1:
-                raise ValueError("ML needs one fitted SVM to expose a decision score")
-            self.decision_estimator = calibrated[0].estimator
+        self.decision_estimator = fitted_svm(self.pipeline)
         if (not callable(getattr(self.decision_estimator, "decision_function", None))
                 or not np.array_equal(self.decision_estimator.classes_, [0, 1])):
             raise ValueError("ML needs a binary decision_function with classes [0, 1]")
@@ -66,20 +87,7 @@ class AccentModel:
         if vector.shape != (len(FEATURE_NAMES),) or not np.isfinite(vector).all():
             raise ValueError("Expected 91 finite acoustic features")
         values = vector[self.columns].reshape(1, -1)
-        # Display the original SVM class so its label matches the raw margin.
-        score = float(self.decision_estimator.decision_function(values)[0])
-        label = int(self.decision_estimator.predict(values)[0])
-        if label not in (0, 1) or not np.isfinite(score):
-            raise ValueError("Invalid ML decision score or class")
-        probability = None
-        if callable(getattr(self.pipeline, "predict_proba", None)):
-            probabilities = np.asarray(self.pipeline.predict_proba(values))[0]
-            if (probabilities.shape != (2,) or not np.isfinite(probabilities).all()
-                    or np.any(probabilities < 0) or np.any(probabilities > 1)
-                    or not np.isclose(probabilities.sum(), 1)):
-                raise ValueError("Expected two valid class probabilities")
-            probability = float(probabilities[label])
-        return prediction(label, score, probability)
+        return predict_values(self.pipeline, self.decision_estimator, values)
 
 
 class EnsembleModel:
@@ -91,31 +99,30 @@ class EnsembleModel:
             path = ROOT / path
         self.pipeline = joblib.load(path)
         metadata = json.loads(path.with_name(path.stem + "_metadata.json").read_text())
-        self.columns = metadata["feature_columns_in_91"]
+        self.columns = metadata["acoustic_columns_in_91"]
         self.width = metadata["whisper_width"]
-        if (len(self.columns) != 35 or len(set(self.columns)) != 35
+        if (len(self.columns) != 65 or len(set(self.columns)) != 65
                 or any(type(i) is not int or not 0 <= i < len(FEATURE_NAMES) for i in self.columns)
-                or metadata["feature_names"] != [FEATURE_NAMES[i] for i in self.columns]):
+                or metadata["acoustic_feature_names"] != [FEATURE_NAMES[i] for i in self.columns]):
             raise ValueError("Ensemble feature names/order do not match the 91-feature extractor")
+        self.decision_estimator = fitted_svm(self.pipeline)
         if (self.width != 512 or metadata["positive_label"] != 1
                 or self.pipeline.n_features_in_ != len(self.columns) + self.width
                 or not np.array_equal(self.pipeline.classes_, [0, 1])
-                or not callable(getattr(self.pipeline, "decision_function", None))):
+                or not callable(getattr(self.decision_estimator, "decision_function", None))):
             raise ValueError("Invalid Ensemble input width or class mapping")
         self.version = os.environ.get("ENSEMBLE_MODEL_VERSION") or path.stem
-        self.whisper_model = metadata["whisper_model"]
-        self.whisper_revision = manifest["whisper_revision"]
+        self.whisper_model = metadata["whisper_provenance"]["model"]
+        self.whisper_revision = metadata["whisper_provenance"]["resolved_revision"]
+        if self.whisper_revision != manifest["whisper_revision"]:
+            raise ValueError("Ensemble Whisper revision differs from the manifest")
 
     def predict(self, vector, embedding):
         if (vector.shape != (len(FEATURE_NAMES),) or not np.isfinite(vector).all()
                 or embedding.shape != (self.width,) or not np.isfinite(embedding).all()):
             raise ValueError("Expected 91 finite acoustic features and a 512-value Whisper embedding")
-        values = np.concatenate([vector[self.columns], embedding]).reshape(1, -1)
-        label = int(self.pipeline.predict(values)[0])
-        score = float(self.pipeline.decision_function(values)[0])
-        if label not in (0, 1) or not np.isfinite(score):
-            raise ValueError("Invalid Ensemble prediction")
-        return prediction(label, score)
+        values = np.concatenate([vector[self.columns].astype(np.float32), embedding]).reshape(1, -1)
+        return predict_values(self.pipeline, self.decision_estimator, values)
 
 
 class AccentModels:

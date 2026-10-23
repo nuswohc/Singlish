@@ -54,7 +54,7 @@ The Compose configuration limits app memory to 3 GB and proxy memory to 128 MB. 
 
 Open the configured HTTPS URL and check both input methods:
 
-- Upload a valid PCM WAV, preview it, and confirm that both ML and Ensemble results appear, with Ensemble as the final result and Agree/Disagree beneath the comparison. Both model cards must show signed decision scores and no percentages.
+- Upload a valid PCM WAV, preview it, and confirm that both ML and Ensemble results appear, with Ensemble as the final result and Agree/Disagree beneath the comparison. Both model cards must show calibrated probabilities.
 - Allow microphone access, record 3–6 seconds, stop, preview, and classify. Check that cancelling a new take preserves previously selected audio and that recording stops at 10 seconds.
 - Deny microphone access and confirm that WAV upload remains available.
 
@@ -81,8 +81,8 @@ The hosted demo runs continuously. VM scheduling is managed separately from Comp
 
 ## Development model swaps
 
-No checksum is required. Replace `mvp/models/svm_35_calibrated.joblib` and its matching
-`svm_35_calibrated_metadata.json`, regenerate the package,
+No checksum is required. Replace `mvp/models/svm_65_calibrated.joblib` and its matching
+`svm_65_calibrated_metadata.json`, regenerate the package,
 and rebuild the app on the VM. For a different filename, update `model_file` in
 `mvp/models/manifest.json`; the packager includes that file automatically. Models
 must select their inputs from the current 91-feature pool using their matching
@@ -93,7 +93,7 @@ a path override must exist inside the container. Both manifest-selected
 models are included in a generated package. Use a unique `MODEL_VERSION` when
 replacing a file under the same name so deployments are easy to distinguish.
 
-For Ensemble, replace `fusion_svm.joblib` and `fusion_svm_metadata.json` together,
+For Ensemble, replace `fusion_svm_calibrated.joblib` and `fusion_svm_calibrated_metadata.json` together,
 or update `ensemble_file` in the manifest for a new filename. The metadata must
 match the raw acoustic + Whisper input contract described in the MVP README.
 

@@ -22,7 +22,7 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('study_root', type=Path, help='E1 project containing data/ and outputs/')
 parser.add_argument('--output', type=Path)
 args = parser.parse_args()
-study = args.study_root / 'outputs/e1_feature_study_accent_3to6s_upstream'
+study = args.study_root / 'outputs/e1_feature_study_accent_30000'
 with np.load(study / 'acoustic_features_91.npz', allow_pickle=False) as cache:
     assert cache['feature_names'].tolist() == FEATURE_NAMES
     features = cache['features'].copy()
@@ -54,7 +54,7 @@ with TestClient(app) as client:
         vector = extract_features(y)
         cached = features[ids.index(row['clip_id'])]
         np.testing.assert_allclose(vector, cached, rtol=1e-5, atol=1e-6)
-        expected = int(ml.decision_estimator.predict(cached[ml.columns].reshape(1, -1))[0])
+        expected = int(ml.pipeline.predict_proba(cached[ml.columns].reshape(1, -1))[0, 1] >= 0.5)
         actual = ml.predict(vector)['class_id']
         assert actual == expected
         stream = BytesIO()

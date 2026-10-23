@@ -1,6 +1,6 @@
 {
-  "model_version": "svm_35_calibrated",
-  "source": "E1_Feature_Engineering/outputs/e1_feature_study_accent_3to6s_upstream/svm_calibrated_probability_testing/svm_35_calibrated.joblib",
+  "model_version": "svm_65_calibrated",
+  "source": "E1_Feature_EngineeringV2/outputs/e1_feature_study_accent_30000/svm_calibrated_probability_testing/svm_65_calibrated.joblib",
   "extractor_version": "librosa91-parquet-upstream-v2",
   "class_mapping": {
     "0": "non_singapore",
@@ -42,7 +42,7 @@
     "delta_width": 9,
     "long_audio": "first_six_seconds_after_trimming"
   },
-  "model_file": "models/svm_35_calibrated.joblib",
-  "ensemble_file": "models/fusion_svm.joblib",
+  "model_file": "models/svm_65_calibrated.joblib",
+  "ensemble_file": "models/fusion_svm_calibrated.joblib",
   "whisper_revision": "911407f4214e0e1d82085af863093ec0b66f9cd6"
 }

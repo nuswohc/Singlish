@@ -47,7 +47,7 @@ def decode_audio(data):
     y = trim_silence(y)
     duration = len(y) / SAMPLE_RATE
     if duration < MIN_SECONDS:
-        raise AudioError("Use at least 3 seconds of speech after silence trimming.", "invalid_duration")
+        raise AudioError("The clip is less than 3 seconds after silence trimming. Please retry with a longer recording.", "invalid_duration")
     truncated = duration > MAX_SECONDS
     warnings = []
     if truncated:

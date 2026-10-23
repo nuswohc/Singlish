@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Singapore English Accent Classification</title>
-  <link rel="stylesheet" href="/static/styles.css?v=20261019f">
-  <script src="/static/recorder.js?v=20261019f" defer></script>
-  <script src="/static/app.js?v=20261019f" defer></script>
+  <link rel="stylesheet" href="/static/styles.css?v=20261023">
+  <script src="/static/recorder.js?v=20261023" defer></script>
+  <script src="/static/app.js?v=20261023" defer></script>
 </head>
 <body>
   <main class="demo">
@@ -21,8 +21,8 @@
         <div class="section-heading"><span class="step" aria-hidden="true">1</span><h2 id="recording-title">Add your audio</h2></div>
         <form id="upload-form">
           <div class="reading-prompt" id="reading-prompt">
-            <p class="prompt-label">Read this sentence aloud</p>
-            <blockquote>“They tried to keep it a secret”</blockquote>
+            <p class="prompt-label">Read this sentence</p>
+            <blockquote>“They tried to keep it a secret but he was able to figure out everything”</blockquote>
             <p class="prompt-hint">Take 3–6 seconds, then stop and preview your recording.</p>
           </div>
           <div class="microphone-actions">
@@ -66,10 +66,10 @@
           <p class="result-caption">Final result · Ensemble</p>
           <h3 id="prediction"><span id="prediction-label"></span></h3>
           <div class="model-comparison" role="group" aria-label="Model predictions" aria-describedby="score-guide">
-            <div class="model-card"><div class="model-identity"><h4>ML</h4><p id="ml-label"></p></div><div class="model-score"><span>Decision score</span><strong id="ml-score"></strong></div></div>
-            <div class="model-card ensemble-result"><div class="model-identity"><h4>Ensemble</h4><p id="ensemble-label"></p></div><div class="model-score"><span>Decision score</span><strong id="ensemble-score"></strong></div></div>
+            <div class="model-card"><div class="model-identity"><h4>ML</h4><p id="ml-label"></p></div><div class="model-score"><span>Probability</span><strong id="ml-score"></strong></div></div>
+            <div class="model-card ensemble-result"><div class="model-identity"><h4>Ensemble</h4><p id="ensemble-label"></p></div><div class="model-score"><span>Probability</span><strong id="ensemble-score"></strong></div></div>
           </div>
-          <p class="score-guide" id="score-guide">Positive: Singapore · Negative: Non-Singapore · Near zero: decision boundary. Scores are not probabilities and their magnitudes cannot be compared across models.</p>
+          <p class="score-guide" id="score-guide">Calibrated probability of each predicted accent. Singapore is selected when its probability is at least 50%.</p>
           <p id="model-agreement" class="model-agreement"></p>
           <dl class="result-summary"><div><dt>Recording duration</dt><dd id="duration">—</dd></div></dl>
           <div id="warnings" class="warnings" hidden></div>
@@ -82,7 +82,7 @@
               <div><dt>ML version</dt><dd id="ml-version"></dd></div>
               <div><dt>Ensemble version</dt><dd id="model-version"></dd></div>
             </dl>
-            <p class="detail-note">Decision scores are raw SVM outputs, not probabilities. Agreement compares the two predicted classes. Speech detection and audio quality scoring are not available.</p>
+            <p class="detail-note">Probabilities refer to each model’s predicted class. Agreement compares the two predicted classes. Speech detection and audio quality scoring are not available.</p>
           </details>
         </div>
         <p class="result-note">Experimental result. It does not determine nationality or identity.</p>
