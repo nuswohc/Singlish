@@ -17,13 +17,25 @@ def wav(seconds=3, rate=16000, channels=1, subtype="PCM_16", silent=False, forma
     sf.write(stream, y, rate, format=format, subtype=subtype)
     return stream.getvalue()
 
+class FakeTranscriber:
+    # Keeps API tests from loading the ~1 GB ASR model.
+    version, decoding, device = 'fake-asr', 'temperature fallback', 'cpu'
+
+    def __init__(self, lock=None, **kwargs):
+        self.lock = lock
+
+    def transcribe(self, waveform):
+        return 'fake transcript'
+
 @pytest.fixture(scope="module")
 def client():
     # API tests exercise the real saved SVMs without downloading/running Whisper.
     import mvp.embeddings as embeddings
+    import mvp.transcription as transcription
     with pytest.MonkeyPatch.context() as patch:
         patch.setattr(embeddings, 'WhisperEmbedding',
                       lambda *args: lambda waveform: np.zeros(512, dtype=np.float32))
+        patch.setattr(transcription, 'Transcriber', FakeTranscriber)
         with TestClient(app) as client:
             yield client
 
@@ -57,7 +69,9 @@ def test_inference_matches_pipeline(client, rate, channels, seconds, format):
     assert not warnings
 
 @pytest.mark.parametrize("data,status", [(b'',422), (b'not wav',415), (b'RIFF1234WAVEbad',422), (b'fLaCbad',422),
-    (wav(silent=True),422), (wav(.2),422), (wav(11),422), (wav(subtype='FLOAT'),415), (b'x'*(MAX_BYTES+1),413)])
+    (wav(silent=True),422), (wav(.2),422), (wav(11),422), (wav(subtype='FLOAT'),415), (b'x'*(MAX_BYTES+1),413)],
+    # Short ids: raw byte ids exceed the Windows limit for PYTEST_CURRENT_TEST.
+    ids=["empty","not_wav","bad_riff","bad_flac","silent","too_short","too_long","float_wav","too_big"])
 def test_invalid_audio(client, data, status):
     response = client.post('/api/classify', files={'audio': ('clip.wav', data)})
     assert response.status_code == status

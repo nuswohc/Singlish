@@ -7,6 +7,7 @@ from .features import SAMPLE_RATE, MIN_SECONDS, MAX_SECONDS, trim_silence, norma
 
 MAX_BYTES = 10 * 1024 * 1024
 MAX_DURATION = 10
+SHORT_CLIP_MESSAGE = "The clip is less than 3 seconds after silence trimming. Please retry with a longer recording."
 
 class AudioError(Exception):
     def __init__(self, message, code="invalid_audio", status=422):
@@ -15,6 +16,12 @@ class AudioError(Exception):
 
 
 def decode_audio(data):
+    """Classifier waveform: validated, trimmed, cropped, normalized PCM16 audio."""
+    return prepare_classifier_audio(*read_audio(data))
+
+
+def read_audio(data):
+    """Validated mono float32 audio at 16 kHz, plus the soundfile info."""
     if not data:
         raise AudioError("Choose a nonempty WAV or FLAC file.")
     if len(data) > MAX_BYTES:
@@ -44,10 +51,14 @@ def decode_audio(data):
         raise AudioError("The audio could not be decoded. Export it again as PCM WAV or FLAC.") from error
     if not y.size or not np.isfinite(y).all() or not np.any(y):
         raise AudioError("The recording is empty or silent. Upload clear English speech.")
+    return y, info
+
+
+def prepare_classifier_audio(y, info):
     y = trim_silence(y)
     duration = len(y) / SAMPLE_RATE
     if duration < MIN_SECONDS:
-        raise AudioError("The clip is less than 3 seconds after silence trimming. Please retry with a longer recording.", "invalid_duration")
+        raise AudioError(SHORT_CLIP_MESSAGE, "invalid_duration")
     truncated = duration > MAX_SECONDS
     warnings = []
     if truncated:
@@ -68,3 +79,16 @@ def decode_audio(data):
         "classified_duration_seconds": round(min(duration, MAX_SECONDS), 4),
         "truncated": truncated,
     }, warnings
+
+
+def prepare_transcription_audio(y, info):
+    """Full upload for ASR: edges trimmed, no 6 s crop and no loudness normalization
+    (the ASR model was trained and evaluated on un-normalized audio)."""
+    y = trim_silence(y)
+    duration = len(y) / SAMPLE_RATE
+    if duration < MIN_SECONDS:
+        raise AudioError(SHORT_CLIP_MESSAGE, "invalid_duration")
+    return y.astype(np.float32), {
+        "duration_seconds": round(info.duration, 4),
+        "transcribed_duration_seconds": round(duration, 4),
+    }

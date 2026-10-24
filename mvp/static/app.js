@@ -6,6 +6,7 @@ let selectedFile = null;
 let previewURL = null;
 let busy = false;
 let validFile = false;
+let transcriptRequest = 0;
 const microphoneSupported = MicrophoneRecorder.supported();
 const recorder = new MicrophoneRecorder({
   onState(state) {
@@ -50,6 +51,40 @@ function clearResult() {
   $('empty-result').hidden = false;
   $('error').hidden = true;
   $('duration').textContent = '—';
+  clearTranscript();
+}
+function clearTranscript() {
+  transcriptRequest += 1; // Responses for earlier requests are ignored.
+  $('transcript-loading').hidden = true;
+  $('transcript-text').hidden = true;
+  $('transcript-text').textContent = '';
+  $('transcript-error').hidden = true;
+  $('transcript').setAttribute('aria-busy', 'false');
+}
+// Runs after a successful classification; its failures stay inside the transcript region.
+async function transcribe(file) {
+  const id = ++transcriptRequest;
+  $('transcript-loading').hidden = false;
+  $('transcript').setAttribute('aria-busy', 'true');
+  const form = new FormData(); form.append('audio', file);
+  try {
+    const response = await fetch('/api/transcribe', { method: 'POST', body: form });
+    const data = await response.json();
+    if (id !== transcriptRequest) return;
+    if (!response.ok || typeof data.transcript !== 'string') throw new Error(data.error?.message || 'Transcription failed. Try again.');
+    const text = data.transcript.trim();
+    $('transcript-text').textContent = text || data.warnings?.[0] || 'No speech was recognised in this recording.';
+    $('transcript-text').hidden = false;
+  } catch (error) {
+    if (id !== transcriptRequest) return;
+    $('transcript-error').textContent = error.message === 'Failed to fetch' ? 'Cannot reach the server. Please retry.' : error.message;
+    $('transcript-error').hidden = false;
+  } finally {
+    if (id === transcriptRequest) {
+      $('transcript-loading').hidden = true;
+      $('transcript').setAttribute('aria-busy', 'false');
+    }
+  }
 }
 function selectFile(file) {
   if (busy || recorder.state !== 'idle') return;
@@ -139,6 +174,7 @@ $('upload-form').addEventListener('submit', async (e) => {
     $('warnings').textContent = data.warnings.join(' ');
     $('warnings').hidden = data.warnings.length === 0;
     $('result').hidden = false;
+    transcribe(selectedFile); // Not awaited: classification controls return immediately.
   } catch (error) {
     $('error').textContent = error.message === 'Failed to fetch' ? 'Cannot reach the server. Please retry.' : error.message;
     $('error').hidden = false;

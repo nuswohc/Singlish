@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Singapore English Accent Classification</title>
-  <link rel="stylesheet" href="/static/styles.css?v=20261023">
-  <script src="/static/recorder.js?v=20261023" defer></script>
-  <script src="/static/app.js?v=20261023" defer></script>
+  <link rel="stylesheet" href="/static/styles.css?v=20261024">
+  <script src="/static/recorder.js?v=20261024" defer></script>
+  <script src="/static/app.js?v=20261024" defer></script>
 </head>
 <body>
   <main class="demo">
     <header class="page-header">
       <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Singapore English · Research demo</p>
       <h1>Singapore English Accent Classification</h1>
-      <p class="intro">Record or upload a short English clip to compare ML and Ensemble predictions.</p>
+      <p class="intro">Record or upload a short English clip to compare ML and Ensemble predictions and see its transcript.</p>
     </header>
 
     <div class="workspace">
@@ -73,6 +73,13 @@
           <p id="model-agreement" class="model-agreement"></p>
           <dl class="result-summary"><div><dt>Recording duration</dt><dd id="duration">—</dd></div></dl>
           <div id="warnings" class="warnings" hidden></div>
+          <section class="transcript" id="transcript" aria-labelledby="transcript-title" aria-live="polite" aria-busy="false">
+            <h4 id="transcript-title">Transcript</h4>
+            <p id="transcript-loading" class="transcript-loading" hidden><span class="spinner small" aria-hidden="true"></span>Transcribing your recording…</p>
+            <p id="transcript-text" class="transcript-text" lang="en" hidden></p>
+            <p id="transcript-error" class="transcript-error" hidden></p>
+            <p class="detail-note">Automatic transcript from a fine-tuned Whisper small model with temperature-fallback decoding. It can contain errors.</p>
+          </section>
           <details class="model-details">
             <summary>Model details</summary>
             <dl class="result-details">

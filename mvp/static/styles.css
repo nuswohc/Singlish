@@ -103,6 +103,13 @@ footer p { margin: 0; }
 .privacy-note svg { flex-shrink: 0; margin-top: 2px; }
 .spinner { display: block; width: 32px; height: 32px; margin: 12px 0 28px; border: 3px solid #dce8e0; border-top-color: var(--teal); border-radius: 50%; animation: spin 1s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
+.transcript { border: 1px solid var(--line); border-radius: 7px; padding: 14px; margin-bottom: 20px; }
+.transcript h4 { margin: 0 0 8px; font-size: 15px; color: var(--teal); }
+.transcript-text { margin: 0; font-size: 16px; line-height: 1.6; overflow-wrap: anywhere; }
+.transcript-loading { display: flex; align-items: center; gap: 10px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
+.spinner.small { width: 18px; height: 18px; border-width: 2px; margin: 0; flex-shrink: 0; }
+.transcript-error { margin: 0; color: #963d30; font-size: 14px; line-height: 1.6; }
+.transcript .detail-note { margin-top: 10px; }
 [hidden] { display: none !important; }
 @media (max-width: 999px) {
   body { padding: 36px 24px 28px; }

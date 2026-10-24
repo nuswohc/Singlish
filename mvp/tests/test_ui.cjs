@@ -123,6 +123,94 @@ test('non-Singapore Ensemble result shows its predicted-class probability', asyn
   assert.equal(elements['ensemble-score'].textContent,'91.2%');
 });
 
+const tick = () => new Promise(r => setImmediate(r));
+const transcript = {transcript:' they tried to keep it a secret ',model_version:'whisper-small-mnsc-sg-15k-heldout',
+  decoding:'temperature fallback',audio:{duration_seconds:3,transcribed_duration_seconds:3},warnings:[]};
+function routes(handlers, urls) {
+  return (url) => { urls.push(url); return handlers[url](); };
+}
+
+test('successful classification is followed by a rendered transcript', async () => {
+  const urls = [];
+  const {elements,select,submit} = setup(routes({'/api/classify': async () => ({ok:true,json:async()=>success}),
+    '/api/transcribe': async () => ({ok:true,json:async()=>transcript})}, urls));
+  select(file);
+  await submit();
+  await tick();
+  assert.deepEqual(urls,['/api/classify','/api/transcribe']);
+  assert.equal(elements['transcript-text'].textContent,'they tried to keep it a secret');
+  assert.equal(elements['transcript-text'].hidden,false);
+  assert.equal(elements['transcript-loading'].hidden,true);
+  assert.equal(elements['transcript-error'].hidden,true);
+  assert.equal(elements.transcript.attributes['aria-busy'],'false');
+});
+
+test('pending transcription shows loading without blocking the controls', async () => {
+  const urls = [];
+  const {elements,select,submit} = setup(routes({'/api/classify': async () => ({ok:true,json:async()=>success}),
+    '/api/transcribe': () => new Promise(() => {})}, urls));
+  select(file);
+  await submit();
+  assert.deepEqual(urls,['/api/classify','/api/transcribe']);
+  assert.equal(elements['transcript-loading'].hidden,false);
+  assert.equal(elements.transcript.attributes['aria-busy'],'true');
+  assert.equal(elements.submit.disabled,false);
+  assert.equal(elements.result.hidden,false);
+});
+
+test('transcription failure stays in the transcript region', async () => {
+  const urls = [];
+  const {elements,select,submit} = setup(routes({'/api/classify': async () => ({ok:true,json:async()=>success}),
+    '/api/transcribe': async () => ({ok:false,json:async()=>({error:{code:'transcription_unavailable',
+      message:'Transcription is unavailable on this server. Classification still works.'}})})}, urls));
+  select(file);
+  await submit();
+  await tick();
+  assert.equal(elements['transcript-error'].textContent,'Transcription is unavailable on this server. Classification still works.');
+  assert.equal(elements['transcript-error'].hidden,false);
+  assert.equal(elements['transcript-text'].hidden,true);
+  assert.equal(elements['transcript-loading'].hidden,true);
+  assert.equal(elements['prediction-label'].textContent,'Singapore Accent');
+  assert.equal(elements.result.hidden,false);
+  assert.equal(elements.error.hidden,true);
+});
+
+test('failed classification does not request a transcript', async () => {
+  const urls = [];
+  const {elements,select,submit} = setup(routes({'/api/classify': async () => ({ok:false,json:async()=>({error:{code:'invalid_duration',message:'Too short. Please retry.'}})})}, urls));
+  select(file);
+  await submit();
+  await tick();
+  assert.deepEqual(urls,['/api/classify']);
+  assert.equal(elements.error.hidden,false);
+});
+
+test('new selection clears a pending transcript and ignores its late response', async () => {
+  let resolve;
+  const urls = [];
+  const {elements,select,submit} = setup(routes({'/api/classify': async () => ({ok:true,json:async()=>success}),
+    '/api/transcribe': () => new Promise(r => resolve = r)}, urls));
+  select(file);
+  await submit();
+  assert.equal(elements['transcript-loading'].hidden,false);
+  select({name:'other.wav',size:1000});
+  assert.equal(elements['transcript-loading'].hidden,true);
+  assert.equal(elements.transcript.attributes['aria-busy'],'false');
+  resolve({ok:true,json:async()=>transcript});
+  await tick();
+  assert.equal(elements['transcript-text'].hidden,true);
+  assert.equal(elements['transcript-text'].textContent,'');
+});
+
+test('empty transcript shows the server warning', async () => {
+  const {elements,select,submit} = setup(routes({'/api/classify': async () => ({ok:true,json:async()=>success}),
+    '/api/transcribe': async () => ({ok:true,json:async()=>({...transcript,transcript:'',warnings:['No speech was recognised in this recording.']})})}, []));
+  select(file);
+  await submit();
+  await tick();
+  assert.equal(elements['transcript-text'].textContent,'No speech was recognised in this recording.');
+});
+
 test('uncalibrated model overrides show no probability', async () => {
   const {elements,select,submit} = setup(async () => ({ok:true,json:async () => ({...success,
     models:{...success.models,ml:{...success.models.ml,prediction:{...ml,probability:null}}}})}));
