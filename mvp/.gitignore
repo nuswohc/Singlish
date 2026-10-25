@@ -3,7 +3,8 @@ __pycache__/
 .pytest_cache/
 models/*.joblib
 models/*.npz
-models/whisper-small-mnsc-sg-15k-heldout/
+# Local copy of the ASR model (~1 GB)
+models/whisper-*/
 
 # Browser recordings saved during development
 /recordings/
