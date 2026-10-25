@@ -28,9 +28,9 @@ function setup(fetch) {
 const file = {name:'test.wav',size:1000};
 const ml = {display_label:'Singapore Accent',probability:0.8765,decision_score:0.8765};
 const ensemble = {display_label:'Singapore Accent',probability:0.9234,decision_score:1.2345};
-const success = {prediction:ensemble, models:{ml:{name:'ML',version:'svm_65_calibrated',prediction:ml},
-  ensemble:{name:'Ensemble',version:'fusion_svm_calibrated',prediction:ensemble}},agreement:'agree',
-  audio:{duration_seconds:3,classified_duration_seconds:3},model_version:'fusion_svm_calibrated',warnings:[]};
+const success = {prediction:ensemble, models:{ml:{name:'ML',version:'svm_65_c_261024',prediction:ml},
+  ensemble:{name:'Ensemble',version:'fusion_svm_c_261024',prediction:ensemble}},agreement:'agree',
+  audio:{duration_seconds:3,classified_duration_seconds:3},model_version:'fusion_svm_c_261024',warnings:[]};
 
 test('selection clears stale result and validates file', () => {
   const {elements,select} = setup();

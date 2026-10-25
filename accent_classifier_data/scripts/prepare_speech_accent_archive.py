@@ -383,13 +383,13 @@ def iter_hf_mirror(repo: str, split: str, revision: str, cache_dir: Path,
     """Find shards with the requested languages, download only those, iterate."""
     from huggingface_hub import HfApi, HfFileSystem, hf_hub_download
 
-    api = HfApi()
+    api = HfApi(token=False if repo == HF_REPO_DEFAULT else None)
     files = sorted(f for f in api.list_repo_files(repo, repo_type="dataset", revision=revision)
                    if f.startswith(f"data/{split}-") and f.endswith(".parquet"))
     if not files:
         raise SourceError(f"No data/{split}-*.parquet files in {repo}.")
     print(f"Scanning id/accent columns of {len(files)} shard(s) in {repo} ({split})")
-    fs = HfFileSystem()
+    fs = HfFileSystem(token=False if repo == HF_REPO_DEFAULT else None)
     wanted = set(languages)
     needed: List[str] = []
     for name in files:
@@ -418,7 +418,7 @@ def iter_hf_mirror(repo: str, split: str, revision: str, cache_dir: Path,
         cache_dir.mkdir(parents=True, exist_ok=True)
         for n in missing:
             hf_hub_download(repo, n, repo_type="dataset", revision=revision,
-                            local_dir=str(cache_dir))
+                            local_dir=str(cache_dir), token=False if repo == HF_REPO_DEFAULT else None)
             print(f"  downloaded {n}")
     stats["shards_used"] = [posixpath.basename(n) for n in needed]
     return "hf_mirror", _iter_mirror_parquets([cache_dir / n for n in needed],
@@ -503,12 +503,15 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     p.add_argument("--source_dir", type=Path, default=None,
                    help="Kaggle zip / unzipped folder, or a folder of mirror parquet "
                         "files (default: use the Hugging Face mirror).")
+    p.add_argument("--select_new_clips", action="store_true",
+                   help="Sample a custom dataset instead of reproducing the fixed 40,000-clip manifest.\n"
+                        "Required when changing selection, split or audio settings.")
     p.add_argument("--data_dir", type=Path, default=DATA_DIR,
                    help="Data folder (default: <project root>/data).")
     p.add_argument("--hf_repo", default=HF_REPO_DEFAULT)
     p.add_argument("--hf_split", default="original",
                    help="Mirror split (only 'original' is unmodified audio).")
-    p.add_argument("--hf_revision", default="main")
+    p.add_argument("--hf_revision", default="23016f358efe530a1cda02098da9dd1996cd30d7")
     p.add_argument("--cache_dir", type=Path, default=RAW_DIR / "speech_accent_archive_hf",
                    help="Where mirror shards are downloaded "
                         "(default: <project root>/raw/speech_accent_archive_hf).")
@@ -568,6 +571,9 @@ def validate_args(args: argparse.Namespace) -> Optional[str]:
 def main(argv: Optional[List[str]] = None) -> int:
     global LAST_STATS
     args = parse_args(argv)
+    if not args.select_new_clips:
+        from reference_dataset import prepare_reference
+        return prepare_reference("speech_accent_archive", args)
     error = validate_args(args)
     if error:
         print(f"ERROR: {error}")

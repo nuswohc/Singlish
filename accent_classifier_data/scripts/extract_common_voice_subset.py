@@ -84,8 +84,7 @@ from cv_utils import (
 PREFILTER_SLACK_SEC = 2.0
 MIN_SPEAKERS_WARNING = 50
 SOURCE = "common_voice"
-CLIP_TARGETS = {"American": 2369, "Australian": 2369, "British": 2369,
-                "Filipino": 2368, "Hong Kong": 2028, "South Asian": 2368}
+from reference_dataset import CLIP_TARGETS
 
 LAST_STATS: Dict = {}
 
@@ -450,12 +449,15 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     )
     p.add_argument("--archive", type=Path, default=None,
                    help="Archive path (default: newest archive in <project root>/raw).")
+    p.add_argument("--select_new_clips", action="store_true",
+                   help="Sample a custom dataset instead of reproducing the fixed 40,000-clip manifest.\n"
+                        "Required when changing selection, split or audio settings.")
     p.add_argument("--data_dir", type=Path, default=DATA_DIR,
                    help="Data folder (default: <project root>/data).")
     p.add_argument("--accent_groups", nargs="+", default=None,
                    help="Accent groups to extract (default: the six Common Voice training groups).")
     p.add_argument("--clips_per_accent", type=int, default=None,
-                   help="Override the default per-accent targets (13,871 clips total).")
+                   help="Override the default per-accent targets (18,871 clips total).")
     p.add_argument("--max_clips_per_speaker", type=int, default=200)
     p.add_argument("--min_duration", type=float, default=3.0)
     p.add_argument("--max_duration", type=float, default=6.0)
@@ -495,6 +497,9 @@ def validate_args(args: argparse.Namespace) -> Optional[str]:
 def main(argv: Optional[List[str]] = None) -> int:
     global LAST_STATS
     args = parse_args(argv)
+    if not args.select_new_clips:
+        from reference_dataset import prepare_reference
+        return prepare_reference("common_voice", args)
     paths = data_paths(args.data_dir)
 
     error = validate_args(args)

@@ -13,7 +13,7 @@ import soundfile as sf
 from cv_utils import (DATA_DIR, SOURCE_SUBSETS, TARGET_SR, TARGET_RMS_DBFS,
                       PEAK_LIMIT, SILENT_RMS, TRIM_FRAME_MS, TRIM_HOP_MS,
                       TRIM_PAD_SEC, TRIM_TOP_DB)
-from extract_common_voice_subset import CLIP_TARGETS
+from reference_dataset import CLIP_TARGETS, SPEC, load_reference, read_receipts
 from prepare_mnsc_singaporean import transcript_key
 
 
@@ -26,23 +26,35 @@ def check_metadata(data_dir):
         frames.extend(pq.read_table(f, columns=['clip_id', 'source', 'speaker_id', 'accent_raw',
             'accent_group', 'is_singaporean', 'split', 'sampling_rate', 'duration_sec']).to_pandas() for f in files)
     frame = pd.concat(frames, ignore_index=True)
-    expected = {**CLIP_TARGETS, 'Korean': 329, 'Mainland Chinese': 800, 'Singaporean': 15000}
+    expected = {**CLIP_TARGETS, 'Korean': 329, 'Mainland Chinese': 800, 'Singaporean': 20000}
     if frame.groupby('accent_group').size().to_dict() != expected:
         raise ValueError(f'Expected clip counts: {expected}; got {frame.groupby("accent_group").size().to_dict()}')
-    if frame.groupby('is_singaporean').size().to_dict() != {False: 15000, True: 15000}:
-        raise ValueError('Expected 15,000 clips per class.')
+    if frame.groupby('is_singaporean').size().to_dict() != {False: 20000, True: 20000}:
+        raise ValueError('Expected 20,000 clips per class.')
     positives = frame[frame.is_singaporean]
     if (not positives.source.eq('mnsc').all()
-            or positives.groupby('accent_raw').size().to_dict() != {'Singaporean (MNSC PART1)': 7500, 'Singaporean (MNSC PART2)': 7500}):
-        raise ValueError('Expected 7,500 clips from each MNSC part.')
+            or positives.groupby('accent_raw').size().to_dict() != {'Singaporean (MNSC PART1)': 7500, 'Singaporean (MNSC PART2)': 12500}):
+        raise ValueError('Expected 7,500 PART1 and 12,500 PART2 clips.')
     if not frame.sampling_rate.eq(16000).all() or not frame.duration_sec.between(3, 6).all():
         raise ValueError('Expected 16 kHz audio lasting 3–6 seconds.')
     if frame.groupby(['source', 'speaker_id']).split.nunique().max() != 1:
         raise ValueError('A speaker appears in multiple splits.')
     if frame.duplicated(['source', 'clip_id']).any() or not frame.split.isin(['train', 'val', 'test']).all():
         raise ValueError('Duplicate clips or invalid splits.')
+    reference = load_reference()
+    columns = ['source', 'clip_id', 'speaker_id', 'accent_raw', 'accent_group',
+               'is_singaporean', 'split', 'sampling_rate']
+    actual = frame.sort_values(['source', 'clip_id']).reset_index(drop=True)
+    expected_rows = reference.sort_values(['source', 'clip_id']).reset_index(drop=True)
+    if (len(actual) != SPEC['clips']
+            or not np.array_equal(actual[columns].to_numpy(), expected_rows[columns].to_numpy())
+            or not np.allclose(actual.duration_sec, expected_rows.duration_sec, rtol=0, atol=1 / TARGET_SR)):
+        raise ValueError('Clip identities, labels, durations or speaker splits differ from the fixed 40,000-clip manifest.')
+    for source, cap in [('mnsc', 30), ('common_voice', 200)]:
+        if frame[frame.source.eq(source)].groupby('speaker_id').size().max() > cap:
+            raise ValueError(f'{source}: speaker clip cap exceeded.')
     print(frame.groupby(['source', 'accent_group']).agg(clips=('clip_id', 'size'), speakers=('speaker_id', 'nunique')).to_string())
-    print(f'Total: {len(frame):,} clips; 15,000 per class; no speaker overlap.')
+    print(f'Total: {len(frame):,} clips; 20,000 per class; no speaker overlap.')
     return frame
 
 
@@ -91,17 +103,23 @@ def inspect_audio(blob):
 def verify(data_dir=DATA_DIR, report_dir=None):
     root = Path(data_dir)
     check_metadata(root)
+    reference = load_reference().set_index(['source', 'clip_id'])
     output = Path(report_dir) if report_dir else root / 'verification'
     output.mkdir(parents=True, exist_ok=True)
     rows, encoded, decoded = [], {}, {}
     for folder in SOURCE_SUBSETS.values():
         for path in sorted((root / folder).glob('part-*.parquet')):
+            receipts = read_receipts(path)
             for batch in pq.ParquetFile(path).iter_batches(batch_size=64):
                 for record in batch.to_pylist():
                     identity = record['source'] + '::' + record['clip_id']
                     info = {k: record[k] for k in ['source', 'clip_id', 'speaker_id', 'accent_group', 'sentence', 'split']}
                     try:
                         info.update(inspect_audio(record['audio_flac']))
+                        expected_pcm = receipts.get(record['clip_id'],
+                            reference.loc[(record['source'], record['clip_id']), 'decoded_sha256'])
+                        if info['decoded_sha256'] != expected_pcm:
+                            info['issues'].append('reference_pcm_mismatch')
                         if abs(info['actual_duration_sec'] - record['duration_sec']) > 1 / info['sample_rate']:
                             info['issues'].append('duration_metadata')
                         if info['sample_rate'] != record['sampling_rate']:
@@ -148,4 +166,5 @@ if __name__ == '__main__':
     parser.add_argument('--report_dir', type=Path)
     args = parser.parse_args()
     result = verify(args.data_dir, args.report_dir)
-    raise SystemExit(bool(result['decoded_duplicate_clips'] or result['clips_with_issues']))
+    raise SystemExit(bool(result['encoded_duplicate_clips'] or result['decoded_duplicate_clips']
+                          or result['clips_with_issues'] or result['repeated_speaker_transcript_rows']))

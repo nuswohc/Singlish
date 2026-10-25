@@ -29,7 +29,7 @@ To include transcription, pass the saved ASR model folder. The packager checks f
 
 ```bash
 mvp/.venv/bin/python mvp/deploy/azure/prepare_deployment.py tmp/azure-mvp \
-  --asr-model ../whisper_fine-tuned_transcription/models/whisper-small-mnsc-sg-15k-heldout
+  --asr-model mvp/models/whisper-small-mnsc-sg-15k-heldout
 ```
 
 Without `--asr-model` the app still classifies, `/api/health` shows `asr.ready: false` and `/api/transcribe` returns 503.
@@ -59,11 +59,20 @@ Caddy obtains a certificate for the configured hostname and redirects HTTP to HT
 
 The Compose configuration limits app memory to 3 GB and proxy memory to 128 MB. Whisper inference (classification embedding and transcription) runs one request at a time to bound memory. Adjust these limits if you change the VM size or application requirements.
 
-TODO (transcription, not yet verified on Azure):
+The online Azure demo uses the **25 Oct models**, deployment `261025-v5-021759`.
+The local MVP uses the **24 Oct models**. Rebuilding from the current local
+checkout would deploy the 24 Oct version.
 
-- Confirm the VM size and `mem_limit: 3g` with the ASR model loaded. Measured locally on Windows CPU: peak working set about 1.8 GB with the ASR model vs 0.65 GB without, and peak committed memory about 3.7 GB vs 2.1 GB. Check `docker stats` on the VM during a transcription.
-- Decide where the deployment gets the ~1 GB ASR model from. It is not in the GitHub release, so today it must be copied from the ASR project before packaging.
-- Transcription took about 3.3–5.3 s per 9.5 s clip on a laptop CPU; expect it to be slower on a 2 vCPU VM.
+- Online ML: `svm_65_c_261025`; Ensemble: `fusion_svm_c_261025`.
+- Online classifier audio preserves float32 waveform gain, with no loudness normalization, peak scaling or PCM16 requantization.
+- Transcription keeps its existing model and original-gain audio preparation.
+- HTTPS classification and transcription passed on three fixed speech clips; predictions matched the saved 25 Oct results. Static files and invalid-audio handling also passed.
+- Online image: `sha256:6c3b522e7917e207fc6a30b4b134bae3d11648698086a388b080dd1b414f31b6`.
+
+Detailed HTTPS checks are saved to the git-ignored `verification.json` beside this README.
+The 24 Oct deployment is retained at `/opt/singlish-previous-261025-v5-021759`,
+with image `singlish-app:rollback-before-261025-v5-021759`.
+Caddy and its certificate volumes were preserved.
 
 ## Check the deployment
 
@@ -99,8 +108,8 @@ The hosted demo runs continuously. VM scheduling is managed separately from Comp
 
 ## Development model swaps
 
-No checksum is required. Replace `mvp/models/svm_65_calibrated.joblib` and its matching
-`svm_65_calibrated_metadata.json`, regenerate the package,
+No checksum is required. Replace `mvp/models/svm_65_c_261024.joblib` and its matching
+`svm_65_c_261024_metadata.json`, regenerate the package,
 and rebuild the app on the VM. For a different filename, update `model_file` in
 `mvp/models/manifest.json`; the packager includes that file automatically. Models
 must select their inputs from the current 91-feature pool using their matching
@@ -111,7 +120,7 @@ a path override must exist inside the container. Both manifest-selected
 models are included in a generated package. Use a unique `MODEL_VERSION` when
 replacing a file under the same name so deployments are easy to distinguish.
 
-For Ensemble, replace `fusion_svm_calibrated.joblib` and `fusion_svm_calibrated_metadata.json` together,
+For Ensemble, replace `fusion_svm_c_261024.joblib` and `fusion_svm_c_261024_metadata.json` together,
 or update `ensemble_file` in the manifest for a new filename. The metadata must
 match the raw acoustic + Whisper input contract described in the MVP README.
 

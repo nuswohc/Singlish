@@ -1,19 +1,19 @@
 # Accent classifier dataset: Singaporean vs non-Singaporean English
 
-Builds a 30,000-clip accent-classification dataset from four public sources.
+Builds a 40,000-clip accent-classification dataset from four public sources.
 Audio is decoded in memory and stored as FLAC bytes inside parquet files.
 
 | Class | Group | Source | Clips |
 |---|---|---|---|
 | Singaporean | Singaporean | MNSC Extended PART1-Train (Hugging Face) | 7,500 |
-| Singaporean | Singaporean | MNSC Extended PART2-Train (Hugging Face) | 7,500 |
-| Non-Singaporean | American, British, Australian | Common Voice English | 2,369 each |
-| Non-Singaporean | Filipino, South Asian | Common Voice English | 2,368 each |
-| Non-Singaporean | Hong Kong | Common Voice English | 2,028 |
+| Singaporean | Singaporean | MNSC Extended PART2-Train (Hugging Face) | 12,500 |
+| Non-Singaporean | American, British, Australian | Common Voice English | 3,349 each |
+| Non-Singaporean | Filipino, South Asian | Common Voice English | 3,347 each |
+| Non-Singaporean | Hong Kong | Common Voice English | 2,130 |
 | Non-Singaporean | Mainland Chinese | speechocean762 (adults only) | 800 |
 | Non-Singaporean | Korean | Speech Accent Archive (HF mirror) | 329 |
 
-Training classes: 15,000 Singaporean vs 15,000 non-Singaporean clips.
+Training classes: 20,000 Singaporean vs 20,000 non-Singaporean clips.
 
 All clips: 16 kHz mono, 3–6 s after silence trimming, normalised.
 Train/val/test (70/15/15) is split by speaker, so no speaker appears in more
@@ -30,14 +30,16 @@ MNSC speaker splits use seed 42.
 
 ## Quick start with the shared data
 
-Download [accent_dataset_3to6s_v2.zip](https://drive.google.com/file/d/1GFQ-ooGlfThktEJdG1hTwq-ruCs9xUzS/view?usp=drive_link)
-from Google Drive, then skip "Run from scratch":
+Download [accent_dataset_3to6s_40k.zip](https://drive.google.com/file/d/1EI7rEoAshSkGSpFY8MsJR0994x2y4Gwl/view?usp=sharing)
+from Google Drive. It contains all 40,000 clips with labels and speaker splits.
+Run these steps from the `accent_classifier_data` folder:
 
 1. `pip install -r requirements.txt`
 2. Unzip it into this folder's `data\` so you get `data\cv_subset\`,
    `data\mnsc_subset\`, `data\speechocean_subset\`, `data\saa_subset\`.
-   In PowerShell: `Expand-Archive accent_dataset_3to6s_v2.zip -DestinationPath data`
-3. Run `python scripts\verify_dataset.py` and load it as shown below.
+   In PowerShell: `Expand-Archive accent_dataset_3to6s_40k.zip -DestinationPath data`
+3. Load the dataset as shown in **Load the data** below. No rebuilding or
+   additional clip downloads are needed.
 
 The zip is for private use within the project team and course staff only.
 Don't post it publicly (see Licenses).
@@ -45,7 +47,9 @@ Don't post it publicly (see Licenses).
 ## Run from scratch
 
 Run every command from the `accent_classifier_data` folder. Each script creates
-its own output folders and replaces its previous output.
+its own output folders and replaces its previous output after verification.
+The checked-in `manifests/clips_40000.csv.gz` fixes the clips, audio checksums
+and speaker splits. Use `--select_new_clips` only to sample a different dataset.
 
 ### 0. Install
 
@@ -70,7 +74,7 @@ python scripts\download_common_voice.py
 Saved to `raw\`. If interrupted, run the same command again to resume.
 Keep the `.part` and `.checksum` files.
 
-### 3. Scan metadata
+### 3. Scan metadata (optional)
 
 ```powershell
 python scripts\scan_common_voice_metadata.py
@@ -85,10 +89,9 @@ Reads the `.tsv` metadata, maps accents to groups, and writes
 python scripts\extract_common_voice_subset.py
 ```
 
-Output: `data\cv_subset\`, with 13,871 clips across the six groups above.
-The defaults select extra candidates to allow for clips dropped after silence
-trimming. If a group is short, the script reports it; increase `--oversample`
-or `--max_clips_per_speaker` and rerun.
+Output: `data\cv_subset\`, with 18,871 clips across the six groups above.
+The original 13,871 clips are read from the archive; 5,000 additions are fetched
+automatically from the pinned Common Voice 22.0 mirror.
 
 ### 5. Mainland Chinese and Korean
 
@@ -106,8 +109,8 @@ Output: `data\speechocean_subset\` and `data\saa_subset\`. Downloads go to
 python scripts\prepare_mnsc_singaporean.py
 ```
 
-Output: `data\mnsc_subset\`, with 7,500 PART1-Train and 7,500 PART2-Train clips.
-The script downloads the required shards into the Hugging Face cache and
+Output: `data\mnsc_subset\`, with 7,500 PART1-Train and 12,500 PART2-Train clips.
+The script reads the required rows from the pinned Hugging Face source and
 includes the extended PART1 selection automatically. No separate project or
 local data folder is required. Test configurations are excluded.
 
@@ -117,9 +120,9 @@ local data folder is required. Test configurations are excluded.
 python scripts\verify_dataset.py
 ```
 
-Checks counts, labels and speaker separation, and decodes every clip to check
-duplicates, duration and preprocessing outputs. Reports are saved in
-`data\verification\`. Boundary-trimming warnings need a raw-input check.
+Checks the fixed clip selection, labels and speaker separation, and decodes
+every clip to check audio checksums, duplicates, duration and preprocessing
+outputs. Reports are saved in `data\verification\`. Boundary-trimming warnings need a raw-input check.
 
 ## Load the data
 

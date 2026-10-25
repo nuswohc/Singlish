@@ -5,8 +5,8 @@ compares two test release candidates and shows a transcript of the recording:
 
 | Display name | Saved model | Inputs |
 |---|---|---|
-| **ML** | `svm_65_calibrated.joblib` | 65 selected acoustic features |
-| **Ensemble** | `fusion_svm_calibrated.joblib` | The same 65 features + 512 Whisper values |
+| **ML** | `svm_65_c_261024.joblib` | 65 selected acoustic features |
+| **Ensemble** | `fusion_svm_c_261024.joblib` | The same 65 features + 512 Whisper values |
 | **Transcript** | `whisper-small-mnsc-sg-15k-heldout` (fine-tuned Whisper small) | The full upload, see [Transcription](#transcription) |
 
 The page shows the shared prediction when both models agree, or **Inconclusive**
@@ -15,23 +15,30 @@ calibrated probability, with **Agree** or **Disagree** based on their class labe
 Both follow the notebooks' rule: Singapore when `p_singapore >= 0.50`, including
 ties. Agreement is not a confidence measure.
 
-Sources: [E1 calibration notebook](../results/E1_Feature_Engineering_20261023/E1_svm_calibrated_probability.ipynb)
-and [E4 calibration notebook](../results/E4_Hybrid_Ensemble_20261023/E4_03_whisper_svm_calibrated_probability.ipynb).
-The [hosted demo](https://singlish-demo-4e04e8d0.eastasia.cloudapp.azure.com/)
-may run an earlier release until redeployed.
+Sources: [E1 calibration notebook](../results/E1_Feature_Engineering_20261024/E1_svm_calibrated_probability.ipynb)
+and [E4 calibration notebook](../results/E4_Hybrid_Ensemble_20261024/E4_03_whisper_svm_calibrated_probability.ipynb).
+Both artifacts use the 40,000-clip study. The date suffix distinguishes them from
+the previous exports; matching metadata uses the same dated stem.
+The local MVP uses the **24 Oct models** with loudness normalization. The
+[hosted Azure demo](https://singlish-demo-4e04e8d0.eastasia.cloudapp.azure.com/)
+uses the **25 Oct models** without loudness normalization.
 
 ## Setup
 
 Python 3.12 or later is required; Python 3.14 matches the serving environment.
 Use trusted joblib artifacts only, since loading them executes Python code.
-Download both models and their matching metadata from
-[release mvp-svm65-rc-20261023](https://github.com/nuswohc/Singlish/releases/tag/mvp-svm65-rc-20261023).
+Copy both models and their matching metadata from the completed
+`E1_Feature_EngineeringV4/outputs/` studies below, using your local project path.
 From the repository root:
 
 ```bash
-for file in svm_65_calibrated.joblib svm_65_calibrated_metadata.json fusion_svm_calibrated.joblib fusion_svm_calibrated_metadata.json; do
-  curl -fL "https://github.com/nuswohc/Singlish/releases/download/mvp-svm65-rc-20261023/$file" -o "mvp/models/$file"
-done
+study_root=/path/to/E1_Feature_EngineeringV4
+ml_source="$study_root/outputs/e1_feature_study_accent_40000/svm_calibrated_probability_testing"
+ensemble_source="$study_root/outputs/svm65_fusion_comparison_40000/calibrated_probability_testing"
+cp "$ml_source/svm_65_calibrated.joblib" mvp/models/svm_65_c_261024.joblib
+cp "$ml_source/svm_65_calibrated_metadata.json" mvp/models/svm_65_c_261024_metadata.json
+cp "$ensemble_source/fusion_svm_calibrated.joblib" mvp/models/fusion_svm_c_261024.joblib
+cp "$ensemble_source/fusion_svm_calibrated_metadata.json" mvp/models/fusion_svm_c_261024_metadata.json
 python3 -m venv mvp/.venv
 # Linux CPU serving: install this first to avoid unnecessary CUDA dependencies.
 mvp/.venv/bin/python -m pip install torch==2.14.0 --index-url https://download.pytorch.org/whl/cpu
@@ -104,8 +111,9 @@ transcript), processed per request, and not retained.
 
 Shared preprocessing matches E1: mono → 16 kHz (soxr HQ) → 40 dB frame-RMS
 boundary trimming (25 ms frames, 10 ms hop, 100 ms edge padding) → require three
-seconds and crop to six → reject RMS below 1e-5 → normalize to −20 dBFS → limit
-peak to 0.99 → PCM16 quantization. Internal pauses remain.
+seconds and crop to six → reject RMS below 1e-5 → normalize to −20 dBFS RMS
+with a 0.99 peak limit → PCM16 FLAC encode/decode in memory, matching the
+24 Oct training audio. Internal pauses remain.
 
 The app extracts 91 acoustic features once and selects each model's 65 metadata
 columns in the saved order. Ensemble concatenates the raw selected values with a
@@ -120,9 +128,6 @@ The classifiers assess accent characteristics, not nationality or identity.
 They can be wrong and do not verify English speech or reject all noise/music.
 
 ## Transcription
-
-**Scope change:** earlier versions of this README listed transcription as future
-work. The MVP now transcribes every classified recording.
 
 - **Model:** `whisper-small-mnsc-sg-15k-heldout`, Whisper small fine-tuned on
   IMDA MNSC PART3 (Singapore conversational English), the final model of the
@@ -139,8 +144,8 @@ work. The MVP now transcribes every classified recording.
 - **Audio:** the transcriber gets the full upload (mono, 16 kHz, silent edges
   trimmed with the same 40 dB rule), not the classifier's six-second crop, and no
   loudness normalization. Clips under three seconds after trimming get the same
-  `invalid_duration` error as classification. The classifier waveform is unchanged
-  (`tests/test_audio_parity.py` checks it is bit-identical).
+  `invalid_duration` error as classification. Transcription preserves waveform
+  gain and uses the full clip; classification normalizes and crops to six seconds.
 - **Serialization:** transcription and classification share one lock, so only one
   model runs at a time.
 - **Measured CPU cost** (Windows, Intel i9-11900H laptop CPU, float32, two torch
@@ -166,7 +171,8 @@ work. The MVP now transcribes every classified recording.
 `MODEL_PATH` / `MODEL_VERSION` configure ML; `ENSEMBLE_MODEL_PATH` /
 `ENSEMBLE_MODEL_VERSION` configure Ensemble. Relative paths resolve from `mvp/`.
 Versions default to filename stems. Restart after replacing files; no checksum
-update is required. Keep each model and its matching metadata together.
+update is required. Keep each model and its matching metadata together, and
+match audio preprocessing to its training release.
 
 ML accepts an estimator or a study dictionary containing `model`, `columns` and
 `feature_names`. Selected-feature estimators need `<stem>_metadata.json` with
@@ -198,9 +204,9 @@ curl -F 'audio=@recording.wav' http://127.0.0.1:8000/api/transcribe
 Success returns `prediction` (the Ensemble result), `final_model: "ensemble"`,
 `models.ml`, `models.ensemble`, `agreement`, `model_version`, `audio` and `warnings`.
 Each prediction contains `class_id`, `label`, `display_label`, `probability` (of
-the predicted class) and the original `decision_score`. Labels now follow the
+the predicted class) and the original `decision_score`. Labels follow the
 calibrated 0.50 threshold, so they can differ from the raw score's sign. The UI
-shows probabilities. Ensemble probability is now numeric instead of null.
+shows probabilities.
 
 Audio metadata contains `duration_seconds`, `classified_duration_seconds` and
 `truncated`; processed duration is not verified speech duration. Errors return
@@ -235,23 +241,32 @@ or `{"ready": false, "model_version": null, "decoding": "temperature fallback", 
 ```bash
 mvp/.venv/bin/python -m pip install -r mvp/requirements-dev.txt
 mvp/.venv/bin/python -m pytest mvp/tests -q
-node --test mvp/tests/test_ui.cjs mvp/tests/test_recorder.cjs
+node --test mvp/tests/*.cjs
 ```
 
-API tests use the real saved SVMs with a stub Whisper embedding. They check
-saved-pipeline parity, calibrated labels, feature order, trimmed duration,
-request limits and error recovery. Recorder tests check microphone cleanup.
-Transcription tests use a stub transcriber for the API (`test_transcribe_api.py`:
-response, validation, errors, health, the 503 path), check model-path resolution
-and decoding options (`test_transcription.py`, which also loads the real tokenizer
-when the model is present), the bit-identical classifier waveform
-(`test_audio_parity.py`) and the vendored decoding (`test_asr_decoding_sync.py`).
-UI tests cover the transcript region.
+All automated tests live in `mvp/tests/`:
+
+| File | Checks |
+|---|---|
+| `test_api.py` | Both upload endpoints, validation, classifier parity, health and errors |
+| `test_audio.py` | Trimming, duration, normalized PCM16 classification and original-gain ASR audio |
+| `test_models.py` | Saved model contracts, feature order, calibrated thresholds and Whisper pooling |
+| `test_transcription.py` | ASR model paths, decoding, locking and tokenizer compatibility |
+| `test_asr_decoding_sync.py` | Optional comparison with the sibling ASR project's source |
+| `test_ui.cjs`, `test_recorder.cjs` | Results, transcripts, recording and microphone cleanup |
+
+`conftest.py` shares the audio factory and API stubs. API tests run the real
+saved classifiers with stub Whisper/ASR models, so they need no downloads.
+The source comparison skips when the sibling ASR project is absent; the real
+tokenizer check skips when its model files are absent.
+
 For an end-to-end check, upload a real speech clip using the actual Whisper
 encoder. The offline E1 verifier also checks acoustic feature parity:
 
 ```bash
-mvp/.venv/bin/python -m mvp.scripts.verify_study /path/to/E1_Feature_EngineeringV2 --output mvp/verification.json
+mvp/.venv/bin/python -m mvp.scripts.verify_study /path/to/E1_Feature_EngineeringV4 --output mvp/verification.json
 ```
 
-It requires `pyarrow==26.0.0`, which is not a server dependency.
+It requires `pyarrow==26.0.0`, which is not a server dependency. If study audio
+is stored elsewhere, pass `--data-root /path/to/shared/data` (locally, V4 uses
+`/home/mh/nusproj/E1_Feature_EngineeringV3/data`).

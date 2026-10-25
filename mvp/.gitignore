@@ -3,6 +3,7 @@ __pycache__/
 .pytest_cache/
 models/*.joblib
 models/*.npz
+models/whisper-small-mnsc-sg-15k-heldout/
 
 # Browser recordings saved during development
 /recordings/

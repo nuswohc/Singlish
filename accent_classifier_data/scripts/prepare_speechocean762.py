@@ -249,10 +249,13 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     p.add_argument("--source_dir", type=Path, default=RAW_DIR / "speechocean762",
                    help="Folder holding (or receiving) the speechocean762 parquet "
                         "files (default: <project root>/raw/speechocean762).")
+    p.add_argument("--select_new_clips", action="store_true",
+                   help="Sample a custom dataset instead of reproducing the fixed 40,000-clip manifest.\n"
+                        "Required when changing selection, split or audio settings.")
     p.add_argument("--data_dir", type=Path, default=DATA_DIR,
                    help="Data folder (default: <project root>/data).")
     p.add_argument("--hf_repo", default=HF_REPO_DEFAULT)
-    p.add_argument("--hf_revision", default="main")
+    p.add_argument("--hf_revision", default="06385584fad212b26134c656fdd3ccf9f093f33e")
     p.add_argument("--no_download", action="store_true",
                    help="Never download; fail with instructions if files are missing.")
     p.add_argument("--min_age", type=int, default=18,
@@ -292,6 +295,9 @@ def validate_args(args: argparse.Namespace) -> Optional[str]:
 def main(argv: Optional[List[str]] = None) -> int:
     global LAST_STATS
     args = parse_args(argv)
+    if not args.select_new_clips:
+        from reference_dataset import prepare_reference
+        return prepare_reference("speechocean762", args)
     error = validate_args(args)
     if error:
         print(f"ERROR: {error}")

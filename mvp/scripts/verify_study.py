@@ -20,9 +20,10 @@ from mvp.features import FEATURE_NAMES, extract_features
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('study_root', type=Path, help='E1 project containing data/ and outputs/')
+parser.add_argument('--data-root', type=Path, help='Shared Parquet data directory, if outside the study project')
 parser.add_argument('--output', type=Path)
 args = parser.parse_args()
-study = args.study_root / 'outputs/e1_feature_study_accent_30000'
+study = args.study_root / 'outputs/e1_feature_study_accent_40000'
 with np.load(study / 'acoustic_features_91.npz', allow_pickle=False) as cache:
     assert cache['feature_names'].tolist() == FEATURE_NAMES
     features = cache['features'].copy()
@@ -36,7 +37,9 @@ for label in ['0', '1']:
     selected.extend(candidates)
 wanted = {row['clip_id'] for row in selected}
 audio = {}
-for path in sorted((args.study_root / 'data').glob('*subset/*.parquet')):
+data_root = args.data_root or args.study_root / 'data'
+assert data_root.is_dir(), f'Missing {data_root}; use --data-root for shared study audio'
+for path in sorted(data_root.glob('*subset/*.parquet')):
     for batch in pq.ParquetFile(path).iter_batches(columns=['source', 'clip_id', 'audio_flac']):
         for row in batch.to_pylist():
             identity = row['source'] + '::' + row['clip_id']

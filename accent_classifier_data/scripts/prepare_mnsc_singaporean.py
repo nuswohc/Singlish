@@ -533,6 +533,9 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     p.add_argument("--source_dir", type=Path, default=None,
                    help="Local copy laid out like the Hub (<dir>/<config>/*.parquet); "
                         "no network access.")
+    p.add_argument("--select_new_clips", action="store_true",
+                   help="Sample a custom dataset instead of reproducing the fixed 40,000-clip manifest.\n"
+                        "Required when changing selection, split or audio settings.")
     p.add_argument("--data_dir", type=Path, default=DATA_DIR,
                    help="Data folder (default: <project root>/data).")
     p.add_argument("--hf_repo", default=HF_REPO_DEFAULT)
@@ -542,7 +545,7 @@ def parse_args(argv: Optional[List[str]] = None) -> argparse.Namespace:
     p.add_argument("--no_download", action="store_true",
                    help="Never download shards; fail if a needed shard is not cached "
                         "(metadata is still range-read remotely).")
-    p.add_argument("--clips_total", type=int, default=15000)
+    p.add_argument("--clips_total", type=int, default=20000)
     p.add_argument("--max_clips_per_speaker", type=int, default=30)
     p.add_argument("--oversample", type=float, default=3.0)
     p.add_argument("--min_duration", type=float, default=3.0)
@@ -598,6 +601,9 @@ def validate_args(args: argparse.Namespace) -> Optional[str]:
 def main(argv: Optional[List[str]] = None) -> int:
     global LAST_STATS
     args = parse_args(argv)
+    if not args.select_new_clips:
+        from reference_dataset import prepare_reference
+        return prepare_reference("mnsc", args)
     error = validate_args(args)
     if error:
         print(f"ERROR: {error}")
