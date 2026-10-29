@@ -87,7 +87,7 @@ def test_classification_matches_saved_pipelines(client, audio_bytes, rate, chann
     assert prediction["class_id"] == expected
     assert prediction["probability"] == pytest.approx(probabilities[expected])
     assert result["models"]["ml"]["version"] == "svm_65_c_261024"
-    assert result["model_version"] == "fusion_svm_c_261024"
+    assert result["model_version"] == "fusion_svm_c_261029"
     assert result["final_model"] == "ensemble"
     ensemble = client.app.state.models.ensemble.predict(vector, np.zeros(512, dtype=np.float32))
     assert result["prediction"] == result["models"]["ensemble"]["prediction"] == ensemble
@@ -171,7 +171,7 @@ def test_page_health_and_shared_lock(client):
     assert client.get("/static/app.js").status_code == 200
     health = client.get("/api/health").json()
     assert health["status"] == "ready"
-    assert health["models"] == {"ml": "svm_65_c_261024", "ensemble": "fusion_svm_c_261024"}
+    assert health["models"] == {"ml": "svm_65_c_261024", "ensemble": "fusion_svm_c_261029"}
     assert health["asr"] == {"ready": True, "model_version": "fake-asr", "decoding": "temperature fallback", "device": "cpu"}
     assert client.app.state.transcriber.lock is client.app.state.models.lock
 
@@ -184,7 +184,7 @@ def test_unavailable_asr_keeps_classification_working(stub_models, audio_bytes, 
     monkeypatch.setattr(transcription, "Transcriber", unavailable)
     with TestClient(app) as client:
         health = client.get("/api/health").json()
-        assert health["status"] == "ready" and health["model_version"] == "fusion_svm_c_261024"
+        assert health["status"] == "ready" and health["model_version"] == "fusion_svm_c_261029"
         assert health["asr"] == {"ready": False, "model_version": None, "decoding": "temperature fallback", "reason": reason}
         response = client.post("/api/transcribe", files={"audio": ("clip.wav", audio_bytes())})
         assert response.status_code == 503

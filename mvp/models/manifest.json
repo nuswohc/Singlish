@@ -42,7 +42,7 @@
     "long_audio": "first_six_seconds_after_trimming"
   },
   "model_file": "models/svm_65_c_261024.joblib",
-  "ensemble_file": "models/fusion_svm_c_261024.joblib",
+  "ensemble_file": "models/fusion_svm_c_261029.joblib",
   "whisper_revision": "911407f4214e0e1d82085af863093ec0b66f9cd6",
   "source": "E1_Feature_EngineeringV4/outputs/e1_feature_study_accent_40000/svm_calibrated_probability_testing/svm_65_calibrated.joblib"
 }

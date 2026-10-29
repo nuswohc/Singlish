@@ -59,26 +59,28 @@ Caddy obtains a certificate for the configured hostname and redirects HTTP to HT
 
 The Compose configuration limits app memory to 3 GB and proxy memory to 128 MB. Whisper inference (classification embedding and transcription) runs one request at a time to bound memory. Adjust these limits if you change the VM size or application requirements.
 
-The online Azure demo uses the **25 Oct models**, deployment `261025-v5-021759`.
-The local MVP uses the **24 Oct models**. Rebuilding from the current local
-checkout would deploy the 24 Oct version.
+The online Azure demo and local MVP use **Fusion SVM (29 Oct)** with
+**Acoustic SVM (24 Oct)** as the comparison model. The active Azure deployment is
+`261029-fusion-063835`.
 
-- Online ML: `svm_65_c_261025`; Ensemble: `fusion_svm_c_261025`.
-- Online classifier audio preserves float32 waveform gain, with no loudness normalization, peak scaling or PCM16 requantization.
+- Acoustic SVM: `svm_65_c_261024`; Fusion SVM: `fusion_svm_c_261029`.
+- Fusion SVM retains all frozen Whisper values, adds its 65 training-ranked acoustic features, and uses no PCA. Its fitted pipeline supplies scaling and sigmoid calibration.
+- Classifier audio uses the local loudness normalization and PCM16 preparation to match these models' training audio.
 - Transcription keeps its existing model and original-gain audio preparation.
-- HTTPS classification and transcription passed on three fixed speech clips; predictions matched the saved 25 Oct results. Static files and invalid-audio handling also passed.
-- Online image: `sha256:6c3b522e7917e207fc6a30b4b134bae3d11648698086a388b080dd1b414f31b6`.
+- All 6,119 saved Fusion SVM test predictions and probabilities were reproduced exactly before deployment.
+- Candidate and public HTTPS checks passed classification and transcription on three fixed speech clips. Predictions matched the local model; static files and invalid-audio handling also passed.
+- Online image: `sha256:92b15526cf04c8e41515feed4a80b6343b09c1bf087ba5358fe319d411876300`.
 
 Detailed HTTPS checks are saved to the git-ignored `verification.json` beside this README.
-The 24 Oct deployment is retained at `/opt/singlish-previous-261025-v5-021759`,
-with image `singlish-app:rollback-before-261025-v5-021759`.
+The previous 25 Oct deployment is retained at `/opt/singlish-previous-261029-fusion-063835`,
+with image `singlish-app:rollback-before-261029-fusion-063835`.
 Caddy and its certificate volumes were preserved.
 
 ## Check the deployment
 
 Open the configured HTTPS URL and check both input methods:
 
-- Upload a valid PCM WAV, preview it, and confirm that both model cards show calibrated probabilities. The final result shows their shared prediction when they agree, or Inconclusive with a retry prompt when they disagree.
+- Upload a valid PCM WAV, preview it, and confirm that both model cards show calibrated probabilities. The final result follows the Ensemble prediction, and model agreement is shown separately.
 - Allow microphone access, record 3–6 seconds, stop, preview, and classify. Check that cancelling a new take preserves previously selected audio and that recording stops at 10 seconds.
 - Deny microphone access and confirm that WAV upload remains available.
 - After a classification, confirm that the Transcript box shows a transcript (or, for a package built without `--asr-model`, the "Transcription is unavailable" message while the accent result stays visible). `curl -F 'audio=@clip.wav' https://YOUR_DEMO_HOSTNAME/api/transcribe` returns the transcript JSON.
@@ -120,7 +122,7 @@ a path override must exist inside the container. Both manifest-selected
 models are included in a generated package. Use a unique `MODEL_VERSION` when
 replacing a file under the same name so deployments are easy to distinguish.
 
-For Ensemble, replace `fusion_svm_c_261024.joblib` and `fusion_svm_c_261024_metadata.json` together,
+For Fusion SVM, replace `fusion_svm_c_261029.joblib` and `fusion_svm_c_261029_metadata.json` together,
 or update `ensemble_file` in the manifest for a new filename. The metadata must
 match the raw acoustic + Whisper input contract described in the MVP README.
 

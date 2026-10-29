@@ -1,44 +1,45 @@
 # Singapore English Accent Classification
 
 A FastAPI demo that records microphone audio or accepts WAV/FLAC uploads,
-compares two test release candidates and shows a transcript of the recording:
+compares two classifiers and shows a transcript of the recording:
 
 | Display name | Saved model | Inputs |
 |---|---|---|
 | **ML** | `svm_65_c_261024.joblib` | 65 selected acoustic features |
-| **Ensemble** | `fusion_svm_c_261024.joblib` | The same 65 features + 512 Whisper values |
+| **Ensemble** | `fusion_svm_c_261029.joblib` | 65 training-ranked acoustic features + 512 Whisper values, without PCA |
 | **Transcript** | `whisper-small-mnsc-sg-15k-heldout` (fine-tuned Whisper small) | The full upload, see [Transcription](#transcription) |
 
-The page shows the shared prediction when both models agree, or **Inconclusive**
-with a retry prompt when they disagree. Both cards show the predicted accent and its
+The page shows the Ensemble prediction as the final result, and indicates whether
+the models agree. Both cards show the predicted accent and its
 calibrated probability, with **Agree** or **Disagree** based on their class labels.
 Both follow the notebooks' rule: Singapore when `p_singapore >= 0.50`, including
 ties. Agreement is not a confidence measure.
 
 Sources: [E1 calibration notebook](../results/E1_Feature_Engineering_20261024/E1_svm_calibrated_probability.ipynb)
-and [E4 calibration notebook](../results/E4_Hybrid_Ensemble_20261024/E4_03_whisper_svm_calibrated_probability.ipynb).
-Both artifacts use the 40,000-clip study. The date suffix distinguishes them from
-the previous exports; matching metadata uses the same dated stem.
-The local MVP uses the **24 Oct models** with loudness normalization. The
-[hosted Azure demo](https://singlish-demo-4e04e8d0.eastasia.cloudapp.azure.com/)
-uses the **25 Oct models** without loudness normalization.
+and [29 Oct fusion results](../results/Report_20261031/E1_Feature_Engineering_20261028/A2_Full512_vs_Fusion_20261029/).
+Both artifacts use the 40,000-clip study. Fusion SVM uses its own ordered acoustic
+feature selection; it does not reuse the Acoustic SVM selection. Each artifact
+needs the metadata with the same dated stem. Classification uses loudness
+normalization to match training.
+
+The [hosted Azure demo](https://singlish-demo-4e04e8d0.eastasia.cloudapp.azure.com/)
+uses the same models and preprocessing; see the [deployment record](deploy/azure/README.md).
 
 ## Setup
 
 Python 3.12 or later is required; Python 3.14 matches the serving environment.
 Use trusted joblib artifacts only, since loading them executes Python code.
-Copy both models and their matching metadata from the completed
-`E1_Feature_EngineeringV4/outputs/` studies below, using your local project path.
+Copy the trusted models from the completed studies below, using your local
+project paths. Keep the matching metadata files supplied in this repository.
 From the repository root:
 
 ```bash
 study_root=/path/to/E1_Feature_EngineeringV4
+whisper_study_root=/path/to/singlish-whisper
 ml_source="$study_root/outputs/e1_feature_study_accent_40000/svm_calibrated_probability_testing"
-ensemble_source="$study_root/outputs/svm65_fusion_comparison_40000/calibrated_probability_testing"
+fusion_source="$whisper_study_root/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029"
 cp "$ml_source/svm_65_calibrated.joblib" mvp/models/svm_65_c_261024.joblib
-cp "$ml_source/svm_65_calibrated_metadata.json" mvp/models/svm_65_c_261024_metadata.json
-cp "$ensemble_source/fusion_svm_calibrated.joblib" mvp/models/fusion_svm_c_261024.joblib
-cp "$ensemble_source/fusion_svm_calibrated_metadata.json" mvp/models/fusion_svm_c_261024_metadata.json
+cp "$fusion_source/fusion_full512_acoustic65_calibrated.joblib" mvp/models/fusion_svm_c_261029.joblib
 python3 -m venv mvp/.venv
 # Linux CPU serving: install this first to avoid unnecessary CUDA dependencies.
 mvp/.venv/bin/python -m pip install torch==2.14.0 --index-url https://download.pytorch.org/whl/cpu
@@ -113,14 +114,15 @@ Shared preprocessing matches E1: mono → 16 kHz (soxr HQ) → 40 dB frame-RMS
 boundary trimming (25 ms frames, 10 ms hop, 100 ms edge padding) → require three
 seconds and crop to six → reject RMS below 1e-5 → normalize to −20 dBFS RMS
 with a 0.99 peak limit → PCM16 FLAC encode/decode in memory, matching the
-24 Oct training audio. Internal pauses remain.
+training audio. Internal pauses remain.
 
 The app extracts 91 acoustic features once and selects each model's 65 metadata
-columns in the saved order. Ensemble concatenates the raw selected values with a
+columns in the saved order. Fusion SVM concatenates the raw selected values with a
 512-value frozen Whisper encoder embedding. Whisper uses the same waveform,
 standard 30-second padding and a mean over real 20 ms encoder steps only
-(`ceil(samples / 320)`). The saved fusion pipeline handles scaling, Whisper PCA
-to 32 components, branch weighting, SVM classification and sigmoid calibration.
+(`ceil(samples / 320)`). The saved fusion pipeline handles scaling, branch
+weighting, SVM classification (C = 10) and sigmoid calibration. It retains all
+512 Whisper values and uses no PCA.
 No fitting occurs in the app. CPU float32 embeddings can differ slightly from
 the research GPU embeddings. Inference is serialized to bound memory use.
 
@@ -168,19 +170,19 @@ They can be wrong and do not verify English speech or reject all noise/music.
 
 ## Model swaps
 
-`MODEL_PATH` / `MODEL_VERSION` configure ML; `ENSEMBLE_MODEL_PATH` /
-`ENSEMBLE_MODEL_VERSION` configure Ensemble. Relative paths resolve from `mvp/`.
+`MODEL_PATH` / `MODEL_VERSION` configure Acoustic SVM; `ENSEMBLE_MODEL_PATH` /
+`ENSEMBLE_MODEL_VERSION` configure Fusion SVM. Relative paths resolve from `mvp/`.
 Versions default to filename stems. Restart after replacing files; no checksum
 update is required. Keep each model and its matching metadata together, and
 match audio preprocessing to its training release.
 
-ML accepts an estimator or a study dictionary containing `model`, `columns` and
+Acoustic SVM accepts an estimator or a study dictionary containing `model`, `columns` and
 `feature_names`. Selected-feature estimators need `<stem>_metadata.json` with
 `columns` and `feature_names`; full 91-feature estimators can omit metadata.
-Ensemble uses the E4 calibrated metadata schema: `acoustic_columns_in_91`,
+Fusion SVM uses the E4 calibrated metadata schema: `acoustic_columns_in_91`,
 `acoustic_feature_names`, `whisper_width`, `positive_label` and
 `whisper_provenance`. Its input width is 577. Both calibrated exports contain
-one refitted SVM. Uncalibrated ML overrides use the original SVM decision and
+one refitted SVM. Uncalibrated Acoustic SVM overrides use the original SVM decision and
 return `probability: null`, shown as a dash in the UI.
 
 For deployment, update `model_file` / `ensemble_file` in the manifest and rebuild.
@@ -201,7 +203,7 @@ curl -F 'audio=@recording.wav' http://127.0.0.1:8000/api/classify
 curl -F 'audio=@recording.wav' http://127.0.0.1:8000/api/transcribe
 ```
 
-Success returns `prediction` (the Ensemble result), `final_model: "ensemble"`,
+Success returns `prediction` (the Fusion SVM result), `final_model: "ensemble"`,
 `models.ml`, `models.ensemble`, `agreement`, `model_version`, `audio` and `warnings`.
 Each prediction contains `class_id`, `label`, `display_label`, `probability` (of
 the predicted class) and the original `decision_score`. Labels follow the
@@ -212,7 +214,7 @@ Audio metadata contains `duration_seconds`, `classified_duration_seconds` and
 `truncated`; processed duration is not verified speech duration. Errors return
 `error.code` and `error.message`: 413 for size limits, 415 for unsupported
 formats, 422 for invalid audio/requests (including `invalid_duration`) and 500
-for inference failure. There is no silent fallback to ML if Ensemble fails.
+for inference failure. There is no silent fallback to Acoustic SVM if Fusion SVM fails.
 
 `/api/transcribe` is separate from classification, so a transcription failure
 cannot change a classification result. It applies the same upload validation and
