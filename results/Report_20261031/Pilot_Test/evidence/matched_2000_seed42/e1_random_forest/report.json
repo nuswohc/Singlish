@@ -1,0 +1,130 @@
+{
+  "model": "e1_random_forest",
+  "dataset_fingerprint": "872f8ffa700bb810105b9796d6c0032c6d8c07bd9b3ffedfb6239a179d6fa8cb",
+  "seed": 42,
+  "shared_split": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/speaker_split.npz",
+  "positive_label": 1,
+  "label_meaning": {
+    "0": "Common Voice / non-Singapore",
+    "1": "MNSC / Singapore"
+  },
+  "validation": {
+    "selected": {
+      "candidate": "leaf=1, max_features=0.5",
+      "macro_f1": 0.9312473143482167,
+      "balanced_accuracy": 0.93125
+    },
+    "trials": [
+      {
+        "candidate": "leaf=1, max_features=sqrt",
+        "macro_f1": 0.9281242980888484,
+        "balanced_accuracy": 0.9281250000000001
+      },
+      {
+        "candidate": "leaf=1, max_features=0.5",
+        "macro_f1": 0.9312473143482167,
+        "balanced_accuracy": 0.93125
+      },
+      {
+        "candidate": "leaf=2, max_features=sqrt",
+        "macro_f1": 0.9187468260478925,
+        "balanced_accuracy": 0.91875
+      },
+      {
+        "candidate": "leaf=2, max_features=0.5",
+        "macro_f1": 0.9249970701980545,
+        "balanced_accuracy": 0.925
+      },
+      {
+        "candidate": "leaf=4, max_features=sqrt",
+        "macro_f1": 0.9218681329413718,
+        "balanced_accuracy": 0.921875
+      },
+      {
+        "candidate": "leaf=4, max_features=0.5",
+        "macro_f1": 0.9187373027035475,
+        "balanced_accuracy": 0.91875
+      }
+    ]
+  },
+  "test": {
+    "accuracy": 0.92,
+    "macro_f1": 0.9199819959490885,
+    "balanced_accuracy": 0.92,
+    "roc_auc": 0.9729875,
+    "errors": 32,
+    "confusion_matrix": [
+      [
+        181,
+        19
+      ],
+      [
+        13,
+        187
+      ]
+    ],
+    "confusion_matrix_labels": [
+      0,
+      1
+    ],
+    "per_class": {
+      "Non-Singapore": {
+        "precision": 0.9329896907216495,
+        "recall": 0.905,
+        "f1-score": 0.9187817258883249,
+        "support": 200.0
+      },
+      "Singapore": {
+        "precision": 0.9077669902912622,
+        "recall": 0.935,
+        "f1-score": 0.9211822660098522,
+        "support": 200.0
+      },
+      "accuracy": 0.92,
+      "macro avg": {
+        "precision": 0.9203783405064558,
+        "recall": 0.92,
+        "f1-score": 0.9199819959490885,
+        "support": 400.0
+      },
+      "weighted avg": {
+        "precision": 0.9203783405064558,
+        "recall": 0.92,
+        "f1-score": 0.9199819959490886,
+        "support": 400.0
+      }
+    },
+    "brier_score": 0.06312658333333333,
+    "speaker_bootstrap_ci95": {
+      "accuracy": [
+        0.8836617292681649,
+        0.9522577996715927
+      ],
+      "balanced_accuracy": [
+        0.8836984833336965,
+        0.9523448843675449
+      ],
+      "macro_f1": [
+        0.8834135704102397,
+        0.9522572028754355
+      ]
+    }
+  },
+  "environment": {
+    "python": "3.12.13",
+    "packages": {
+      "numpy": "2.5.1",
+      "scipy": "1.18.0",
+      "scikit-learn": "1.9.0",
+      "librosa": "1.0.0",
+      "torch": "2.13.0+cu126",
+      "transformers": "4.57.6",
+      "nbclient": "0.11.0"
+    }
+  },
+  "uncertainty": "2000 speaker bootstrap samples, stratified by class. Conditional on this fitted model and split.",
+  "limitation": "Class and corpus are confounded. No independent recording-source test was run.",
+  "features": 39,
+  "decision_rule": "model.predict",
+  "training": "refit on train plus validation"
+}

@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "notebooks": {
+    "E4_02_whisper_e1_feature_fusion_beginner.ipynb": {
+      "executed_cells": 7,
+      "errors": 0
+    },
+    "E1_01_svm_beginner.ipynb": {
+      "executed_cells": 7,
+      "errors": 0
+    },
+    "E1_02_random_forest_beginner.ipynb": {
+      "executed_cells": 8,
+      "errors": 0
+    },
+    "E1_03_logistic_regression_beginner.ipynb": {
+      "executed_cells": 7,
+      "errors": 0
+    },
+    "E2_01_whisper_classifier_beginner.ipynb": {
+      "executed_cells": 5,
+      "errors": 0
+    },
+    "E4_01_hybrid_ensemble_beginner.ipynb": {
+      "executed_cells": 6,
+      "errors": 0
+    }
+  },
+  "evaluated_reports": 11,
+  "test_clips": 400,
+  "test_speakers": 176,
+  "speaker_overlap": 0,
+  "checks": [
+    "Every required notebook completed without cell errors",
+    "Identical test clip IDs, labels, groups and row order in all 11 reports",
+    "Saved metrics independently recomputed from per-clip predictions",
+    "Duplicate full-Whisper and acoustic-LR controls agree across notebooks",
+    "Weighted vote reconstructs from saved branch scores",
+    "Standalone scalers and fusion PCA fitted on train plus validation only"
+  ],
+  "dataset_fingerprint": "872f8ffa700bb810105b9796d6c0032c6d8c07bd9b3ffedfb6239a179d6fa8cb"
+}

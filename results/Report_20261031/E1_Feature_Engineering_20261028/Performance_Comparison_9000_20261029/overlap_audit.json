@@ -1,0 +1,23 @@
+[
+  {
+    "dataset": "mnsc_part1_unseen_3000",
+    "clips": 3000,
+    "speakers": 157,
+    "fit_clip_id_overlap": 0,
+    "fit_speaker_clips": 0
+  },
+  {
+    "dataset": "mnsc_part2_unseen_3000",
+    "clips": 3000,
+    "speakers": 160,
+    "fit_clip_id_overlap": 0,
+    "fit_speaker_clips": 0
+  },
+  {
+    "dataset": "cv_unseen_3000",
+    "clips": 3000,
+    "speakers": 2469,
+    "fit_clip_id_overlap": 137,
+    "fit_speaker_clips": 446
+  }
+]

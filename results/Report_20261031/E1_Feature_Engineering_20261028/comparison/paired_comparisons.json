@@ -1,0 +1,75 @@
+{
+  "internal": {
+    "ba_gain_pp": 0.4087280940267461,
+    "ba_gain_ci95_pp": [
+      0.16897168427858303,
+      0.6734651411039788
+    ],
+    "candidate_only_correct": 40,
+    "release_only_correct": 15,
+    "prediction_disagreements": 55,
+    "bootstrap_repeats": 2000,
+    "seed": 42,
+    "method": "paired class-stratified whole-speaker bootstrap; clip-balanced BA; fixed fitted models",
+    "brier_change": -0.0033581982178999647,
+    "log_loss_change": -0.01519641371408767,
+    "raw_models": {
+      "ba_gain_pp": 0.27825113329323314,
+      "ba_gain_ci95_pp": [
+        0.0677167879737934,
+        0.5125549512938339
+      ],
+      "candidate_only_correct": 34,
+      "release_only_correct": 17,
+      "prediction_disagreements": 51,
+      "bootstrap_repeats": 2000,
+      "seed": 42,
+      "method": "paired class-stratified whole-speaker bootstrap; clip-balanced BA; fixed fitted models"
+    },
+    "raw_candidate_vs_frozen_whisper_only": {
+      "ba_gain_pp": 0.2334429143932247,
+      "ba_gain_ci95_pp": [
+        -0.21677676967654363,
+        0.66391993588414
+      ],
+      "candidate_only_correct": 53,
+      "release_only_correct": 39,
+      "prediction_disagreements": 92,
+      "bootstrap_repeats": 2000,
+      "seed": 42,
+      "method": "paired class-stratified whole-speaker bootstrap; clip-balanced BA; fixed fitted models"
+    }
+  },
+  "benchmark": {
+    "all_9000": {
+      "ba_gain_pp": 0.49166666666666664,
+      "ba_gain_ci95_pp": [
+        0.27839431122718333,
+        0.70336147178791
+      ],
+      "candidate_only_correct": 63,
+      "release_only_correct": 17,
+      "prediction_disagreements": 80,
+      "bootstrap_repeats": 2000,
+      "seed": 42,
+      "method": "paired class-stratified whole-speaker bootstrap; clip-balanced BA; fixed fitted models",
+      "brier_change": -0.0041018916322399165,
+      "log_loss_change": -0.014984877590264012
+    },
+    "fit_speaker_independent": {
+      "ba_gain_pp": 0.49034847298355516,
+      "ba_gain_ci95_pp": [
+        0.2658486806959846,
+        0.7282056883249889
+      ],
+      "candidate_only_correct": 61,
+      "release_only_correct": 17,
+      "prediction_disagreements": 78,
+      "bootstrap_repeats": 2000,
+      "seed": 42,
+      "method": "paired class-stratified whole-speaker bootstrap; clip-balanced BA; fixed fitted models",
+      "brier_change": -0.004090446431577153,
+      "log_loss_change": -0.01500053484940652
+    }
+  }
+}

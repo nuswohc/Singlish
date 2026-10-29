@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "clips": 9000,
+  "predictions": 36000,
+  "independent_source_id_checks": 9000,
+  "independent_fit_speaker_checks": 9000,
+  "independent_source_coordinate_checks": 6000,
+  "independent_hash_and_utterance_checks": 9000,
+  "metric_groups_recomputed": 16,
+  "saved_model_hashes_unchanged": true,
+  "manifest_sha256": "6e43a1cd6ca002b04a2368e532397f7efc18ae619f94f3ab716f66979e4b2770",
+  "predictions_sha256": "d1574b2ca240bda6562cb69d3335bece3a232178bebc02c97df857f9da5b1ea6"
+}

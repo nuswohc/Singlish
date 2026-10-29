@@ -1,0 +1,3 @@
+model,test_predict_and_score_seconds,input
+SVM65,2.6753119630011497,precomputed raw features; excludes audio/Whisper extraction
+Fusion SVM,2.3195147260012163,precomputed raw features; excludes audio/Whisper extraction

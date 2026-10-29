@@ -1,0 +1,34 @@
+[
+  {
+    "model": "24 Oct PCA32+65",
+    "artifact": "/home/mh/nusproj/Singlish/mvp/models/fusion_svm_c_261024.joblib",
+    "artifact_sha256": "d2eb00c072bf8c9f2e465ad19e2ec52c214831dcbbc3f871537d023cdcfd589c",
+    "artifact_bytes": 4446429,
+    "input_width": 577,
+    "processed_width": 97,
+    "C": 10.0,
+    "support_vectors": 3760,
+    "support_vector_bytes": 2917760,
+    "calibration_folds": 5,
+    "branch_weights": {
+      "acoustic": 0.12403473458920847,
+      "whisper": 0.17677669529663687
+    }
+  },
+  {
+    "model": "28 Oct full512+65",
+    "artifact": "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_full_whisper_fusion_comparison_40000/calibrated_probability_testing/fusion_svm_calibrated.joblib",
+    "artifact_sha256": "e04f26b1c61e57978ba672c9b8680e277898499200b78fec6d80b1a2328db27f",
+    "artifact_bytes": 18717633,
+    "input_width": 577,
+    "processed_width": 577,
+    "C": 1.0,
+    "support_vectors": 3739,
+    "support_vector_bytes": 17259224,
+    "calibration_folds": 5,
+    "branch_weights": {
+      "acoustic": 0.12403473458920847,
+      "whisper": 0.044194173824159216
+    }
+  }
+]

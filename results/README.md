@@ -1,8 +1,14 @@
 # Experiment results
 
+[Classification training report and supporting evidence](Report_20261031/Singlish_Classification_Training_Report.md) ([Word](Report_20261031/Singlish_Classification_Training_Report.docx)).
+
 
 | Snapshot | Report | What changed |
 | --- | --- | --- |
+| **[29 October 2026 — new unseen-recording performance test](Report_20261031/Performance_Test_Unseen_9000_20261029/)** | [Performance report](Report_20261031/Performance_Test_Unseen_9000_20261029/Performance_Test_Report.md) | 9,000 new recordings; zero training/validation speaker overlap and zero detected recording overlap with the 40k study or old benchmark. Original test speakers allowed. Fusion SVM: 99.442% BA, 54 errors. |
+| **[28 October 2026 — full Whisper fusion review](Report_20261031/E1_Feature_Engineering_20261028/)** | [Replacement review](Report_20261031/E1_Feature_Engineering_20261028/Fusion_Replacement_Review.md) | 65 acoustic + full512 Whisper versus the calibrated 24 Oct PCA32 fusion: paired internal tests, a fresh fixed-benchmark comparison, matched classifier timings, notebook review and release gaps. |
+| **[28 October 2026 — pilot test](Report_20261031/Pilot_Test/)** | [Pilot test report](Report_20261031/Pilot_Test/Pilot_Test_Report.md) | Ten executed notebooks: ten supervised systems on the matched 2,000-clip pilot, plus development-only E3 PCA/K-means/UMAP exploration; compact reports, predictions, assignments and verification retained. |
+| **28 October 2026 — final classification controls** | [Final test index](Report_20261031/Classification_Tests_20261028/README.md) | Completed 40k Whisper-only controls and development-only E3 clustering, with compact records and links to existing final model tests. |
 | [25 October 2026 — performance test](Perfomance_Test_20261025/) | [Key results and findings](Perfomance_Test_20261025/Performance_Test_Report.md) | Frozen 25 Oct models on the same normalized benchmark; Ensemble reaches 98.36% overall accuracy. Training uses unnormalized audio; the raw PART2 stress test is reported separately. |
 | [24 October 2026 — performance test](Perfomance_Test_20261024/) | [Key results and findings](Perfomance_Test_20261024/Performance_Test_Report.md) | Frozen 24 Oct models on 9,000 fixed clips; Ensemble reaches 98.80% overall accuracy. Normalization explains the low raw PART2 score. |
 | **[24 October 2026 — latest E1](E1_Feature_Engineering_20261024/)** | [Calibrated SVM probabilities](E1_Feature_Engineering_20261024/E1_svm_calibrated_probability.ipynb) | Expanded study from 30,000 to 40,000-clip. |

@@ -1,0 +1,120 @@
+{
+  "experiment": "E3 matched 2000-clip pilot unsupervised learning",
+  "scope": "Development-only exploration; not held-out classification",
+  "started_utc": "2026-10-28T14:36:15.292775+00:00",
+  "settings": {
+    "analysis_partitions": [
+      "train",
+      "validation"
+    ],
+    "pca_components": 50,
+    "pca_solver": "full",
+    "clusters": 2,
+    "kmeans_n_init": 10,
+    "seed": 42,
+    "stability_seeds": [
+      7,
+      19
+    ],
+    "umap_neighbors": 15,
+    "umap_min_dist": 0.1,
+    "umap_init": "random",
+    "speaker_mean_check": true
+  },
+  "input_audit": {
+    "status": "passed",
+    "dataset_fingerprint": "872f8ffa700bb810105b9796d6c0032c6d8c07bd9b3ffedfb6239a179d6fa8cb",
+    "manifest_sha256": "9029dc6d6772407ad595dc84937b92463e5e806fa0c30ea9c80e22ba2f316c20",
+    "split_sha256": "b8b14bbc9dfa318f6bbe5ea0e571e3d13bf3d336499eefa9ead8cb94f69188fa",
+    "split_manifest_sha256": "3fcb30d345834cd1d9623f0b726d2759963613955da6660eacc245969a441e29",
+    "embedding_cache_sha256": "0a980ca2880941545a6eaa2fef0c6219a98c9c41efd401342423bca514a6a730",
+    "embedding_cache_key": "872f8ffa700bb810105b9796d6c0032c6d8c07bd9b3ffedfb6239a179d6fa8cb|503747da166e2be287f636eae59c1e46522a0cd0fb991f6e292706f066170157|sr=16000|seconds=6|openai/whisper-base.en|real_audio_steps_v2|float32",
+    "encoder": "openai/whisper-base.en",
+    "encoder_revision": "911407f4214e0e1d82085af863093ec0b66f9cd6",
+    "audio_hashes_matched": 2000,
+    "fit_clips": 1600,
+    "fit_speakers": 707,
+    "excluded_test_clips": 400,
+    "excluded_test_speakers": 176,
+    "fit_test_clip_overlap": 0,
+    "fit_test_speaker_overlap": 0,
+    "fit_clip_ids_sha256": "e47b92c0a0019e0254b542e07422dee7fd194d61f3d5f114ca2930badb570770",
+    "audio_reprepared": false,
+    "encoder_rerun": false
+  },
+  "python": "3.14.7",
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "umap-learn": "0.5.12",
+    "matplotlib": "3.11.2",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0"
+  },
+  "copied_from": "notebooks/E3_01_unsupervised_learning_beginner.ipynb",
+  "base_notebook_sha256": "f4a85e0a22e3669060b950f6b30aaf21a907cd51b1f975a8537cb2140c9544bb",
+  "clip_analysis": {
+    "clips": 1600,
+    "speakers": 707,
+    "pca_variance_retained": 0.5720885992050171,
+    "pca_first_two_variance": [
+      0.05778069421648979,
+      0.042245447635650635
+    ],
+    "silhouette": 0.07074442505836487,
+    "adjusted_rand_index": 0.6742479805387991,
+    "cluster_composition": {
+      "0": {
+        "non_singapore": 739,
+        "singapore": 82,
+        "total": 821,
+        "singapore_share": 0.09987819732034105
+      },
+      "1": {
+        "non_singapore": 61,
+        "singapore": 718,
+        "total": 779,
+        "singapore_share": 0.9216944801026957
+      }
+    },
+    "speakers_with_clips_in_both_clusters": 54,
+    "initialization_sensitivity": [
+      {
+        "seed": 7,
+        "ari_to_seed42": 1.0
+      },
+      {
+        "seed": 19,
+        "ari_to_seed42": 1.0
+      }
+    ]
+  },
+  "speaker_mean_analysis": {
+    "speakers": 707,
+    "adjusted_rand_index": 0.7153418127656024,
+    "silhouette": 0.07983417809009552,
+    "pca_variance_retained": 0.6295027732849121,
+    "cluster_composition": {
+      "0": {
+        "non_singapore": 18,
+        "singapore": 431
+      },
+      "1": {
+        "non_singapore": 222,
+        "singapore": 36
+      }
+    }
+  },
+  "fit_labels_used": false,
+  "test_clips_analyzed": 0,
+  "limitations": [
+    "Class and recording source are confounded.",
+    "Retrospective analysis after supervised pilot inspection; no independent-source validation.",
+    "One fixed development population; two clusters and PCA50 fixed rather than selected.",
+    "Speaker means are a weighting sensitivity check, not independent validation.",
+    "UMAP is a visualization; ARI and silhouette are not test accuracy."
+  ],
+  "runtime_seconds": 16.021342519999962
+}

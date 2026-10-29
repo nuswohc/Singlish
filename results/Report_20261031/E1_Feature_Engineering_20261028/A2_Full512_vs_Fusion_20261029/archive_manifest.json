@@ -1,0 +1,110 @@
+{
+  "status": "verified",
+  "notebook_code_sha256": "1cc04cce310bc76cc70fb783e226c84a9844893c6145e7ecc01e2fbdd681abd5",
+  "source_notebook_sha256": "d501812cf43fface283b26fb679acecb4d76d63f71088c9734b6d96075fba236",
+  "source_outputs": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029",
+  "primary_result": {
+    "mode": "calibrated",
+    "metric": "balanced_accuracy",
+    "difference": 0.004765547458356778,
+    "ci95_low": 0.0009321929159645803,
+    "ci95_high": 0.009012105499363083,
+    "candidate_only_correct": 55,
+    "reference_only_correct": 26,
+    "prediction_disagreements": 81,
+    "primary": true
+  },
+  "files": [
+    {
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029/report.md",
+      "archived": "A2_Full512_vs_Fusion_20261029/report.md",
+      "sha256": "af5bb351acb64162723d236768c011447030fb2d288a102c94f82fcec298c2f3"
+    },
+    {
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029/comparison.png",
+      "archived": "A2_Full512_vs_Fusion_20261029/comparison.png",
+      "sha256": "5c20a8f2e82dcca080c4c1cce40a4e3e74eaa28822734f1317d55ee5544b2387",
+      "source_sha256": "a4587b486f6a840e580776cb34dd6b6d4e2b9fecc9da9cb4f32dccc0d1def915",
+      "presentation_revision": "Redrawn from verified archived metrics; BA axis ends at 100%; value labels sit outside axes. Data and intervals are unchanged."
+    },
+    {
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029/test_metrics.csv",
+      "archived": "A2_Full512_vs_Fusion_20261029/test_metrics.csv",
+      "sha256": "e45392b98f8d15f91daf1c0a3fecef2a9f449a83eea128ff852d07cd25812b7b"
+    },
+    {
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029/paired_comparisons.csv",
+      "archived": "A2_Full512_vs_Fusion_20261029/paired_comparisons.csv",
+      "sha256": "0b8ccd0b64a9e988b2f16c5736645456c0492f987b3eb36ce00a75a81cd91da6"
+    },
+    {
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029/source_metrics.csv",
+      "archived": "A2_Full512_vs_Fusion_20261029/source_metrics.csv",
+      "sha256": "09608fe8b8b560d402bd8935f6f04e56b96f900b2036e47043732e11c5c146fb"
+    },
+    {
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029/validation_trials.csv",
+      "archived": "A2_Full512_vs_Fusion_20261029/validation_trials.csv",
+      "sha256": "12a54bd7385407a9a054e60e5fbef07d2a97be002b48eddbbdc219d3fca0eb37"
+    },
+    {
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029/selected_C.json",
+      "archived": "A2_Full512_vs_Fusion_20261029/selected_C.json",
+      "sha256": "539c7d61a7ac625edef991122b0db1f556002c7ca3afe05852070532e00eea68"
+    },
+    {
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029/latency_samples.csv",
+      "archived": "A2_Full512_vs_Fusion_20261029/latency_samples.csv",
+      "sha256": "f46ad42c2ba5c0b4d22fbc01e814ff66823aebef242b78dab3f3616e63e1b75b"
+    },
+    {
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029/latency_summary.csv",
+      "archived": "A2_Full512_vs_Fusion_20261029/latency_summary.csv",
+      "sha256": "5a9ecdafac698693f241ae11da906bb1a50f752812d75a94d96d8cf12ac1e058"
+    },
+    {
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029/protocol.json",
+      "archived": "A2_Full512_vs_Fusion_20261029/protocol.json",
+      "sha256": "00f443004704bed9e913cd486bef9e780cde34f45b199ca1b7b57fba467a14d5"
+    },
+    {
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029/model_contracts.json",
+      "archived": "A2_Full512_vs_Fusion_20261029/model_contracts.json",
+      "sha256": "d42fd60d0c95893c2d0eec1247e82271f43b75a543b825ccf21a343e963eeb52"
+    },
+    {
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029/run_record.json",
+      "archived": "A2_Full512_vs_Fusion_20261029/run_record.json",
+      "sha256": "a01e9f76e19d2e6fd35687b189e9793bfdfbf9d64961f99928eb05d1912a1cc0"
+    },
+    {
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029/test_predictions.csv",
+      "source_sha256": "723f8bf400cfafbcf87a4c1162a6e48b837bc71eb37c84f269a8cb2f82e99cae",
+      "archived": "A2_Full512_vs_Fusion_20261029/test_predictions.csv.gz",
+      "sha256": "84b58978e9deea9cc9ef81e8868578bf2a847c441cefb26932569debf3a0dbd1",
+      "compression": "gzip; decompressed bytes match source"
+    },
+    {
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029/calibration_folds.csv",
+      "source_sha256": "cae51eaa6d49b3376a43598ad3a4114566c5270f24ae86bea77db9f0629ce894",
+      "archived": "A2_Full512_vs_Fusion_20261029/calibration_folds.csv.gz",
+      "sha256": "88e56d92bdad97005c8960549890b3b466a8618f7ff5de6f3310343e74d893ef",
+      "compression": "gzip; decompressed bytes match source"
+    },
+    {
+      "source": "/home/mh/nusproj/singlish-whisper/notebooks/E4_02_5_frozen_full512_vs_fusion_calibrated.ipynb",
+      "archived": "notebooks/E4_02_5_frozen_full512_vs_fusion_calibrated.ipynb",
+      "sha256": "d501812cf43fface283b26fb679acecb4d76d63f71088c9734b6d96075fba236"
+    }
+  ],
+  "verification": [
+    "no notebook cell errors",
+    "all eight code cells executed",
+    "source input hashes unchanged",
+    "all generated output hashes checked",
+    "metrics recomputed from all saved test predictions",
+    "speaker isolation checked",
+    "archived notebook identical",
+    "gzip round trip matches original bytes"
+  ]
+}

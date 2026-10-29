@@ -1,0 +1,11 @@
+model,artifact,balanced_accuracy,macro_f1,roc_auc,errors,false_positive,false_negative
+Acoustic LR,e1_logistic_regression,0.9325,0.9324793217922989,0.9729,27,17,10
+Acoustic SVM,e1_svm,0.9575,0.9574784734771978,0.989525,17,13,4
+Random Forest,e1_random_forest,0.92,0.9199819959490885,0.9729875,32,19,13
+Whisper full,e2_whisper,0.9824999999999999,0.9824998906243163,0.99785,7,4,3
+Whisper PCA32,fusion_whisper_pca,0.97,0.97,0.993125,12,6,6
+Feature fusion,feature_fusion,0.98,0.9799954989872721,0.9956999999999999,8,7,1
+Weighted vote,weighted_vote,0.98,0.9799919967987194,0.9994999999999999,8,8,0
+i-vector LR,e1_ivector,0.86,0.8599439775910365,0.9457,56,32,24
+x-vector LR,e2_xvector,0.965,0.9649991249781245,0.9947250000000001,14,8,6
+ECAPA-TDNN LR,e2_ecapa_tdnn,0.9675,0.9674981717721622,0.997525,13,8,5

@@ -1,0 +1,46 @@
+{
+  "results_files": {
+    "Performance_Test_Report.md": "a5abbe19b3c6f5f22ec121dae6e1c9116d99040855818fc51b398d5d0705f6fb",
+    "README.md": "24c6728b9ed2b5d9f5653e96fbe3364ece0b95418b5b194356d0b3bc3622fadc",
+    "common.py": "d1195e0f1bdf5aebecb2a6f2c6f43297c03b7a0d003f0ba5dcc4c5b8adec7fd9",
+    "common_voice_manifest.csv.gz": "cd9369804d1a240cba760cb4771bf564ec7513e8b64ff25c512ad90676466fe1",
+    "common_voice_preparation.json": "dfa3323b226221281b079df2b3c599f28407094e182aa81d7345012a00d81b07",
+    "evaluate.py": "10f0bde70b116569677ca562c764b79ca9554708d8de211843210825eba589ec",
+    "feature_record.json": "84e25a4ca6662b69f976f83869302e6c777673ed46718c8c86320ea37d6b5c75",
+    "freeze_and_extract.py": "e8128c2f0cb00d306bc82ba5a819a00d56e02d7f662153758ae167c1f2733243",
+    "manifest.csv.gz": "6e43a1cd6ca002b04a2368e532397f7efc18ae619f94f3ab716f66979e4b2770",
+    "metrics.csv": "fffd04e1617cd98feec46f4b9c65a589ed5346b6f7aa78cb377885b3b0af2a6a",
+    "mnsc_part1_manifest.csv.gz": "c8f05be97034afbde25d53d2c791907d2ad3ff03aea2f5088381ac3c954c168f",
+    "mnsc_part1_preparation.json": "c12e91692344c6949042aff8e967c8225cf44e0a6732618d9b19a0973ab6960b",
+    "mnsc_part2_manifest.csv.gz": "c3b440a3b0b70d5bb82356547477dbe8ae66db891fc877dfa08f1a60a32dbe77",
+    "mnsc_part2_preparation.json": "bb852295a63b80304c82248cd7afc292393a35f249418d9e7f42d15119846cdb",
+    "model_contracts.json": "d1c95fbc36056c62293cd2ed84aa9ef0136f8aa85e66223a250dc6d3d983be44",
+    "model_lock.json": "f9555ac273d2354553fa9a5f3f04c1003948e98f378288d4dee9dbeedb7d1f6f",
+    "overlap_audit.json": "7a16a4858ec5e7b1958458b9105ebd603ac22f222f9ba69422ae72e061df1e32",
+    "paired_comparisons.csv": "a4b043808b6e9c59bbd5789f0d8b945369538fad9b8b8a8d5acf371a273a32d4",
+    "performance_comparison.png": "ea1800b809ae7864914daaa40dac75e448e331c812ad000f1e8fdc75ba11983f",
+    "predictions.csv.gz": "d1574b2ca240bda6562cb69d3335bece3a232178bebc02c97df857f9da5b1ea6",
+    "preparation_code_hashes.json": "e7298ccee9d998ba03dea8727f0e93d1af15eca95a4b4a1b48fd10d09c681314",
+    "preparation_compatibility.json": "e8cbaf5106fe24ac246cb3137122e649daba5f639ff29e653163045f71aba095",
+    "prepare_cv.py": "7794f72d2460f40efca82870947d228cfabdc74e6d7bb0768bfadae1e2b7d3ba",
+    "prepare_mnsc.py": "1e8c81e267d54ff1f56ce1c338b8d1adb8e28d83e967e40c381407911b8eded5",
+    "protocol.json": "97cd6c5cbad993bc4bdeaff6843cc51bae232172d6f87cdc803c4460455ebe0c",
+    "run_record.json": "3bcb190c8b196a6ccf9ef0bf92565623f1d3f36f65bcc8b92894647503e15b2b",
+    "verification.json": "e5cd42c43e0b7df3ef0c670c14131ee5fd3e016d9aa8cae0cb581afefd2d0d24",
+    "verify_results.py": "603514560c25a0415d4fc94a28e146a6c18530735f5dec35ce41e0ac68b2f2bf",
+    "write_report.py": "6bddaf13d5ac1d244513cc7b16cc78c4cf46395346888051e5e7cea9cf17a460"
+  },
+  "prepared_audio_files": {
+    "prepared/common_voice_frozen.parquet": "e321f7f420117f0bb4dc3678b51881c3bf14cea4fcef9dff38ad61747e1a7b79",
+    "prepared/mnsc_part1_frozen.parquet": "6baa9f21b5b631cac153b9c3985be3d228afb772b13807b7c4c2070be275cb42",
+    "prepared/mnsc_part2_frozen.parquet": "72f62249acc1d088d1d0b4c3d35a8a725f8f1cd7f843de6f0714528bf9bf47a4"
+  },
+  "audio_location": "/home/mh/nusproj/Singlish/outputs/performance_test_unseen_9000_20261029/prepared",
+  "feature_location": "/home/mh/nusproj/Singlish/outputs/performance_test_unseen_9000_20261029",
+  "notes": "Frozen Parquet files contain PCM16 FLAC audio plus identities; portable manifests omit audio bytes. Existing benchmarks, reports and models were not changed by this evaluation.",
+  "original_results_file_hashes": {
+    "README.md": "dda90b89684efa8d6c4bc9d0d70becf2e8fd291e7d6a6939c38f344b26dc46d9",
+    "common.py": "3794dc35d48e1ad16c8cea36e87911611a16c90908293d106aad74bd994f2605"
+  },
+  "consolidation_note": "README paths and common.py project-root depth were updated after the run. Original hashes identify the files recorded at evaluation time."
+}

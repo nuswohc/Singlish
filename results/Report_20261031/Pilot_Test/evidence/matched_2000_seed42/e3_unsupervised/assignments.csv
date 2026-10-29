@@ -1,0 +1,1601 @@
+clip_id,group,partition,label,source,cluster,pca_1,pca_2,umap_1,umap_2
+non_singapore/speaker_001/clip_001.wav,non_singapore::speaker_001,train,0,Common Voice,0,-0.8957034,-10.078815,-2.7384613,6.6656036
+non_singapore/speaker_002/clip_001.wav,non_singapore::speaker_002,train,0,Common Voice,0,-0.07066784,-2.7435782,-2.7493472,3.4637163
+non_singapore/speaker_003/clip_001.wav,non_singapore::speaker_003,validation,0,Common Voice,0,-2.921759,-5.392054,-2.9677033,5.370731
+non_singapore/speaker_004/clip_001.wav,non_singapore::speaker_004,validation,0,Common Voice,0,-2.295818,-3.823238,-2.7729154,4.839013
+non_singapore/speaker_005/clip_001.wav,non_singapore::speaker_005,train,0,Common Voice,0,-0.8971701,-9.041285,-3.5399008,4.1853514
+non_singapore/speaker_006/clip_001.wav,non_singapore::speaker_006,train,0,Common Voice,0,-0.9168182,-5.592207,-3.1047523,4.719428
+non_singapore/speaker_009/clip_001.wav,non_singapore::speaker_009,train,0,Common Voice,0,-3.3446403,-0.55875576,-2.120439,5.329599
+non_singapore/speaker_010/clip_001.wav,non_singapore::speaker_010,train,0,Common Voice,0,-2.489214,-6.930618,-3.064799,4.0947795
+non_singapore/speaker_011/clip_001.wav,non_singapore::speaker_011,train,0,Common Voice,0,-1.5492817,-5.241898,-3.4392014,5.3387237
+non_singapore/speaker_012/clip_001.wav,non_singapore::speaker_012,train,0,Common Voice,0,-6.9796176,3.0673459,-1.3444135,6.1146917
+non_singapore/speaker_014/clip_001.wav,non_singapore::speaker_014,validation,0,Common Voice,0,1.6195018,-10.203117,-4.333255,4.932681
+non_singapore/speaker_015/clip_001.wav,non_singapore::speaker_015,train,0,Common Voice,0,-0.012635503,-4.9103613,-3.5949028,3.8915186
+non_singapore/speaker_016/clip_001.wav,non_singapore::speaker_016,validation,0,Common Voice,1,1.5684788,1.0174965,0.9567604,3.1634643
+non_singapore/speaker_017/clip_001.wav,non_singapore::speaker_017,train,0,Common Voice,0,0.26962698,-7.29843,-3.9328127,4.9310226
+non_singapore/speaker_018/clip_001.wav,non_singapore::speaker_018,train,0,Common Voice,0,-6.980732,-1.1963068,-2.2298281,4.987279
+non_singapore/speaker_019/clip_001.wav,non_singapore::speaker_019,train,0,Common Voice,0,0.53763103,-4.334101,-3.1930916,3.6582675
+non_singapore/speaker_021/clip_001.wav,non_singapore::speaker_021,train,0,Common Voice,1,0.42547816,0.06833204,-1.3164973,3.6235468
+non_singapore/speaker_022/clip_001.wav,non_singapore::speaker_022,train,0,Common Voice,0,1.7481158,-4.7885227,-3.2871397,6.345762
+non_singapore/speaker_023/clip_001.wav,non_singapore::speaker_023,train,0,Common Voice,0,0.296703,-1.5812765,-2.8597033,5.40109
+non_singapore/speaker_025/clip_001.wav,non_singapore::speaker_025,validation,0,Common Voice,0,-1.2505628,-5.9374204,-3.9884026,6.09749
+non_singapore/speaker_026/clip_001.wav,non_singapore::speaker_026,train,0,Common Voice,0,-5.5002184,-5.0515513,-2.1383014,7.0174966
+non_singapore/speaker_027/clip_001.wav,non_singapore::speaker_027,validation,0,Common Voice,0,-0.27774778,-4.6168704,-2.3580346,6.886953
+non_singapore/speaker_029/clip_001.wav,non_singapore::speaker_029,train,0,Common Voice,0,2.028288,-3.5092432,-2.043951,1.4200445
+non_singapore/speaker_030/clip_001.wav,non_singapore::speaker_030,train,0,Common Voice,0,-2.0173018,-4.3496428,-2.9259472,4.176907
+non_singapore/speaker_031/clip_001.wav,non_singapore::speaker_031,train,0,Common Voice,0,-3.9424357,-6.467989,-2.4587495,5.6432114
+non_singapore/speaker_033/clip_001.wav,non_singapore::speaker_033,validation,0,Common Voice,1,3.0591857,0.637554,0.14437628,2.7800033
+non_singapore/speaker_034/clip_001.wav,non_singapore::speaker_034,train,0,Common Voice,0,-1.6403239,-5.0936227,-2.3821967,5.9561687
+non_singapore/speaker_036/clip_001.wav,non_singapore::speaker_036,train,0,Common Voice,1,2.7116811,-3.855184,-2.1865358,2.8050096
+non_singapore/speaker_039/clip_001.wav,non_singapore::speaker_039,train,0,Common Voice,1,4.1445932,-1.0827175,-1.4902232,2.3384125
+non_singapore/speaker_040/clip_001.wav,non_singapore::speaker_040,train,0,Common Voice,0,0.31443754,-4.8351912,-2.76307,4.114853
+non_singapore/speaker_041/clip_001.wav,non_singapore::speaker_041,validation,0,Common Voice,1,-3.3384185,8.303068,0.06291837,4.461487
+non_singapore/speaker_042/clip_001.wav,non_singapore::speaker_042,train,0,Common Voice,0,-3.7734234,-3.2869844,-3.7039807,5.766755
+non_singapore/speaker_044/clip_001.wav,non_singapore::speaker_044,validation,0,Common Voice,0,-0.7865641,-3.3298447,-2.630344,6.2165475
+non_singapore/speaker_045/clip_001.wav,non_singapore::speaker_045,train,0,Common Voice,0,1.5990753,-2.6921673,-2.8507211,2.920714
+non_singapore/speaker_046/clip_001.wav,non_singapore::speaker_046,train,0,Common Voice,0,-1.2910428,-5.150181,-3.2267537,5.531264
+non_singapore/speaker_047/clip_001.wav,non_singapore::speaker_047,train,0,Common Voice,1,-0.107633926,2.2100449,-1.3371251,4.432738
+non_singapore/speaker_048/clip_001.wav,non_singapore::speaker_048,train,0,Common Voice,0,-6.5646505,-2.6524265,-2.059258,5.284613
+non_singapore/speaker_049/clip_001.wav,non_singapore::speaker_049,train,0,Common Voice,0,-2.4116256,0.80996466,-1.2666327,6.6075144
+non_singapore/speaker_050/clip_001.wav,non_singapore::speaker_050,train,0,Common Voice,0,-0.8930941,-2.404307,-2.6241822,4.4300823
+non_singapore/speaker_052/clip_001.wav,non_singapore::speaker_052,train,0,Common Voice,0,-2.7104256,-5.2977595,-3.0075433,5.3075695
+non_singapore/speaker_053/clip_001.wav,non_singapore::speaker_053,train,0,Common Voice,0,-7.8629723,0.30326363,-1.6137364,5.016244
+non_singapore/speaker_054/clip_001.wav,non_singapore::speaker_054,train,0,Common Voice,0,-1.8121382,-5.1006618,-3.7640824,4.3750396
+non_singapore/speaker_055/clip_001.wav,non_singapore::speaker_055,train,0,Common Voice,0,-11.587255,3.999008,-0.38650075,6.66128
+non_singapore/speaker_056/clip_001.wav,non_singapore::speaker_056,train,0,Common Voice,1,1.5491118,3.585554,1.3094536,1.9273733
+non_singapore/speaker_057/clip_001.wav,non_singapore::speaker_057,train,0,Common Voice,0,-1.8820876,-6.4939685,-3.2540438,5.894556
+non_singapore/speaker_058/clip_001.wav,non_singapore::speaker_058,train,0,Common Voice,0,0.981148,-7.3031316,-3.342752,5.6558733
+non_singapore/speaker_059/clip_001.wav,non_singapore::speaker_059,validation,0,Common Voice,0,-0.849086,-4.938099,-2.8725991,4.90613
+non_singapore/speaker_060/clip_001.wav,non_singapore::speaker_060,train,0,Common Voice,0,-1.4983581,-2.281236,-3.4795208,6.0008316
+non_singapore/speaker_061/clip_001.wav,non_singapore::speaker_061,train,0,Common Voice,1,0.20061964,3.2449346,0.73143977,3.4528909
+non_singapore/speaker_062/clip_001.wav,non_singapore::speaker_062,validation,0,Common Voice,0,-2.0107994,-3.8997629,-2.2509649,6.277043
+non_singapore/speaker_062/clip_002.wav,non_singapore::speaker_062,validation,0,Common Voice,0,-5.023853,0.4265146,-0.37605363,5.6258335
+non_singapore/speaker_063/clip_001.wav,non_singapore::speaker_063,train,0,Common Voice,0,-2.2611587,-4.9600744,-2.9331954,4.8377333
+non_singapore/speaker_063/clip_002.wav,non_singapore::speaker_063,train,0,Common Voice,0,-11.856359,-0.53452224,-2.7616074,5.2648206
+non_singapore/speaker_065/clip_001.wav,non_singapore::speaker_065,train,0,Common Voice,1,1.0413741,1.6152936,-0.007894854,2.6904826
+non_singapore/speaker_065/clip_002.wav,non_singapore::speaker_065,train,0,Common Voice,1,4.392575,-3.045629,-1.201447,2.1731622
+non_singapore/speaker_066/clip_001.wav,non_singapore::speaker_066,validation,0,Common Voice,0,-2.2250226,-0.7365253,-2.6662035,4.7219043
+non_singapore/speaker_066/clip_002.wav,non_singapore::speaker_066,validation,0,Common Voice,0,-4.21796,-1.4836166,-3.0066526,5.9737267
+non_singapore/speaker_067/clip_001.wav,non_singapore::speaker_067,validation,0,Common Voice,0,-7.575083,0.85833097,-1.4090099,6.395163
+non_singapore/speaker_067/clip_002.wav,non_singapore::speaker_067,validation,0,Common Voice,0,-9.906533,2.2635305,-2.4228964,5.3120317
+non_singapore/speaker_068/clip_001.wav,non_singapore::speaker_068,train,0,Common Voice,0,-1.5180818,-0.55246794,-2.3261523,4.260587
+non_singapore/speaker_068/clip_002.wav,non_singapore::speaker_068,train,0,Common Voice,0,-4.4695196,-2.328552,-2.0661192,5.4668055
+non_singapore/speaker_069/clip_001.wav,non_singapore::speaker_069,validation,0,Common Voice,0,-0.5886437,-6.134842,-3.7098281,6.022643
+non_singapore/speaker_069/clip_002.wav,non_singapore::speaker_069,validation,0,Common Voice,0,0.27529603,-8.969639,-3.4338927,4.563673
+non_singapore/speaker_070/clip_001.wav,non_singapore::speaker_070,train,0,Common Voice,0,1.3144091,-7.5485716,-3.5014105,4.112474
+non_singapore/speaker_070/clip_002.wav,non_singapore::speaker_070,train,0,Common Voice,0,-0.78733987,-3.6479583,-3.0314333,5.02497
+non_singapore/speaker_072/clip_001.wav,non_singapore::speaker_072,train,0,Common Voice,0,0.8898438,-2.7378309,-3.2328503,5.8227773
+non_singapore/speaker_072/clip_002.wav,non_singapore::speaker_072,train,0,Common Voice,0,-1.9447085,-0.71102095,-3.2524245,3.5510514
+non_singapore/speaker_075/clip_001.wav,non_singapore::speaker_075,train,0,Common Voice,0,-1.511414,-6.185878,-3.7197287,4.537372
+non_singapore/speaker_075/clip_002.wav,non_singapore::speaker_075,train,0,Common Voice,0,-2.7798374,-4.0916424,-2.961184,6.154804
+non_singapore/speaker_076/clip_001.wav,non_singapore::speaker_076,train,0,Common Voice,0,-3.4258869,-3.8359382,-3.492091,5.7053394
+non_singapore/speaker_076/clip_002.wav,non_singapore::speaker_076,train,0,Common Voice,0,-0.5994766,-9.106669,-3.684493,4.483175
+non_singapore/speaker_077/clip_001.wav,non_singapore::speaker_077,train,0,Common Voice,0,-8.369509,0.21097642,-0.8636322,6.504792
+non_singapore/speaker_077/clip_002.wav,non_singapore::speaker_077,train,0,Common Voice,0,-10.40045,-0.048536133,-1.0453285,5.332472
+non_singapore/speaker_078/clip_001.wav,non_singapore::speaker_078,train,0,Common Voice,0,-4.20238,-6.592045,-2.3013613,5.789662
+non_singapore/speaker_078/clip_002.wav,non_singapore::speaker_078,train,0,Common Voice,0,-13.44165,2.8399343,-1.6249385,7.130781
+non_singapore/speaker_079/clip_001.wav,non_singapore::speaker_079,train,0,Common Voice,0,-6.594401,-2.2679608,-2.8993134,5.0576377
+non_singapore/speaker_079/clip_002.wav,non_singapore::speaker_079,train,0,Common Voice,0,-8.694957,3.566696,-1.1971184,4.9050307
+non_singapore/speaker_080/clip_001.wav,non_singapore::speaker_080,train,0,Common Voice,1,-2.552712,4.678826,0.5665813,4.134816
+non_singapore/speaker_080/clip_002.wav,non_singapore::speaker_080,train,0,Common Voice,1,1.1777966,2.5412824,0.7016728,3.6741652
+non_singapore/speaker_081/clip_001.wav,non_singapore::speaker_081,train,0,Common Voice,0,-4.1378303,-1.8609661,-2.3061686,4.8390894
+non_singapore/speaker_081/clip_002.wav,non_singapore::speaker_081,train,0,Common Voice,0,-0.48729712,-5.8508387,-3.2566311,4.172325
+non_singapore/speaker_082/clip_001.wav,non_singapore::speaker_082,train,0,Common Voice,0,0.4029475,-11.942188,-4.391221,4.641397
+non_singapore/speaker_082/clip_002.wav,non_singapore::speaker_082,train,0,Common Voice,0,0.92301536,-10.736966,-4.160969,4.4033575
+non_singapore/speaker_083/clip_001.wav,non_singapore::speaker_083,train,0,Common Voice,0,-12.519073,1.715521,-1.5209801,6.5321393
+non_singapore/speaker_083/clip_002.wav,non_singapore::speaker_083,train,0,Common Voice,0,-10.798686,4.6455226,-1.1476183,6.1411138
+non_singapore/speaker_084/clip_001.wav,non_singapore::speaker_084,train,0,Common Voice,0,-4.5528154,-0.8452527,-2.0566928,5.3412056
+non_singapore/speaker_084/clip_002.wav,non_singapore::speaker_084,train,0,Common Voice,0,-3.4415965,-2.1361406,-3.5438712,6.1841197
+non_singapore/speaker_085/clip_001.wav,non_singapore::speaker_085,train,0,Common Voice,0,-11.602997,-1.2071247,-0.6472739,6.445367
+non_singapore/speaker_085/clip_002.wav,non_singapore::speaker_085,train,0,Common Voice,0,0.34360594,-9.9312105,-4.1628637,4.5064836
+non_singapore/speaker_086/clip_001.wav,non_singapore::speaker_086,validation,0,Common Voice,0,-10.652716,-2.5742507,-0.6830761,6.931657
+non_singapore/speaker_086/clip_002.wav,non_singapore::speaker_086,validation,0,Common Voice,0,-2.1584616,-3.179128,-1.5275496,5.75748
+non_singapore/speaker_087/clip_001.wav,non_singapore::speaker_087,train,0,Common Voice,0,-1.247652,-2.784675,-3.6231787,4.0399375
+non_singapore/speaker_087/clip_002.wav,non_singapore::speaker_087,train,0,Common Voice,0,-1.2535007,1.0007339,0.85443175,2.5015018
+non_singapore/speaker_088/clip_001.wav,non_singapore::speaker_088,train,0,Common Voice,0,-1.7589362,-4.661173,-2.5649278,6.8454747
+non_singapore/speaker_088/clip_002.wav,non_singapore::speaker_088,train,0,Common Voice,0,-8.34542,1.6758214,-0.5565629,6.737118
+non_singapore/speaker_090/clip_001.wav,non_singapore::speaker_090,train,0,Common Voice,0,-6.7385626,2.1367917,-2.4497452,5.1902943
+non_singapore/speaker_090/clip_002.wav,non_singapore::speaker_090,train,0,Common Voice,0,0.09716952,-5.441644,-2.6160903,6.15808
+non_singapore/speaker_091/clip_001.wav,non_singapore::speaker_091,train,0,Common Voice,0,-2.0011945,-0.6898695,-2.102149,7.229436
+non_singapore/speaker_091/clip_002.wav,non_singapore::speaker_091,train,0,Common Voice,0,-9.976443,-0.039512984,-0.5720279,6.876218
+non_singapore/speaker_094/clip_001.wav,non_singapore::speaker_094,train,0,Common Voice,0,-6.395935,0.5477392,-1.6126964,6.3663325
+non_singapore/speaker_094/clip_002.wav,non_singapore::speaker_094,train,0,Common Voice,0,2.123966,-3.609539,-2.8716862,3.6967952
+non_singapore/speaker_095/clip_001.wav,non_singapore::speaker_095,train,0,Common Voice,1,-0.0918823,1.4938328,0.67402035,4.184276
+non_singapore/speaker_095/clip_002.wav,non_singapore::speaker_095,train,0,Common Voice,0,-2.514263,0.88377297,0.7328758,3.9520273
+non_singapore/speaker_097/clip_001.wav,non_singapore::speaker_097,train,0,Common Voice,0,2.350348,-9.93047,-3.9256246,4.4579396
+non_singapore/speaker_097/clip_002.wav,non_singapore::speaker_097,train,0,Common Voice,0,-0.7700194,-4.1113048,-2.7744668,4.344148
+non_singapore/speaker_099/clip_001.wav,non_singapore::speaker_099,train,0,Common Voice,0,1.8981355,-3.9351249,-4.3690567,4.7933598
+non_singapore/speaker_099/clip_002.wav,non_singapore::speaker_099,train,0,Common Voice,1,3.271533,1.4230069,0.7681319,2.1117353
+non_singapore/speaker_100/clip_001.wav,non_singapore::speaker_100,validation,0,Common Voice,0,-0.7592042,-8.466095,-4.201764,5.1903534
+non_singapore/speaker_100/clip_002.wav,non_singapore::speaker_100,validation,0,Common Voice,0,-3.378789,0.04064086,-1.6392889,4.789016
+non_singapore/speaker_101/clip_001.wav,non_singapore::speaker_101,train,0,Common Voice,0,0.48201278,-6.8350277,-3.4302905,4.1655126
+non_singapore/speaker_101/clip_002.wav,non_singapore::speaker_101,train,0,Common Voice,0,-2.7030253,-4.9954205,-2.9334285,5.1373262
+non_singapore/speaker_102/clip_001.wav,non_singapore::speaker_102,train,0,Common Voice,0,-0.99495316,-6.809562,-2.0358047,5.835809
+non_singapore/speaker_102/clip_002.wav,non_singapore::speaker_102,train,0,Common Voice,0,-5.9941235,-0.29822087,-2.551316,5.1781178
+non_singapore/speaker_103/clip_001.wav,non_singapore::speaker_103,train,0,Common Voice,0,-1.2397696,-6.632415,-2.3676066,5.8249893
+non_singapore/speaker_103/clip_002.wav,non_singapore::speaker_103,train,0,Common Voice,0,0.5506953,-1.4498346,-2.7047372,5.5365043
+non_singapore/speaker_103/clip_003.wav,non_singapore::speaker_103,train,0,Common Voice,1,2.8137019,-4.0447783,-4.180514,4.6821637
+non_singapore/speaker_105/clip_001.wav,non_singapore::speaker_105,train,0,Common Voice,0,-16.246271,1.0293167,-1.808027,5.004269
+non_singapore/speaker_105/clip_002.wav,non_singapore::speaker_105,train,0,Common Voice,0,-6.3970456,-2.991867,-2.172346,5.2227874
+non_singapore/speaker_105/clip_003.wav,non_singapore::speaker_105,train,0,Common Voice,0,-10.719359,3.8224666,-0.5208995,3.6511474
+non_singapore/speaker_106/clip_001.wav,non_singapore::speaker_106,train,0,Common Voice,0,-2.2780466,-5.5924015,-3.1070561,5.582389
+non_singapore/speaker_106/clip_002.wav,non_singapore::speaker_106,train,0,Common Voice,0,3.0736008,-8.577387,-3.8135438,4.0260744
+non_singapore/speaker_106/clip_003.wav,non_singapore::speaker_106,train,0,Common Voice,0,2.147877,-3.8126462,-3.5556438,4.7430835
+non_singapore/speaker_107/clip_001.wav,non_singapore::speaker_107,train,0,Common Voice,0,-1.3957062,-5.953079,-3.7446969,5.2945065
+non_singapore/speaker_107/clip_002.wav,non_singapore::speaker_107,train,0,Common Voice,0,-19.655458,9.941622,-0.92980176,5.281244
+non_singapore/speaker_107/clip_003.wav,non_singapore::speaker_107,train,0,Common Voice,0,-9.371917,3.2666452,-0.9772451,5.466991
+non_singapore/speaker_108/clip_001.wav,non_singapore::speaker_108,train,0,Common Voice,0,-3.1773705,-3.4294033,-1.9438558,6.9282303
+non_singapore/speaker_108/clip_002.wav,non_singapore::speaker_108,train,0,Common Voice,0,-7.592374,0.09567932,-2.3683672,4.797974
+non_singapore/speaker_108/clip_003.wav,non_singapore::speaker_108,train,0,Common Voice,0,-7.2838755,0.73604745,-1.8236479,4.2865877
+non_singapore/speaker_110/clip_001.wav,non_singapore::speaker_110,train,0,Common Voice,0,-10.211316,6.143552,-1.3164413,6.594887
+non_singapore/speaker_110/clip_002.wav,non_singapore::speaker_110,train,0,Common Voice,0,-8.584293,8.323418,-1.1787344,4.4571576
+non_singapore/speaker_110/clip_003.wav,non_singapore::speaker_110,train,0,Common Voice,0,-5.0820785,1.8984164,-2.6585774,5.8527827
+non_singapore/speaker_111/clip_001.wav,non_singapore::speaker_111,train,0,Common Voice,1,2.8449106,0.2137531,0.69461894,2.699248
+non_singapore/speaker_111/clip_002.wav,non_singapore::speaker_111,train,0,Common Voice,1,0.2551862,2.7085695,0.2894157,3.4113805
+non_singapore/speaker_111/clip_003.wav,non_singapore::speaker_111,train,0,Common Voice,1,-0.22393237,3.0680568,1.0269502,2.1151793
+non_singapore/speaker_112/clip_001.wav,non_singapore::speaker_112,validation,0,Common Voice,1,-0.6897844,7.249444,0.756654,2.910405
+non_singapore/speaker_112/clip_002.wav,non_singapore::speaker_112,validation,0,Common Voice,1,2.1161003,5.8293676,0.060616605,2.7800272
+non_singapore/speaker_112/clip_003.wav,non_singapore::speaker_112,validation,0,Common Voice,1,2.939885,2.8140635,0.08336954,2.9188561
+non_singapore/speaker_114/clip_001.wav,non_singapore::speaker_114,train,0,Common Voice,0,-6.230123,-3.24632,-1.2492716,6.73444
+non_singapore/speaker_114/clip_002.wav,non_singapore::speaker_114,train,0,Common Voice,0,-8.558303,0.066290826,-0.9678111,6.4610643
+non_singapore/speaker_114/clip_003.wav,non_singapore::speaker_114,train,0,Common Voice,0,-6.0679607,-0.04270754,-1.3491734,5.726049
+non_singapore/speaker_115/clip_001.wav,non_singapore::speaker_115,train,0,Common Voice,0,1.4458222,-1.8445574,-2.282477,3.992986
+non_singapore/speaker_115/clip_002.wav,non_singapore::speaker_115,train,0,Common Voice,0,-0.80325353,-2.9845428,-2.7720666,3.9321907
+non_singapore/speaker_115/clip_003.wav,non_singapore::speaker_115,train,0,Common Voice,0,-2.6127536,1.6757741,-2.3542407,3.7962666
+non_singapore/speaker_116/clip_001.wav,non_singapore::speaker_116,train,0,Common Voice,0,0.39628434,-2.895228,-3.2811403,5.104165
+non_singapore/speaker_116/clip_002.wav,non_singapore::speaker_116,train,0,Common Voice,0,0.57813984,-3.2206807,-2.5301507,4.893214
+non_singapore/speaker_116/clip_003.wav,non_singapore::speaker_116,train,0,Common Voice,0,0.5389928,-2.8033738,-2.4138916,3.8187168
+non_singapore/speaker_118/clip_001.wav,non_singapore::speaker_118,validation,0,Common Voice,0,-3.592575,-6.1867456,-1.1689731,6.595528
+non_singapore/speaker_118/clip_002.wav,non_singapore::speaker_118,validation,0,Common Voice,0,-1.9205087,-6.420209,-1.778606,6.3955455
+non_singapore/speaker_118/clip_003.wav,non_singapore::speaker_118,validation,0,Common Voice,0,-5.680509,-4.781256,-1.9748371,6.9326215
+non_singapore/speaker_119/clip_001.wav,non_singapore::speaker_119,train,0,Common Voice,1,3.9891627,1.3854724,1.2263281,1.212125
+non_singapore/speaker_119/clip_002.wav,non_singapore::speaker_119,train,0,Common Voice,1,1.008367,-0.56268924,1.2270331,1.2408408
+non_singapore/speaker_119/clip_003.wav,non_singapore::speaker_119,train,0,Common Voice,1,7.250982,3.1272707,1.0744605,0.9859484
+non_singapore/speaker_120/clip_001.wav,non_singapore::speaker_120,train,0,Common Voice,0,-5.1206675,0.59616244,-0.97272927,5.9613104
+non_singapore/speaker_120/clip_002.wav,non_singapore::speaker_120,train,0,Common Voice,0,-3.9860582,-2.5638027,-2.279894,4.554596
+non_singapore/speaker_120/clip_003.wav,non_singapore::speaker_120,train,0,Common Voice,0,-3.2377925,-7.322404,-3.674737,4.5862503
+non_singapore/speaker_121/clip_001.wav,non_singapore::speaker_121,train,0,Common Voice,0,-7.173126,-3.0450795,-1.7932879,7.0983405
+non_singapore/speaker_121/clip_002.wav,non_singapore::speaker_121,train,0,Common Voice,0,-9.561315,3.9135387,-2.0253665,6.815582
+non_singapore/speaker_121/clip_003.wav,non_singapore::speaker_121,train,0,Common Voice,0,-9.917248,-2.3902724,-1.7322607,6.7869506
+non_singapore/speaker_122/clip_001.wav,non_singapore::speaker_122,validation,0,Common Voice,0,-1.1479818,-7.3493075,-3.360809,5.315301
+non_singapore/speaker_122/clip_002.wav,non_singapore::speaker_122,validation,0,Common Voice,0,-7.5623713,-2.7637894,-3.3755713,5.612764
+non_singapore/speaker_122/clip_003.wav,non_singapore::speaker_122,validation,0,Common Voice,0,-0.097902566,-8.383184,-4.198154,4.3624086
+non_singapore/speaker_123/clip_001.wav,non_singapore::speaker_123,train,0,Common Voice,1,-2.0351663,5.0885425,-0.0033780625,4.2446456
+non_singapore/speaker_123/clip_002.wav,non_singapore::speaker_123,train,0,Common Voice,1,-0.37915555,3.9732852,-0.035668217,2.7365453
+non_singapore/speaker_123/clip_003.wav,non_singapore::speaker_123,train,0,Common Voice,1,1.7896597,3.1959689,-0.3140907,3.1114638
+non_singapore/speaker_124/clip_001.wav,non_singapore::speaker_124,validation,0,Common Voice,0,-1.6430291,-7.124306,-3.656546,5.810154
+non_singapore/speaker_124/clip_002.wav,non_singapore::speaker_124,validation,0,Common Voice,0,-15.102077,2.7347634,-1.5571198,6.5449843
+non_singapore/speaker_124/clip_003.wav,non_singapore::speaker_124,validation,0,Common Voice,0,-2.5766141,0.1584911,-1.4531615,6.4359784
+non_singapore/speaker_125/clip_001.wav,non_singapore::speaker_125,train,0,Common Voice,0,-1.0092248,-0.3205547,-0.70333236,4.2882767
+non_singapore/speaker_125/clip_002.wav,non_singapore::speaker_125,train,0,Common Voice,1,3.2071571,0.93609136,-0.27955708,2.0117872
+non_singapore/speaker_125/clip_003.wav,non_singapore::speaker_125,train,0,Common Voice,1,3.8341048,-5.0788126,-2.0993364,2.7409277
+non_singapore/speaker_126/clip_001.wav,non_singapore::speaker_126,train,0,Common Voice,0,-16.418062,7.877299,-0.5546828,5.877213
+non_singapore/speaker_126/clip_002.wav,non_singapore::speaker_126,train,0,Common Voice,0,-12.423887,4.068682,-0.42283064,6.561186
+non_singapore/speaker_126/clip_003.wav,non_singapore::speaker_126,train,0,Common Voice,0,-2.6170166,-4.155517,-2.094671,6.4064746
+non_singapore/speaker_127/clip_001.wav,non_singapore::speaker_127,train,0,Common Voice,0,0.31902245,-7.89405,-2.7365458,6.6667295
+non_singapore/speaker_127/clip_002.wav,non_singapore::speaker_127,train,0,Common Voice,0,-1.3051614,-4.952155,-3.4805956,3.9979892
+non_singapore/speaker_127/clip_003.wav,non_singapore::speaker_127,train,0,Common Voice,0,-4.8737254,-3.8763235,-2.5536811,5.499147
+non_singapore/speaker_129/clip_001.wav,non_singapore::speaker_129,train,0,Common Voice,0,-2.5237713,-2.0388548,-2.737227,5.6089725
+non_singapore/speaker_129/clip_002.wav,non_singapore::speaker_129,train,0,Common Voice,0,2.2228405,-6.6673126,-3.7531836,3.8245947
+non_singapore/speaker_129/clip_003.wav,non_singapore::speaker_129,train,0,Common Voice,0,0.8257416,-3.932791,-3.5386474,4.8242292
+non_singapore/speaker_130/clip_001.wav,non_singapore::speaker_130,train,0,Common Voice,0,-2.2066483,-4.5410376,-2.9683764,4.7397704
+non_singapore/speaker_130/clip_002.wav,non_singapore::speaker_130,train,0,Common Voice,0,-8.51032,0.07017534,-1.8670113,4.8378677
+non_singapore/speaker_130/clip_003.wav,non_singapore::speaker_130,train,0,Common Voice,0,-4.3172383,-2.5410063,-2.7732105,4.7177
+non_singapore/speaker_133/clip_001.wav,non_singapore::speaker_133,train,0,Common Voice,0,-3.7598426,-7.8922153,-3.6387546,4.0877256
+non_singapore/speaker_133/clip_002.wav,non_singapore::speaker_133,train,0,Common Voice,0,1.7053516,-13.795997,-3.9285867,4.2312784
+non_singapore/speaker_133/clip_003.wav,non_singapore::speaker_133,train,0,Common Voice,0,-6.955205,-4.7200675,-3.2544975,4.2042065
+non_singapore/speaker_134/clip_001.wav,non_singapore::speaker_134,train,0,Common Voice,0,-2.8805242,-7.459215,-2.7844713,4.759548
+non_singapore/speaker_134/clip_002.wav,non_singapore::speaker_134,train,0,Common Voice,0,-1.2974293,-6.866888,-3.7176793,4.0864506
+non_singapore/speaker_134/clip_003.wav,non_singapore::speaker_134,train,0,Common Voice,0,-4.5953455,-6.5902915,-2.7786138,4.6666493
+non_singapore/speaker_135/clip_001.wav,non_singapore::speaker_135,validation,0,Common Voice,0,-1.8000609,1.3922535,-1.205567,3.5272515
+non_singapore/speaker_135/clip_002.wav,non_singapore::speaker_135,validation,0,Common Voice,1,3.2372704,-3.0644372,-1.6552502,3.476067
+non_singapore/speaker_135/clip_003.wav,non_singapore::speaker_135,validation,0,Common Voice,1,2.664124,-3.2668066,-2.5335684,2.9314787
+non_singapore/speaker_136/clip_001.wav,non_singapore::speaker_136,train,0,Common Voice,0,-0.6742613,-3.504175,-2.8512046,3.6770008
+non_singapore/speaker_136/clip_002.wav,non_singapore::speaker_136,train,0,Common Voice,0,1.2339313,-3.721087,-2.7779934,3.6642706
+non_singapore/speaker_136/clip_003.wav,non_singapore::speaker_136,train,0,Common Voice,0,-6.742996,-4.58198,-3.267902,5.1618524
+non_singapore/speaker_138/clip_001.wav,non_singapore::speaker_138,validation,0,Common Voice,0,-4.447427,-3.436809,-2.5269935,4.6271906
+non_singapore/speaker_138/clip_002.wav,non_singapore::speaker_138,validation,0,Common Voice,0,-6.1777306,1.2258697,-0.7203721,6.196801
+non_singapore/speaker_138/clip_003.wav,non_singapore::speaker_138,validation,0,Common Voice,0,-9.750688,-0.42534086,-0.79187,6.1146803
+non_singapore/speaker_139/clip_001.wav,non_singapore::speaker_139,train,0,Common Voice,0,-8.8528,1.568338,-0.70570266,6.296112
+non_singapore/speaker_139/clip_002.wav,non_singapore::speaker_139,train,0,Common Voice,0,-0.56943464,-3.0670245,-1.7810854,6.005546
+non_singapore/speaker_139/clip_003.wav,non_singapore::speaker_139,train,0,Common Voice,0,-5.092613,0.51486206,-1.4275254,5.974415
+non_singapore/speaker_140/clip_001.wav,non_singapore::speaker_140,train,0,Common Voice,0,-8.18294,-1.6420442,-3.0105646,4.220376
+non_singapore/speaker_140/clip_002.wav,non_singapore::speaker_140,train,0,Common Voice,0,-0.8254204,-7.3344197,-3.2066083,5.1528363
+non_singapore/speaker_140/clip_003.wav,non_singapore::speaker_140,train,0,Common Voice,0,-0.87435716,-6.299959,-3.4591386,5.265526
+non_singapore/speaker_141/clip_001.wav,non_singapore::speaker_141,validation,0,Common Voice,0,-9.521005,4.6479487,-1.4072479,6.617924
+non_singapore/speaker_141/clip_002.wav,non_singapore::speaker_141,validation,0,Common Voice,0,-15.932878,6.9998193,-0.34242073,6.378729
+non_singapore/speaker_141/clip_003.wav,non_singapore::speaker_141,validation,0,Common Voice,0,-2.8540006,-1.9487718,-2.41711,4.551861
+non_singapore/speaker_142/clip_001.wav,non_singapore::speaker_142,train,0,Common Voice,0,-1.734413,-3.7693431,-2.760458,6.1502037
+non_singapore/speaker_142/clip_002.wav,non_singapore::speaker_142,train,0,Common Voice,0,-0.9368356,-2.3371663,-2.520039,5.8750725
+non_singapore/speaker_142/clip_003.wav,non_singapore::speaker_142,train,0,Common Voice,0,-4.0698347,-0.74329007,-0.38303235,4.0777936
+non_singapore/speaker_143/clip_001.wav,non_singapore::speaker_143,validation,0,Common Voice,0,0.4750485,-3.9020011,0.2973313,4.829314
+non_singapore/speaker_143/clip_002.wav,non_singapore::speaker_143,validation,0,Common Voice,0,-6.7162633,-2.5519888,-0.4355714,5.974511
+non_singapore/speaker_143/clip_003.wav,non_singapore::speaker_143,validation,0,Common Voice,0,-3.4984858,-4.4539213,-2.20668,5.9214406
+non_singapore/speaker_144/clip_001.wav,non_singapore::speaker_144,train,0,Common Voice,1,1.5281019,0.33847094,-1.3056875,1.8201842
+non_singapore/speaker_144/clip_002.wav,non_singapore::speaker_144,train,0,Common Voice,1,4.5179057,-1.6517222,-1.852986,2.484991
+non_singapore/speaker_144/clip_003.wav,non_singapore::speaker_144,train,0,Common Voice,0,-0.83046407,-2.3519392,-2.413265,6.658072
+non_singapore/speaker_145/clip_001.wav,non_singapore::speaker_145,train,0,Common Voice,0,-1.6663452,-8.450952,-2.3397968,6.593519
+non_singapore/speaker_145/clip_002.wav,non_singapore::speaker_145,train,0,Common Voice,0,-3.4853332,-3.6083126,-1.6252053,6.4370937
+non_singapore/speaker_145/clip_003.wav,non_singapore::speaker_145,train,0,Common Voice,0,-2.4558952,-3.149998,-1.8280439,5.798437
+non_singapore/speaker_146/clip_001.wav,non_singapore::speaker_146,train,0,Common Voice,0,-5.4373093,0.7944715,-1.1825346,6.4847364
+non_singapore/speaker_146/clip_002.wav,non_singapore::speaker_146,train,0,Common Voice,0,0.22146726,-5.9211044,-4.0493836,4.781647
+non_singapore/speaker_146/clip_003.wav,non_singapore::speaker_146,train,0,Common Voice,0,-4.5233517,-1.4566462,-1.4094979,6.3360815
+non_singapore/speaker_147/clip_001.wav,non_singapore::speaker_147,train,0,Common Voice,0,-7.4732637,-0.96861064,-1.9198209,6.7695446
+non_singapore/speaker_147/clip_002.wav,non_singapore::speaker_147,train,0,Common Voice,0,-6.7287292,4.585832,-1.4317428,4.888935
+non_singapore/speaker_147/clip_003.wav,non_singapore::speaker_147,train,0,Common Voice,0,-14.705487,2.8963108,-0.3403529,6.720073
+non_singapore/speaker_148/clip_001.wav,non_singapore::speaker_148,train,0,Common Voice,0,-12.14183,3.1387243,-0.6325923,6.2903748
+non_singapore/speaker_148/clip_002.wav,non_singapore::speaker_148,train,0,Common Voice,0,-8.461995,4.586838,-0.1994364,5.782763
+non_singapore/speaker_148/clip_003.wav,non_singapore::speaker_148,train,0,Common Voice,0,-10.5196085,9.425612,-0.823432,5.3106084
+non_singapore/speaker_148/clip_004.wav,non_singapore::speaker_148,train,0,Common Voice,0,-13.418606,7.46209,-0.8216318,5.4461856
+non_singapore/speaker_152/clip_001.wav,non_singapore::speaker_152,train,0,Common Voice,0,-3.1885438,-2.403462,-2.0719519,7.2123384
+non_singapore/speaker_152/clip_002.wav,non_singapore::speaker_152,train,0,Common Voice,0,-3.4696555,-5.1697726,-3.3812988,4.0615964
+non_singapore/speaker_152/clip_003.wav,non_singapore::speaker_152,train,0,Common Voice,0,-5.368305,-1.0427637,-1.5278754,6.0230336
+non_singapore/speaker_152/clip_004.wav,non_singapore::speaker_152,train,0,Common Voice,0,-13.451202,2.3163218,-0.38829544,6.7570767
+non_singapore/speaker_153/clip_001.wav,non_singapore::speaker_153,train,0,Common Voice,0,-1.8808339,-3.5371382,-3.6172738,3.9209695
+non_singapore/speaker_153/clip_002.wav,non_singapore::speaker_153,train,0,Common Voice,0,1.7949475,-5.0110083,-3.1357865,5.975623
+non_singapore/speaker_153/clip_003.wav,non_singapore::speaker_153,train,0,Common Voice,0,3.0408108,-8.450837,-3.5624754,4.1895385
+non_singapore/speaker_153/clip_004.wav,non_singapore::speaker_153,train,0,Common Voice,0,0.13683775,-3.0838208,-3.500764,4.6184974
+non_singapore/speaker_154/clip_001.wav,non_singapore::speaker_154,validation,0,Common Voice,0,-3.5544412,2.1628184,-1.5028912,5.0635676
+non_singapore/speaker_154/clip_002.wav,non_singapore::speaker_154,validation,0,Common Voice,0,-2.9724276,-0.3662275,-2.196,4.473815
+non_singapore/speaker_154/clip_003.wav,non_singapore::speaker_154,validation,0,Common Voice,0,-10.227338,-0.4224609,-2.039364,4.7373247
+non_singapore/speaker_154/clip_004.wav,non_singapore::speaker_154,validation,0,Common Voice,0,-3.75865,-2.7920067,-2.3954499,4.4029393
+non_singapore/speaker_155/clip_001.wav,non_singapore::speaker_155,train,0,Common Voice,0,-4.8408384,-5.409206,-2.4213123,6.9314227
+non_singapore/speaker_155/clip_002.wav,non_singapore::speaker_155,train,0,Common Voice,0,-9.932548,-0.29448766,-1.5015845,6.180845
+non_singapore/speaker_155/clip_003.wav,non_singapore::speaker_155,train,0,Common Voice,0,-9.601543,4.5532627,-1.1409787,6.1003985
+non_singapore/speaker_155/clip_004.wav,non_singapore::speaker_155,train,0,Common Voice,0,-17.436111,7.9530544,-0.9862749,6.368948
+non_singapore/speaker_156/clip_001.wav,non_singapore::speaker_156,train,0,Common Voice,0,-6.986566,-1.0237807,-1.8546082,5.4875937
+non_singapore/speaker_156/clip_002.wav,non_singapore::speaker_156,train,0,Common Voice,0,-4.2733088,-1.4862463,-0.85104275,6.737245
+non_singapore/speaker_156/clip_003.wav,non_singapore::speaker_156,train,0,Common Voice,0,-5.5231714,-1.500019,-2.686339,5.838133
+non_singapore/speaker_156/clip_004.wav,non_singapore::speaker_156,train,0,Common Voice,0,-1.4271655,-6.9152684,-2.80087,6.629633
+non_singapore/speaker_157/clip_001.wav,non_singapore::speaker_157,train,0,Common Voice,0,-2.6053298,-7.0656986,-2.2555537,7.1518455
+non_singapore/speaker_157/clip_002.wav,non_singapore::speaker_157,train,0,Common Voice,0,-0.20728925,-4.1657324,-1.8758307,5.979397
+non_singapore/speaker_157/clip_003.wav,non_singapore::speaker_157,train,0,Common Voice,0,-4.8267674,2.3389318,-1.974804,5.1152425
+non_singapore/speaker_157/clip_004.wav,non_singapore::speaker_157,train,0,Common Voice,0,-0.27043518,-6.3845215,-2.6504688,4.726389
+non_singapore/speaker_158/clip_001.wav,non_singapore::speaker_158,validation,0,Common Voice,0,-5.9047046,0.27337933,-2.2656796,4.4193196
+non_singapore/speaker_158/clip_002.wav,non_singapore::speaker_158,validation,0,Common Voice,0,2.700562,-10.037211,-3.6984036,3.7998567
+non_singapore/speaker_158/clip_003.wav,non_singapore::speaker_158,validation,0,Common Voice,0,-16.706259,3.889194,-0.750709,5.8547435
+non_singapore/speaker_158/clip_004.wav,non_singapore::speaker_158,validation,0,Common Voice,0,-4.635643,-2.4948113,-2.970931,4.3265185
+non_singapore/speaker_159/clip_001.wav,non_singapore::speaker_159,train,0,Common Voice,0,-1.7044815,-4.6035852,-2.8819547,4.116125
+non_singapore/speaker_159/clip_002.wav,non_singapore::speaker_159,train,0,Common Voice,0,0.19863926,-7.688924,-3.080192,4.958764
+non_singapore/speaker_159/clip_003.wav,non_singapore::speaker_159,train,0,Common Voice,0,-2.8361242,-2.2580714,-2.7442243,4.3008595
+non_singapore/speaker_159/clip_004.wav,non_singapore::speaker_159,train,0,Common Voice,0,1.9642138,-8.047216,-3.0925617,4.4952784
+non_singapore/speaker_161/clip_001.wav,non_singapore::speaker_161,train,0,Common Voice,0,0.047879912,-8.493138,-3.8051019,4.201182
+non_singapore/speaker_161/clip_002.wav,non_singapore::speaker_161,train,0,Common Voice,0,-0.013229363,-3.777709,-3.1262577,4.5189347
+non_singapore/speaker_161/clip_003.wav,non_singapore::speaker_161,train,0,Common Voice,0,0.99370235,-7.363631,-4.0033236,4.8650746
+non_singapore/speaker_161/clip_004.wav,non_singapore::speaker_161,train,0,Common Voice,0,-0.33991417,-8.095215,-3.252249,4.127047
+non_singapore/speaker_163/clip_001.wav,non_singapore::speaker_163,train,0,Common Voice,0,-2.7457697,-9.08075,-3.4847705,4.599937
+non_singapore/speaker_163/clip_002.wav,non_singapore::speaker_163,train,0,Common Voice,0,-0.636176,-9.076818,-3.5596642,5.654839
+non_singapore/speaker_163/clip_003.wav,non_singapore::speaker_163,train,0,Common Voice,0,-6.34885,-1.6730558,-2.1078162,4.511921
+non_singapore/speaker_163/clip_004.wav,non_singapore::speaker_163,train,0,Common Voice,0,-0.35093093,-6.1187415,-2.3101552,3.0675354
+non_singapore/speaker_166/clip_001.wav,non_singapore::speaker_166,validation,0,Common Voice,0,0.3678499,-1.4105963,-1.5750569,2.9116633
+non_singapore/speaker_166/clip_002.wav,non_singapore::speaker_166,validation,0,Common Voice,0,0.28645566,-3.681884,-2.2774832,4.4325166
+non_singapore/speaker_166/clip_003.wav,non_singapore::speaker_166,validation,0,Common Voice,0,-2.355927,3.5494976,0.9364298,2.5522754
+non_singapore/speaker_166/clip_004.wav,non_singapore::speaker_166,validation,0,Common Voice,0,-12.056096,7.4650555,-2.584324,4.3486233
+non_singapore/speaker_167/clip_001.wav,non_singapore::speaker_167,train,0,Common Voice,0,-3.3241568,1.4018887,-0.65605384,6.269884
+non_singapore/speaker_167/clip_002.wav,non_singapore::speaker_167,train,0,Common Voice,0,-12.427794,6.530966,-0.3379736,6.668259
+non_singapore/speaker_167/clip_003.wav,non_singapore::speaker_167,train,0,Common Voice,0,-11.146289,2.703775,-0.3133882,6.5793433
+non_singapore/speaker_167/clip_004.wav,non_singapore::speaker_167,train,0,Common Voice,1,2.7826464,1.4587234,0.5309243,3.2488728
+non_singapore/speaker_168/clip_001.wav,non_singapore::speaker_168,train,0,Common Voice,0,-1.8967061,-2.8944852,-3.7153926,5.7386527
+non_singapore/speaker_168/clip_002.wav,non_singapore::speaker_168,train,0,Common Voice,0,-8.665661,0.6713937,-1.4357185,4.102537
+non_singapore/speaker_168/clip_003.wav,non_singapore::speaker_168,train,0,Common Voice,0,-1.1676446,-9.161241,-4.011387,4.507636
+non_singapore/speaker_168/clip_004.wav,non_singapore::speaker_168,train,0,Common Voice,0,-1.4955113,-9.527561,-3.8233387,4.3099613
+non_singapore/speaker_169/clip_001.wav,non_singapore::speaker_169,train,0,Common Voice,0,-2.063702,-5.489518,-2.532049,6.9468775
+non_singapore/speaker_169/clip_002.wav,non_singapore::speaker_169,train,0,Common Voice,0,0.44727618,-6.8134084,-4.2181892,4.734342
+non_singapore/speaker_169/clip_003.wav,non_singapore::speaker_169,train,0,Common Voice,0,-5.1918974,-3.2644634,-3.6653976,6.2630343
+non_singapore/speaker_169/clip_004.wav,non_singapore::speaker_169,train,0,Common Voice,0,0.73973846,-8.36085,-4.1359344,4.282681
+non_singapore/speaker_170/clip_001.wav,non_singapore::speaker_170,train,0,Common Voice,0,-0.6552406,-1.3299856,-2.9087703,5.736159
+non_singapore/speaker_170/clip_002.wav,non_singapore::speaker_170,train,0,Common Voice,1,0.19433379,0.26091588,-3.295135,6.6921873
+non_singapore/speaker_170/clip_003.wav,non_singapore::speaker_170,train,0,Common Voice,0,-13.759577,11.603246,-0.8094498,5.718469
+non_singapore/speaker_170/clip_004.wav,non_singapore::speaker_170,train,0,Common Voice,0,-12.178037,5.2999063,-0.95472074,5.776725
+non_singapore/speaker_171/clip_001.wav,non_singapore::speaker_171,train,0,Common Voice,0,-1.7441301,-1.9337524,-3.2235763,6.5511823
+non_singapore/speaker_171/clip_002.wav,non_singapore::speaker_171,train,0,Common Voice,0,-0.42666882,-2.0341892,-3.203929,6.3302526
+non_singapore/speaker_171/clip_003.wav,non_singapore::speaker_171,train,0,Common Voice,0,-0.35375926,-0.49052733,-3.2296042,6.5490146
+non_singapore/speaker_171/clip_004.wav,non_singapore::speaker_171,train,0,Common Voice,0,2.5387602,-6.1270313,-3.3642082,6.0401015
+non_singapore/speaker_172/clip_001.wav,non_singapore::speaker_172,train,0,Common Voice,0,0.34010422,-3.3238163,-2.3413072,1.7329357
+non_singapore/speaker_172/clip_002.wav,non_singapore::speaker_172,train,0,Common Voice,0,-5.552284,0.5174189,-1.7209321,6.2212696
+non_singapore/speaker_172/clip_003.wav,non_singapore::speaker_172,train,0,Common Voice,0,-3.5990124,-0.8183676,-2.1657653,5.336992
+non_singapore/speaker_172/clip_004.wav,non_singapore::speaker_172,train,0,Common Voice,0,-1.9142119,-0.23709248,-2.4466288,5.7415824
+non_singapore/speaker_173/clip_001.wav,non_singapore::speaker_173,train,0,Common Voice,0,-1.1810706,-3.8711407,-2.1437438,4.300601
+non_singapore/speaker_173/clip_002.wav,non_singapore::speaker_173,train,0,Common Voice,1,0.49946213,1.4923476,0.81094766,2.6129217
+non_singapore/speaker_173/clip_003.wav,non_singapore::speaker_173,train,0,Common Voice,0,-7.0107794,2.6957612,-1.2547882,3.813851
+non_singapore/speaker_173/clip_004.wav,non_singapore::speaker_173,train,0,Common Voice,1,3.5131383,-1.0192219,-1.8222512,3.0842109
+non_singapore/speaker_174/clip_001.wav,non_singapore::speaker_174,train,0,Common Voice,0,-0.8508545,-5.1184134,-3.8425963,5.88663
+non_singapore/speaker_174/clip_002.wav,non_singapore::speaker_174,train,0,Common Voice,0,-2.5637136,0.20090753,-2.8769925,5.9371195
+non_singapore/speaker_174/clip_003.wav,non_singapore::speaker_174,train,0,Common Voice,0,0.6938531,-7.770935,-4.2843823,4.606
+non_singapore/speaker_174/clip_004.wav,non_singapore::speaker_174,train,0,Common Voice,0,-5.993368,3.3813956,-1.1570971,5.0767126
+non_singapore/speaker_175/clip_001.wav,non_singapore::speaker_175,train,0,Common Voice,0,-2.8733041,-7.437426,-2.483948,6.9405284
+non_singapore/speaker_175/clip_002.wav,non_singapore::speaker_175,train,0,Common Voice,0,-5.2118034,-4.82179,-1.9949689,5.563707
+non_singapore/speaker_175/clip_003.wav,non_singapore::speaker_175,train,0,Common Voice,0,0.29640552,-5.7614017,-3.2616203,5.9168935
+non_singapore/speaker_175/clip_004.wav,non_singapore::speaker_175,train,0,Common Voice,0,0.03665471,-6.336216,-3.5978565,5.726517
+non_singapore/speaker_176/clip_001.wav,non_singapore::speaker_176,train,0,Common Voice,0,-9.9472885,1.5894313,-0.50188315,6.552763
+non_singapore/speaker_176/clip_002.wav,non_singapore::speaker_176,train,0,Common Voice,0,-1.4054669,-2.9007134,-2.5092337,5.752931
+non_singapore/speaker_176/clip_003.wav,non_singapore::speaker_176,train,0,Common Voice,0,-3.3085394,-1.6943446,-2.5924833,5.522275
+non_singapore/speaker_176/clip_004.wav,non_singapore::speaker_176,train,0,Common Voice,0,-1.6715385,-6.054325,-2.6927793,6.530424
+non_singapore/speaker_177/clip_001.wav,non_singapore::speaker_177,validation,0,Common Voice,0,1.1652077,-8.036913,-4.04501,6.0526824
+non_singapore/speaker_177/clip_002.wav,non_singapore::speaker_177,validation,0,Common Voice,0,-2.963946,-4.2082095,-2.2605805,6.103362
+non_singapore/speaker_177/clip_003.wav,non_singapore::speaker_177,validation,0,Common Voice,0,-3.1330104,-7.051448,-3.9645414,5.026564
+non_singapore/speaker_177/clip_004.wav,non_singapore::speaker_177,validation,0,Common Voice,0,-2.5090644,-5.1545362,-2.3913646,7.0667844
+non_singapore/speaker_178/clip_001.wav,non_singapore::speaker_178,validation,0,Common Voice,0,2.2952533,-10.056591,-4.2626343,4.485772
+non_singapore/speaker_178/clip_002.wav,non_singapore::speaker_178,validation,0,Common Voice,0,-2.92636,-5.958639,-3.138926,4.996349
+non_singapore/speaker_178/clip_003.wav,non_singapore::speaker_178,validation,0,Common Voice,0,-0.5356298,-11.679885,-4.219659,4.336788
+non_singapore/speaker_178/clip_004.wav,non_singapore::speaker_178,validation,0,Common Voice,0,-6.18711,3.811881,-1.2493569,4.1363115
+non_singapore/speaker_179/clip_001.wav,non_singapore::speaker_179,train,0,Common Voice,0,-1.7281231,-3.994591,-3.4524262,5.3094606
+non_singapore/speaker_179/clip_002.wav,non_singapore::speaker_179,train,0,Common Voice,0,2.379428,-6.060709,-2.3081355,3.2919283
+non_singapore/speaker_179/clip_003.wav,non_singapore::speaker_179,train,0,Common Voice,0,0.69503087,-3.1862366,-2.2342932,3.4046602
+non_singapore/speaker_179/clip_004.wav,non_singapore::speaker_179,train,0,Common Voice,0,2.3770134,-9.647223,-3.865144,5.1939425
+non_singapore/speaker_180/clip_001.wav,non_singapore::speaker_180,train,0,Common Voice,0,-5.2336154,-6.94681,-1.9967374,5.6405587
+non_singapore/speaker_180/clip_002.wav,non_singapore::speaker_180,train,0,Common Voice,0,-4.9544983,-3.6804779,-1.3137074,6.6820107
+non_singapore/speaker_180/clip_003.wav,non_singapore::speaker_180,train,0,Common Voice,0,-2.1939912,-1.2396082,-2.138758,4.543514
+non_singapore/speaker_180/clip_004.wav,non_singapore::speaker_180,train,0,Common Voice,0,-2.5368845,-4.4217806,-3.352453,5.7585263
+non_singapore/speaker_182/clip_001.wav,non_singapore::speaker_182,train,0,Common Voice,0,-4.540869,-2.5663874,-2.5847194,6.0196385
+non_singapore/speaker_182/clip_002.wav,non_singapore::speaker_182,train,0,Common Voice,0,-0.38837606,-4.7789445,-2.9018576,4.939444
+non_singapore/speaker_182/clip_003.wav,non_singapore::speaker_182,train,0,Common Voice,0,1.2165822,-8.509618,-3.4627008,4.854172
+non_singapore/speaker_182/clip_004.wav,non_singapore::speaker_182,train,0,Common Voice,0,0.018598463,-6.7157817,-4.107654,5.6515474
+non_singapore/speaker_183/clip_001.wav,non_singapore::speaker_183,train,0,Common Voice,0,-3.0931194,-4.7204843,-2.6301422,6.5734243
+non_singapore/speaker_183/clip_002.wav,non_singapore::speaker_183,train,0,Common Voice,0,0.47070643,-4.087449,-2.6041858,3.6983309
+non_singapore/speaker_183/clip_003.wav,non_singapore::speaker_183,train,0,Common Voice,0,-7.540304,2.8176389,-0.3183735,5.5455
+non_singapore/speaker_183/clip_004.wav,non_singapore::speaker_183,train,0,Common Voice,0,-1.5157486,-2.78747,-3.0439312,5.344638
+non_singapore/speaker_184/clip_001.wav,non_singapore::speaker_184,train,0,Common Voice,0,-0.04879673,-2.1255171,-2.0267847,2.3852465
+non_singapore/speaker_184/clip_002.wav,non_singapore::speaker_184,train,0,Common Voice,0,-7.3470755,4.2655215,-1.8640388,4.521945
+non_singapore/speaker_184/clip_003.wav,non_singapore::speaker_184,train,0,Common Voice,0,-11.805916,6.6587524,-1.5665231,5.001611
+non_singapore/speaker_184/clip_004.wav,non_singapore::speaker_184,train,0,Common Voice,0,-4.2279663,0.33982217,-2.2019243,4.266632
+non_singapore/speaker_186/clip_001.wav,non_singapore::speaker_186,train,0,Common Voice,0,-0.9435582,-0.38477615,-0.76645464,6.660974
+non_singapore/speaker_186/clip_002.wav,non_singapore::speaker_186,train,0,Common Voice,1,3.5033553,1.5954602,0.8512744,1.4930351
+non_singapore/speaker_186/clip_003.wav,non_singapore::speaker_186,train,0,Common Voice,1,1.176397,3.5106373,-0.89318013,2.9357827
+non_singapore/speaker_186/clip_004.wav,non_singapore::speaker_186,train,0,Common Voice,1,-0.5863448,0.76283574,0.48341504,4.42138
+non_singapore/speaker_187/clip_001.wav,non_singapore::speaker_187,train,0,Common Voice,0,-1.5849636,-5.0603757,-3.4419258,5.6904864
+non_singapore/speaker_187/clip_002.wav,non_singapore::speaker_187,train,0,Common Voice,0,-1.7447857,-3.6173127,-3.7145755,6.051539
+non_singapore/speaker_187/clip_003.wav,non_singapore::speaker_187,train,0,Common Voice,0,-3.0369205,-4.7340355,-3.4163005,5.4208603
+non_singapore/speaker_187/clip_004.wav,non_singapore::speaker_187,train,0,Common Voice,0,-1.3529729,-3.0213287,-3.5770104,6.2963934
+non_singapore/speaker_188/clip_001.wav,non_singapore::speaker_188,train,0,Common Voice,0,-0.8548233,-6.1277294,-3.4389622,5.326268
+non_singapore/speaker_188/clip_002.wav,non_singapore::speaker_188,train,0,Common Voice,0,-5.770932,1.0316477,-2.5967176,5.698436
+non_singapore/speaker_188/clip_003.wav,non_singapore::speaker_188,train,0,Common Voice,0,-1.1498053,-6.8552065,-3.8394415,6.1833425
+non_singapore/speaker_188/clip_004.wav,non_singapore::speaker_188,train,0,Common Voice,0,-3.2899365,-5.4104605,-3.7012613,5.827647
+non_singapore/speaker_189/clip_001.wav,non_singapore::speaker_189,train,0,Common Voice,0,0.023648612,-8.058261,-3.9237745,4.914644
+non_singapore/speaker_189/clip_002.wav,non_singapore::speaker_189,train,0,Common Voice,0,-1.3109503,-6.770225,-3.4222422,4.9636827
+non_singapore/speaker_189/clip_003.wav,non_singapore::speaker_189,train,0,Common Voice,0,-2.9778738,-7.5941987,-3.9025393,4.227957
+non_singapore/speaker_189/clip_004.wav,non_singapore::speaker_189,train,0,Common Voice,0,-1.2845006,-8.5310955,-3.474945,5.1743593
+non_singapore/speaker_190/clip_001.wav,non_singapore::speaker_190,train,0,Common Voice,0,0.13385963,-7.362991,-3.290689,5.1960135
+non_singapore/speaker_190/clip_002.wav,non_singapore::speaker_190,train,0,Common Voice,0,-2.166286,-5.3345923,-2.9508655,4.9640045
+non_singapore/speaker_190/clip_003.wav,non_singapore::speaker_190,train,0,Common Voice,0,-3.0447648,-4.5490193,-2.1700323,6.2732725
+non_singapore/speaker_190/clip_004.wav,non_singapore::speaker_190,train,0,Common Voice,0,-3.7675326,-0.6387186,-1.1738154,5.8008127
+non_singapore/speaker_190/clip_005.wav,non_singapore::speaker_190,train,0,Common Voice,0,-0.8088459,-5.5818033,-3.1691785,5.1283107
+non_singapore/speaker_191/clip_001.wav,non_singapore::speaker_191,train,0,Common Voice,0,-0.56655186,-3.5965405,-2.256509,4.7198586
+non_singapore/speaker_191/clip_002.wav,non_singapore::speaker_191,train,0,Common Voice,0,-2.0975811,-7.3301387,-3.8627396,4.458799
+non_singapore/speaker_191/clip_003.wav,non_singapore::speaker_191,train,0,Common Voice,1,3.7948954,-4.786247,-4.1324043,5.990027
+non_singapore/speaker_191/clip_004.wav,non_singapore::speaker_191,train,0,Common Voice,0,0.71953464,-4.853558,-2.823809,3.6595638
+non_singapore/speaker_191/clip_005.wav,non_singapore::speaker_191,train,0,Common Voice,0,0.064686455,-8.756127,-3.7786086,4.115512
+non_singapore/speaker_192/clip_001.wav,non_singapore::speaker_192,train,0,Common Voice,0,-2.1836638,-3.2001042,-3.0790267,4.1267595
+non_singapore/speaker_192/clip_002.wav,non_singapore::speaker_192,train,0,Common Voice,0,-11.553454,7.870084,-0.084482946,4.802365
+non_singapore/speaker_192/clip_003.wav,non_singapore::speaker_192,train,0,Common Voice,0,-2.5097477,-4.6594005,-3.2262185,4.348003
+non_singapore/speaker_192/clip_004.wav,non_singapore::speaker_192,train,0,Common Voice,0,-0.24712104,-4.515989,-3.4624789,5.395673
+non_singapore/speaker_192/clip_005.wav,non_singapore::speaker_192,train,0,Common Voice,0,-6.4692397,-0.45495972,-1.2059048,5.252141
+non_singapore/speaker_193/clip_001.wav,non_singapore::speaker_193,train,0,Common Voice,0,-0.69456464,-5.0723686,-2.7930298,6.6148033
+non_singapore/speaker_193/clip_002.wav,non_singapore::speaker_193,train,0,Common Voice,0,0.73894846,-5.405428,-3.3711221,5.0600715
+non_singapore/speaker_193/clip_003.wav,non_singapore::speaker_193,train,0,Common Voice,0,1.5081829,-7.7677155,-4.3707952,4.846439
+non_singapore/speaker_193/clip_004.wav,non_singapore::speaker_193,train,0,Common Voice,0,-3.731764,-4.5885696,-2.7437625,6.745358
+non_singapore/speaker_193/clip_005.wav,non_singapore::speaker_193,train,0,Common Voice,0,-2.1240487,-5.289271,-3.3290544,5.786673
+non_singapore/speaker_194/clip_001.wav,non_singapore::speaker_194,train,0,Common Voice,0,1.2967385,-6.9163265,-3.6356075,5.3043146
+non_singapore/speaker_194/clip_002.wav,non_singapore::speaker_194,train,0,Common Voice,0,1.1570258,-3.8279648,-3.116711,5.9553337
+non_singapore/speaker_194/clip_003.wav,non_singapore::speaker_194,train,0,Common Voice,0,0.36833158,-4.8199883,-3.865105,5.543958
+non_singapore/speaker_194/clip_004.wav,non_singapore::speaker_194,train,0,Common Voice,0,-4.125534,-3.662876,-2.5665658,5.276471
+non_singapore/speaker_194/clip_005.wav,non_singapore::speaker_194,train,0,Common Voice,0,-4.6334987,0.012359817,-3.7536745,6.1177177
+non_singapore/speaker_196/clip_001.wav,non_singapore::speaker_196,validation,0,Common Voice,0,-0.04165937,-3.935019,-2.6783667,4.1690955
+non_singapore/speaker_196/clip_002.wav,non_singapore::speaker_196,validation,0,Common Voice,0,-14.557563,6.9158254,-0.21554555,6.641355
+non_singapore/speaker_196/clip_003.wav,non_singapore::speaker_196,validation,0,Common Voice,0,-4.8498445,-2.5900223,-2.4854162,4.739408
+non_singapore/speaker_196/clip_004.wav,non_singapore::speaker_196,validation,0,Common Voice,0,-0.9527701,-6.2544765,-3.8854225,4.1205616
+non_singapore/speaker_196/clip_005.wav,non_singapore::speaker_196,validation,0,Common Voice,0,-1.2612324,-2.1036131,-3.103477,3.8943791
+non_singapore/speaker_197/clip_001.wav,non_singapore::speaker_197,train,0,Common Voice,0,-4.9034166,-4.509309,-2.2242596,7.1742697
+non_singapore/speaker_197/clip_002.wav,non_singapore::speaker_197,train,0,Common Voice,0,-1.5041835,-7.6775126,-2.500571,7.004462
+non_singapore/speaker_197/clip_003.wav,non_singapore::speaker_197,train,0,Common Voice,0,-2.4925976,-4.8656397,-2.3874779,7.1169252
+non_singapore/speaker_197/clip_004.wav,non_singapore::speaker_197,train,0,Common Voice,0,-0.79192764,-6.089924,-3.1919045,4.6268725
+non_singapore/speaker_197/clip_005.wav,non_singapore::speaker_197,train,0,Common Voice,0,-1.3870006,-8.311177,-2.6425009,6.7862678
+non_singapore/speaker_198/clip_001.wav,non_singapore::speaker_198,train,0,Common Voice,0,-10.871587,2.51873,-0.51383287,6.110516
+non_singapore/speaker_198/clip_002.wav,non_singapore::speaker_198,train,0,Common Voice,0,-2.5341794,-1.1744807,-2.3675601,4.398128
+non_singapore/speaker_198/clip_003.wav,non_singapore::speaker_198,train,0,Common Voice,0,-5.1235356,-1.7691941,-1.5604928,5.2286034
+non_singapore/speaker_198/clip_004.wav,non_singapore::speaker_198,train,0,Common Voice,0,1.4161552,-4.2459,-2.9137604,4.1074977
+non_singapore/speaker_198/clip_005.wav,non_singapore::speaker_198,train,0,Common Voice,0,-6.921594,2.827552,-1.5916537,4.2302327
+non_singapore/speaker_199/clip_001.wav,non_singapore::speaker_199,train,0,Common Voice,0,-4.206997,-3.3230212,-2.9078412,4.4843755
+non_singapore/speaker_199/clip_002.wav,non_singapore::speaker_199,train,0,Common Voice,0,-2.4484906,-3.576448,-2.2978933,6.7680693
+non_singapore/speaker_199/clip_003.wav,non_singapore::speaker_199,train,0,Common Voice,0,-2.3690956,-3.6710985,-3.413822,5.593491
+non_singapore/speaker_199/clip_004.wav,non_singapore::speaker_199,train,0,Common Voice,0,-4.0531006,-5.4009523,-3.772955,5.4865713
+non_singapore/speaker_199/clip_005.wav,non_singapore::speaker_199,train,0,Common Voice,0,-4.1865273,-8.763723,-3.598493,4.2730465
+non_singapore/speaker_200/clip_001.wav,non_singapore::speaker_200,train,0,Common Voice,0,-1.5269934,-8.150233,-4.1666164,4.3031726
+non_singapore/speaker_200/clip_002.wav,non_singapore::speaker_200,train,0,Common Voice,0,-2.7309003,-9.440744,-3.6757479,5.6440883
+non_singapore/speaker_200/clip_003.wav,non_singapore::speaker_200,train,0,Common Voice,0,-1.9410886,-7.6087966,-3.2506924,4.791809
+non_singapore/speaker_200/clip_004.wav,non_singapore::speaker_200,train,0,Common Voice,0,-2.3633015,-6.399771,-3.7504778,3.9926496
+non_singapore/speaker_200/clip_005.wav,non_singapore::speaker_200,train,0,Common Voice,0,-8.897398,0.16920651,-1.9014071,5.4794416
+non_singapore/speaker_201/clip_001.wav,non_singapore::speaker_201,validation,0,Common Voice,0,-7.36914,-0.48808965,-1.0432218,6.5154934
+non_singapore/speaker_201/clip_002.wav,non_singapore::speaker_201,validation,0,Common Voice,0,1.1755664,-6.196217,-2.3578157,6.5027313
+non_singapore/speaker_201/clip_003.wav,non_singapore::speaker_201,validation,0,Common Voice,0,-0.8308212,-4.081436,-2.8806527,5.657303
+non_singapore/speaker_201/clip_004.wav,non_singapore::speaker_201,validation,0,Common Voice,0,0.2138951,-6.8301144,-4.049805,4.4218006
+non_singapore/speaker_201/clip_005.wav,non_singapore::speaker_201,validation,0,Common Voice,0,-0.6769359,-5.137592,-2.9832497,6.1489005
+non_singapore/speaker_202/clip_001.wav,non_singapore::speaker_202,train,0,Common Voice,0,-1.6074756,-5.1663647,-3.136471,5.9182878
+non_singapore/speaker_202/clip_002.wav,non_singapore::speaker_202,train,0,Common Voice,0,-1.8928212,-2.8866377,-2.7167532,4.2231674
+non_singapore/speaker_202/clip_003.wav,non_singapore::speaker_202,train,0,Common Voice,0,-5.1845865,0.23981188,-2.501628,5.427486
+non_singapore/speaker_202/clip_004.wav,non_singapore::speaker_202,train,0,Common Voice,0,-4.111146,-8.835395,-3.4206915,4.118572
+non_singapore/speaker_202/clip_005.wav,non_singapore::speaker_202,train,0,Common Voice,0,-2.3016589,-8.0496235,-3.3860142,4.8670745
+non_singapore/speaker_203/clip_001.wav,non_singapore::speaker_203,validation,0,Common Voice,0,-1.0106249,-8.67967,-3.5447197,4.97109
+non_singapore/speaker_203/clip_002.wav,non_singapore::speaker_203,validation,0,Common Voice,0,-1.8550435,-7.410877,-3.411483,4.954429
+non_singapore/speaker_203/clip_003.wav,non_singapore::speaker_203,validation,0,Common Voice,0,-3.116406,-3.1692693,-2.8357882,4.3808036
+non_singapore/speaker_203/clip_004.wav,non_singapore::speaker_203,validation,0,Common Voice,0,-1.5385883,-5.608839,-3.09459,4.7279444
+non_singapore/speaker_203/clip_005.wav,non_singapore::speaker_203,validation,0,Common Voice,0,-7.5957527,-0.8966271,-2.0697496,4.794423
+non_singapore/speaker_204/clip_001.wav,non_singapore::speaker_204,train,0,Common Voice,0,-5.4832053,-6.5089946,-2.2086868,5.852817
+non_singapore/speaker_204/clip_002.wav,non_singapore::speaker_204,train,0,Common Voice,0,-4.9223604,0.20424393,-0.7010298,4.126327
+non_singapore/speaker_204/clip_003.wav,non_singapore::speaker_204,train,0,Common Voice,0,-5.2370944,-7.3837967,-1.8607748,6.653651
+non_singapore/speaker_204/clip_004.wav,non_singapore::speaker_204,train,0,Common Voice,0,1.0381678,-5.1473393,-3.2150733,6.0465617
+non_singapore/speaker_204/clip_005.wav,non_singapore::speaker_204,train,0,Common Voice,0,-1.3314469,-6.906508,-3.1284235,6.6387177
+non_singapore/speaker_206/clip_001.wav,non_singapore::speaker_206,train,0,Common Voice,0,-0.9362634,-7.046561,-3.28194,4.687096
+non_singapore/speaker_206/clip_002.wav,non_singapore::speaker_206,train,0,Common Voice,0,-3.4069104,-5.6472626,-2.741197,5.51869
+non_singapore/speaker_206/clip_003.wav,non_singapore::speaker_206,train,0,Common Voice,0,-14.044239,4.3103323,-1.1444156,5.002329
+non_singapore/speaker_206/clip_004.wav,non_singapore::speaker_206,train,0,Common Voice,0,-4.7882404,-7.3059335,-3.2319317,4.4073567
+non_singapore/speaker_206/clip_005.wav,non_singapore::speaker_206,train,0,Common Voice,0,-5.921206,-2.797308,-2.6903872,5.303696
+non_singapore/speaker_207/clip_001.wav,non_singapore::speaker_207,train,0,Common Voice,0,-0.74757147,-8.05991,-3.5271242,4.6669374
+non_singapore/speaker_207/clip_002.wav,non_singapore::speaker_207,train,0,Common Voice,0,2.74698,-11.7408285,-4.2667007,4.4981785
+non_singapore/speaker_207/clip_003.wav,non_singapore::speaker_207,train,0,Common Voice,0,0.56458676,-9.859087,-4.0366135,4.900334
+non_singapore/speaker_207/clip_004.wav,non_singapore::speaker_207,train,0,Common Voice,0,-2.7293282,-3.8599336,-3.8890123,4.7903423
+non_singapore/speaker_207/clip_005.wav,non_singapore::speaker_207,train,0,Common Voice,0,-7.787112,-1.0739688,-1.8133309,5.694096
+non_singapore/speaker_208/clip_001.wav,non_singapore::speaker_208,train,0,Common Voice,0,-2.6443706,-4.826825,-3.3981695,5.6578016
+non_singapore/speaker_208/clip_002.wav,non_singapore::speaker_208,train,0,Common Voice,0,-0.10986596,-2.8288689,-1.7881364,3.9761798
+non_singapore/speaker_208/clip_003.wav,non_singapore::speaker_208,train,0,Common Voice,0,-2.6955159,-7.9938593,-3.84276,4.7635584
+non_singapore/speaker_208/clip_004.wav,non_singapore::speaker_208,train,0,Common Voice,0,-4.8073106,-1.7109847,-3.4813669,5.4935565
+non_singapore/speaker_208/clip_005.wav,non_singapore::speaker_208,train,0,Common Voice,0,-0.047506988,-8.557966,-4.3358254,4.8067546
+non_singapore/speaker_209/clip_001.wav,non_singapore::speaker_209,validation,0,Common Voice,0,-2.1257334,-6.386145,-3.1856625,4.6081295
+non_singapore/speaker_209/clip_002.wav,non_singapore::speaker_209,validation,0,Common Voice,0,-0.70395416,-8.722189,-3.9335022,5.103089
+non_singapore/speaker_209/clip_003.wav,non_singapore::speaker_209,validation,0,Common Voice,0,-2.9371092,-8.311832,-3.6394598,5.710862
+non_singapore/speaker_209/clip_004.wav,non_singapore::speaker_209,validation,0,Common Voice,0,-1.6367658,-9.283016,-3.7173,5.140603
+non_singapore/speaker_209/clip_005.wav,non_singapore::speaker_209,validation,0,Common Voice,0,-1.794826,-8.887914,-3.9798589,5.2621136
+non_singapore/speaker_210/clip_001.wav,non_singapore::speaker_210,validation,0,Common Voice,0,-3.149867,-0.830855,-2.7402756,3.6754525
+non_singapore/speaker_210/clip_002.wav,non_singapore::speaker_210,validation,0,Common Voice,0,-2.9657001,-2.6760817,-3.0420668,3.8349588
+non_singapore/speaker_210/clip_003.wav,non_singapore::speaker_210,validation,0,Common Voice,1,3.4307594,-5.035234,-2.6858478,3.277987
+non_singapore/speaker_210/clip_004.wav,non_singapore::speaker_210,validation,0,Common Voice,0,1.7254316,-4.159329,-2.6573687,5.007388
+non_singapore/speaker_210/clip_005.wav,non_singapore::speaker_210,validation,0,Common Voice,0,0.24710995,-4.259543,-3.6057742,6.2346115
+non_singapore/speaker_211/clip_001.wav,non_singapore::speaker_211,train,0,Common Voice,0,-5.279799,-4.880012,-2.2318547,7.149352
+non_singapore/speaker_211/clip_002.wav,non_singapore::speaker_211,train,0,Common Voice,0,-6.0293407,-4.0220885,-2.344832,4.4880414
+non_singapore/speaker_211/clip_003.wav,non_singapore::speaker_211,train,0,Common Voice,0,-2.0428247,-6.9756207,-2.1956704,3.818992
+non_singapore/speaker_211/clip_004.wav,non_singapore::speaker_211,train,0,Common Voice,0,-2.9365594,-6.600085,-2.334146,4.376047
+non_singapore/speaker_211/clip_005.wav,non_singapore::speaker_211,train,0,Common Voice,0,-6.8098745,-6.154627,-3.5048516,4.624807
+non_singapore/speaker_213/clip_001.wav,non_singapore::speaker_213,train,0,Common Voice,0,-1.5423881,-7.521535,-3.501592,5.539023
+non_singapore/speaker_213/clip_002.wav,non_singapore::speaker_213,train,0,Common Voice,0,-1.1004553,-6.6473937,-3.3350852,6.467284
+non_singapore/speaker_213/clip_003.wav,non_singapore::speaker_213,train,0,Common Voice,0,-4.336891,-2.4162924,-2.53726,5.059246
+non_singapore/speaker_213/clip_004.wav,non_singapore::speaker_213,train,0,Common Voice,0,0.3056128,-4.278772,-3.0206347,3.914047
+non_singapore/speaker_213/clip_005.wav,non_singapore::speaker_213,train,0,Common Voice,0,-1.4460565,-5.110347,-3.1465173,5.550156
+non_singapore/speaker_214/clip_001.wav,non_singapore::speaker_214,train,0,Common Voice,0,1.1079297,-8.880683,-4.179243,4.4317803
+non_singapore/speaker_214/clip_002.wav,non_singapore::speaker_214,train,0,Common Voice,0,-1.7613496,-9.322535,-2.7217953,6.5637507
+non_singapore/speaker_214/clip_003.wav,non_singapore::speaker_214,train,0,Common Voice,0,-1.357087,-6.721835,-2.7674704,6.336033
+non_singapore/speaker_214/clip_004.wav,non_singapore::speaker_214,train,0,Common Voice,0,-2.4409983,-5.12193,-2.6059048,6.2208047
+non_singapore/speaker_214/clip_005.wav,non_singapore::speaker_214,train,0,Common Voice,0,-4.065952,-4.460358,-2.6348128,6.2598877
+non_singapore/speaker_215/clip_001.wav,non_singapore::speaker_215,validation,0,Common Voice,0,-3.4973857,-6.084857,-2.477196,6.4119005
+non_singapore/speaker_215/clip_002.wav,non_singapore::speaker_215,validation,0,Common Voice,0,-14.668514,7.4468513,-1.6049837,4.895112
+non_singapore/speaker_215/clip_003.wav,non_singapore::speaker_215,validation,0,Common Voice,0,-1.4213364,-4.9975605,-2.6038141,7.030229
+non_singapore/speaker_215/clip_004.wav,non_singapore::speaker_215,validation,0,Common Voice,0,1.7245792,-10.301891,-4.367655,4.617871
+non_singapore/speaker_215/clip_005.wav,non_singapore::speaker_215,validation,0,Common Voice,0,-0.10072709,-6.5942593,-3.2721713,4.344161
+non_singapore/speaker_216/clip_001.wav,non_singapore::speaker_216,validation,0,Common Voice,0,-2.2561994,-8.004814,-2.3125389,5.82203
+non_singapore/speaker_216/clip_002.wav,non_singapore::speaker_216,validation,0,Common Voice,0,-0.043136027,-6.788114,-2.4996636,6.83107
+non_singapore/speaker_216/clip_003.wav,non_singapore::speaker_216,validation,0,Common Voice,0,-6.0377173,-8.879827,-1.6717734,6.7742777
+non_singapore/speaker_216/clip_004.wav,non_singapore::speaker_216,validation,0,Common Voice,0,-5.721602,-5.421408,-2.7378101,6.696503
+non_singapore/speaker_216/clip_005.wav,non_singapore::speaker_216,validation,0,Common Voice,0,-2.5751588,-8.970513,-2.221689,6.476364
+non_singapore/speaker_217/clip_001.wav,non_singapore::speaker_217,train,0,Common Voice,0,-2.0878718,-3.3377328,-3.257167,4.9090753
+non_singapore/speaker_217/clip_002.wav,non_singapore::speaker_217,train,0,Common Voice,0,-3.492294,-1.306313,-2.3339458,5.2974076
+non_singapore/speaker_217/clip_003.wav,non_singapore::speaker_217,train,0,Common Voice,0,-4.5160975,-5.027127,-3.3701131,5.0500965
+non_singapore/speaker_217/clip_004.wav,non_singapore::speaker_217,train,0,Common Voice,0,-3.3722055,5.0378256,-1.4578347,4.536231
+non_singapore/speaker_217/clip_005.wav,non_singapore::speaker_217,train,0,Common Voice,0,-7.444371,1.2231735,-1.5754081,4.9040685
+non_singapore/speaker_219/clip_001.wav,non_singapore::speaker_219,train,0,Common Voice,0,-14.180642,6.514634,-0.8281498,5.622381
+non_singapore/speaker_219/clip_002.wav,non_singapore::speaker_219,train,0,Common Voice,0,-5.7479687,1.3201963,-2.6414988,5.1790366
+non_singapore/speaker_219/clip_003.wav,non_singapore::speaker_219,train,0,Common Voice,0,-3.3895915,-3.4577389,-3.9449136,5.8530254
+non_singapore/speaker_219/clip_004.wav,non_singapore::speaker_219,train,0,Common Voice,0,-15.0148535,11.991184,-0.75705546,5.6463614
+non_singapore/speaker_219/clip_005.wav,non_singapore::speaker_219,train,0,Common Voice,0,-6.393989,-4.200498,-2.8263032,4.85724
+non_singapore/speaker_220/clip_001.wav,non_singapore::speaker_220,train,0,Common Voice,0,-4.704161,2.1820896,-1.2207088,4.9105062
+non_singapore/speaker_220/clip_002.wav,non_singapore::speaker_220,train,0,Common Voice,1,4.2193265,-3.3703544,-1.7964387,1.709062
+non_singapore/speaker_220/clip_003.wav,non_singapore::speaker_220,train,0,Common Voice,1,3.1180472,-3.0152512,-2.1089568,1.2216408
+non_singapore/speaker_220/clip_004.wav,non_singapore::speaker_220,train,0,Common Voice,0,-2.6986358,0.123203315,-1.2090064,4.6680574
+non_singapore/speaker_220/clip_005.wav,non_singapore::speaker_220,train,0,Common Voice,1,2.3153524,-1.9757,-2.1264906,3.465704
+non_singapore/speaker_221/clip_001.wav,non_singapore::speaker_221,train,0,Common Voice,0,0.01000913,-4.411526,-3.8341184,3.9795647
+non_singapore/speaker_221/clip_002.wav,non_singapore::speaker_221,train,0,Common Voice,0,0.8411962,-4.2913313,-3.617927,5.002451
+non_singapore/speaker_221/clip_003.wav,non_singapore::speaker_221,train,0,Common Voice,0,-13.537934,11.05853,-0.92752916,4.8775926
+non_singapore/speaker_221/clip_004.wav,non_singapore::speaker_221,train,0,Common Voice,0,-0.42332414,-4.5950246,-3.1806266,3.880452
+non_singapore/speaker_221/clip_005.wav,non_singapore::speaker_221,train,0,Common Voice,0,-0.14660487,-3.0643513,-2.623279,5.2057443
+non_singapore/speaker_222/clip_001.wav,non_singapore::speaker_222,train,0,Common Voice,0,-1.1100901,-0.2767181,-2.398517,5.754184
+non_singapore/speaker_222/clip_002.wav,non_singapore::speaker_222,train,0,Common Voice,0,-3.7481594,-4.537093,-2.285463,7.118497
+non_singapore/speaker_222/clip_003.wav,non_singapore::speaker_222,train,0,Common Voice,0,-0.84358394,-4.104307,-3.8631995,5.3730197
+non_singapore/speaker_222/clip_004.wav,non_singapore::speaker_222,train,0,Common Voice,0,2.8049479,-6.6038833,-3.6343067,3.7332206
+non_singapore/speaker_222/clip_005.wav,non_singapore::speaker_222,train,0,Common Voice,0,-1.0769112,-3.2119846,-3.0440454,3.9921112
+non_singapore/speaker_223/clip_001.wav,non_singapore::speaker_223,train,0,Common Voice,0,0.11910329,-5.933839,-3.4638336,5.290662
+non_singapore/speaker_223/clip_002.wav,non_singapore::speaker_223,train,0,Common Voice,0,-2.2901278,0.070591,-1.6760216,6.052796
+non_singapore/speaker_223/clip_003.wav,non_singapore::speaker_223,train,0,Common Voice,0,-0.7062298,-2.6055727,-2.8855524,5.878784
+non_singapore/speaker_223/clip_004.wav,non_singapore::speaker_223,train,0,Common Voice,0,-1.8486087,-8.894358,-3.2725408,4.270385
+non_singapore/speaker_223/clip_005.wav,non_singapore::speaker_223,train,0,Common Voice,0,-4.554405,-2.3756592,-2.4530778,5.1051245
+non_singapore/speaker_224/clip_001.wav,non_singapore::speaker_224,train,0,Common Voice,0,-2.4836056,-4.452181,-2.9763398,6.2073226
+non_singapore/speaker_224/clip_002.wav,non_singapore::speaker_224,train,0,Common Voice,0,-1.5473697,1.1597937,-1.3754762,3.6653466
+non_singapore/speaker_224/clip_003.wav,non_singapore::speaker_224,train,0,Common Voice,0,-11.069115,1.7704202,-1.6461045,6.981828
+non_singapore/speaker_224/clip_004.wav,non_singapore::speaker_224,train,0,Common Voice,0,-3.0740893,-0.62867194,-3.5275867,5.3294005
+non_singapore/speaker_224/clip_005.wav,non_singapore::speaker_224,train,0,Common Voice,0,-1.8863213,-0.63037413,-1.9017622,5.586094
+non_singapore/speaker_226/clip_001.wav,non_singapore::speaker_226,train,0,Common Voice,0,-1.2228277,0.28223088,-1.6658953,4.06621
+non_singapore/speaker_226/clip_002.wav,non_singapore::speaker_226,train,0,Common Voice,0,-1.8923094,1.0800883,-1.6149949,3.542679
+non_singapore/speaker_226/clip_003.wav,non_singapore::speaker_226,train,0,Common Voice,0,-0.6032039,0.2746009,-1.9265859,3.7810082
+non_singapore/speaker_226/clip_004.wav,non_singapore::speaker_226,train,0,Common Voice,0,2.4382708,-5.1882267,-3.4970756,3.342508
+non_singapore/speaker_226/clip_005.wav,non_singapore::speaker_226,train,0,Common Voice,0,-0.64077985,-4.406057,-3.0378273,5.393457
+non_singapore/speaker_227/clip_001.wav,non_singapore::speaker_227,train,0,Common Voice,0,-16.406536,6.520643,0.117065325,6.8339725
+non_singapore/speaker_227/clip_002.wav,non_singapore::speaker_227,train,0,Common Voice,0,-19.592314,7.5360265,0.1025003,6.893338
+non_singapore/speaker_227/clip_003.wav,non_singapore::speaker_227,train,0,Common Voice,0,-16.511093,10.912421,0.14754651,6.835945
+non_singapore/speaker_227/clip_004.wav,non_singapore::speaker_227,train,0,Common Voice,0,-17.37283,7.4470563,0.110728115,6.8882804
+non_singapore/speaker_227/clip_005.wav,non_singapore::speaker_227,train,0,Common Voice,0,-15.758058,5.412779,0.11649689,6.8650336
+non_singapore/speaker_228/clip_001.wav,non_singapore::speaker_228,validation,0,Common Voice,0,-0.25506806,-8.258142,-2.7259173,6.790385
+non_singapore/speaker_228/clip_002.wav,non_singapore::speaker_228,validation,0,Common Voice,0,-0.57281935,-7.239135,-2.0304923,6.5519233
+non_singapore/speaker_228/clip_003.wav,non_singapore::speaker_228,validation,0,Common Voice,0,-4.877769,-1.54416,-1.0604373,6.5004706
+non_singapore/speaker_228/clip_004.wav,non_singapore::speaker_228,validation,0,Common Voice,0,-6.227397,-3.3506317,-1.3749723,6.502059
+non_singapore/speaker_228/clip_005.wav,non_singapore::speaker_228,validation,0,Common Voice,0,-3.90416,-3.1578984,-0.9780123,6.398523
+non_singapore/speaker_229/clip_001.wav,non_singapore::speaker_229,train,0,Common Voice,0,-5.03492,-4.0203085,-1.9123129,7.0444603
+non_singapore/speaker_229/clip_002.wav,non_singapore::speaker_229,train,0,Common Voice,0,-1.7558872,-5.7224445,-3.801791,5.504313
+non_singapore/speaker_229/clip_003.wav,non_singapore::speaker_229,train,0,Common Voice,0,-1.0416783,-5.9714656,-3.8335462,6.0725393
+non_singapore/speaker_229/clip_004.wav,non_singapore::speaker_229,train,0,Common Voice,0,2.4604306,-6.457253,-3.9539986,4.764918
+non_singapore/speaker_229/clip_005.wav,non_singapore::speaker_229,train,0,Common Voice,0,-1.139615,-4.4562035,-3.0599525,5.5602345
+non_singapore/speaker_230/clip_001.wav,non_singapore::speaker_230,validation,0,Common Voice,0,-1.7633175,-4.51809,-3.223037,5.9592314
+non_singapore/speaker_230/clip_002.wav,non_singapore::speaker_230,validation,0,Common Voice,0,-6.7179356,-4.049498,-2.857511,4.7369328
+non_singapore/speaker_230/clip_003.wav,non_singapore::speaker_230,validation,0,Common Voice,0,-2.0933146,-1.8279061,-2.2605503,6.792299
+non_singapore/speaker_230/clip_004.wav,non_singapore::speaker_230,validation,0,Common Voice,0,-4.7748666,-0.4572251,-2.4920025,5.4304357
+non_singapore/speaker_230/clip_005.wav,non_singapore::speaker_230,validation,0,Common Voice,0,-1.113828,-6.871257,-3.0859208,5.4492774
+non_singapore/speaker_231/clip_001.wav,non_singapore::speaker_231,validation,0,Common Voice,0,-2.1605961,-7.026732,-1.7955308,5.981957
+non_singapore/speaker_231/clip_002.wav,non_singapore::speaker_231,validation,0,Common Voice,0,-3.9611425,-6.082958,-1.97017,5.9319305
+non_singapore/speaker_231/clip_003.wav,non_singapore::speaker_231,validation,0,Common Voice,0,-7.415656,1.1423904,-1.0190744,6.1988306
+non_singapore/speaker_231/clip_004.wav,non_singapore::speaker_231,validation,0,Common Voice,0,-2.662155,-3.5059493,-1.7978833,6.5239997
+non_singapore/speaker_231/clip_005.wav,non_singapore::speaker_231,validation,0,Common Voice,0,-1.2048799,-5.968303,-3.904748,5.628883
+non_singapore/speaker_232/clip_001.wav,non_singapore::speaker_232,train,0,Common Voice,0,-3.8728747,-3.5126705,-1.5350027,6.0050926
+non_singapore/speaker_232/clip_002.wav,non_singapore::speaker_232,train,0,Common Voice,0,-1.7957424,-5.0731854,-1.8202218,5.9353395
+non_singapore/speaker_232/clip_003.wav,non_singapore::speaker_232,train,0,Common Voice,0,-0.52854633,-6.0061197,-3.8124037,6.2066584
+non_singapore/speaker_232/clip_004.wav,non_singapore::speaker_232,train,0,Common Voice,0,-0.9540283,-3.3871217,-2.7414825,5.007281
+non_singapore/speaker_232/clip_005.wav,non_singapore::speaker_232,train,0,Common Voice,0,-1.0126928,-4.9040904,-2.6254287,4.9966273
+non_singapore/speaker_233/clip_001.wav,non_singapore::speaker_233,train,0,Common Voice,0,-2.9059794,-2.3232174,-2.2025213,5.0747385
+non_singapore/speaker_233/clip_002.wav,non_singapore::speaker_233,train,0,Common Voice,0,-4.799458,5.25163,-1.6445901,4.7610435
+non_singapore/speaker_233/clip_003.wav,non_singapore::speaker_233,train,0,Common Voice,0,-1.9292411,-2.1125784,-3.6640546,6.4403973
+non_singapore/speaker_233/clip_004.wav,non_singapore::speaker_233,train,0,Common Voice,0,-4.733985,-2.6801264,-2.7711935,5.518515
+non_singapore/speaker_233/clip_005.wav,non_singapore::speaker_233,train,0,Common Voice,0,-5.7828846,-0.7050902,-1.8252102,5.0591407
+non_singapore/speaker_234/clip_001.wav,non_singapore::speaker_234,train,0,Common Voice,0,-3.5913484,-1.1647999,-1.6943965,6.230091
+non_singapore/speaker_234/clip_002.wav,non_singapore::speaker_234,train,0,Common Voice,0,-2.0669708,-7.392613,-2.3855896,6.5246353
+non_singapore/speaker_234/clip_003.wav,non_singapore::speaker_234,train,0,Common Voice,0,-1.8854893,-8.895281,-3.1036375,6.4356594
+non_singapore/speaker_234/clip_004.wav,non_singapore::speaker_234,train,0,Common Voice,0,-1.9756345,-5.413992,-3.4637227,5.8466434
+non_singapore/speaker_234/clip_005.wav,non_singapore::speaker_234,train,0,Common Voice,0,1.1196606,-7.7017884,-3.7065837,5.175667
+non_singapore/speaker_235/clip_001.wav,non_singapore::speaker_235,train,0,Common Voice,0,-4.3004355,-9.091138,-3.4798172,5.468459
+non_singapore/speaker_235/clip_002.wav,non_singapore::speaker_235,train,0,Common Voice,0,2.3555837,-10.85175,-3.8157985,4.1413865
+non_singapore/speaker_235/clip_003.wav,non_singapore::speaker_235,train,0,Common Voice,0,-0.77568454,-10.4110775,-3.9047863,3.9576986
+non_singapore/speaker_235/clip_004.wav,non_singapore::speaker_235,train,0,Common Voice,0,-1.607981,-3.6789906,-3.4673965,6.168055
+non_singapore/speaker_235/clip_005.wav,non_singapore::speaker_235,train,0,Common Voice,0,-10.470537,0.28259984,-3.000387,5.2804585
+non_singapore/speaker_236/clip_001.wav,non_singapore::speaker_236,validation,0,Common Voice,0,-5.956246,-4.9156127,-1.0212816,6.507428
+non_singapore/speaker_236/clip_002.wav,non_singapore::speaker_236,validation,0,Common Voice,0,-3.5837102,-4.4614987,-2.0640857,6.2227893
+non_singapore/speaker_236/clip_003.wav,non_singapore::speaker_236,validation,0,Common Voice,0,-4.259844,-0.32824445,-1.593269,6.075938
+non_singapore/speaker_236/clip_004.wav,non_singapore::speaker_236,validation,0,Common Voice,0,-2.4136572,-4.5874033,-1.89665,6.162801
+non_singapore/speaker_236/clip_005.wav,non_singapore::speaker_236,validation,0,Common Voice,0,-4.9473667,-2.4656065,-1.3381093,6.658778
+non_singapore/speaker_237/clip_001.wav,non_singapore::speaker_237,train,0,Common Voice,0,-5.146994,-4.3962355,-3.1140954,4.335726
+non_singapore/speaker_237/clip_002.wav,non_singapore::speaker_237,train,0,Common Voice,0,-5.470224,-4.6251183,-2.6636536,4.8209233
+non_singapore/speaker_237/clip_003.wav,non_singapore::speaker_237,train,0,Common Voice,0,-4.813748,-0.35675597,-2.7859504,4.519588
+non_singapore/speaker_237/clip_004.wav,non_singapore::speaker_237,train,0,Common Voice,0,-6.624253,2.1180136,-1.4543862,5.106948
+non_singapore/speaker_237/clip_005.wav,non_singapore::speaker_237,train,0,Common Voice,0,-3.7880116,-1.7487537,-3.3074546,5.2526236
+non_singapore/speaker_238/clip_001.wav,non_singapore::speaker_238,train,0,Common Voice,0,-1.0775185,-7.581069,-3.0403306,4.8771677
+non_singapore/speaker_238/clip_002.wav,non_singapore::speaker_238,train,0,Common Voice,0,-0.94483876,-9.277224,-3.4375796,4.52248
+non_singapore/speaker_238/clip_003.wav,non_singapore::speaker_238,train,0,Common Voice,0,-2.9644935,-4.727706,-3.7342565,6.309049
+non_singapore/speaker_238/clip_004.wav,non_singapore::speaker_238,train,0,Common Voice,0,-3.9269829,-2.1850111,-1.4828031,4.956243
+non_singapore/speaker_238/clip_005.wav,non_singapore::speaker_238,train,0,Common Voice,0,-1.1913285,-5.967658,-2.9518335,4.4438105
+non_singapore/speaker_239/clip_001.wav,non_singapore::speaker_239,validation,0,Common Voice,0,-15.648304,7.645479,-0.19293553,6.6716456
+non_singapore/speaker_239/clip_002.wav,non_singapore::speaker_239,validation,0,Common Voice,0,-1.6744483,-4.608434,-1.7635213,5.6802506
+non_singapore/speaker_239/clip_003.wav,non_singapore::speaker_239,validation,0,Common Voice,0,-3.5759401,-3.3258398,-1.8361416,6.2923894
+non_singapore/speaker_239/clip_004.wav,non_singapore::speaker_239,validation,0,Common Voice,0,-14.4071865,6.355752,-0.19919378,6.6833973
+non_singapore/speaker_239/clip_005.wav,non_singapore::speaker_239,validation,0,Common Voice,0,-4.6178274,-0.19154073,-1.367556,5.432573
+non_singapore/speaker_241/clip_001.wav,non_singapore::speaker_241,train,0,Common Voice,0,-6.4078164,-2.5993097,-1.6257514,7.136376
+non_singapore/speaker_241/clip_002.wav,non_singapore::speaker_241,train,0,Common Voice,0,-0.2871853,-5.322506,-2.4834185,7.115134
+non_singapore/speaker_241/clip_003.wav,non_singapore::speaker_241,train,0,Common Voice,0,-4.775691,-4.19217,-1.6167077,6.8578463
+non_singapore/speaker_241/clip_004.wav,non_singapore::speaker_241,train,0,Common Voice,0,-4.337307,-8.219717,-1.6153039,6.7015476
+non_singapore/speaker_241/clip_005.wav,non_singapore::speaker_241,train,0,Common Voice,0,-1.7507693,-5.2922745,-2.2189107,7.1846695
+non_singapore/speaker_243/clip_001.wav,non_singapore::speaker_243,train,0,Common Voice,0,-2.9848285,-5.33509,-1.9823002,6.5880256
+non_singapore/speaker_243/clip_002.wav,non_singapore::speaker_243,train,0,Common Voice,0,-3.0788436,-3.7736819,-2.3822567,6.902325
+non_singapore/speaker_243/clip_003.wav,non_singapore::speaker_243,train,0,Common Voice,0,-6.6611476,-1.9817814,-2.2810616,5.626453
+non_singapore/speaker_243/clip_004.wav,non_singapore::speaker_243,train,0,Common Voice,0,-4.4596515,-1.5373471,-1.1999131,6.551296
+non_singapore/speaker_243/clip_005.wav,non_singapore::speaker_243,train,0,Common Voice,0,-3.6094372,-1.6613173,-3.003419,6.869093
+non_singapore/speaker_244/clip_001.wav,non_singapore::speaker_244,train,0,Common Voice,1,2.289918,-3.4049914,-1.3077017,3.6444628
+non_singapore/speaker_244/clip_002.wav,non_singapore::speaker_244,train,0,Common Voice,0,-3.6091256,5.3196993,-1.0790364,4.5245996
+non_singapore/speaker_244/clip_003.wav,non_singapore::speaker_244,train,0,Common Voice,1,2.222925,-1.0006341,-1.1023294,3.528376
+non_singapore/speaker_244/clip_004.wav,non_singapore::speaker_244,train,0,Common Voice,1,3.718806,-1.4000868,-1.9103768,1.0634269
+non_singapore/speaker_244/clip_005.wav,non_singapore::speaker_244,train,0,Common Voice,0,-8.658291,3.1496167,-0.60360456,6.2322135
+non_singapore/speaker_245/clip_001.wav,non_singapore::speaker_245,train,0,Common Voice,0,-6.383469,3.659964,-1.458143,4.7252755
+non_singapore/speaker_245/clip_002.wav,non_singapore::speaker_245,train,0,Common Voice,0,-0.6887208,-10.219391,-3.9875472,4.429259
+non_singapore/speaker_245/clip_003.wav,non_singapore::speaker_245,train,0,Common Voice,0,-9.386872,-0.9607411,-2.5904307,6.821982
+non_singapore/speaker_245/clip_004.wav,non_singapore::speaker_245,train,0,Common Voice,0,-6.0840755,-4.556185,-2.2962675,5.0756025
+non_singapore/speaker_245/clip_005.wav,non_singapore::speaker_245,train,0,Common Voice,0,-16.707382,6.1311793,-0.9823535,5.331498
+non_singapore/speaker_246/clip_001.wav,non_singapore::speaker_246,train,0,Common Voice,0,-1.5660614,-5.153608,-2.070993,5.9217153
+non_singapore/speaker_246/clip_002.wav,non_singapore::speaker_246,train,0,Common Voice,0,-1.6777208,-5.261123,-2.2570288,5.3390718
+non_singapore/speaker_246/clip_003.wav,non_singapore::speaker_246,train,0,Common Voice,0,-4.169348,-2.1555593,-1.515203,5.5882754
+non_singapore/speaker_246/clip_004.wav,non_singapore::speaker_246,train,0,Common Voice,0,-6.088481,-0.10413525,-1.3133764,5.681502
+non_singapore/speaker_246/clip_005.wav,non_singapore::speaker_246,train,0,Common Voice,0,-2.2449994,-5.41812,-2.068993,6.421252
+non_singapore/speaker_247/clip_001.wav,non_singapore::speaker_247,train,0,Common Voice,0,2.7860184,-6.9961104,-3.9212182,4.014361
+non_singapore/speaker_247/clip_002.wav,non_singapore::speaker_247,train,0,Common Voice,0,0.40573114,-2.8953228,-3.185991,5.544834
+non_singapore/speaker_247/clip_003.wav,non_singapore::speaker_247,train,0,Common Voice,0,-0.4525477,-2.264593,-2.538338,3.0038657
+non_singapore/speaker_247/clip_004.wav,non_singapore::speaker_247,train,0,Common Voice,0,-2.746519,2.3218613,-0.8297598,3.1194236
+non_singapore/speaker_247/clip_005.wav,non_singapore::speaker_247,train,0,Common Voice,0,1.1099648,-2.3149369,-3.6395173,3.761085
+non_singapore/speaker_248/clip_001.wav,non_singapore::speaker_248,validation,0,Common Voice,0,-3.2484508,-1.3801229,-2.263383,6.7027783
+non_singapore/speaker_248/clip_002.wav,non_singapore::speaker_248,validation,0,Common Voice,0,-1.8471513,-1.2009472,-3.7848492,6.495544
+non_singapore/speaker_248/clip_003.wav,non_singapore::speaker_248,validation,0,Common Voice,1,1.9427917,-1.0746583,-1.9168023,4.0370946
+non_singapore/speaker_248/clip_004.wav,non_singapore::speaker_248,validation,0,Common Voice,1,1.0627474,-1.8268831,-3.619558,6.35522
+non_singapore/speaker_248/clip_005.wav,non_singapore::speaker_248,validation,0,Common Voice,1,0.07697254,0.113686696,0.75684136,2.3364823
+non_singapore/speaker_251/clip_001.wav,non_singapore::speaker_251,train,0,Common Voice,0,-1.887731,-8.342982,-3.6847196,4.7763505
+non_singapore/speaker_251/clip_002.wav,non_singapore::speaker_251,train,0,Common Voice,0,-2.6993167,-7.2454476,-3.1240358,6.398803
+non_singapore/speaker_251/clip_003.wav,non_singapore::speaker_251,train,0,Common Voice,0,-3.8095908,-4.6605854,-3.2365568,4.8154883
+non_singapore/speaker_251/clip_004.wav,non_singapore::speaker_251,train,0,Common Voice,0,-2.3858078,-4.6439257,-3.364897,3.9369557
+non_singapore/speaker_251/clip_005.wav,non_singapore::speaker_251,train,0,Common Voice,0,1.6473503,-9.216955,-4.1484957,4.4634395
+non_singapore/speaker_252/clip_001.wav,non_singapore::speaker_252,validation,0,Common Voice,0,-19.70844,7.4863477,0.15297268,6.782161
+non_singapore/speaker_252/clip_002.wav,non_singapore::speaker_252,validation,0,Common Voice,0,-16.761894,16.918333,0.14937246,6.726178
+non_singapore/speaker_252/clip_003.wav,non_singapore::speaker_252,validation,0,Common Voice,0,-18.267355,9.202464,0.09798447,6.8617907
+non_singapore/speaker_252/clip_004.wav,non_singapore::speaker_252,validation,0,Common Voice,0,-17.774996,9.531878,0.17339884,6.841596
+non_singapore/speaker_252/clip_005.wav,non_singapore::speaker_252,validation,0,Common Voice,0,-18.043844,7.268017,0.13151982,6.904767
+non_singapore/speaker_253/clip_001.wav,non_singapore::speaker_253,validation,0,Common Voice,0,0.54237634,-10.86842,-4.2827516,4.6946135
+non_singapore/speaker_253/clip_002.wav,non_singapore::speaker_253,validation,0,Common Voice,0,-2.103966,-7.345378,-3.87388,4.693773
+non_singapore/speaker_253/clip_003.wav,non_singapore::speaker_253,validation,0,Common Voice,0,-3.6929145,-4.181362,-3.4937415,5.7699385
+non_singapore/speaker_253/clip_004.wav,non_singapore::speaker_253,validation,0,Common Voice,0,-1.3052077,-5.362062,-2.9463263,4.261162
+non_singapore/speaker_253/clip_005.wav,non_singapore::speaker_253,validation,0,Common Voice,0,0.2217888,-4.9645224,-3.0512855,4.696203
+non_singapore/speaker_254/clip_001.wav,non_singapore::speaker_254,validation,0,Common Voice,0,-3.0033245,-1.2031643,-2.142285,7.2652392
+non_singapore/speaker_254/clip_002.wav,non_singapore::speaker_254,validation,0,Common Voice,0,-7.730097,-3.3198411,-0.9810927,6.9797664
+non_singapore/speaker_254/clip_003.wav,non_singapore::speaker_254,validation,0,Common Voice,0,-1.3735853,-3.4306862,-2.871881,6.887121
+non_singapore/speaker_254/clip_004.wav,non_singapore::speaker_254,validation,0,Common Voice,0,-6.93924,-1.1762807,-1.0359105,5.8290358
+non_singapore/speaker_254/clip_005.wav,non_singapore::speaker_254,validation,0,Common Voice,0,-4.760135,2.568102,-1.9271162,5.478547
+non_singapore/speaker_257/clip_001.wav,non_singapore::speaker_257,train,0,Common Voice,0,-1.1903067,-4.571259,-2.504007,6.805879
+non_singapore/speaker_257/clip_002.wav,non_singapore::speaker_257,train,0,Common Voice,0,0.21765602,-7.9006376,-3.3791478,4.8715706
+non_singapore/speaker_257/clip_003.wav,non_singapore::speaker_257,train,0,Common Voice,0,-6.9357104,-0.86622685,-1.9280086,4.7126904
+non_singapore/speaker_257/clip_004.wav,non_singapore::speaker_257,train,0,Common Voice,0,-0.24591503,-4.1576796,-2.7053955,4.2140436
+non_singapore/speaker_257/clip_005.wav,non_singapore::speaker_257,train,0,Common Voice,0,3.229397,-12.83612,-4.365822,4.6303854
+non_singapore/speaker_258/clip_001.wav,non_singapore::speaker_258,train,0,Common Voice,0,-10.718949,1.4040185,-1.7166172,7.202185
+non_singapore/speaker_258/clip_002.wav,non_singapore::speaker_258,train,0,Common Voice,0,-15.704899,7.0266566,-0.86315346,5.390619
+non_singapore/speaker_258/clip_003.wav,non_singapore::speaker_258,train,0,Common Voice,0,-4.9554543,-5.787685,-2.7088034,4.823593
+non_singapore/speaker_258/clip_004.wav,non_singapore::speaker_258,train,0,Common Voice,0,-5.1649685,-0.29965976,-2.6227503,4.9582
+non_singapore/speaker_258/clip_005.wav,non_singapore::speaker_258,train,0,Common Voice,0,-1.9195361,-4.687054,-3.3236651,3.8549922
+non_singapore/speaker_259/clip_001.wav,non_singapore::speaker_259,train,0,Common Voice,0,-7.3747845,0.33565792,-2.4780147,5.640273
+non_singapore/speaker_259/clip_002.wav,non_singapore::speaker_259,train,0,Common Voice,0,-3.9131618,-6.335004,-3.2413683,4.472552
+non_singapore/speaker_259/clip_003.wav,non_singapore::speaker_259,train,0,Common Voice,0,-1.131159,-3.9362354,-2.832684,4.429919
+non_singapore/speaker_259/clip_004.wav,non_singapore::speaker_259,train,0,Common Voice,0,2.330065,-8.766989,-4.2860584,4.7080336
+non_singapore/speaker_259/clip_005.wav,non_singapore::speaker_259,train,0,Common Voice,0,-1.8081337,-6.1526685,-2.9380288,4.4930263
+non_singapore/speaker_260/clip_001.wav,non_singapore::speaker_260,train,0,Common Voice,0,-13.860895,8.505763,-0.8984269,5.509256
+non_singapore/speaker_260/clip_002.wav,non_singapore::speaker_260,train,0,Common Voice,0,-1.377335,-4.0716343,-2.749327,4.499074
+non_singapore/speaker_260/clip_003.wav,non_singapore::speaker_260,train,0,Common Voice,0,-5.506806,-1.2997382,-2.1009092,4.806982
+non_singapore/speaker_260/clip_004.wav,non_singapore::speaker_260,train,0,Common Voice,0,-7.91238,3.7030053,-2.5372386,5.585199
+non_singapore/speaker_260/clip_005.wav,non_singapore::speaker_260,train,0,Common Voice,0,-3.2887435,-3.161081,-2.3501303,3.8352232
+non_singapore/speaker_261/clip_001.wav,non_singapore::speaker_261,validation,0,Common Voice,0,-3.3321347,1.3944986,-2.455183,5.5013504
+non_singapore/speaker_261/clip_002.wav,non_singapore::speaker_261,validation,0,Common Voice,1,1.472757,-2.1846538,-0.009008198,4.0429845
+non_singapore/speaker_261/clip_003.wav,non_singapore::speaker_261,validation,0,Common Voice,0,-6.188886,2.3747742,-1.5427492,6.534892
+non_singapore/speaker_261/clip_004.wav,non_singapore::speaker_261,validation,0,Common Voice,1,0.90232295,1.4116029,0.10520331,3.1619089
+non_singapore/speaker_261/clip_005.wav,non_singapore::speaker_261,validation,0,Common Voice,0,-1.0406789,0.8879746,-1.2956367,2.7278063
+non_singapore/speaker_263/clip_001.wav,non_singapore::speaker_263,train,0,Common Voice,0,1.7616237,-4.410714,-2.773265,6.3245564
+non_singapore/speaker_263/clip_002.wav,non_singapore::speaker_263,train,0,Common Voice,0,-1.0703083,-5.035449,-2.76232,6.631152
+non_singapore/speaker_263/clip_003.wav,non_singapore::speaker_263,train,0,Common Voice,1,0.8611105,-0.34851176,-0.21706973,3.4952898
+non_singapore/speaker_263/clip_004.wav,non_singapore::speaker_263,train,0,Common Voice,0,-2.739423,-3.5506754,-2.402302,5.973352
+non_singapore/speaker_263/clip_005.wav,non_singapore::speaker_263,train,0,Common Voice,0,0.25366104,-3.0157619,-2.1317027,4.480723
+non_singapore/speaker_264/clip_001.wav,non_singapore::speaker_264,train,0,Common Voice,0,-5.260174,0.7557794,-1.0893753,6.0293746
+non_singapore/speaker_264/clip_002.wav,non_singapore::speaker_264,train,0,Common Voice,0,-9.168882,-0.9929077,-1.8984618,4.0963917
+non_singapore/speaker_264/clip_003.wav,non_singapore::speaker_264,train,0,Common Voice,0,-6.3057437,3.1516445,-1.1690419,4.9936934
+non_singapore/speaker_264/clip_004.wav,non_singapore::speaker_264,train,0,Common Voice,0,-1.3675026,-5.717153,-2.73279,6.919894
+non_singapore/speaker_264/clip_005.wav,non_singapore::speaker_264,train,0,Common Voice,0,-1.2406301,-4.172211,-2.314132,4.159915
+non_singapore/speaker_266/clip_001.wav,non_singapore::speaker_266,train,0,Common Voice,0,-12.145132,2.745389,-0.47317958,6.0686436
+non_singapore/speaker_266/clip_002.wav,non_singapore::speaker_266,train,0,Common Voice,0,-6.7136483,-0.5943291,-1.6290648,4.7988124
+non_singapore/speaker_266/clip_003.wav,non_singapore::speaker_266,train,0,Common Voice,0,-4.7827835,-2.7225518,-1.3687024,5.582847
+non_singapore/speaker_266/clip_004.wav,non_singapore::speaker_266,train,0,Common Voice,0,0.11927684,-3.2654905,-2.3655658,4.3348584
+non_singapore/speaker_266/clip_005.wav,non_singapore::speaker_266,train,0,Common Voice,0,0.019103752,-9.281031,-3.561524,4.623143
+non_singapore/speaker_267/clip_001.wav,non_singapore::speaker_267,train,0,Common Voice,0,-5.6032352,-1.9679111,-2.8952758,4.1406584
+non_singapore/speaker_267/clip_002.wav,non_singapore::speaker_267,train,0,Common Voice,0,1.7549328,-6.981783,-3.955223,4.251429
+non_singapore/speaker_267/clip_003.wav,non_singapore::speaker_267,train,0,Common Voice,0,-7.981818,-0.3676762,-1.4695977,6.5403533
+non_singapore/speaker_267/clip_004.wav,non_singapore::speaker_267,train,0,Common Voice,0,-3.8982577,2.2508068,-1.5225277,4.747244
+non_singapore/speaker_267/clip_005.wav,non_singapore::speaker_267,train,0,Common Voice,0,-13.700084,1.3765404,-1.5166485,7.072976
+non_singapore/speaker_269/clip_001.wav,non_singapore::speaker_269,train,0,Common Voice,0,-4.1782446,-5.3467603,-2.0498326,6.2901363
+non_singapore/speaker_269/clip_002.wav,non_singapore::speaker_269,train,0,Common Voice,0,-2.8612175,-6.395227,-3.5303323,5.2328825
+non_singapore/speaker_269/clip_003.wav,non_singapore::speaker_269,train,0,Common Voice,0,-1.6154987,-4.6471415,-3.5107377,5.2790084
+non_singapore/speaker_269/clip_004.wav,non_singapore::speaker_269,train,0,Common Voice,0,0.48706192,-6.4566417,-3.560175,4.232352
+non_singapore/speaker_269/clip_005.wav,non_singapore::speaker_269,train,0,Common Voice,0,-3.4025018,-5.353758,-4.0450625,5.3292556
+non_singapore/speaker_270/clip_001.wav,non_singapore::speaker_270,train,0,Common Voice,0,0.53162944,-1.3995043,-3.4950657,6.2717257
+non_singapore/speaker_270/clip_002.wav,non_singapore::speaker_270,train,0,Common Voice,0,-2.8575857,1.9498891,-1.7943131,4.062655
+non_singapore/speaker_270/clip_003.wav,non_singapore::speaker_270,train,0,Common Voice,0,-0.5559505,-3.1091886,-3.6285472,6.2067876
+non_singapore/speaker_270/clip_004.wav,non_singapore::speaker_270,train,0,Common Voice,0,-5.7190228,3.514935,-1.3585459,5.1809087
+non_singapore/speaker_270/clip_005.wav,non_singapore::speaker_270,train,0,Common Voice,0,-8.608471,5.052035,-1.881836,6.875463
+non_singapore/speaker_271/clip_001.wav,non_singapore::speaker_271,train,0,Common Voice,0,-15.091724,4.2550235,-0.238889,5.8185105
+non_singapore/speaker_271/clip_002.wav,non_singapore::speaker_271,train,0,Common Voice,0,-7.5631104,5.2786946,-1.9459682,5.299895
+non_singapore/speaker_271/clip_003.wav,non_singapore::speaker_271,train,0,Common Voice,0,-9.900795,1.2260712,-2.5579839,4.046346
+non_singapore/speaker_271/clip_004.wav,non_singapore::speaker_271,train,0,Common Voice,0,-3.1247714,-2.5728104,-2.6472747,4.6981454
+non_singapore/speaker_271/clip_005.wav,non_singapore::speaker_271,train,0,Common Voice,0,-8.694908,3.6448593,-1.4648777,4.990917
+non_singapore/speaker_272/clip_001.wav,non_singapore::speaker_272,train,0,Common Voice,0,-10.887292,9.966903,-0.73718864,5.1431866
+non_singapore/speaker_272/clip_002.wav,non_singapore::speaker_272,train,0,Common Voice,0,-13.161885,8.3738985,-0.83764243,5.355002
+non_singapore/speaker_272/clip_003.wav,non_singapore::speaker_272,train,0,Common Voice,0,1.2475002,-6.370019,-3.9360075,4.0101547
+non_singapore/speaker_272/clip_004.wav,non_singapore::speaker_272,train,0,Common Voice,0,-7.6849046,0.42745492,-1.9005992,4.7791247
+non_singapore/speaker_272/clip_005.wav,non_singapore::speaker_272,train,0,Common Voice,0,-3.8466506,-1.0580671,-2.0164175,4.421915
+non_singapore/speaker_273/clip_001.wav,non_singapore::speaker_273,train,0,Common Voice,0,-5.876922,-3.9999084,-0.770542,6.77953
+non_singapore/speaker_273/clip_002.wav,non_singapore::speaker_273,train,0,Common Voice,0,-7.0647717,4.777857,-1.1616834,5.4059215
+non_singapore/speaker_273/clip_003.wav,non_singapore::speaker_273,train,0,Common Voice,0,-9.23357,2.7894835,-1.1268427,5.429813
+non_singapore/speaker_273/clip_004.wav,non_singapore::speaker_273,train,0,Common Voice,0,-9.897492,4.067394,-0.8173114,4.726637
+non_singapore/speaker_273/clip_005.wav,non_singapore::speaker_273,train,0,Common Voice,0,-9.404472,2.3715775,-1.8700812,5.268999
+non_singapore/speaker_274/clip_001.wav,non_singapore::speaker_274,train,0,Common Voice,0,-6.7405806,8.3748045,-0.63020754,4.4625034
+non_singapore/speaker_274/clip_002.wav,non_singapore::speaker_274,train,0,Common Voice,0,-9.570875,-0.23229331,-1.8166493,4.9282975
+non_singapore/speaker_274/clip_003.wav,non_singapore::speaker_274,train,0,Common Voice,0,-6.3661523,-3.9354835,-2.101202,7.2566743
+non_singapore/speaker_274/clip_004.wav,non_singapore::speaker_274,train,0,Common Voice,0,-1.4479681,2.0796616,-0.6558778,3.2399313
+non_singapore/speaker_274/clip_005.wav,non_singapore::speaker_274,train,0,Common Voice,0,-4.3835263,4.418367,-0.79468036,3.796102
+non_singapore/speaker_275/clip_001.wav,non_singapore::speaker_275,train,0,Common Voice,0,-14.578297,5.344932,-0.267907,6.5995827
+non_singapore/speaker_275/clip_002.wav,non_singapore::speaker_275,train,0,Common Voice,0,-5.8169055,-4.313442,-1.7813746,5.746489
+non_singapore/speaker_275/clip_003.wav,non_singapore::speaker_275,train,0,Common Voice,0,-6.7908278,-0.0022112497,-0.7545842,6.0245814
+non_singapore/speaker_275/clip_004.wav,non_singapore::speaker_275,train,0,Common Voice,0,-13.56503,4.711596,-0.42249957,6.484851
+non_singapore/speaker_275/clip_005.wav,non_singapore::speaker_275,train,0,Common Voice,0,-6.1162663,1.1161788,-0.92458725,5.753167
+non_singapore/speaker_276/clip_001.wav,non_singapore::speaker_276,train,0,Common Voice,0,-8.685733,-0.22109534,-2.1406298,4.5886984
+non_singapore/speaker_276/clip_002.wav,non_singapore::speaker_276,train,0,Common Voice,0,-10.753667,4.799524,-1.5584985,4.077738
+non_singapore/speaker_276/clip_003.wav,non_singapore::speaker_276,train,0,Common Voice,0,-3.1727302,-3.961644,-2.682179,4.893473
+non_singapore/speaker_276/clip_004.wav,non_singapore::speaker_276,train,0,Common Voice,0,-14.5039215,6.2427087,-0.7568072,5.8202457
+non_singapore/speaker_276/clip_005.wav,non_singapore::speaker_276,train,0,Common Voice,0,-10.876049,-1.428761,-2.7291577,4.5880404
+non_singapore/speaker_281/clip_001.wav,non_singapore::speaker_281,train,0,Common Voice,0,-3.921497,1.9371943,-1.7823887,3.8268044
+non_singapore/speaker_281/clip_002.wav,non_singapore::speaker_281,train,0,Common Voice,0,-10.882369,4.2009115,-1.1953498,5.392338
+non_singapore/speaker_281/clip_003.wav,non_singapore::speaker_281,train,0,Common Voice,0,-4.6972914,6.888422,-0.42201722,4.089273
+non_singapore/speaker_281/clip_004.wav,non_singapore::speaker_281,train,0,Common Voice,0,-0.2925225,-2.1576176,-1.507737,2.6694412
+non_singapore/speaker_281/clip_005.wav,non_singapore::speaker_281,train,0,Common Voice,1,-1.7861897,8.895368,0.21695703,2.6914108
+non_singapore/speaker_283/clip_001.wav,non_singapore::speaker_283,train,0,Common Voice,0,-4.011417,-2.7798817,-2.0005293,5.1216416
+non_singapore/speaker_283/clip_002.wav,non_singapore::speaker_283,train,0,Common Voice,0,-6.6616745,0.32350332,-1.8834223,5.161726
+non_singapore/speaker_283/clip_003.wav,non_singapore::speaker_283,train,0,Common Voice,0,-2.7964523,-6.5939975,-3.805466,4.6725755
+non_singapore/speaker_283/clip_004.wav,non_singapore::speaker_283,train,0,Common Voice,0,-1.3803751,-6.1848965,-2.9144392,4.6123395
+non_singapore/speaker_283/clip_005.wav,non_singapore::speaker_283,train,0,Common Voice,0,-0.6417008,-5.0409164,-2.5484529,4.3696713
+non_singapore/speaker_284/clip_001.wav,non_singapore::speaker_284,train,0,Common Voice,0,-3.5508802,-5.0735345,-3.6046002,5.8108764
+non_singapore/speaker_284/clip_002.wav,non_singapore::speaker_284,train,0,Common Voice,0,-0.8232274,-8.183239,-3.3708649,4.146338
+non_singapore/speaker_284/clip_003.wav,non_singapore::speaker_284,train,0,Common Voice,0,-0.24211924,-6.1555023,-3.2502213,4.3221426
+non_singapore/speaker_284/clip_004.wav,non_singapore::speaker_284,train,0,Common Voice,0,-4.1042175,-1.6434666,-1.3867818,4.7728286
+non_singapore/speaker_284/clip_005.wav,non_singapore::speaker_284,train,0,Common Voice,0,-1.4830699,-4.0364456,-3.162598,4.184492
+non_singapore/speaker_285/clip_001.wav,non_singapore::speaker_285,train,0,Common Voice,0,-3.5653682,-0.26818484,-2.8129292,5.416787
+non_singapore/speaker_285/clip_002.wav,non_singapore::speaker_285,train,0,Common Voice,0,-7.930947,-1.7647047,-1.9547231,7.1395416
+non_singapore/speaker_285/clip_003.wav,non_singapore::speaker_285,train,0,Common Voice,0,-12.557026,-1.7110941,-2.3799448,4.7691092
+non_singapore/speaker_285/clip_004.wav,non_singapore::speaker_285,train,0,Common Voice,0,-5.037249,1.0160085,-2.0770583,5.0476193
+non_singapore/speaker_285/clip_005.wav,non_singapore::speaker_285,train,0,Common Voice,0,-8.492197,2.085383,-1.4124156,6.5466137
+non_singapore/speaker_286/clip_001.wav,non_singapore::speaker_286,train,0,Common Voice,0,0.84666145,-2.6345987,-2.9749832,6.683591
+non_singapore/speaker_286/clip_002.wav,non_singapore::speaker_286,train,0,Common Voice,0,-2.2799723,1.1170269,-0.16130155,4.744761
+non_singapore/speaker_286/clip_003.wav,non_singapore::speaker_286,train,0,Common Voice,1,3.286202,-3.576547,-3.0288897,2.7902458
+non_singapore/speaker_286/clip_004.wav,non_singapore::speaker_286,train,0,Common Voice,0,1.3885347,-2.152467,-2.2475657,3.7540786
+non_singapore/speaker_286/clip_005.wav,non_singapore::speaker_286,train,0,Common Voice,0,0.79123366,-3.3973155,-2.736372,6.4761457
+non_singapore/speaker_287/clip_001.wav,non_singapore::speaker_287,train,0,Common Voice,0,-1.1751069,-4.7194834,-2.5249267,3.8963
+non_singapore/speaker_287/clip_002.wav,non_singapore::speaker_287,train,0,Common Voice,0,-4.5037384,-2.2646086,-3.0510905,3.8267002
+non_singapore/speaker_287/clip_003.wav,non_singapore::speaker_287,train,0,Common Voice,0,-2.6253603,-8.1223755,-3.8167348,6.0485253
+non_singapore/speaker_287/clip_004.wav,non_singapore::speaker_287,train,0,Common Voice,0,-3.6939378,-2.3002303,-2.635124,4.3295465
+non_singapore/speaker_287/clip_005.wav,non_singapore::speaker_287,train,0,Common Voice,0,-5.259872,-4.1096773,-3.3051972,5.5337486
+non_singapore/speaker_288/clip_001.wav,non_singapore::speaker_288,train,0,Common Voice,0,-5.1139936,0.35761228,-1.7051953,5.304464
+non_singapore/speaker_288/clip_002.wav,non_singapore::speaker_288,train,0,Common Voice,0,-1.862752,-3.8456306,-2.6879086,4.783758
+non_singapore/speaker_288/clip_003.wav,non_singapore::speaker_288,train,0,Common Voice,0,-4.9092417,-3.7673519,-1.6615804,4.9554286
+non_singapore/speaker_288/clip_004.wav,non_singapore::speaker_288,train,0,Common Voice,0,-8.077327,-2.7460158,-1.4026055,5.4972706
+non_singapore/speaker_288/clip_005.wav,non_singapore::speaker_288,train,0,Common Voice,0,-7.2593665,-2.3387225,-2.1616347,4.6103845
+non_singapore/speaker_289/clip_001.wav,non_singapore::speaker_289,train,0,Common Voice,0,-11.095163,6.2182684,-0.31466547,6.474332
+non_singapore/speaker_289/clip_002.wav,non_singapore::speaker_289,train,0,Common Voice,0,-4.064373,-4.7296114,-0.7568099,6.9328156
+non_singapore/speaker_289/clip_003.wav,non_singapore::speaker_289,train,0,Common Voice,0,-1.0460426,-3.5559294,-2.6486282,6.9108496
+non_singapore/speaker_289/clip_004.wav,non_singapore::speaker_289,train,0,Common Voice,0,-8.259309,-0.24494666,-0.5367668,6.8381963
+non_singapore/speaker_289/clip_005.wav,non_singapore::speaker_289,train,0,Common Voice,0,-10.295252,-1.2984163,-0.70942867,6.961954
+non_singapore/speaker_290/clip_001.wav,non_singapore::speaker_290,train,0,Common Voice,0,3.0451412,-8.074264,-4.342296,4.672139
+non_singapore/speaker_290/clip_002.wav,non_singapore::speaker_290,train,0,Common Voice,0,-1.8668224,-5.960493,-2.9988654,6.4932203
+non_singapore/speaker_290/clip_003.wav,non_singapore::speaker_290,train,0,Common Voice,0,-1.7081015,-1.4004712,-0.76741654,4.67958
+non_singapore/speaker_290/clip_004.wav,non_singapore::speaker_290,train,0,Common Voice,0,1.3599944,-7.6754427,-2.9581933,6.669514
+non_singapore/speaker_290/clip_005.wav,non_singapore::speaker_290,train,0,Common Voice,0,0.35488287,-8.37573,-4.1502724,5.71845
+non_singapore/speaker_291/clip_001.wav,non_singapore::speaker_291,train,0,Common Voice,0,-5.2098904,-0.6052996,-1.7021811,5.6280274
+non_singapore/speaker_291/clip_002.wav,non_singapore::speaker_291,train,0,Common Voice,0,-6.530387,-0.55804086,-0.9658619,6.435047
+non_singapore/speaker_291/clip_003.wav,non_singapore::speaker_291,train,0,Common Voice,0,-3.3622053,-4.8026714,-2.2211976,6.2454815
+non_singapore/speaker_291/clip_004.wav,non_singapore::speaker_291,train,0,Common Voice,0,-4.16793,-1.4715714,-1.5848825,5.626641
+non_singapore/speaker_291/clip_005.wav,non_singapore::speaker_291,train,0,Common Voice,0,-7.1161733,-0.26638904,-1.458212,5.8272634
+non_singapore/speaker_292/clip_001.wav,non_singapore::speaker_292,train,0,Common Voice,0,0.0050342176,-8.410758,-3.8945193,5.4910736
+non_singapore/speaker_292/clip_002.wav,non_singapore::speaker_292,train,0,Common Voice,0,-0.6131283,-8.049751,-4.1837287,4.273797
+non_singapore/speaker_292/clip_003.wav,non_singapore::speaker_292,train,0,Common Voice,0,0.605291,-7.834369,-4.1428084,4.0917473
+non_singapore/speaker_292/clip_004.wav,non_singapore::speaker_292,train,0,Common Voice,0,1.3029497,-9.658283,-4.209774,4.1886063
+non_singapore/speaker_292/clip_005.wav,non_singapore::speaker_292,train,0,Common Voice,0,0.14432435,-6.8905025,-2.8931549,4.5919466
+non_singapore/speaker_293/clip_001.wav,non_singapore::speaker_293,train,0,Common Voice,1,0.6686721,0.25094485,0.7090329,4.0465126
+non_singapore/speaker_293/clip_002.wav,non_singapore::speaker_293,train,0,Common Voice,1,2.400822,-1.3618379,-1.1756327,3.3228807
+non_singapore/speaker_293/clip_003.wav,non_singapore::speaker_293,train,0,Common Voice,1,-3.1501806,5.827238,0.17955267,4.359598
+non_singapore/speaker_293/clip_004.wav,non_singapore::speaker_293,train,0,Common Voice,1,1.8600248,-1.8596989,0.40283382,4.56702
+non_singapore/speaker_293/clip_005.wav,non_singapore::speaker_293,train,0,Common Voice,0,-0.43008432,0.446841,0.5199986,4.479442
+non_singapore/speaker_294/clip_001.wav,non_singapore::speaker_294,validation,0,Common Voice,0,-5.4903216,-3.0006142,-2.6517506,4.7535396
+non_singapore/speaker_294/clip_002.wav,non_singapore::speaker_294,validation,0,Common Voice,0,-3.246419,-1.294202,-2.0088944,4.609412
+non_singapore/speaker_294/clip_003.wav,non_singapore::speaker_294,validation,0,Common Voice,0,-8.621147,4.449848,-0.5542606,5.9559865
+non_singapore/speaker_294/clip_004.wav,non_singapore::speaker_294,validation,0,Common Voice,0,-14.852505,5.6082287,-0.8677268,6.4057255
+non_singapore/speaker_294/clip_005.wav,non_singapore::speaker_294,validation,0,Common Voice,0,-11.712731,1.0961387,-1.93649,5.11288
+non_singapore/speaker_297/clip_001.wav,non_singapore::speaker_297,train,0,Common Voice,0,-3.02334,-4.2737617,-2.0778496,4.5780044
+non_singapore/speaker_297/clip_002.wav,non_singapore::speaker_297,train,0,Common Voice,0,0.25029147,-11.422505,-3.735137,4.114955
+non_singapore/speaker_297/clip_003.wav,non_singapore::speaker_297,train,0,Common Voice,0,-4.9941273,-4.0085506,-2.5542884,4.9781356
+non_singapore/speaker_297/clip_004.wav,non_singapore::speaker_297,train,0,Common Voice,0,-2.8551028,-4.0742617,-2.316036,4.1615596
+non_singapore/speaker_297/clip_005.wav,non_singapore::speaker_297,train,0,Common Voice,0,-0.25990024,-8.864686,-3.283496,4.3717666
+non_singapore/speaker_298/clip_001.wav,non_singapore::speaker_298,train,0,Common Voice,0,1.5009427,-8.099686,-3.1748593,6.081735
+non_singapore/speaker_298/clip_002.wav,non_singapore::speaker_298,train,0,Common Voice,0,-8.07006,-0.26018378,-2.895471,4.8389096
+non_singapore/speaker_298/clip_003.wav,non_singapore::speaker_298,train,0,Common Voice,0,-1.4862634,-2.8009486,-2.9920425,5.084028
+non_singapore/speaker_298/clip_004.wav,non_singapore::speaker_298,train,0,Common Voice,0,0.27383015,-5.135611,-3.6179516,5.9173145
+non_singapore/speaker_298/clip_005.wav,non_singapore::speaker_298,train,0,Common Voice,0,1.109504,-11.102155,-4.339944,4.537929
+non_singapore/speaker_300/clip_001.wav,non_singapore::speaker_300,validation,0,Common Voice,0,-7.4181027,-1.5054218,-1.7169764,4.6795473
+non_singapore/speaker_300/clip_002.wav,non_singapore::speaker_300,validation,0,Common Voice,0,-15.749377,7.6466084,-0.22665764,6.6401844
+non_singapore/speaker_300/clip_003.wav,non_singapore::speaker_300,validation,0,Common Voice,0,-11.690393,1.8610097,-1.5761098,4.6906652
+non_singapore/speaker_300/clip_004.wav,non_singapore::speaker_300,validation,0,Common Voice,0,-11.602345,0.60899407,-1.2737002,5.6151567
+singapore/speaker_002/clip_001.wav,singapore::speaker_002,train,1,MNSC,1,-3.3404799,7.929296,0.11060625,4.13033
+singapore/speaker_002/clip_002.wav,singapore::speaker_002,train,1,MNSC,1,8.445771,1.4796677,-1.2974793,1.0366122
+singapore/speaker_004/clip_001.wav,singapore::speaker_004,train,1,MNSC,1,7.5441103,3.2580762,-1.0851065,0.47551805
+singapore/speaker_007/clip_001.wav,singapore::speaker_007,train,1,MNSC,0,-2.9000256,4.7259164,-2.3277194,4.892153
+singapore/speaker_007/clip_002.wav,singapore::speaker_007,train,1,MNSC,1,7.085303,1.579748,-1.1141318,1.0795332
+singapore/speaker_007/clip_003.wav,singapore::speaker_007,train,1,MNSC,1,7.626992,-4.6662927,-1.4215702,0.8760577
+singapore/speaker_010/clip_001.wav,singapore::speaker_010,train,1,MNSC,1,2.9633126,-0.8403821,0.90275425,3.1738946
+singapore/speaker_010/clip_002.wav,singapore::speaker_010,train,1,MNSC,1,0.80518746,0.28483802,0.96461225,3.3054512
+singapore/speaker_011/clip_001.wav,singapore::speaker_011,train,1,MNSC,1,8.352324,3.5797708,0.23443858,0.6789692
+singapore/speaker_011/clip_002.wav,singapore::speaker_011,train,1,MNSC,1,8.62461,3.4303586,-0.37428907,2.1318483
+singapore/speaker_011/clip_003.wav,singapore::speaker_011,train,1,MNSC,1,8.940313,4.2582083,-0.3315589,2.1739628
+singapore/speaker_011/clip_004.wav,singapore::speaker_011,train,1,MNSC,1,3.9291604,1.8742487,0.28206754,3.6636875
+singapore/speaker_012/clip_001.wav,singapore::speaker_012,train,1,MNSC,0,-1.509976,1.8433999,-1.3290784,3.854512
+singapore/speaker_012/clip_002.wav,singapore::speaker_012,train,1,MNSC,1,0.54248744,3.3471174,-0.9526206,3.2636726
+singapore/speaker_012/clip_003.wav,singapore::speaker_012,train,1,MNSC,1,7.8279963,-1.6467848,-1.1792083,0.67972517
+singapore/speaker_015/clip_001.wav,singapore::speaker_015,train,1,MNSC,1,8.908657,-1.3318007,-1.5290333,0.58278096
+singapore/speaker_015/clip_002.wav,singapore::speaker_015,train,1,MNSC,0,-5.8786793,1.2367074,-0.7404826,5.144026
+singapore/speaker_015/clip_003.wav,singapore::speaker_015,train,1,MNSC,1,7.372692,-3.757792,-1.4840138,0.6567256
+singapore/speaker_017/clip_001.wav,singapore::speaker_017,train,1,MNSC,1,-1.1685318,2.0746434,-2.1544802,2.6798508
+singapore/speaker_017/clip_002.wav,singapore::speaker_017,train,1,MNSC,1,5.5138764,1.8217897,-1.0891712,1.243968
+singapore/speaker_017/clip_003.wav,singapore::speaker_017,train,1,MNSC,1,7.184612,-3.4789248,-1.7906263,0.71436507
+singapore/speaker_017/clip_004.wav,singapore::speaker_017,train,1,MNSC,1,5.446317,-0.52648157,0.6942185,1.397761
+singapore/speaker_018/clip_001.wav,singapore::speaker_018,train,1,MNSC,1,8.377552,3.7597747,0.8301081,0.83718413
+singapore/speaker_018/clip_002.wav,singapore::speaker_018,train,1,MNSC,1,6.1473317,5.5465503,-0.009297434,0.58105975
+singapore/speaker_019/clip_001.wav,singapore::speaker_019,validation,1,MNSC,1,1.7800597,3.3431704,0.7100188,3.1362782
+singapore/speaker_019/clip_002.wav,singapore::speaker_019,validation,1,MNSC,1,8.687396,2.4743211,-0.8413944,1.0204681
+singapore/speaker_020/clip_001.wav,singapore::speaker_020,train,1,MNSC,1,1.2435479,1.4231097,-1.874522,3.2577064
+singapore/speaker_020/clip_002.wav,singapore::speaker_020,train,1,MNSC,1,1.2899708,2.6098566,-1.8218372,3.265546
+singapore/speaker_020/clip_003.wav,singapore::speaker_020,train,1,MNSC,1,1.1544003,1.4837205,-1.8709928,3.2890565
+singapore/speaker_021/clip_001.wav,singapore::speaker_021,train,1,MNSC,1,6.7538395,0.89919394,-1.3943636,1.1531037
+singapore/speaker_022/clip_001.wav,singapore::speaker_022,validation,1,MNSC,1,1.2317902,8.495209,0.064977475,2.5693703
+singapore/speaker_022/clip_002.wav,singapore::speaker_022,validation,1,MNSC,0,-4.214436,4.474815,-0.5204844,4.910718
+singapore/speaker_022/clip_003.wav,singapore::speaker_022,validation,1,MNSC,1,5.0904136,3.3937585,-0.5786332,1.5050508
+singapore/speaker_022/clip_004.wav,singapore::speaker_022,validation,1,MNSC,1,-0.8307519,5.1354365,-0.5062521,4.8705416
+singapore/speaker_022/clip_005.wav,singapore::speaker_022,validation,1,MNSC,0,-4.1282105,4.6874614,-0.48943606,4.9719114
+singapore/speaker_023/clip_001.wav,singapore::speaker_023,train,1,MNSC,1,3.1025352,1.9478493,0.32088885,1.6308032
+singapore/speaker_023/clip_002.wav,singapore::speaker_023,train,1,MNSC,1,1.9695598,-0.31953633,0.42552257,2.526645
+singapore/speaker_024/clip_001.wav,singapore::speaker_024,train,1,MNSC,1,5.580969,6.209507,-0.39065123,1.5772642
+singapore/speaker_024/clip_002.wav,singapore::speaker_024,train,1,MNSC,1,2.1235902,4.499318,-0.4120794,2.8525977
+singapore/speaker_025/clip_001.wav,singapore::speaker_025,train,1,MNSC,1,2.6794515,1.8040758,0.4107642,4.3862896
+singapore/speaker_025/clip_002.wav,singapore::speaker_025,train,1,MNSC,0,-5.0539546,6.1307683,-0.8247236,3.9242182
+singapore/speaker_026/clip_001.wav,singapore::speaker_026,train,1,MNSC,0,1.7000396,-3.259704,-1.5698906,1.9875787
+singapore/speaker_027/clip_001.wav,singapore::speaker_027,validation,1,MNSC,1,7.131106,-0.9280062,-1.3265496,1.445634
+singapore/speaker_029/clip_001.wav,singapore::speaker_029,train,1,MNSC,1,1.1655506,2.6435697,-1.0818418,4.2099695
+singapore/speaker_029/clip_002.wav,singapore::speaker_029,train,1,MNSC,1,0.85348606,1.3316799,-1.112967,4.283083
+singapore/speaker_030/clip_001.wav,singapore::speaker_030,train,1,MNSC,1,3.2951593,1.2640616,-1.1904573,3.0783968
+singapore/speaker_030/clip_002.wav,singapore::speaker_030,train,1,MNSC,1,2.0876877,-1.3767511,-1.5810605,2.5679224
+singapore/speaker_032/clip_001.wav,singapore::speaker_032,train,1,MNSC,1,1.8721004,0.3911836,0.33946824,4.585587
+singapore/speaker_033/clip_001.wav,singapore::speaker_033,train,1,MNSC,1,1.0015819,4.9576693,-0.5973645,3.0938034
+singapore/speaker_034/clip_001.wav,singapore::speaker_034,train,1,MNSC,1,-4.4624887,9.124711,-0.42296258,4.2444944
+singapore/speaker_034/clip_002.wav,singapore::speaker_034,train,1,MNSC,1,-4.574842,9.493371,-0.22544378,4.3010607
+singapore/speaker_035/clip_001.wav,singapore::speaker_035,train,1,MNSC,1,8.723616,0.4376101,-0.9789397,0.75179607
+singapore/speaker_035/clip_002.wav,singapore::speaker_035,train,1,MNSC,1,0.041967455,1.4321861,0.028114744,3.9816558
+singapore/speaker_036/clip_001.wav,singapore::speaker_036,train,1,MNSC,1,3.4860506,-0.37810194,-1.593142,2.1863112
+singapore/speaker_037/clip_001.wav,singapore::speaker_037,train,1,MNSC,1,-0.28433818,3.6703327,-2.0049105,2.7529142
+singapore/speaker_038/clip_001.wav,singapore::speaker_038,train,1,MNSC,1,2.8495815,1.4579,1.2263678,1.7909069
+singapore/speaker_038/clip_002.wav,singapore::speaker_038,train,1,MNSC,1,3.4669225,-2.6555657,0.19921345,1.3058454
+singapore/speaker_039/clip_001.wav,singapore::speaker_039,train,1,MNSC,1,1.7483176,0.3006467,0.060235564,4.7272477
+singapore/speaker_040/clip_001.wav,singapore::speaker_040,validation,1,MNSC,1,9.338125,1.3788928,-0.6210914,0.5911328
+singapore/speaker_040/clip_002.wav,singapore::speaker_040,validation,1,MNSC,1,7.9961805,2.3674717,-0.17471822,0.8734972
+singapore/speaker_042/clip_001.wav,singapore::speaker_042,train,1,MNSC,1,2.5541584,1.3950144,-2.3682003,2.5159
+singapore/speaker_043/clip_001.wav,singapore::speaker_043,train,1,MNSC,1,2.7717273,6.5105405,0.26835796,0.75600064
+singapore/speaker_043/clip_002.wav,singapore::speaker_043,train,1,MNSC,1,1.5492258,9.082776,-0.0630071,3.6876872
+singapore/speaker_043/clip_003.wav,singapore::speaker_043,train,1,MNSC,1,6.302538,8.814824,0.21489947,0.62439364
+singapore/speaker_045/clip_001.wav,singapore::speaker_045,validation,1,MNSC,0,-2.443165,4.102665,-0.99373186,4.5021467
+singapore/speaker_045/clip_002.wav,singapore::speaker_045,validation,1,MNSC,0,-4.377874,4.2114124,0.013915839,4.6054935
+singapore/speaker_046/clip_001.wav,singapore::speaker_046,train,1,MNSC,0,-1.9247679,0.32479173,-2.8315983,2.1595144
+singapore/speaker_046/clip_002.wav,singapore::speaker_046,train,1,MNSC,0,-4.7561545,-2.5011432,-0.7960939,5.318146
+singapore/speaker_048/clip_001.wav,singapore::speaker_048,train,1,MNSC,0,-5.68575,7.9969378,-0.561573,4.7750196
+singapore/speaker_048/clip_002.wav,singapore::speaker_048,train,1,MNSC,1,2.0695899,4.2581663,-0.9391543,2.5189629
+singapore/speaker_048/clip_003.wav,singapore::speaker_048,train,1,MNSC,1,-4.6894565,9.631397,-0.51144844,4.726048
+singapore/speaker_048/clip_004.wav,singapore::speaker_048,train,1,MNSC,0,1.0163168,-1.4583669,-2.811608,3.2116795
+singapore/speaker_048/clip_005.wav,singapore::speaker_048,train,1,MNSC,1,1.1129836,-0.98689824,-2.7653172,3.2508342
+singapore/speaker_049/clip_001.wav,singapore::speaker_049,train,1,MNSC,1,-1.7364864,6.3495646,-0.29896602,3.716545
+singapore/speaker_049/clip_002.wav,singapore::speaker_049,train,1,MNSC,1,6.069006,-0.3815465,-1.0868317,1.4574246
+singapore/speaker_049/clip_003.wav,singapore::speaker_049,train,1,MNSC,1,-0.8863244,6.0856695,-0.04792459,2.3714728
+singapore/speaker_050/clip_001.wav,singapore::speaker_050,train,1,MNSC,1,6.413661,-1.2986948,-1.7141509,0.92175096
+singapore/speaker_052/clip_001.wav,singapore::speaker_052,train,1,MNSC,1,8.090838,3.5164032,0.850946,0.94396347
+singapore/speaker_052/clip_002.wav,singapore::speaker_052,train,1,MNSC,1,-2.5539577,8.826686,-0.43434396,3.4554875
+singapore/speaker_053/clip_001.wav,singapore::speaker_053,train,1,MNSC,1,4.9811273,5.858917,0.20913395,2.0207796
+singapore/speaker_054/clip_001.wav,singapore::speaker_054,validation,1,MNSC,1,9.209615,3.479167,-0.9040842,0.52744234
+singapore/speaker_054/clip_002.wav,singapore::speaker_054,validation,1,MNSC,1,3.8117032,0.27373868,-1.3348384,1.8130842
+singapore/speaker_054/clip_003.wav,singapore::speaker_054,validation,1,MNSC,0,-2.8016691,4.506122,-0.09168174,4.537971
+singapore/speaker_054/clip_004.wav,singapore::speaker_054,validation,1,MNSC,1,5.5516744,1.2951624,-1.2223876,1.6600158
+singapore/speaker_055/clip_001.wav,singapore::speaker_055,train,1,MNSC,1,4.370536,1.1260862,-0.27429935,1.2836223
+singapore/speaker_055/clip_002.wav,singapore::speaker_055,train,1,MNSC,1,6.394336,-0.29949108,-0.9313173,1.31398
+singapore/speaker_056/clip_001.wav,singapore::speaker_056,validation,1,MNSC,1,6.0601726,0.8779567,-1.3521072,1.1884276
+singapore/speaker_056/clip_002.wav,singapore::speaker_056,validation,1,MNSC,1,4.1577363,-6.5656877,-1.7867136,2.0154922
+singapore/speaker_057/clip_001.wav,singapore::speaker_057,validation,1,MNSC,1,0.812051,-0.27573425,0.83910996,3.8754897
+singapore/speaker_057/clip_002.wav,singapore::speaker_057,validation,1,MNSC,1,1.3955052,-0.103963815,0.9875885,3.290948
+singapore/speaker_057/clip_003.wav,singapore::speaker_057,validation,1,MNSC,1,4.7487087,-1.6529902,-1.8125793,0.83175975
+singapore/speaker_057/clip_004.wav,singapore::speaker_057,validation,1,MNSC,1,4.539891,-0.56847656,-1.8251102,0.7713759
+singapore/speaker_058/clip_001.wav,singapore::speaker_058,train,1,MNSC,1,7.8251524,3.5758486,0.82532084,1.3747195
+singapore/speaker_058/clip_002.wav,singapore::speaker_058,train,1,MNSC,1,4.5014257,7.470456,-0.19554807,1.1666098
+singapore/speaker_059/clip_001.wav,singapore::speaker_059,train,1,MNSC,1,1.4635626,7.9361715,-0.94780177,3.2712781
+singapore/speaker_060/clip_001.wav,singapore::speaker_060,train,1,MNSC,1,11.066557,2.6700354,-1.0436456,0.35899165
+singapore/speaker_060/clip_002.wav,singapore::speaker_060,train,1,MNSC,1,7.77151,3.6293454,-0.39344373,0.83000255
+singapore/speaker_061/clip_001.wav,singapore::speaker_061,train,1,MNSC,1,7.6279616,1.0632256,-0.9270185,0.7646002
+singapore/speaker_062/clip_001.wav,singapore::speaker_062,validation,1,MNSC,0,-0.16917813,-0.65113795,-1.6366669,3.0457375
+singapore/speaker_062/clip_002.wav,singapore::speaker_062,validation,1,MNSC,1,5.8222976,0.6551323,0.40690896,1.1867148
+singapore/speaker_062/clip_003.wav,singapore::speaker_062,validation,1,MNSC,1,6.8390646,1.2159426,0.39549172,1.1788448
+singapore/speaker_062/clip_004.wav,singapore::speaker_062,validation,1,MNSC,0,-1.3524957,0.312107,-1.6350502,3.105589
+singapore/speaker_062/clip_005.wav,singapore::speaker_062,validation,1,MNSC,1,4.7868485,4.6790643,1.1332228,1.6314117
+singapore/speaker_063/clip_001.wav,singapore::speaker_063,train,1,MNSC,1,2.2617424,-2.3236055,-1.762649,3.8888123
+singapore/speaker_063/clip_002.wav,singapore::speaker_063,train,1,MNSC,1,6.7731357,-0.41604635,-2.1189773,1.5025865
+singapore/speaker_063/clip_003.wav,singapore::speaker_063,train,1,MNSC,1,7.9245386,-5.6894903,-1.8338326,0.83990365
+singapore/speaker_063/clip_004.wav,singapore::speaker_063,train,1,MNSC,1,5.8464985,-1.432042,-2.1874266,1.6078955
+singapore/speaker_064/clip_001.wav,singapore::speaker_064,train,1,MNSC,1,5.2147784,5.127679,-0.15630336,1.8721763
+singapore/speaker_064/clip_002.wav,singapore::speaker_064,train,1,MNSC,1,3.427739,6.3917646,1.3037782,1.5917678
+singapore/speaker_065/clip_001.wav,singapore::speaker_065,train,1,MNSC,0,-0.865876,-1.0409923,-2.3246188,2.2282758
+singapore/speaker_065/clip_002.wav,singapore::speaker_065,train,1,MNSC,0,-3.272727,1.8239903,1.2591245,2.0558422
+singapore/speaker_068/clip_001.wav,singapore::speaker_068,validation,1,MNSC,1,5.7236767,2.5104263,0.13410385,1.3647156
+singapore/speaker_068/clip_002.wav,singapore::speaker_068,validation,1,MNSC,1,5.5671177,2.566229,0.12287703,1.3967975
+singapore/speaker_069/clip_001.wav,singapore::speaker_069,train,1,MNSC,1,5.8383994,1.8549874,-1.1368486,1.1075373
+singapore/speaker_069/clip_002.wav,singapore::speaker_069,train,1,MNSC,1,-0.93713206,5.637822,-0.77541834,3.2597363
+singapore/speaker_070/clip_001.wav,singapore::speaker_070,train,1,MNSC,1,4.1811504,1.0812593,0.7031909,1.7900622
+singapore/speaker_070/clip_002.wav,singapore::speaker_070,train,1,MNSC,1,7.7388697,2.3316724,-0.86084986,1.6626827
+singapore/speaker_070/clip_003.wav,singapore::speaker_070,train,1,MNSC,1,7.936636,3.0931835,-0.8812757,1.5523676
+singapore/speaker_071/clip_001.wav,singapore::speaker_071,train,1,MNSC,1,-3.141413,6.4269366,-0.7296718,3.7796676
+singapore/speaker_071/clip_002.wav,singapore::speaker_071,train,1,MNSC,1,9.103703,-0.18944824,-0.9982441,0.42023042
+singapore/speaker_071/clip_003.wav,singapore::speaker_071,train,1,MNSC,1,9.166009,0.33886763,-1.0923495,0.4784811
+singapore/speaker_072/clip_001.wav,singapore::speaker_072,validation,1,MNSC,1,1.6379956,0.9876576,-0.94547784,2.1706069
+singapore/speaker_072/clip_002.wav,singapore::speaker_072,validation,1,MNSC,1,4.8128085,-0.75694245,-1.9309325,1.9577032
+singapore/speaker_073/clip_001.wav,singapore::speaker_073,validation,1,MNSC,1,4.837403,2.2557938,-0.8253957,2.3210652
+singapore/speaker_074/clip_001.wav,singapore::speaker_074,train,1,MNSC,1,5.135726,1.0092587,-0.16090865,1.6408943
+singapore/speaker_075/clip_001.wav,singapore::speaker_075,train,1,MNSC,0,-5.24376,1.2893705,-1.2929292,3.5818415
+singapore/speaker_076/clip_001.wav,singapore::speaker_076,train,1,MNSC,1,3.1323082,5.98494,-0.74205244,2.4162095
+singapore/speaker_076/clip_002.wav,singapore::speaker_076,train,1,MNSC,0,-0.76924294,0.32842404,-2.7494261,3.565301
+singapore/speaker_076/clip_003.wav,singapore::speaker_076,train,1,MNSC,1,8.870729,7.1504083,-0.3838346,0.44233066
+singapore/speaker_077/clip_001.wav,singapore::speaker_077,train,1,MNSC,1,7.984914,2.8722408,-1.2973361,0.6790013
+singapore/speaker_077/clip_002.wav,singapore::speaker_077,train,1,MNSC,0,-6.980898,10.293815,-0.78756857,4.0219364
+singapore/speaker_077/clip_003.wav,singapore::speaker_077,train,1,MNSC,1,8.152081,3.4691355,-1.1535618,1.3029224
+singapore/speaker_078/clip_001.wav,singapore::speaker_078,train,1,MNSC,1,9.239737,2.7008147,-0.25430992,0.28025663
+singapore/speaker_078/clip_002.wav,singapore::speaker_078,train,1,MNSC,1,7.383782,5.1439333,-0.20955825,1.2848327
+singapore/speaker_078/clip_003.wav,singapore::speaker_078,train,1,MNSC,1,12.743318,0.5093416,-0.5422512,0.16997613
+singapore/speaker_079/clip_001.wav,singapore::speaker_079,train,1,MNSC,0,-1.0355952,-2.6457965,-1.5124272,5.333978
+singapore/speaker_079/clip_002.wav,singapore::speaker_079,train,1,MNSC,0,0.9590283,-4.4809117,-3.1300108,3.8351872
+singapore/speaker_079/clip_003.wav,singapore::speaker_079,train,1,MNSC,0,0.11086517,-3.5982096,-2.3730693,6.14109
+singapore/speaker_079/clip_004.wav,singapore::speaker_079,train,1,MNSC,0,-1.0706902,-4.4426594,-2.3839722,6.2561936
+singapore/speaker_081/clip_001.wav,singapore::speaker_081,validation,1,MNSC,1,2.6725256,1.0960975,-1.1790423,2.640002
+singapore/speaker_081/clip_002.wav,singapore::speaker_081,validation,1,MNSC,1,3.4625816,-2.197619,-1.391327,1.7016032
+singapore/speaker_081/clip_003.wav,singapore::speaker_081,validation,1,MNSC,1,4.2875953,2.4754755,-0.46370903,1.1476958
+singapore/speaker_083/clip_001.wav,singapore::speaker_083,validation,1,MNSC,1,1.7238411,0.4976715,-2.7867255,2.087311
+singapore/speaker_086/clip_001.wav,singapore::speaker_086,train,1,MNSC,1,5.7587137,1.784261,-0.7474266,1.2036958
+singapore/speaker_086/clip_002.wav,singapore::speaker_086,train,1,MNSC,1,6.191639,3.6810365,0.95340544,0.97219944
+singapore/speaker_087/clip_001.wav,singapore::speaker_087,validation,1,MNSC,1,4.835297,2.8930948,-1.6910278,1.6240202
+singapore/speaker_088/clip_001.wav,singapore::speaker_088,train,1,MNSC,1,2.9414787,5.8323207,-0.96140444,3.1466112
+singapore/speaker_088/clip_002.wav,singapore::speaker_088,train,1,MNSC,1,1.6262518,4.598603,-0.858248,3.1519449
+singapore/speaker_089/clip_001.wav,singapore::speaker_089,validation,1,MNSC,0,-7.9068813,4.2570143,-0.2482894,5.657568
+singapore/speaker_090/clip_001.wav,singapore::speaker_090,train,1,MNSC,1,7.0921936,-1.0435859,-1.3611124,0.8929574
+singapore/speaker_091/clip_001.wav,singapore::speaker_091,train,1,MNSC,1,2.0868192,6.3284407,-0.04647053,2.9381418
+singapore/speaker_092/clip_001.wav,singapore::speaker_092,train,1,MNSC,1,11.077707,0.2289834,-1.0376178,0.3752073
+singapore/speaker_093/clip_001.wav,singapore::speaker_093,train,1,MNSC,1,8.1884165,6.665636,0.29208848,0.7955137
+singapore/speaker_095/clip_001.wav,singapore::speaker_095,train,1,MNSC,1,3.665807,3.4197216,-0.28547552,2.148767
+singapore/speaker_095/clip_002.wav,singapore::speaker_095,train,1,MNSC,1,2.2798147,-0.7919946,0.68482715,1.0343864
+singapore/speaker_095/clip_003.wav,singapore::speaker_095,train,1,MNSC,1,3.9724526,4.509723,-0.49236745,1.6440445
+singapore/speaker_096/clip_001.wav,singapore::speaker_096,validation,1,MNSC,1,4.0424294,0.99290687,-1.3875493,2.4561696
+singapore/speaker_097/clip_001.wav,singapore::speaker_097,train,1,MNSC,1,0.70565414,4.4700212,-1.111023,3.8438811
+singapore/speaker_098/clip_001.wav,singapore::speaker_098,train,1,MNSC,1,4.352776,2.9991195,-0.12459947,1.3370491
+singapore/speaker_098/clip_002.wav,singapore::speaker_098,train,1,MNSC,1,-1.3128027,5.404308,0.4249062,2.2708876
+singapore/speaker_100/clip_001.wav,singapore::speaker_100,train,1,MNSC,1,1.0533069,1.4162734,0.6397582,2.449235
+singapore/speaker_100/clip_002.wav,singapore::speaker_100,train,1,MNSC,1,4.569731,4.3617167,1.1991253,1.392186
+singapore/speaker_100/clip_003.wav,singapore::speaker_100,train,1,MNSC,1,1.5001568,1.935096,0.6155631,2.5402737
+singapore/speaker_101/clip_001.wav,singapore::speaker_101,train,1,MNSC,1,0.87397075,5.4915967,-0.25246084,3.4953325
+singapore/speaker_101/clip_002.wav,singapore::speaker_101,train,1,MNSC,1,-1.6737815,5.611864,-0.029788623,3.9147134
+singapore/speaker_101/clip_003.wav,singapore::speaker_101,train,1,MNSC,1,-1.8157485,4.302354,-0.35963675,4.0163608
+singapore/speaker_102/clip_001.wav,singapore::speaker_102,validation,1,MNSC,1,7.8212433,-0.48981848,-0.61797637,1.5163742
+singapore/speaker_104/clip_001.wav,singapore::speaker_104,train,1,MNSC,1,9.984344,-0.93894166,-1.5201709,0.37900555
+singapore/speaker_104/clip_002.wav,singapore::speaker_104,train,1,MNSC,1,3.3981774,2.2707417,0.27308765,1.864394
+singapore/speaker_104/clip_003.wav,singapore::speaker_104,train,1,MNSC,1,4.9588623,-1.662137,-1.9419729,0.5521836
+singapore/speaker_105/clip_001.wav,singapore::speaker_105,train,1,MNSC,1,6.355943,6.2360806,0.7114961,0.8877883
+singapore/speaker_106/clip_001.wav,singapore::speaker_106,validation,1,MNSC,1,-3.466558,10.551877,-0.4738679,3.4445624
+singapore/speaker_107/clip_001.wav,singapore::speaker_107,train,1,MNSC,1,2.082566,-1.3253064,-1.1525387,2.6277227
+singapore/speaker_110/clip_001.wav,singapore::speaker_110,train,1,MNSC,1,1.790318,5.895026,0.42763364,1.9983557
+singapore/speaker_111/clip_001.wav,singapore::speaker_111,train,1,MNSC,1,-2.2925887,8.387837,-0.19710371,3.1035638
+singapore/speaker_113/clip_001.wav,singapore::speaker_113,validation,1,MNSC,1,3.8727338,2.9380069,0.81530595,1.8450935
+singapore/speaker_114/clip_001.wav,singapore::speaker_114,train,1,MNSC,1,8.335265,10.186768,-0.1702531,0.49921814
+singapore/speaker_114/clip_002.wav,singapore::speaker_114,train,1,MNSC,1,3.8070972,7.9350066,-0.4158231,0.6431052
+singapore/speaker_114/clip_003.wav,singapore::speaker_114,train,1,MNSC,1,7.8295183,1.2617089,-1.3271606,1.2345208
+singapore/speaker_114/clip_004.wav,singapore::speaker_114,train,1,MNSC,1,8.495489,10.378614,-0.10390182,0.48913595
+singapore/speaker_114/clip_005.wav,singapore::speaker_114,train,1,MNSC,1,8.145152,3.3600347,-0.6637448,1.8328427
+singapore/speaker_116/clip_001.wav,singapore::speaker_116,train,1,MNSC,1,4.4967537,1.7034519,-1.4187853,2.501876
+singapore/speaker_117/clip_001.wav,singapore::speaker_117,train,1,MNSC,1,1.7163568,0.12736338,-1.3672236,2.8336792
+singapore/speaker_117/clip_002.wav,singapore::speaker_117,train,1,MNSC,1,-0.22405304,3.8836303,-1.0203792,3.201514
+singapore/speaker_118/clip_001.wav,singapore::speaker_118,validation,1,MNSC,0,0.03277202,-0.8020455,-1.7245011,2.3929877
+singapore/speaker_118/clip_002.wav,singapore::speaker_118,validation,1,MNSC,1,4.312348,-0.81231326,-0.50365037,1.3328503
+singapore/speaker_118/clip_003.wav,singapore::speaker_118,validation,1,MNSC,1,4.681272,-1.5302273,-0.3819124,1.3153397
+singapore/speaker_119/clip_001.wav,singapore::speaker_119,train,1,MNSC,1,8.529577,3.0742939,0.23498166,0.75221145
+singapore/speaker_120/clip_001.wav,singapore::speaker_120,train,1,MNSC,1,6.961542,0.09325572,-0.9528664,0.92898494
+singapore/speaker_120/clip_002.wav,singapore::speaker_120,train,1,MNSC,1,10.33772,0.4615251,-0.9346363,0.3312269
+singapore/speaker_121/clip_001.wav,singapore::speaker_121,train,1,MNSC,1,-1.7275515,4.520149,0.93741834,2.5247023
+singapore/speaker_122/clip_001.wav,singapore::speaker_122,train,1,MNSC,1,3.9051719,4.2908664,-0.55624205,2.6331263
+singapore/speaker_122/clip_002.wav,singapore::speaker_122,train,1,MNSC,1,4.0349803,3.790428,-0.7140232,2.5938838
+singapore/speaker_123/clip_001.wav,singapore::speaker_123,train,1,MNSC,1,3.548966,1.9006566,-0.5404266,2.2642984
+singapore/speaker_124/clip_001.wav,singapore::speaker_124,validation,1,MNSC,1,3.2513678,4.1308007,1.228176,1.940358
+singapore/speaker_124/clip_002.wav,singapore::speaker_124,validation,1,MNSC,1,3.672824,4.7403975,1.2816272,1.8423097
+singapore/speaker_126/clip_001.wav,singapore::speaker_126,train,1,MNSC,1,7.134033,4.778001,-0.54235405,0.77707905
+singapore/speaker_127/clip_001.wav,singapore::speaker_127,validation,1,MNSC,1,8.809951,-1.6601379,-1.528256,0.42226875
+singapore/speaker_127/clip_002.wav,singapore::speaker_127,validation,1,MNSC,0,-4.6660986,6.9299736,-0.5909661,3.825647
+singapore/speaker_128/clip_001.wav,singapore::speaker_128,train,1,MNSC,1,5.803034,-2.905341,-1.9587821,1.1337256
+singapore/speaker_129/clip_001.wav,singapore::speaker_129,train,1,MNSC,1,3.7224355,1.2765732,-2.3206813,1.6653475
+singapore/speaker_130/clip_001.wav,singapore::speaker_130,train,1,MNSC,0,-3.487107,6.765612,-0.717659,3.4923022
+singapore/speaker_131/clip_001.wav,singapore::speaker_131,train,1,MNSC,1,10.144265,0.01352673,-1.4244485,0.98376197
+singapore/speaker_131/clip_002.wav,singapore::speaker_131,train,1,MNSC,1,1.0846173,0.6948998,-1.8498212,2.5037394
+singapore/speaker_132/clip_001.wav,singapore::speaker_132,train,1,MNSC,1,7.449639,4.790317,-0.63062733,0.83126634
+singapore/speaker_133/clip_001.wav,singapore::speaker_133,train,1,MNSC,0,-2.8907754,2.5839624,-0.21134971,5.8618703
+singapore/speaker_134/clip_001.wav,singapore::speaker_134,train,1,MNSC,1,11.606116,-0.91917,-1.1561244,0.4381573
+singapore/speaker_134/clip_002.wav,singapore::speaker_134,train,1,MNSC,1,9.556241,-1.9240966,-1.8391366,0.95209026
+singapore/speaker_137/clip_001.wav,singapore::speaker_137,train,1,MNSC,0,-6.393215,5.990518,0.17480402,4.2810044
+singapore/speaker_137/clip_002.wav,singapore::speaker_137,train,1,MNSC,0,-6.5956573,6.0480995,0.18318196,4.2923164
+singapore/speaker_138/clip_001.wav,singapore::speaker_138,train,1,MNSC,1,4.7921133,6.789168,1.2697366,1.3580716
+singapore/speaker_139/clip_001.wav,singapore::speaker_139,train,1,MNSC,1,6.3955894,2.1895735,-1.5672905,0.8882532
+singapore/speaker_139/clip_002.wav,singapore::speaker_139,train,1,MNSC,1,7.6025624,5.577948,-0.691843,0.69981873
+singapore/speaker_139/clip_003.wav,singapore::speaker_139,train,1,MNSC,1,2.2620282,4.15659,0.4097695,2.6223059
+singapore/speaker_141/clip_001.wav,singapore::speaker_141,train,1,MNSC,1,5.98433,-1.3453501,-0.24257345,1.4685409
+singapore/speaker_141/clip_002.wav,singapore::speaker_141,train,1,MNSC,1,7.1221814,-0.52045506,-0.720346,1.9655745
+singapore/speaker_142/clip_001.wav,singapore::speaker_142,train,1,MNSC,1,3.3710897,2.1637173,0.055019233,2.43455
+singapore/speaker_142/clip_002.wav,singapore::speaker_142,train,1,MNSC,1,0.49790877,2.7114587,0.55543923,3.7456594
+singapore/speaker_143/clip_001.wav,singapore::speaker_143,train,1,MNSC,1,6.9543166,5.0219765,0.37138656,0.9048736
+singapore/speaker_143/clip_002.wav,singapore::speaker_143,train,1,MNSC,1,4.7372527,3.837376,0.78051466,1.6341014
+singapore/speaker_144/clip_001.wav,singapore::speaker_144,train,1,MNSC,1,1.3281697,9.0484295,1.3103545,1.5818456
+singapore/speaker_144/clip_002.wav,singapore::speaker_144,train,1,MNSC,1,0.12726948,6.28041,1.0725703,2.064207
+singapore/speaker_144/clip_003.wav,singapore::speaker_144,train,1,MNSC,1,3.120273,4.586922,0.7419609,1.7550892
+singapore/speaker_144/clip_004.wav,singapore::speaker_144,train,1,MNSC,1,6.4702783,1.999099,0.722089,1.2729623
+singapore/speaker_144/clip_005.wav,singapore::speaker_144,train,1,MNSC,1,3.1474063,5.4683895,0.8560883,1.7783828
+singapore/speaker_145/clip_001.wav,singapore::speaker_145,train,1,MNSC,0,-1.3305355,-0.84695286,-2.3376942,2.2875507
+singapore/speaker_145/clip_002.wav,singapore::speaker_145,train,1,MNSC,1,7.7685447,1.2383394,-1.4933283,1.4947677
+singapore/speaker_145/clip_003.wav,singapore::speaker_145,train,1,MNSC,1,7.5547323,-0.23995316,-1.5467209,1.2082763
+singapore/speaker_146/clip_001.wav,singapore::speaker_146,train,1,MNSC,1,5.3270164,0.4589647,-0.8782549,2.065995
+singapore/speaker_147/clip_001.wav,singapore::speaker_147,train,1,MNSC,1,4.8701406,4.4503455,0.5734596,0.9111855
+singapore/speaker_148/clip_001.wav,singapore::speaker_148,train,1,MNSC,1,11.500279,2.329822,-0.9637593,0.25562358
+singapore/speaker_148/clip_002.wav,singapore::speaker_148,train,1,MNSC,1,2.9767969,5.312058,-1.4264905,2.1088188
+singapore/speaker_150/clip_001.wav,singapore::speaker_150,validation,1,MNSC,1,9.369864,2.863615,-0.72351253,0.9817443
+singapore/speaker_150/clip_002.wav,singapore::speaker_150,validation,1,MNSC,1,3.5583436,5.8768744,0.42330265,0.92183334
+singapore/speaker_150/clip_003.wav,singapore::speaker_150,validation,1,MNSC,1,10.205314,3.0152483,-0.60604775,1.0413549
+singapore/speaker_151/clip_001.wav,singapore::speaker_151,train,1,MNSC,1,5.949464,-1.4089725,-0.49013737,1.9307374
+singapore/speaker_151/clip_002.wav,singapore::speaker_151,train,1,MNSC,1,4.273375,-0.1289897,-1.9682348,0.7634317
+singapore/speaker_151/clip_003.wav,singapore::speaker_151,train,1,MNSC,1,3.9922507,-1.9696571,-1.8364419,1.5858784
+singapore/speaker_152/clip_001.wav,singapore::speaker_152,train,1,MNSC,1,4.154938,4.148955,0.046666875,2.8107324
+singapore/speaker_153/clip_001.wav,singapore::speaker_153,train,1,MNSC,1,-3.238335,6.3572454,-0.74892443,3.7937927
+singapore/speaker_153/clip_002.wav,singapore::speaker_153,train,1,MNSC,1,10.334118,2.374003,-0.836026,0.15032065
+singapore/speaker_153/clip_003.wav,singapore::speaker_153,train,1,MNSC,0,-4.4664764,3.9984057,-0.5676265,3.662831
+singapore/speaker_153/clip_004.wav,singapore::speaker_153,train,1,MNSC,1,6.3552957,1.4221445,-0.7540527,0.58859897
+singapore/speaker_154/clip_001.wav,singapore::speaker_154,train,1,MNSC,0,-6.224155,8.1723995,-0.89462304,4.186804
+singapore/speaker_154/clip_002.wav,singapore::speaker_154,train,1,MNSC,1,1.7050487,7.250664,0.70313495,2.0135076
+singapore/speaker_154/clip_003.wav,singapore::speaker_154,train,1,MNSC,1,4.3104057,6.7152348,0.7473423,2.249426
+singapore/speaker_155/clip_001.wav,singapore::speaker_155,train,1,MNSC,1,2.1556914,5.5140467,-0.19453603,3.279363
+singapore/speaker_156/clip_001.wav,singapore::speaker_156,train,1,MNSC,1,-1.4932309,6.360824,-1.0122204,4.2020926
+singapore/speaker_156/clip_002.wav,singapore::speaker_156,train,1,MNSC,1,3.2286284,0.42043078,1.0101107,1.3070164
+singapore/speaker_157/clip_001.wav,singapore::speaker_157,train,1,MNSC,1,7.2618723,3.239214,-0.65626186,0.7216589
+singapore/speaker_157/clip_002.wav,singapore::speaker_157,train,1,MNSC,1,1.084534,4.977436,-0.043829244,2.38283
+singapore/speaker_158/clip_001.wav,singapore::speaker_158,train,1,MNSC,1,6.603793,-7.090755,-3.2335815,2.5648606
+singapore/speaker_158/clip_002.wav,singapore::speaker_158,train,1,MNSC,1,4.3375916,-4.638906,-1.9148941,2.2027662
+singapore/speaker_158/clip_003.wav,singapore::speaker_158,train,1,MNSC,1,6.5762553,-6.8599777,-3.2074795,2.5621884
+singapore/speaker_158/clip_004.wav,singapore::speaker_158,train,1,MNSC,1,1.4923179,2.8083866,-0.23236133,2.6043398
+singapore/speaker_158/clip_005.wav,singapore::speaker_158,train,1,MNSC,1,4.689728,-4.2015176,-1.9325408,2.1523423
+singapore/speaker_159/clip_001.wav,singapore::speaker_159,validation,1,MNSC,1,6.9302793,-2.7432587,-1.1614575,0.6563596
+singapore/speaker_161/clip_001.wav,singapore::speaker_161,train,1,MNSC,1,9.189142,5.2507825,-0.1365923,0.4797306
+singapore/speaker_162/clip_001.wav,singapore::speaker_162,train,1,MNSC,1,5.504666,2.8292599,-0.7559385,1.6382208
+singapore/speaker_162/clip_002.wav,singapore::speaker_162,train,1,MNSC,1,1.395653,0.8288724,-1.6018894,4.154026
+singapore/speaker_163/clip_001.wav,singapore::speaker_163,train,1,MNSC,1,3.6323915,2.172948,0.8987807,1.6619499
+singapore/speaker_164/clip_001.wav,singapore::speaker_164,train,1,MNSC,1,5.593021,0.65240383,-0.22483855,2.0159068
+singapore/speaker_164/clip_002.wav,singapore::speaker_164,train,1,MNSC,1,5.231702,0.49820808,-0.19176973,1.9472135
+singapore/speaker_164/clip_003.wav,singapore::speaker_164,train,1,MNSC,1,5.2189865,0.45518625,-0.21868327,2.003902
+singapore/speaker_166/clip_001.wav,singapore::speaker_166,validation,1,MNSC,1,10.536462,7.293798,-0.20638786,0.4512375
+singapore/speaker_166/clip_002.wav,singapore::speaker_166,validation,1,MNSC,1,7.9868884,1.0218991,-1.0559196,0.37775645
+singapore/speaker_167/clip_001.wav,singapore::speaker_167,validation,1,MNSC,1,4.856721,3.093695,-0.4423382,1.6495056
+singapore/speaker_168/clip_001.wav,singapore::speaker_168,train,1,MNSC,1,6.407576,3.321265,0.53065765,0.95778537
+singapore/speaker_168/clip_002.wav,singapore::speaker_168,train,1,MNSC,1,13.764451,-1.0156533,-0.9933802,0.092115454
+singapore/speaker_168/clip_003.wav,singapore::speaker_168,train,1,MNSC,1,6.96146,3.017771,0.23676634,1.3074096
+singapore/speaker_168/clip_004.wav,singapore::speaker_168,train,1,MNSC,1,3.6500154,6.1296096,0.15817101,1.0941443
+singapore/speaker_168/clip_005.wav,singapore::speaker_168,train,1,MNSC,1,14.4661255,0.38735119,-0.9431952,0.11552212
+singapore/speaker_169/clip_001.wav,singapore::speaker_169,train,1,MNSC,1,4.765631,4.85369,-0.27257413,2.4949539
+singapore/speaker_169/clip_002.wav,singapore::speaker_169,train,1,MNSC,1,2.5490696,3.779454,0.39657873,3.3815217
+singapore/speaker_169/clip_003.wav,singapore::speaker_169,train,1,MNSC,1,0.94079655,7.1803803,0.46818352,2.3470888
+singapore/speaker_170/clip_001.wav,singapore::speaker_170,train,1,MNSC,0,-6.139437,0.60335326,-0.15928726,5.6239753
+singapore/speaker_171/clip_001.wav,singapore::speaker_171,train,1,MNSC,1,1.5041081,3.838173,-0.39164886,2.8826804
+singapore/speaker_171/clip_002.wav,singapore::speaker_171,train,1,MNSC,1,0.21122302,3.0289176,-0.44859773,2.9066825
+singapore/speaker_173/clip_001.wav,singapore::speaker_173,validation,1,MNSC,1,6.350156,0.42185828,-1.8314672,1.947306
+singapore/speaker_173/clip_002.wav,singapore::speaker_173,validation,1,MNSC,1,6.052776,0.7717311,-1.7275542,1.9606405
+singapore/speaker_174/clip_001.wav,singapore::speaker_174,train,1,MNSC,1,4.273414,3.8115752,0.5057615,2.7101867
+singapore/speaker_174/clip_002.wav,singapore::speaker_174,train,1,MNSC,1,9.220908,1.6157627,-1.680737,0.92687255
+singapore/speaker_175/clip_001.wav,singapore::speaker_175,train,1,MNSC,1,6.8477936,1.9400593,-1.4107126,1.6438988
+singapore/speaker_175/clip_002.wav,singapore::speaker_175,train,1,MNSC,1,7.167411,1.9786325,-1.4663996,1.6427101
+singapore/speaker_175/clip_003.wav,singapore::speaker_175,train,1,MNSC,1,0.73544663,3.672756,-0.75221634,2.6674416
+singapore/speaker_175/clip_004.wav,singapore::speaker_175,train,1,MNSC,1,0.35242414,3.6451643,-0.7007236,2.7475405
+singapore/speaker_176/clip_001.wav,singapore::speaker_176,train,1,MNSC,1,2.9657173,2.2604325,0.7016948,3.4131155
+singapore/speaker_177/clip_001.wav,singapore::speaker_177,validation,1,MNSC,1,-0.48924044,4.542439,-0.7741268,1.91896
+singapore/speaker_177/clip_002.wav,singapore::speaker_177,validation,1,MNSC,0,0.5419439,-3.919057,-2.1106746,2.123111
+singapore/speaker_177/clip_003.wav,singapore::speaker_177,validation,1,MNSC,0,-5.806374,1.8599837,-2.001967,3.927817
+singapore/speaker_178/clip_001.wav,singapore::speaker_178,train,1,MNSC,1,3.8837662,6.8261585,-0.36121404,2.4547973
+singapore/speaker_179/clip_001.wav,singapore::speaker_179,train,1,MNSC,1,-0.7930932,4.212491,-0.8716267,3.2349093
+singapore/speaker_180/clip_001.wav,singapore::speaker_180,train,1,MNSC,1,4.0013328,5.3348207,0.07758573,0.92228514
+singapore/speaker_180/clip_002.wav,singapore::speaker_180,train,1,MNSC,1,3.0808842,3.9738762,0.15759547,1.1237904
+singapore/speaker_180/clip_003.wav,singapore::speaker_180,train,1,MNSC,0,-6.3841314,8.85813,-1.0223962,4.4844875
+singapore/speaker_180/clip_004.wav,singapore::speaker_180,train,1,MNSC,1,-1.4029388,11.5679455,-0.113875315,3.704354
+singapore/speaker_182/clip_001.wav,singapore::speaker_182,train,1,MNSC,0,-2.1058326,2.868466,-0.8302774,4.2046223
+singapore/speaker_183/clip_001.wav,singapore::speaker_183,train,1,MNSC,1,4.20571,-1.4670419,-1.7148184,2.0007648
+singapore/speaker_183/clip_002.wav,singapore::speaker_183,train,1,MNSC,1,4.2713513,-2.1350832,-1.685695,2.0299988
+singapore/speaker_183/clip_003.wav,singapore::speaker_183,train,1,MNSC,1,6.0764456,-0.7978392,-1.0963925,1.7422585
+singapore/speaker_185/clip_001.wav,singapore::speaker_185,train,1,MNSC,1,8.114419,0.43717927,-1.2776952,1.6233009
+singapore/speaker_186/clip_001.wav,singapore::speaker_186,train,1,MNSC,1,5.498547,4.639352,0.01698383,2.1949525
+singapore/speaker_186/clip_002.wav,singapore::speaker_186,train,1,MNSC,1,0.23880072,6.698854,0.29443756,2.5279973
+singapore/speaker_186/clip_003.wav,singapore::speaker_186,train,1,MNSC,1,-0.3230989,8.732825,-0.008829099,2.372879
+singapore/speaker_186/clip_004.wav,singapore::speaker_186,train,1,MNSC,1,0.93848,4.690578,0.23836285,2.4771338
+singapore/speaker_186/clip_005.wav,singapore::speaker_186,train,1,MNSC,1,4.6813583,3.9132261,0.005044548,2.1640096
+singapore/speaker_187/clip_001.wav,singapore::speaker_187,train,1,MNSC,1,3.7825396,2.4449158,-1.1989139,3.0340412
+singapore/speaker_188/clip_001.wav,singapore::speaker_188,train,1,MNSC,1,2.521637,2.258057,0.3211083,1.7998315
+singapore/speaker_188/clip_002.wav,singapore::speaker_188,train,1,MNSC,1,6.2417884,2.6723878,-0.03291946,2.147592
+singapore/speaker_189/clip_001.wav,singapore::speaker_189,train,1,MNSC,1,2.44837,3.697403,-0.8142023,1.0231819
+singapore/speaker_189/clip_002.wav,singapore::speaker_189,train,1,MNSC,1,-0.5023955,8.169552,-0.51552933,3.3026109
+singapore/speaker_189/clip_003.wav,singapore::speaker_189,train,1,MNSC,1,4.0274744,5.2157936,-0.6925633,0.92366827
+singapore/speaker_190/clip_001.wav,singapore::speaker_190,validation,1,MNSC,1,3.6542945,-0.23849179,-0.24269088,1.0550325
+singapore/speaker_190/clip_002.wav,singapore::speaker_190,validation,1,MNSC,1,5.101242,-0.18029363,-0.23819834,1.0274923
+singapore/speaker_190/clip_003.wav,singapore::speaker_190,validation,1,MNSC,1,4.52256,-0.7949846,-1.5499117,1.612201
+singapore/speaker_191/clip_001.wav,singapore::speaker_191,validation,1,MNSC,1,-1.175399,4.1247554,0.14626428,4.0397463
+singapore/speaker_192/clip_001.wav,singapore::speaker_192,train,1,MNSC,1,4.5548344,2.784764,-0.3860638,2.4830062
+singapore/speaker_192/clip_002.wav,singapore::speaker_192,train,1,MNSC,1,4.5479383,2.9453235,-0.3633086,2.4655466
+singapore/speaker_193/clip_001.wav,singapore::speaker_193,train,1,MNSC,1,0.53362143,4.3165593,-2.2860117,2.1425104
+singapore/speaker_193/clip_002.wav,singapore::speaker_193,train,1,MNSC,1,5.757361,0.17213015,-0.21176735,1.9516811
+singapore/speaker_193/clip_003.wav,singapore::speaker_193,train,1,MNSC,1,2.1415856,3.2413597,-1.6439651,2.3428876
+singapore/speaker_194/clip_001.wav,singapore::speaker_194,train,1,MNSC,1,3.1725285,2.9140825,-0.8877229,2.9379597
+singapore/speaker_195/clip_001.wav,singapore::speaker_195,validation,1,MNSC,1,2.6386468,-3.0584054,-2.7604923,2.6278725
+singapore/speaker_195/clip_002.wav,singapore::speaker_195,validation,1,MNSC,0,0.5810662,-4.7029257,-2.8582494,2.7581854
+singapore/speaker_195/clip_003.wav,singapore::speaker_195,validation,1,MNSC,1,2.2323809,-2.66341,-2.1507978,3.3578892
+singapore/speaker_196/clip_001.wav,singapore::speaker_196,train,1,MNSC,1,5.4529953,4.711594,0.5836209,1.037371
+singapore/speaker_196/clip_002.wav,singapore::speaker_196,train,1,MNSC,1,4.3234663,2.7267742,0.2194724,2.0594647
+singapore/speaker_198/clip_001.wav,singapore::speaker_198,train,1,MNSC,0,1.3860406,-2.8614576,-1.4756618,3.2373252
+singapore/speaker_199/clip_001.wav,singapore::speaker_199,train,1,MNSC,0,-8.800624,5.5003605,-1.0919003,3.645876
+singapore/speaker_201/clip_001.wav,singapore::speaker_201,validation,1,MNSC,1,1.4116966,4.343694,0.7845249,2.068859
+singapore/speaker_202/clip_001.wav,singapore::speaker_202,train,1,MNSC,1,5.3862557,0.9098929,-1.2894912,1.86268
+singapore/speaker_202/clip_002.wav,singapore::speaker_202,train,1,MNSC,1,6.1729465,-0.34434265,-1.5324109,1.1634127
+singapore/speaker_202/clip_003.wav,singapore::speaker_202,train,1,MNSC,1,5.3128347,0.65835166,-1.3562641,1.9309745
+singapore/speaker_203/clip_001.wav,singapore::speaker_203,train,1,MNSC,1,2.0469673,3.8628395,-0.98818254,2.6524744
+singapore/speaker_204/clip_001.wav,singapore::speaker_204,train,1,MNSC,1,2.0457354,4.6888866,-0.94034535,0.88178325
+singapore/speaker_204/clip_002.wav,singapore::speaker_204,train,1,MNSC,1,1.7581952,3.787035,-0.9241106,0.94493735
+singapore/speaker_204/clip_003.wav,singapore::speaker_204,train,1,MNSC,1,7.919669,-1.475549,-1.4221438,1.1267108
+singapore/speaker_205/clip_001.wav,singapore::speaker_205,train,1,MNSC,1,8.871255,9.544478,-0.1974048,0.47953165
+singapore/speaker_206/clip_001.wav,singapore::speaker_206,train,1,MNSC,1,2.1485221,-2.817452,-2.4894376,2.631197
+singapore/speaker_206/clip_002.wav,singapore::speaker_206,train,1,MNSC,1,2.3608468,-2.1809447,-2.4942617,2.5812283
+singapore/speaker_207/clip_001.wav,singapore::speaker_207,train,1,MNSC,1,6.3596907,1.9198123,-0.3313518,1.2264167
+singapore/speaker_209/clip_001.wav,singapore::speaker_209,train,1,MNSC,1,9.061073,0.5056638,-0.6215102,1.0345103
+singapore/speaker_209/clip_002.wav,singapore::speaker_209,train,1,MNSC,1,1.611908,7.1893744,-0.07107403,2.810556
+singapore/speaker_209/clip_003.wav,singapore::speaker_209,train,1,MNSC,1,9.019486,6.2201266,-0.38495752,0.5301122
+singapore/speaker_210/clip_001.wav,singapore::speaker_210,train,1,MNSC,1,0.754407,-0.44077605,-1.5528414,2.5835397
+singapore/speaker_211/clip_001.wav,singapore::speaker_211,train,1,MNSC,1,6.325297,2.3997307,-1.592638,1.9834857
+singapore/speaker_211/clip_002.wav,singapore::speaker_211,train,1,MNSC,1,6.083638,2.5658174,-1.4736454,1.8385677
+singapore/speaker_212/clip_001.wav,singapore::speaker_212,train,1,MNSC,1,1.0467279,-0.90595955,0.08652059,3.9855235
+singapore/speaker_212/clip_002.wav,singapore::speaker_212,train,1,MNSC,1,4.6082535,0.27438784,0.5545161,1.2686608
+singapore/speaker_212/clip_003.wav,singapore::speaker_212,train,1,MNSC,1,5.568848,0.6316214,0.5357429,1.1441429
+singapore/speaker_214/clip_001.wav,singapore::speaker_214,train,1,MNSC,1,0.652935,6.671906,-0.12314622,2.6378133
+singapore/speaker_215/clip_001.wav,singapore::speaker_215,train,1,MNSC,1,7.4550366,2.9784899,0.2858259,1.2023964
+singapore/speaker_215/clip_002.wav,singapore::speaker_215,train,1,MNSC,1,5.3932266,1.2439494,0.41234004,1.6554861
+singapore/speaker_215/clip_003.wav,singapore::speaker_215,train,1,MNSC,1,7.543273,-0.4148178,-1.3486296,1.467929
+singapore/speaker_216/clip_001.wav,singapore::speaker_216,train,1,MNSC,1,6.304904,1.3809812,-0.5521178,1.4424796
+singapore/speaker_218/clip_001.wav,singapore::speaker_218,train,1,MNSC,1,-1.2272025,4.0092745,-1.1952257,3.9623644
+singapore/speaker_218/clip_002.wav,singapore::speaker_218,train,1,MNSC,1,-0.7399261,7.084865,-0.19553564,3.1165206
+singapore/speaker_218/clip_003.wav,singapore::speaker_218,train,1,MNSC,1,-1.1656493,7.395177,-0.24851587,3.1962807
+singapore/speaker_218/clip_004.wav,singapore::speaker_218,train,1,MNSC,1,2.4850872,4.289818,-1.1434066,3.0106645
+singapore/speaker_219/clip_001.wav,singapore::speaker_219,train,1,MNSC,1,-1.3200707,2.7389493,1.1294246,2.0934956
+singapore/speaker_219/clip_002.wav,singapore::speaker_219,train,1,MNSC,1,7.058517,3.1872249,-0.55587846,2.0041888
+singapore/speaker_220/clip_001.wav,singapore::speaker_220,validation,1,MNSC,1,9.045614,5.6138167,-0.62894857,1.9127759
+singapore/speaker_220/clip_002.wav,singapore::speaker_220,validation,1,MNSC,1,9.153402,5.0705557,-0.60925907,1.8846114
+singapore/speaker_221/clip_001.wav,singapore::speaker_221,train,1,MNSC,1,3.6533365,1.8325701,-1.1447196,3.0820224
+singapore/speaker_221/clip_002.wav,singapore::speaker_221,train,1,MNSC,1,5.587522,3.006902,-1.1907984,2.4714844
+singapore/speaker_221/clip_003.wav,singapore::speaker_221,train,1,MNSC,1,7.3105307,2.6257584,-0.957504,0.9396971
+singapore/speaker_221/clip_004.wav,singapore::speaker_221,train,1,MNSC,1,8.7687645,3.799975,-0.78478193,0.9698647
+singapore/speaker_222/clip_001.wav,singapore::speaker_222,train,1,MNSC,1,4.123348,3.097433,-1.2802765,2.3855948
+singapore/speaker_223/clip_001.wav,singapore::speaker_223,train,1,MNSC,1,7.0927267,-2.4731226,-1.9157437,0.80681354
+singapore/speaker_224/clip_001.wav,singapore::speaker_224,train,1,MNSC,1,4.3976836,3.55511,-0.3020418,2.471986
+singapore/speaker_224/clip_002.wav,singapore::speaker_224,train,1,MNSC,1,8.80215,-2.0279236,-1.722445,0.64262354
+singapore/speaker_225/clip_001.wav,singapore::speaker_225,validation,1,MNSC,1,7.037679,0.7911945,-0.23157819,1.3583944
+singapore/speaker_225/clip_002.wav,singapore::speaker_225,validation,1,MNSC,1,7.4218287,-0.30295333,0.5112683,1.2551725
+singapore/speaker_225/clip_003.wav,singapore::speaker_225,validation,1,MNSC,1,6.219238,-0.6850883,0.67468065,1.2050064
+singapore/speaker_225/clip_004.wav,singapore::speaker_225,validation,1,MNSC,1,6.4907293,-0.021073444,-0.200733,1.3571328
+singapore/speaker_226/clip_001.wav,singapore::speaker_226,validation,1,MNSC,1,4.4366217,1.8606403,-1.0157965,1.6174549
+singapore/speaker_227/clip_001.wav,singapore::speaker_227,train,1,MNSC,1,2.8170898,3.1237378,-1.8681415,1.5729048
+singapore/speaker_227/clip_002.wav,singapore::speaker_227,train,1,MNSC,1,7.5582247,-1.2751577,-1.8393075,0.75590014
+singapore/speaker_227/clip_003.wav,singapore::speaker_227,train,1,MNSC,1,5.350864,2.0489786,-2.0155392,1.5871058
+singapore/speaker_228/clip_001.wav,singapore::speaker_228,train,1,MNSC,1,7.679743,4.843112,-0.48176065,0.9749215
+singapore/speaker_228/clip_002.wav,singapore::speaker_228,train,1,MNSC,1,7.742771,2.1930656,-0.7182166,0.5572888
+singapore/speaker_231/clip_001.wav,singapore::speaker_231,validation,1,MNSC,1,-0.21800941,2.4158976,-2.044363,2.7425048
+singapore/speaker_232/clip_001.wav,singapore::speaker_232,validation,1,MNSC,1,6.4228363,-1.3591985,-1.0537268,1.2572827
+singapore/speaker_232/clip_002.wav,singapore::speaker_232,validation,1,MNSC,1,8.905035,0.9161812,-0.3202227,0.39462295
+singapore/speaker_233/clip_001.wav,singapore::speaker_233,train,1,MNSC,1,8.618443,1.3805195,-0.455759,0.47007877
+singapore/speaker_236/clip_001.wav,singapore::speaker_236,train,1,MNSC,1,2.596721,2.3167558,0.119261764,3.5064898
+singapore/speaker_236/clip_002.wav,singapore::speaker_236,train,1,MNSC,1,1.0121799,5.0034533,0.77303356,2.376173
+singapore/speaker_237/clip_001.wav,singapore::speaker_237,train,1,MNSC,0,-4.223623,4.977963,0.09637912,2.6801155
+singapore/speaker_237/clip_002.wav,singapore::speaker_237,train,1,MNSC,1,-0.99640495,4.1899214,0.16811994,3.8609056
+singapore/speaker_237/clip_003.wav,singapore::speaker_237,train,1,MNSC,1,2.775946,5.4236016,-0.67969096,2.7051218
+singapore/speaker_238/clip_001.wav,singapore::speaker_238,train,1,MNSC,1,1.3001684,2.560588,0.4347213,3.817205
+singapore/speaker_238/clip_002.wav,singapore::speaker_238,train,1,MNSC,1,2.199703,2.5816321,-1.2301308,2.454823
+singapore/speaker_241/clip_001.wav,singapore::speaker_241,train,1,MNSC,1,2.459208,1.0132066,0.17688689,1.4166605
+singapore/speaker_242/clip_001.wav,singapore::speaker_242,train,1,MNSC,0,-5.6547346,9.040816,0.2986869,3.6547484
+singapore/speaker_243/clip_001.wav,singapore::speaker_243,validation,1,MNSC,1,6.6191936,5.060658,-0.29765278,0.5379873
+singapore/speaker_243/clip_002.wav,singapore::speaker_243,validation,1,MNSC,1,6.081104,5.9775286,-0.27850738,0.4901516
+singapore/speaker_243/clip_003.wav,singapore::speaker_243,validation,1,MNSC,1,8.292164,4.975234,-0.4142657,0.554077
+singapore/speaker_244/clip_001.wav,singapore::speaker_244,train,1,MNSC,1,1.5157483,2.2890627,-0.8488886,2.0432599
+singapore/speaker_245/clip_001.wav,singapore::speaker_245,train,1,MNSC,1,4.4162235,-1.4118165,0.29127446,1.6212088
+singapore/speaker_245/clip_002.wav,singapore::speaker_245,train,1,MNSC,1,4.2559185,-1.024291,0.26557866,1.7014657
+singapore/speaker_245/clip_003.wav,singapore::speaker_245,train,1,MNSC,1,9.8071995,4.842022,-0.7024057,0.22808306
+singapore/speaker_245/clip_004.wav,singapore::speaker_245,train,1,MNSC,1,6.0867944,-2.2637753,-1.8511735,1.4608555
+singapore/speaker_246/clip_001.wav,singapore::speaker_246,train,1,MNSC,1,-0.1330667,2.132091,-1.1974576,2.784444
+singapore/speaker_247/clip_001.wav,singapore::speaker_247,train,1,MNSC,1,4.057266,-0.38204172,-0.15465604,3.2339811
+singapore/speaker_248/clip_001.wav,singapore::speaker_248,train,1,MNSC,1,3.724384,6.4392824,-0.53805053,2.3508415
+singapore/speaker_248/clip_002.wav,singapore::speaker_248,train,1,MNSC,1,2.0710726,5.62642,0.1516448,2.3671026
+singapore/speaker_248/clip_003.wav,singapore::speaker_248,train,1,MNSC,1,8.474783,-1.2685764,-1.1434243,0.84296143
+singapore/speaker_248/clip_004.wav,singapore::speaker_248,train,1,MNSC,1,4.692433,2.224184,0.725289,1.9880342
+singapore/speaker_249/clip_001.wav,singapore::speaker_249,train,1,MNSC,1,5.9335265,2.1004438,0.4770566,1.1229022
+singapore/speaker_249/clip_002.wav,singapore::speaker_249,train,1,MNSC,1,2.3638203,3.2847886,-0.04657339,2.0544698
+singapore/speaker_251/clip_001.wav,singapore::speaker_251,train,1,MNSC,1,4.889268,-1.1505747,-0.42955318,1.6874346
+singapore/speaker_252/clip_001.wav,singapore::speaker_252,train,1,MNSC,1,3.7752783,1.4049299,-1.183873,1.7889907
+singapore/speaker_252/clip_002.wav,singapore::speaker_252,train,1,MNSC,1,3.2970147,-0.5894198,-2.0943897,2.7660244
+singapore/speaker_254/clip_001.wav,singapore::speaker_254,train,1,MNSC,1,2.8012276,9.291517,0.49084744,2.251399
+singapore/speaker_254/clip_002.wav,singapore::speaker_254,train,1,MNSC,1,8.879913,6.1389356,-0.27527076,0.5319425
+singapore/speaker_255/clip_001.wav,singapore::speaker_255,train,1,MNSC,1,6.62246,2.0982556,-0.7463323,1.9072628
+singapore/speaker_255/clip_002.wav,singapore::speaker_255,train,1,MNSC,0,-5.4890275,7.598592,-1.1024734,4.6448884
+singapore/speaker_255/clip_003.wav,singapore::speaker_255,train,1,MNSC,0,-8.205184,6.9182963,-1.1132734,4.8193645
+singapore/speaker_256/clip_001.wav,singapore::speaker_256,train,1,MNSC,1,7.741372,0.27753276,-0.7181721,1.2109997
+singapore/speaker_256/clip_002.wav,singapore::speaker_256,train,1,MNSC,1,8.194666,1.1761352,-0.68777764,1.0637503
+singapore/speaker_257/clip_001.wav,singapore::speaker_257,train,1,MNSC,1,4.764419,4.2824144,-0.14165969,1.3854101
+singapore/speaker_257/clip_002.wav,singapore::speaker_257,train,1,MNSC,1,5.4981236,4.885697,-0.22211257,1.3739183
+singapore/speaker_258/clip_001.wav,singapore::speaker_258,train,1,MNSC,1,4.633877,-0.35749623,-1.3693417,0.4768656
+singapore/speaker_258/clip_002.wav,singapore::speaker_258,train,1,MNSC,1,3.695311,-0.66603667,-1.3887229,0.36376372
+singapore/speaker_258/clip_003.wav,singapore::speaker_258,train,1,MNSC,1,-2.3659043,5.937696,-2.1221302,2.4469516
+singapore/speaker_258/clip_004.wav,singapore::speaker_258,train,1,MNSC,1,5.0665016,-2.69293,-1.5652835,1.6483108
+singapore/speaker_259/clip_001.wav,singapore::speaker_259,validation,1,MNSC,1,5.400651,3.3406775,1.1930627,1.5347013
+singapore/speaker_260/clip_001.wav,singapore::speaker_260,train,1,MNSC,1,5.0297184,0.71271884,0.4728851,1.4157983
+singapore/speaker_260/clip_002.wav,singapore::speaker_260,train,1,MNSC,1,-1.0959733,3.698215,-1.5560466,2.3992221
+singapore/speaker_261/clip_001.wav,singapore::speaker_261,validation,1,MNSC,1,7.5279417,2.3381388,-1.0157244,0.55038285
+singapore/speaker_261/clip_002.wav,singapore::speaker_261,validation,1,MNSC,1,6.439017,-0.3249656,0.20286393,1.2537619
+singapore/speaker_261/clip_003.wav,singapore::speaker_261,validation,1,MNSC,1,4.4833965,2.205969,-2.7548292,2.0353308
+singapore/speaker_262/clip_001.wav,singapore::speaker_262,train,1,MNSC,1,5.0088024,8.272146,-1.7918552,1.03183
+singapore/speaker_263/clip_001.wav,singapore::speaker_263,train,1,MNSC,1,4.419142,5.5214615,0.93778133,1.3023703
+singapore/speaker_263/clip_002.wav,singapore::speaker_263,train,1,MNSC,1,6.051692,0.124147706,-0.6754613,1.8326935
+singapore/speaker_263/clip_003.wav,singapore::speaker_263,train,1,MNSC,1,4.70265,3.0160139,-1.3676399,1.859685
+singapore/speaker_264/clip_001.wav,singapore::speaker_264,validation,1,MNSC,1,4.4879704,3.5988548,-1.2061818,0.59755576
+singapore/speaker_264/clip_002.wav,singapore::speaker_264,validation,1,MNSC,1,2.5485096,2.8748353,-0.73153114,2.1120896
+singapore/speaker_264/clip_003.wav,singapore::speaker_264,validation,1,MNSC,1,2.3755393,2.0635238,-1.0494462,2.3540695
+singapore/speaker_265/clip_001.wav,singapore::speaker_265,train,1,MNSC,1,3.5697815,-3.493198,-1.332899,0.75653565
+singapore/speaker_266/clip_001.wav,singapore::speaker_266,train,1,MNSC,0,-5.5278454,7.7470994,-0.8564026,3.9440894
+singapore/speaker_266/clip_002.wav,singapore::speaker_266,train,1,MNSC,1,8.6735115,1.709538,-0.55807143,0.5203675
+singapore/speaker_267/clip_001.wav,singapore::speaker_267,validation,1,MNSC,1,4.0750017,4.2605057,0.20069526,2.323682
+singapore/speaker_267/clip_002.wav,singapore::speaker_267,validation,1,MNSC,1,4.63711,4.6298614,1.0604982,1.5892799
+singapore/speaker_268/clip_001.wav,singapore::speaker_268,train,1,MNSC,1,6.0706058,0.006961395,-1.3633943,1.0702575
+singapore/speaker_268/clip_002.wav,singapore::speaker_268,train,1,MNSC,1,3.7553542,4.048802,-0.43798533,1.8839352
+singapore/speaker_269/clip_001.wav,singapore::speaker_269,train,1,MNSC,0,-7.218117,3.100226,-0.083473414,5.4432635
+singapore/speaker_270/clip_001.wav,singapore::speaker_270,train,1,MNSC,1,-1.1514947,5.362558,0.03549291,3.775024
+singapore/speaker_270/clip_002.wav,singapore::speaker_270,train,1,MNSC,1,-0.34386453,6.314021,0.11578107,3.7573354
+singapore/speaker_271/clip_001.wav,singapore::speaker_271,train,1,MNSC,1,4.0843353,-0.0363578,-1.4882662,1.7212882
+singapore/speaker_271/clip_002.wav,singapore::speaker_271,train,1,MNSC,1,4.7111616,-1.3619534,-2.2545826,1.7055539
+singapore/speaker_271/clip_003.wav,singapore::speaker_271,train,1,MNSC,1,7.1741014,0.9096954,-2.2283146,1.5782549
+singapore/speaker_273/clip_001.wav,singapore::speaker_273,train,1,MNSC,0,-0.13979732,-2.4645104,0.68546766,2.0499804
+singapore/speaker_275/clip_001.wav,singapore::speaker_275,train,1,MNSC,1,6.8463197,2.3930447,-1.2822276,1.3379561
+singapore/speaker_275/clip_002.wav,singapore::speaker_275,train,1,MNSC,1,3.0943959,2.885908,0.87506276,1.7581323
+singapore/speaker_276/clip_001.wav,singapore::speaker_276,train,1,MNSC,1,2.0245435,-1.1741807,0.24490102,3.9347193
+singapore/speaker_277/clip_001.wav,singapore::speaker_277,train,1,MNSC,1,-0.76793694,8.9642,0.44752628,3.140573
+singapore/speaker_277/clip_002.wav,singapore::speaker_277,train,1,MNSC,1,1.554577,1.5618968,0.6228018,3.254827
+singapore/speaker_277/clip_003.wav,singapore::speaker_277,train,1,MNSC,1,-1.0889167,3.7777603,-0.7668156,3.4854228
+singapore/speaker_277/clip_004.wav,singapore::speaker_277,train,1,MNSC,1,3.892977,3.0295322,0.61200213,3.1246936
+singapore/speaker_278/clip_001.wav,singapore::speaker_278,train,1,MNSC,1,1.3608694,-1.4591477,0.32820857,4.690962
+singapore/speaker_278/clip_002.wav,singapore::speaker_278,train,1,MNSC,1,2.302922,3.0534685,0.66469246,1.92355
+singapore/speaker_279/clip_001.wav,singapore::speaker_279,train,1,MNSC,1,7.17085,6.643221,-0.52548933,1.4164345
+singapore/speaker_280/clip_001.wav,singapore::speaker_280,train,1,MNSC,1,-1.4402514,7.7065377,-0.4764416,4.70233
+singapore/speaker_281/clip_001.wav,singapore::speaker_281,validation,1,MNSC,1,3.6409318,6.145362,-0.44553795,2.931637
+singapore/speaker_282/clip_001.wav,singapore::speaker_282,train,1,MNSC,1,8.369593,3.4151466,0.40142393,0.6528936
+singapore/speaker_282/clip_002.wav,singapore::speaker_282,train,1,MNSC,1,4.32843,2.9074707,-0.9929442,1.9188026
+singapore/speaker_283/clip_001.wav,singapore::speaker_283,train,1,MNSC,0,-7.286337,4.1571445,-0.2128703,5.525407
+singapore/speaker_283/clip_002.wav,singapore::speaker_283,train,1,MNSC,1,12.143466,-1.8433776,-1.2172863,0.3056181
+singapore/speaker_284/clip_001.wav,singapore::speaker_284,train,1,MNSC,1,3.814228,5.518796,0.84590936,1.6680275
+singapore/speaker_284/clip_002.wav,singapore::speaker_284,train,1,MNSC,1,3.4330175,4.5967646,0.52549225,3.2140918
+singapore/speaker_284/clip_003.wav,singapore::speaker_284,train,1,MNSC,1,0.19432333,1.464684,1.099228,1.3061527
+singapore/speaker_285/clip_001.wav,singapore::speaker_285,train,1,MNSC,1,3.9299085,5.673484,-1.4746377,0.30403385
+singapore/speaker_285/clip_002.wav,singapore::speaker_285,train,1,MNSC,1,3.4096162,-1.0026305,-2.8045533,3.2092695
+singapore/speaker_285/clip_003.wav,singapore::speaker_285,train,1,MNSC,1,1.0588824,6.011236,-1.5306484,0.28586525
+singapore/speaker_286/clip_001.wav,singapore::speaker_286,train,1,MNSC,0,-5.4071183,4.9063034,-2.2467897,2.588637
+singapore/speaker_286/clip_002.wav,singapore::speaker_286,train,1,MNSC,1,6.7771163,-0.19840486,-1.3471609,1.0343345
+singapore/speaker_286/clip_003.wav,singapore::speaker_286,train,1,MNSC,1,7.4680905,-0.60054946,-1.3106452,0.96972144
+singapore/speaker_288/clip_001.wav,singapore::speaker_288,train,1,MNSC,1,5.925184,2.7534637,-1.4728341,1.609615
+singapore/speaker_289/clip_001.wav,singapore::speaker_289,train,1,MNSC,1,3.1988492,1.1111223,-0.92068756,2.7785857
+singapore/speaker_290/clip_001.wav,singapore::speaker_290,train,1,MNSC,1,4.3484664,3.210758,-0.29906413,1.0367101
+singapore/speaker_290/clip_002.wav,singapore::speaker_290,train,1,MNSC,1,6.5110307,3.3584886,-0.2553043,0.9883557
+singapore/speaker_291/clip_001.wav,singapore::speaker_291,validation,1,MNSC,1,2.8320065,0.12800002,0.30974162,1.4763354
+singapore/speaker_291/clip_002.wav,singapore::speaker_291,validation,1,MNSC,1,2.7951465,1.9009095,-0.80201465,2.3973007
+singapore/speaker_293/clip_001.wav,singapore::speaker_293,train,1,MNSC,0,-1.912976,3.0987616,-1.2842339,3.6236944
+singapore/speaker_293/clip_002.wav,singapore::speaker_293,train,1,MNSC,1,5.0237527,-0.9945819,-1.4263513,1.5753117
+singapore/speaker_294/clip_001.wav,singapore::speaker_294,train,1,MNSC,1,4.094196,4.7953396,-0.19863589,1.1640794
+singapore/speaker_294/clip_002.wav,singapore::speaker_294,train,1,MNSC,1,7.640012,1.7093412,-0.16864271,0.9057251
+singapore/speaker_297/clip_001.wav,singapore::speaker_297,train,1,MNSC,1,5.6567993,-0.17613348,-1.7785869,1.9668398
+singapore/speaker_299/clip_001.wav,singapore::speaker_299,train,1,MNSC,1,3.1958954,-0.21772671,-0.8499724,2.2339194
+singapore/speaker_299/clip_002.wav,singapore::speaker_299,train,1,MNSC,1,0.50161946,3.6272414,-0.00333705,2.2186804
+singapore/speaker_301/clip_001.wav,singapore::speaker_301,validation,1,MNSC,1,3.3853486,4.419014,0.015517502,1.9412522
+singapore/speaker_301/clip_002.wav,singapore::speaker_301,validation,1,MNSC,1,4.3341646,4.3105044,-0.047123205,1.6543341
+singapore/speaker_302/clip_001.wav,singapore::speaker_302,train,1,MNSC,1,4.371127,-1.6570219,-1.7802038,2.0527835
+singapore/speaker_302/clip_002.wav,singapore::speaker_302,train,1,MNSC,1,4.523776,-2.2330036,-1.6591054,2.2143455
+singapore/speaker_304/clip_001.wav,singapore::speaker_304,train,1,MNSC,1,-0.1191811,4.2219667,0.42037556,3.7335005
+singapore/speaker_305/clip_001.wav,singapore::speaker_305,train,1,MNSC,1,-0.24926077,8.14555,-0.8596149,1.9767469
+singapore/speaker_306/clip_001.wav,singapore::speaker_306,train,1,MNSC,1,0.881055,1.1857438,-1.4523948,4.2229266
+singapore/speaker_306/clip_002.wav,singapore::speaker_306,train,1,MNSC,1,0.80772394,0.06434186,0.8714762,1.486406
+singapore/speaker_307/clip_001.wav,singapore::speaker_307,validation,1,MNSC,1,1.0886958,0.17398572,-1.2121129,2.097079
+singapore/speaker_308/clip_001.wav,singapore::speaker_308,train,1,MNSC,1,3.286953,4.4154997,0.38704708,2.2798643
+singapore/speaker_308/clip_002.wav,singapore::speaker_308,train,1,MNSC,1,3.7835758,4.626746,0.20604599,3.4805627
+singapore/speaker_308/clip_003.wav,singapore::speaker_308,train,1,MNSC,1,0.972786,3.7930002,0.25298375,3.6651702
+singapore/speaker_308/clip_004.wav,singapore::speaker_308,train,1,MNSC,1,2.7279077,3.4352646,0.24685816,3.2729466
+singapore/speaker_309/clip_001.wav,singapore::speaker_309,train,1,MNSC,1,3.6155925,6.345096,0.5263901,2.8858085
+singapore/speaker_311/clip_001.wav,singapore::speaker_311,train,1,MNSC,1,11.903603,3.8403018,-0.39908415,0.36761132
+singapore/speaker_311/clip_002.wav,singapore::speaker_311,train,1,MNSC,1,12.65203,1.0261775,-1.0625544,0.30684587
+singapore/speaker_312/clip_001.wav,singapore::speaker_312,validation,1,MNSC,1,4.0714197,0.8649355,0.79266906,1.8381279
+singapore/speaker_313/clip_001.wav,singapore::speaker_313,train,1,MNSC,1,4.8514366,2.6136053,0.86519575,2.3773153
+singapore/speaker_313/clip_002.wav,singapore::speaker_313,train,1,MNSC,1,7.744491,-1.0281533,-1.7573262,0.7224001
+singapore/speaker_315/clip_001.wav,singapore::speaker_315,train,1,MNSC,1,-0.4399723,2.7891808,-0.94887614,2.0606458
+singapore/speaker_315/clip_002.wav,singapore::speaker_315,train,1,MNSC,1,-4.814032,8.18235,-0.34971663,5.11484
+singapore/speaker_315/clip_003.wav,singapore::speaker_315,train,1,MNSC,1,6.6519623,0.48518035,-1.2974652,1.3401043
+singapore/speaker_316/clip_001.wav,singapore::speaker_316,train,1,MNSC,1,1.1168318,5.1345363,1.0348959,2.2016423
+singapore/speaker_318/clip_001.wav,singapore::speaker_318,train,1,MNSC,1,6.9609084,2.081675,1.0900131,1.0544505
+singapore/speaker_319/clip_001.wav,singapore::speaker_319,train,1,MNSC,1,6.4160166,0.74499935,-1.267883,1.5162932
+singapore/speaker_320/clip_001.wav,singapore::speaker_320,train,1,MNSC,1,5.393729,2.3459833,1.1558937,1.210557
+singapore/speaker_321/clip_001.wav,singapore::speaker_321,train,1,MNSC,1,2.1202557,-1.4094177,-2.3001432,3.6013792
+singapore/speaker_322/clip_001.wav,singapore::speaker_322,validation,1,MNSC,1,1.9078103,7.617184,1.27681,1.8700587
+singapore/speaker_322/clip_002.wav,singapore::speaker_322,validation,1,MNSC,1,1.2928767,6.1311646,1.2919929,1.7948369
+singapore/speaker_323/clip_001.wav,singapore::speaker_323,train,1,MNSC,1,7.359879,-0.36151055,-0.4192435,1.6721393
+singapore/speaker_324/clip_001.wav,singapore::speaker_324,train,1,MNSC,1,10.819031,3.3740065,-0.37390357,0.3777726
+singapore/speaker_325/clip_001.wav,singapore::speaker_325,train,1,MNSC,1,7.3089833,-0.13826506,0.14366786,1.5616136
+singapore/speaker_325/clip_002.wav,singapore::speaker_325,train,1,MNSC,0,-6.7178044,4.456651,-0.25914153,5.523917
+singapore/speaker_325/clip_003.wav,singapore::speaker_325,train,1,MNSC,1,3.1461384,3.1665933,-0.7496857,2.5184667
+singapore/speaker_326/clip_001.wav,singapore::speaker_326,train,1,MNSC,0,-0.62632644,-0.9443269,-2.2422285,3.1704314
+singapore/speaker_326/clip_002.wav,singapore::speaker_326,train,1,MNSC,0,-2.41543,3.0474849,-0.2592354,4.8473625
+singapore/speaker_326/clip_003.wav,singapore::speaker_326,train,1,MNSC,1,3.0256052,-1.1607841,-2.5987349,2.9837577
+singapore/speaker_326/clip_004.wav,singapore::speaker_326,train,1,MNSC,1,6.340463,0.65784454,-1.3948672,0.8836534
+singapore/speaker_327/clip_001.wav,singapore::speaker_327,train,1,MNSC,1,4.0634885,-1.6632029,-1.883686,1.828851
+singapore/speaker_328/clip_001.wav,singapore::speaker_328,train,1,MNSC,1,-0.9893588,5.881027,-0.20748483,2.7847314
+singapore/speaker_330/clip_001.wav,singapore::speaker_330,train,1,MNSC,1,7.0528054,4.930889,-0.34339854,1.0856667
+singapore/speaker_331/clip_001.wav,singapore::speaker_331,validation,1,MNSC,1,6.9010878,3.0605927,-0.7654149,1.3790127
+singapore/speaker_331/clip_002.wav,singapore::speaker_331,validation,1,MNSC,1,5.742924,0.79733413,-0.81509006,2.184106
+singapore/speaker_332/clip_001.wav,singapore::speaker_332,train,1,MNSC,1,-0.48813128,7.2768927,0.19534178,4.0694966
+singapore/speaker_332/clip_002.wav,singapore::speaker_332,train,1,MNSC,1,2.1520596,4.5032444,-0.76099235,3.0764656
+singapore/speaker_333/clip_001.wav,singapore::speaker_333,train,1,MNSC,1,0.074003555,3.7346876,-0.8667225,1.1035032
+singapore/speaker_334/clip_001.wav,singapore::speaker_334,train,1,MNSC,1,5.1435933,5.1200743,-0.092593186,2.3090324
+singapore/speaker_334/clip_002.wav,singapore::speaker_334,train,1,MNSC,1,-2.2703965,6.4975486,-0.18425336,3.075472
+singapore/speaker_337/clip_001.wav,singapore::speaker_337,validation,1,MNSC,1,6.8060093,-3.5394747,-0.9839005,1.9766482
+singapore/speaker_337/clip_002.wav,singapore::speaker_337,validation,1,MNSC,1,6.899516,-3.8180726,-1.0552177,1.8988223
+singapore/speaker_339/clip_001.wav,singapore::speaker_339,train,1,MNSC,0,0.24458362,-0.22708037,-1.6262443,4.1354833
+singapore/speaker_339/clip_002.wav,singapore::speaker_339,train,1,MNSC,0,1.8228456,-2.499133,-2.113859,3.6452415
+singapore/speaker_340/clip_001.wav,singapore::speaker_340,validation,1,MNSC,1,3.877142,1.498058,-0.59246284,1.54592
+singapore/speaker_340/clip_002.wav,singapore::speaker_340,validation,1,MNSC,1,4.245959,1.271935,-0.561455,1.5320995
+singapore/speaker_341/clip_001.wav,singapore::speaker_341,train,1,MNSC,0,-6.482244,5.655211,0.0970542,4.3665786
+singapore/speaker_341/clip_002.wav,singapore::speaker_341,train,1,MNSC,1,-3.2810671,8.581233,0.20953098,2.9151945
+singapore/speaker_342/clip_001.wav,singapore::speaker_342,validation,1,MNSC,1,2.6055462,2.0646262,0.3042533,3.5789866
+singapore/speaker_342/clip_002.wav,singapore::speaker_342,validation,1,MNSC,1,4.2928147,1.34234,-0.9245727,2.707421
+singapore/speaker_343/clip_001.wav,singapore::speaker_343,train,1,MNSC,1,0.85054034,7.1842217,0.22213696,2.4792216
+singapore/speaker_345/clip_001.wav,singapore::speaker_345,train,1,MNSC,1,7.51667,3.9532466,-0.3904907,0.73435277
+singapore/speaker_345/clip_002.wav,singapore::speaker_345,train,1,MNSC,1,7.6059365,5.880564,-0.80544347,1.0256451
+singapore/speaker_348/clip_001.wav,singapore::speaker_348,validation,1,MNSC,1,5.862852,-0.7292594,-1.3153812,0.79130197
+singapore/speaker_348/clip_002.wav,singapore::speaker_348,validation,1,MNSC,1,5.133741,2.4341228,-0.8230578,0.7301782
+singapore/speaker_350/clip_001.wav,singapore::speaker_350,train,1,MNSC,1,1.8073012,-0.49586836,0.21705015,3.6244717
+singapore/speaker_351/clip_001.wav,singapore::speaker_351,train,1,MNSC,1,3.5614173,-2.2343397,-2.3998551,3.3826795
+singapore/speaker_351/clip_002.wav,singapore::speaker_351,train,1,MNSC,1,5.6059556,-2.9966612,-2.2334795,1.7924953
+singapore/speaker_352/clip_001.wav,singapore::speaker_352,train,1,MNSC,0,-6.142236,7.380277,-0.5272358,3.5833519
+singapore/speaker_352/clip_002.wav,singapore::speaker_352,train,1,MNSC,1,0.42425397,2.8576427,-0.94850254,3.3225691
+singapore/speaker_354/clip_001.wav,singapore::speaker_354,validation,1,MNSC,1,1.1307596,0.8631301,-2.2747784,2.3210492
+singapore/speaker_354/clip_002.wav,singapore::speaker_354,validation,1,MNSC,1,1.340963,1.9975333,-2.269278,2.3124359
+singapore/speaker_355/clip_001.wav,singapore::speaker_355,train,1,MNSC,1,0.67251766,4.1386538,-0.22148937,2.883119
+singapore/speaker_356/clip_001.wav,singapore::speaker_356,train,1,MNSC,1,4.975089,0.23047929,-0.7850378,2.6567762
+singapore/speaker_356/clip_002.wav,singapore::speaker_356,train,1,MNSC,1,2.9734433,2.3675916,-0.47034767,2.2734497
+singapore/speaker_357/clip_001.wav,singapore::speaker_357,train,1,MNSC,1,10.398543,2.0936918,-0.6749753,0.2870792
+singapore/speaker_359/clip_001.wav,singapore::speaker_359,train,1,MNSC,1,6.6572347,0.9437659,0.7378788,0.81337667
+singapore/speaker_359/clip_002.wav,singapore::speaker_359,train,1,MNSC,1,1.4103322,4.348617,0.40589792,2.5060961
+singapore/speaker_359/clip_003.wav,singapore::speaker_359,train,1,MNSC,1,1.7658104,4.940552,0.2949361,2.379733
+singapore/speaker_361/clip_001.wav,singapore::speaker_361,train,1,MNSC,1,2.6758695,0.9957935,0.9729127,1.4973141
+singapore/speaker_361/clip_002.wav,singapore::speaker_361,train,1,MNSC,1,4.933645,0.9273989,0.5862036,1.2022227
+singapore/speaker_361/clip_003.wav,singapore::speaker_361,train,1,MNSC,0,-5.058906,5.3016496,0.8466339,2.9693015
+singapore/speaker_362/clip_001.wav,singapore::speaker_362,train,1,MNSC,1,-3.6097825,11.519771,0.31233075,3.5927646
+singapore/speaker_364/clip_001.wav,singapore::speaker_364,train,1,MNSC,1,3.7428613,0.62995833,0.6795812,3.2075536
+singapore/speaker_364/clip_002.wav,singapore::speaker_364,train,1,MNSC,0,-2.7021756,2.5083442,-0.52611506,3.3324952
+singapore/speaker_365/clip_001.wav,singapore::speaker_365,train,1,MNSC,0,1.4613371,-4.1530886,-2.0813286,2.0826774
+singapore/speaker_366/clip_001.wav,singapore::speaker_366,train,1,MNSC,1,7.818082,0.21518068,-0.64538974,1.0256951
+singapore/speaker_366/clip_002.wav,singapore::speaker_366,train,1,MNSC,1,7.2893343,1.8556213,-1.3026388,1.1290331
+singapore/speaker_367/clip_001.wav,singapore::speaker_367,train,1,MNSC,1,6.4643826,-1.0250041,-1.4260329,0.6186769
+singapore/speaker_367/clip_002.wav,singapore::speaker_367,train,1,MNSC,1,7.0879784,0.74254394,-1.0363151,1.1119194
+singapore/speaker_368/clip_001.wav,singapore::speaker_368,train,1,MNSC,1,3.5033638,2.16894,1.1583866,1.0390711
+singapore/speaker_369/clip_001.wav,singapore::speaker_369,train,1,MNSC,1,5.3718424,-1.7086377,-1.7267976,0.554697
+singapore/speaker_369/clip_002.wav,singapore::speaker_369,train,1,MNSC,1,4.993591,-0.6804679,-1.09004,2.2204268
+singapore/speaker_370/clip_001.wav,singapore::speaker_370,train,1,MNSC,1,4.0555563,1.9804246,0.23082945,2.5676978
+singapore/speaker_370/clip_002.wav,singapore::speaker_370,train,1,MNSC,1,6.037209,3.337287,-0.93683344,2.2251458
+singapore/speaker_371/clip_001.wav,singapore::speaker_371,train,1,MNSC,0,0.9762682,-4.6370015,-3.024048,2.2818556
+singapore/speaker_372/clip_001.wav,singapore::speaker_372,train,1,MNSC,1,-0.84838814,4.344894,-0.5072801,2.4048567
+singapore/speaker_372/clip_002.wav,singapore::speaker_372,train,1,MNSC,1,1.9942477,3.8274298,0.78409195,2.628163
+singapore/speaker_373/clip_001.wav,singapore::speaker_373,train,1,MNSC,1,-0.8791775,9.421798,0.1577397,2.6968982
+singapore/speaker_374/clip_001.wav,singapore::speaker_374,train,1,MNSC,1,5.6144905,1.4877204,0.27659962,1.1048911
+singapore/speaker_375/clip_001.wav,singapore::speaker_375,validation,1,MNSC,1,3.5475395,-0.55568975,-1.9157456,1.1025816
+singapore/speaker_375/clip_002.wav,singapore::speaker_375,validation,1,MNSC,1,1.4161086,-0.3320779,-2.0418947,1.1308172
+singapore/speaker_376/clip_001.wav,singapore::speaker_376,train,1,MNSC,1,-0.6176453,4.297276,-0.7865796,2.832543
+singapore/speaker_377/clip_001.wav,singapore::speaker_377,train,1,MNSC,1,6.910124,3.1674066,-1.1619486,1.0245997
+singapore/speaker_378/clip_001.wav,singapore::speaker_378,train,1,MNSC,1,1.9378088,1.0651298,-1.4446671,2.4928586
+singapore/speaker_380/clip_001.wav,singapore::speaker_380,validation,1,MNSC,1,5.330953,1.0017103,-0.89242816,3.3420756
+singapore/speaker_381/clip_001.wav,singapore::speaker_381,train,1,MNSC,0,-8.319394,5.287382,-0.2031028,5.530116
+singapore/speaker_383/clip_001.wav,singapore::speaker_383,validation,1,MNSC,1,4.7360578,0.8397275,-0.5797932,1.7763731
+singapore/speaker_384/clip_001.wav,singapore::speaker_384,train,1,MNSC,1,4.4565616,-2.0775077,-0.23651254,1.9761293
+singapore/speaker_385/clip_001.wav,singapore::speaker_385,train,1,MNSC,1,2.368522,7.278263,-0.14950839,2.9671905
+singapore/speaker_385/clip_002.wav,singapore::speaker_385,train,1,MNSC,1,0.3315201,7.269146,0.22535846,4.22053
+singapore/speaker_386/clip_001.wav,singapore::speaker_386,train,1,MNSC,1,7.0012145,3.3762965,-0.024399681,0.65970594
+singapore/speaker_386/clip_002.wav,singapore::speaker_386,train,1,MNSC,1,7.24775,3.0861282,-0.4030214,0.932664
+singapore/speaker_388/clip_001.wav,singapore::speaker_388,train,1,MNSC,1,1.4123921,0.85006106,-0.6139117,2.960233
+singapore/speaker_389/clip_001.wav,singapore::speaker_389,train,1,MNSC,1,8.559636,4.532339,0.18978575,0.59959316
+singapore/speaker_390/clip_001.wav,singapore::speaker_390,train,1,MNSC,1,3.1582677,3.8982613,0.35645124,2.2263024
+singapore/speaker_390/clip_002.wav,singapore::speaker_390,train,1,MNSC,1,5.262673,0.23939705,-1.3728001,1.814645
+singapore/speaker_392/clip_001.wav,singapore::speaker_392,train,1,MNSC,1,4.1870923,3.2852,-1.2950586,0.40730295
+singapore/speaker_394/clip_001.wav,singapore::speaker_394,train,1,MNSC,1,4.7240686,0.5912926,-0.9313237,1.6704446
+singapore/speaker_395/clip_001.wav,singapore::speaker_395,validation,1,MNSC,1,2.4253476,1.8850138,-1.6240506,2.2533832
+singapore/speaker_396/clip_001.wav,singapore::speaker_396,train,1,MNSC,1,7.5422854,1.4583317,-1.295101,1.1843653
+singapore/speaker_397/clip_001.wav,singapore::speaker_397,validation,1,MNSC,1,9.471004,-2.3660924,-1.7455477,0.7724431
+singapore/speaker_399/clip_001.wav,singapore::speaker_399,train,1,MNSC,1,4.09216,4.3879824,-0.20929687,0.62892026
+singapore/speaker_399/clip_002.wav,singapore::speaker_399,train,1,MNSC,1,2.5180774,4.2365737,-0.18321161,0.9091183
+singapore/speaker_400/clip_001.wav,singapore::speaker_400,validation,1,MNSC,1,0.9170197,4.3995066,0.43969846,4.3754225
+singapore/speaker_401/clip_001.wav,singapore::speaker_401,train,1,MNSC,1,9.74239,2.2552683,-0.34035867,0.19577749
+singapore/speaker_402/clip_001.wav,singapore::speaker_402,train,1,MNSC,1,4.1083965,6.47932,0.93955356,1.3238758
+singapore/speaker_404/clip_001.wav,singapore::speaker_404,validation,1,MNSC,1,7.2638226,2.3625476,-0.14043632,0.9935989
+singapore/speaker_404/clip_002.wav,singapore::speaker_404,validation,1,MNSC,1,7.288928,3.0153031,-0.57791,0.649405
+singapore/speaker_405/clip_001.wav,singapore::speaker_405,validation,1,MNSC,1,2.8286607,4.7441754,-1.173619,0.2986221
+singapore/speaker_406/clip_001.wav,singapore::speaker_406,train,1,MNSC,1,7.805658,3.8543575,0.30292946,0.9078621
+singapore/speaker_407/clip_001.wav,singapore::speaker_407,train,1,MNSC,1,4.3329153,-1.1231467,-2.4535813,2.4499154
+singapore/speaker_408/clip_001.wav,singapore::speaker_408,train,1,MNSC,1,0.14418665,1.7871039,1.1773455,2.3825746
+singapore/speaker_409/clip_001.wav,singapore::speaker_409,validation,1,MNSC,1,1.9526162,5.3245416,0.40898582,2.930761
+singapore/speaker_409/clip_002.wav,singapore::speaker_409,validation,1,MNSC,1,0.42019704,5.512707,0.4579555,3.0741842
+singapore/speaker_410/clip_001.wav,singapore::speaker_410,train,1,MNSC,0,-6.8273,5.388876,-0.074699566,4.455448
+singapore/speaker_411/clip_001.wav,singapore::speaker_411,validation,1,MNSC,1,6.38251,2.7968094,0.29507667,1.4813192
+singapore/speaker_411/clip_002.wav,singapore::speaker_411,validation,1,MNSC,1,4.871584,1.8610353,0.3513043,1.6122292
+singapore/speaker_412/clip_001.wav,singapore::speaker_412,train,1,MNSC,1,3.709795,4.3985057,0.9355325,1.9318703
+singapore/speaker_413/clip_001.wav,singapore::speaker_413,train,1,MNSC,1,5.5991845,2.1634378,0.25275052,1.1771612
+singapore/speaker_414/clip_001.wav,singapore::speaker_414,train,1,MNSC,1,-0.8435898,1.5396483,-2.2409358,2.072293
+singapore/speaker_417/clip_001.wav,singapore::speaker_417,train,1,MNSC,1,10.776732,-5.117376,-1.6994579,1.0567698
+singapore/speaker_418/clip_001.wav,singapore::speaker_418,train,1,MNSC,1,5.51977,0.07332474,0.25121605,1.6354787
+singapore/speaker_419/clip_001.wav,singapore::speaker_419,train,1,MNSC,1,10.05379,-3.511375,-1.4566909,0.73454255
+singapore/speaker_420/clip_001.wav,singapore::speaker_420,train,1,MNSC,1,8.035057,2.2585335,0.49314553,0.83857715
+singapore/speaker_420/clip_002.wav,singapore::speaker_420,train,1,MNSC,1,0.99964213,-1.3593743,-3.5804877,5.784006
+singapore/speaker_421/clip_001.wav,singapore::speaker_421,train,1,MNSC,1,7.1806726,3.410015,-1.1457862,0.6697147
+singapore/speaker_422/clip_001.wav,singapore::speaker_422,train,1,MNSC,0,-1.6178653,1.6183416,0.6613314,2.289542
+singapore/speaker_423/clip_001.wav,singapore::speaker_423,validation,1,MNSC,1,8.355824,-0.13865703,-0.9484976,0.8160171
+singapore/speaker_424/clip_001.wav,singapore::speaker_424,train,1,MNSC,1,6.0541754,1.6249509,-1.976958,0.7631428
+singapore/speaker_426/clip_001.wav,singapore::speaker_426,validation,1,MNSC,1,-0.9594774,4.1658015,0.50511974,2.6212199
+singapore/speaker_427/clip_001.wav,singapore::speaker_427,validation,1,MNSC,1,-1.4283744,10.550374,-0.5671454,3.2448316
+singapore/speaker_427/clip_002.wav,singapore::speaker_427,validation,1,MNSC,1,9.138727,3.69186,0.5649764,0.9015013
+singapore/speaker_427/clip_003.wav,singapore::speaker_427,validation,1,MNSC,1,-0.8371843,10.88876,-0.6121883,3.269547
+singapore/speaker_428/clip_001.wav,singapore::speaker_428,validation,1,MNSC,0,-1.3071795,0.67486644,-1.720849,4.4336476
+singapore/speaker_430/clip_001.wav,singapore::speaker_430,train,1,MNSC,1,5.8354993,3.9912856,0.87707025,1.8062135
+singapore/speaker_430/clip_002.wav,singapore::speaker_430,train,1,MNSC,1,3.8463123,7.459686,0.3538871,1.9581405
+singapore/speaker_432/clip_001.wav,singapore::speaker_432,train,1,MNSC,1,6.1335716,-0.98783934,-2.3350167,1.7253561
+singapore/speaker_432/clip_002.wav,singapore::speaker_432,train,1,MNSC,1,3.788808,1.6348947,0.074346244,2.4864867
+singapore/speaker_434/clip_001.wav,singapore::speaker_434,validation,1,MNSC,1,6.3175316,3.1307764,0.7173844,0.90459156
+singapore/speaker_434/clip_002.wav,singapore::speaker_434,validation,1,MNSC,1,10.293542,2.781918,-0.9769854,1.1429194
+singapore/speaker_434/clip_003.wav,singapore::speaker_434,validation,1,MNSC,1,3.258541,-1.492792,-1.8156443,2.4205263
+singapore/speaker_435/clip_001.wav,singapore::speaker_435,train,1,MNSC,1,8.162137,6.3711476,-0.5924211,1.0027772
+singapore/speaker_436/clip_001.wav,singapore::speaker_436,train,1,MNSC,1,4.4284415,3.880186,-1.2246273,1.203379
+singapore/speaker_436/clip_002.wav,singapore::speaker_436,train,1,MNSC,1,5.559287,6.133259,0.2542595,2.2457373
+singapore/speaker_437/clip_001.wav,singapore::speaker_437,train,1,MNSC,0,-3.1823654,1.4287658,-0.078831375,5.0004616
+singapore/speaker_437/clip_002.wav,singapore::speaker_437,train,1,MNSC,1,-0.50819665,3.177032,-0.2002736,3.524322
+singapore/speaker_437/clip_003.wav,singapore::speaker_437,train,1,MNSC,1,2.4582496,-1.7141466,0.61562186,4.278571
+singapore/speaker_437/clip_004.wav,singapore::speaker_437,train,1,MNSC,1,4.5995526,-3.488308,-1.6548121,1.4665661
+singapore/speaker_442/clip_001.wav,singapore::speaker_442,train,1,MNSC,1,2.2974808,4.887335,0.66134155,3.306133
+singapore/speaker_443/clip_001.wav,singapore::speaker_443,train,1,MNSC,1,2.7977598,3.5559607,-1.1585703,2.2185934
+singapore/speaker_443/clip_002.wav,singapore::speaker_443,train,1,MNSC,1,3.5012841,2.807802,-1.1314095,2.1693888
+singapore/speaker_445/clip_001.wav,singapore::speaker_445,train,1,MNSC,1,6.8500304,-6.5451035,-0.809285,0.9834606
+singapore/speaker_446/clip_001.wav,singapore::speaker_446,train,1,MNSC,1,-3.1161444,10.638796,-0.1450476,3.0385256
+singapore/speaker_447/clip_001.wav,singapore::speaker_447,train,1,MNSC,1,3.2858064,5.6341243,-0.05650033,1.9774971
+singapore/speaker_447/clip_002.wav,singapore::speaker_447,train,1,MNSC,1,4.5936146,-1.7386945,-2.627961,1.928417
+singapore/speaker_448/clip_001.wav,singapore::speaker_448,validation,1,MNSC,1,5.1164055,4.318691,-0.39424485,0.665237
+singapore/speaker_450/clip_001.wav,singapore::speaker_450,train,1,MNSC,1,2.7508454,-0.52220714,-1.6596929,2.5603843
+singapore/speaker_451/clip_001.wav,singapore::speaker_451,train,1,MNSC,1,4.8190064,1.3113325,0.23448764,1.834666
+singapore/speaker_451/clip_002.wav,singapore::speaker_451,train,1,MNSC,0,-1.7880691,2.4219327,0.12299636,4.5053616
+singapore/speaker_456/clip_001.wav,singapore::speaker_456,validation,1,MNSC,1,0.5413609,2.5078146,0.75801915,2.6055088
+singapore/speaker_458/clip_001.wav,singapore::speaker_458,train,1,MNSC,1,1.6437907,9.710623,-1.0057889,2.2138495
+singapore/speaker_458/clip_002.wav,singapore::speaker_458,train,1,MNSC,1,0.99179935,-0.43063414,-2.0410767,2.6255844
+singapore/speaker_460/clip_001.wav,singapore::speaker_460,train,1,MNSC,1,3.3121924,-2.614125,-1.4979101,2.6798675
+singapore/speaker_461/clip_001.wav,singapore::speaker_461,train,1,MNSC,1,4.047404,2.0902576,0.31898928,2.9921937
+singapore/speaker_461/clip_002.wav,singapore::speaker_461,train,1,MNSC,1,2.6368165,3.0630095,0.4299909,3.316952
+singapore/speaker_462/clip_001.wav,singapore::speaker_462,train,1,MNSC,1,2.515648,-0.49203402,-1.679115,3.1562226
+singapore/speaker_463/clip_001.wav,singapore::speaker_463,train,1,MNSC,1,5.9228964,6.225605,-0.26248685,1.6689208
+singapore/speaker_464/clip_001.wav,singapore::speaker_464,validation,1,MNSC,1,1.9762331,-3.963733,-1.9301004,2.14101
+singapore/speaker_465/clip_001.wav,singapore::speaker_465,validation,1,MNSC,1,3.6991317,-4.229077,-2.5347853,2.778169
+singapore/speaker_466/clip_001.wav,singapore::speaker_466,train,1,MNSC,1,4.8782005,2.8618438,-1.3563524,1.3063772
+singapore/speaker_467/clip_001.wav,singapore::speaker_467,train,1,MNSC,0,-4.3574204,4.328388,-1.2890307,3.8082175
+singapore/speaker_467/clip_002.wav,singapore::speaker_467,train,1,MNSC,1,5.645263,-0.75693595,-0.33572713,1.6593192
+singapore/speaker_468/clip_001.wav,singapore::speaker_468,train,1,MNSC,1,-0.2814351,9.242741,-0.6522744,3.3747122
+singapore/speaker_468/clip_002.wav,singapore::speaker_468,train,1,MNSC,1,-0.11112277,10.46214,-0.6638135,3.215285
+singapore/speaker_469/clip_001.wav,singapore::speaker_469,train,1,MNSC,0,-3.5261085,0.6386875,-0.025098255,4.971585
+singapore/speaker_469/clip_002.wav,singapore::speaker_469,train,1,MNSC,0,-0.43590972,0.90596247,-0.27604488,4.8461676
+singapore/speaker_470/clip_001.wav,singapore::speaker_470,validation,1,MNSC,1,4.8610163,-3.4609263,-2.7365024,2.3457747
+singapore/speaker_471/clip_001.wav,singapore::speaker_471,train,1,MNSC,1,7.1551085,-0.7145039,-1.7941386,1.2147561
+singapore/speaker_471/clip_002.wav,singapore::speaker_471,train,1,MNSC,1,7.2441826,3.3424325,-0.57934403,2.2789965
+singapore/speaker_472/clip_001.wav,singapore::speaker_472,train,1,MNSC,1,4.5929637,3.3658445,-0.7173651,2.3578568
+singapore/speaker_472/clip_002.wav,singapore::speaker_472,train,1,MNSC,1,2.962845,4.89833,-1.1433569,0.9260913
+singapore/speaker_473/clip_001.wav,singapore::speaker_473,validation,1,MNSC,0,-0.8022445,0.041213445,1.1589787,1.3112731
+singapore/speaker_476/clip_001.wav,singapore::speaker_476,train,1,MNSC,1,9.23256,-1.3229828,-1.2877539,0.62255406
+singapore/speaker_476/clip_002.wav,singapore::speaker_476,train,1,MNSC,1,9.948161,0.032025717,-1.2862661,0.62447757
+singapore/speaker_477/clip_001.wav,singapore::speaker_477,train,1,MNSC,1,6.956312,0.2795238,-0.21706268,1.960198
+singapore/speaker_479/clip_001.wav,singapore::speaker_479,train,1,MNSC,1,2.9746327,3.967599,0.11343224,3.565656
+singapore/speaker_479/clip_002.wav,singapore::speaker_479,train,1,MNSC,1,3.8003118,2.3307269,-0.2110519,2.5039103
+singapore/speaker_480/clip_001.wav,singapore::speaker_480,train,1,MNSC,1,2.1332922,-0.26811686,-2.8586054,2.085966
+singapore/speaker_481/clip_001.wav,singapore::speaker_481,train,1,MNSC,1,2.1654599,-2.310823,0.35218677,4.730773
+singapore/speaker_482/clip_001.wav,singapore::speaker_482,validation,1,MNSC,1,6.722564,-0.034611717,0.19042645,1.0334346
+singapore/speaker_483/clip_001.wav,singapore::speaker_483,validation,1,MNSC,1,3.153363,3.370191,0.04517941,3.0636373
+singapore/speaker_484/clip_001.wav,singapore::speaker_484,train,1,MNSC,1,7.839378,-4.3686347,-1.5274767,1.4972569
+singapore/speaker_485/clip_001.wav,singapore::speaker_485,train,1,MNSC,1,7.1996408,0.34107247,-1.0480567,0.90040785
+singapore/speaker_486/clip_001.wav,singapore::speaker_486,train,1,MNSC,0,-0.6845742,0.03869752,-0.14064531,3.5850973
+singapore/speaker_487/clip_001.wav,singapore::speaker_487,train,1,MNSC,1,8.65189,0.7653538,-0.86237645,0.3832218
+singapore/speaker_488/clip_001.wav,singapore::speaker_488,train,1,MNSC,1,5.284297,0.13231704,-1.2761674,1.5157062
+singapore/speaker_490/clip_001.wav,singapore::speaker_490,train,1,MNSC,0,-2.8851342,4.0637994,0.17887625,4.0338044
+singapore/speaker_492/clip_001.wav,singapore::speaker_492,train,1,MNSC,1,8.245176,-0.78452533,-1.1351069,0.7670308
+singapore/speaker_492/clip_002.wav,singapore::speaker_492,train,1,MNSC,1,5.675714,0.7381589,-1.4748675,1.4110708
+singapore/speaker_493/clip_001.wav,singapore::speaker_493,train,1,MNSC,1,2.1080964,-1.5582461,-1.6777322,2.032269
+singapore/speaker_493/clip_002.wav,singapore::speaker_493,train,1,MNSC,1,5.6490316,3.168533,0.3939073,1.544993
+singapore/speaker_495/clip_001.wav,singapore::speaker_495,train,1,MNSC,1,5.4563117,2.878541,0.89580303,1.5694851
+singapore/speaker_496/clip_001.wav,singapore::speaker_496,train,1,MNSC,1,2.4561176,5.2601295,1.2145911,1.9888334
+singapore/speaker_497/clip_001.wav,singapore::speaker_497,train,1,MNSC,1,1.7912921,3.0194037,-0.5408901,2.2982643
+singapore/speaker_497/clip_002.wav,singapore::speaker_497,train,1,MNSC,1,0.96672094,1.6752206,-0.49390298,2.593332
+singapore/speaker_498/clip_001.wav,singapore::speaker_498,train,1,MNSC,1,0.80535716,0.42638728,-1.0338243,3.6279798
+singapore/speaker_498/clip_002.wav,singapore::speaker_498,train,1,MNSC,1,2.982549,0.80787927,-1.0967929,3.5176947
+singapore/speaker_501/clip_001.wav,singapore::speaker_501,train,1,MNSC,1,1.4688406,2.1739275,-1.327362,3.3184385
+singapore/speaker_502/clip_001.wav,singapore::speaker_502,validation,1,MNSC,1,2.7077994,0.53038204,0.6361795,2.002764
+singapore/speaker_502/clip_002.wav,singapore::speaker_502,validation,1,MNSC,0,-2.1773503,3.1670506,-0.183606,4.095683
+singapore/speaker_503/clip_001.wav,singapore::speaker_503,train,1,MNSC,1,-0.6439688,5.6756697,-0.36633754,3.9420264
+singapore/speaker_504/clip_001.wav,singapore::speaker_504,train,1,MNSC,1,8.1411915,0.53964263,-0.9891082,1.3204695
+singapore/speaker_504/clip_002.wav,singapore::speaker_504,train,1,MNSC,1,3.2962584,4.263051,-0.8096348,2.0888631
+singapore/speaker_505/clip_001.wav,singapore::speaker_505,train,1,MNSC,1,4.7300935,-1.7187353,-1.5528708,1.3574969
+singapore/speaker_506/clip_001.wav,singapore::speaker_506,validation,1,MNSC,1,0.89444244,5.3992643,0.42052612,3.8698962
+singapore/speaker_507/clip_001.wav,singapore::speaker_507,train,1,MNSC,1,10.355426,-0.48655963,-0.8730173,1.2689153
+singapore/speaker_509/clip_001.wav,singapore::speaker_509,train,1,MNSC,1,4.6340194,0.97401553,0.52243876,2.1013572
+singapore/speaker_510/clip_001.wav,singapore::speaker_510,validation,1,MNSC,1,6.9220753,3.6726685,-1.1967742,0.36342326
+singapore/speaker_511/clip_001.wav,singapore::speaker_511,train,1,MNSC,1,-4.171357,10.2915325,-0.001473476,4.116849
+singapore/speaker_512/clip_001.wav,singapore::speaker_512,train,1,MNSC,1,3.3060274,2.2186406,1.1419432,1.1408617
+singapore/speaker_513/clip_001.wav,singapore::speaker_513,train,1,MNSC,1,-2.8980439,5.3525867,0.44353387,3.9208593
+singapore/speaker_514/clip_001.wav,singapore::speaker_514,train,1,MNSC,1,3.1942554,1.6514872,0.6570893,1.9926645
+singapore/speaker_515/clip_001.wav,singapore::speaker_515,validation,1,MNSC,1,4.4102383,-1.9320346,-2.6182234,2.5210216
+singapore/speaker_516/clip_001.wav,singapore::speaker_516,train,1,MNSC,1,-2.279249,5.5933466,-0.10546647,3.166629
+singapore/speaker_517/clip_001.wav,singapore::speaker_517,train,1,MNSC,1,4.367678,2.2692204,1.113794,1.3614408
+singapore/speaker_518/clip_001.wav,singapore::speaker_518,train,1,MNSC,1,4.2903304,-4.597907,-2.9801111,2.8855584
+singapore/speaker_519/clip_001.wav,singapore::speaker_519,train,1,MNSC,1,5.722395,5.011961,0.46519417,1.6984897
+singapore/speaker_520/clip_001.wav,singapore::speaker_520,validation,1,MNSC,1,4.0962167,-4.1620917,-3.102873,2.893906
+singapore/speaker_521/clip_001.wav,singapore::speaker_521,train,1,MNSC,1,-2.636208,8.483749,-0.0783702,3.3640776
+singapore/speaker_522/clip_001.wav,singapore::speaker_522,train,1,MNSC,1,5.161997,2.1142766,0.80441016,1.8500265
+singapore/speaker_523/clip_001.wav,singapore::speaker_523,train,1,MNSC,1,0.14356743,2.4532533,-0.481897,3.1322193
+singapore/speaker_524/clip_001.wav,singapore::speaker_524,train,1,MNSC,1,-1.3669981,11.578953,0.06705338,3.8239496
+singapore/speaker_525/clip_001.wav,singapore::speaker_525,validation,1,MNSC,1,5.5357475,2.0028281,0.19022138,1.6107159
+singapore/speaker_526/clip_001.wav,singapore::speaker_526,train,1,MNSC,1,-0.46758473,7.9663253,-1.248197,3.0498886
+singapore/speaker_526/clip_002.wav,singapore::speaker_526,train,1,MNSC,1,-1.4454113,7.6546135,-1.285539,3.1500502
+singapore/speaker_527/clip_001.wav,singapore::speaker_527,validation,1,MNSC,1,6.4159503,3.2922442,-0.66920334,2.2163694
+singapore/speaker_527/clip_002.wav,singapore::speaker_527,validation,1,MNSC,1,6.501691,3.651779,-0.63962597,2.2626066
+singapore/speaker_528/clip_001.wav,singapore::speaker_528,train,1,MNSC,1,1.2946953,6.1434083,0.10561514,2.557602
+singapore/speaker_529/clip_001.wav,singapore::speaker_529,train,1,MNSC,1,0.49173895,5.1293383,1.0566318,2.0790334
+singapore/speaker_531/clip_001.wav,singapore::speaker_531,train,1,MNSC,1,1.236813,4.3842344,1.1796242,2.1164489
+singapore/speaker_531/clip_002.wav,singapore::speaker_531,train,1,MNSC,1,1.5981098,4.6012135,1.2177721,2.0373976
+singapore/speaker_532/clip_001.wav,singapore::speaker_532,train,1,MNSC,1,4.6852365,4.089858,-2.0375555,1.2106283
+singapore/speaker_533/clip_001.wav,singapore::speaker_533,train,1,MNSC,1,0.8451081,1.872869,0.6698873,3.5856802
+singapore/speaker_534/clip_001.wav,singapore::speaker_534,train,1,MNSC,1,0.9171391,0.09334583,0.74814063,1.9838909
+singapore/speaker_535/clip_001.wav,singapore::speaker_535,train,1,MNSC,1,8.471888,4.384922,-0.4511159,0.5737676
+singapore/speaker_536/clip_001.wav,singapore::speaker_536,train,1,MNSC,1,-0.6618501,7.1357427,-1.5215622,0.2960049
+singapore/speaker_536/clip_002.wav,singapore::speaker_536,train,1,MNSC,1,3.454364,3.5503664,-2.071247,1.8108257
+singapore/speaker_537/clip_001.wav,singapore::speaker_537,train,1,MNSC,1,-0.24906819,9.221613,1.1793901,2.2226565
+singapore/speaker_538/clip_001.wav,singapore::speaker_538,validation,1,MNSC,0,-9.53788,6.701179,-0.3072085,5.8954077
+singapore/speaker_539/clip_001.wav,singapore::speaker_539,validation,1,MNSC,1,2.1167402,5.722288,0.30906734,2.902521
+singapore/speaker_541/clip_001.wav,singapore::speaker_541,train,1,MNSC,1,5.6283107,0.69740117,0.06742829,1.5248823
+singapore/speaker_542/clip_001.wav,singapore::speaker_542,train,1,MNSC,1,10.209658,3.2175052,-0.29887784,0.5387166
+singapore/speaker_543/clip_001.wav,singapore::speaker_543,validation,1,MNSC,0,0.37218535,-2.8666523,0.27949494,4.808123
+singapore/speaker_544/clip_001.wav,singapore::speaker_544,train,1,MNSC,1,-0.55158764,3.442336,-1.2314427,4.014131
+singapore/speaker_545/clip_001.wav,singapore::speaker_545,train,1,MNSC,1,4.934828,5.09379,1.2067182,1.5113684
+singapore/speaker_548/clip_001.wav,singapore::speaker_548,train,1,MNSC,1,-1.6999304,6.468888,-0.24344401,3.57993
+singapore/speaker_549/clip_001.wav,singapore::speaker_549,train,1,MNSC,1,2.1230278,2.584039,-0.3241435,2.5710588
+singapore/speaker_550/clip_001.wav,singapore::speaker_550,validation,1,MNSC,1,4.598107,-0.92070955,-1.687668,1.3280392
+singapore/speaker_551/clip_001.wav,singapore::speaker_551,train,1,MNSC,0,0.7418239,-2.3887315,-2.475619,3.042747
+singapore/speaker_552/clip_001.wav,singapore::speaker_552,train,1,MNSC,1,2.7618048,2.551289,-0.7414661,2.8425756
+singapore/speaker_553/clip_001.wav,singapore::speaker_553,train,1,MNSC,1,-0.61657065,2.4294639,1.1243645,1.4615158
+singapore/speaker_555/clip_001.wav,singapore::speaker_555,train,1,MNSC,1,4.5474916,-2.6403828,-2.8441098,2.3982506
+singapore/speaker_556/clip_001.wav,singapore::speaker_556,train,1,MNSC,1,3.4382513,5.5491242,-0.8310343,2.9633005
+singapore/speaker_557/clip_001.wav,singapore::speaker_557,validation,1,MNSC,1,4.080929,2.7995691,0.7938775,1.4125278
+singapore/speaker_558/clip_001.wav,singapore::speaker_558,train,1,MNSC,1,5.0814567,7.4030886,0.044439193,0.5904164
+singapore/speaker_559/clip_001.wav,singapore::speaker_559,train,1,MNSC,1,-2.2566817,6.7429805,-0.52840656,3.2039347
+singapore/speaker_560/clip_001.wav,singapore::speaker_560,train,1,MNSC,1,6.711431,3.6570706,-0.1566058,0.71251696
+singapore/speaker_560/clip_002.wav,singapore::speaker_560,train,1,MNSC,1,9.473773,0.16798112,-0.9191,0.34600788
+singapore/speaker_561/clip_001.wav,singapore::speaker_561,train,1,MNSC,1,-2.297146,5.967329,0.5421328,2.9356205
+singapore/speaker_562/clip_001.wav,singapore::speaker_562,train,1,MNSC,1,4.7310233,-0.5685274,-0.36283302,1.5360007
+singapore/speaker_562/clip_002.wav,singapore::speaker_562,train,1,MNSC,1,9.091978,0.034084592,-0.6763263,0.86114186
+singapore/speaker_563/clip_001.wav,singapore::speaker_563,train,1,MNSC,1,3.9877923,4.3303785,-0.09236196,2.1593559
+singapore/speaker_564/clip_001.wav,singapore::speaker_564,train,1,MNSC,1,0.9138037,3.9481287,-0.75714165,2.6293495
+singapore/speaker_565/clip_001.wav,singapore::speaker_565,train,1,MNSC,1,6.726744,-0.17625952,-0.9132578,1.1734172
+singapore/speaker_566/clip_001.wav,singapore::speaker_566,train,1,MNSC,1,-1.3731444,6.6901884,-0.76580715,3.8951843
+singapore/speaker_567/clip_001.wav,singapore::speaker_567,validation,1,MNSC,0,-1.4078497,0.5698632,-1.8283949,4.30724
+singapore/speaker_568/clip_001.wav,singapore::speaker_568,train,1,MNSC,0,-7.961073,10.308059,0.047893263,4.1610856
+singapore/speaker_569/clip_001.wav,singapore::speaker_569,train,1,MNSC,1,7.2599683,-0.7519041,-0.1744652,0.9274396
+singapore/speaker_570/clip_001.wav,singapore::speaker_570,train,1,MNSC,1,8.879144,2.6897295,-0.5234874,0.33219072
+singapore/speaker_571/clip_001.wav,singapore::speaker_571,train,1,MNSC,1,2.4897044,8.681896,-0.23136196,2.537616
+singapore/speaker_573/clip_001.wav,singapore::speaker_573,train,1,MNSC,1,7.7515826,10.988512,-0.014619709,0.56553215
+singapore/speaker_574/clip_001.wav,singapore::speaker_574,train,1,MNSC,1,3.8745072,3.654918,-1.3369992,1.3229185
+singapore/speaker_575/clip_001.wav,singapore::speaker_575,train,1,MNSC,1,5.839676,-0.63503087,-0.77513164,1.4968925
+singapore/speaker_576/clip_001.wav,singapore::speaker_576,train,1,MNSC,1,1.1230284,6.007851,-0.3782773,3.8754146
+singapore/speaker_577/clip_001.wav,singapore::speaker_577,train,1,MNSC,1,6.8267055,7.215963,-0.4481717,0.8206394
+singapore/speaker_578/clip_001.wav,singapore::speaker_578,validation,1,MNSC,1,5.6819963,3.3883476,-0.17218474,1.6515955
+singapore/speaker_579/clip_001.wav,singapore::speaker_579,train,1,MNSC,1,8.866776,4.695878,-0.31865567,0.49632907
+singapore/speaker_580/clip_001.wav,singapore::speaker_580,validation,1,MNSC,1,1.7665201,2.6167414,-0.80714536,3.003896
+singapore/speaker_582/clip_001.wav,singapore::speaker_582,train,1,MNSC,1,1.1637051,5.301558,1.0189258,2.260989
+singapore/speaker_583/clip_001.wav,singapore::speaker_583,train,1,MNSC,1,8.11464,1.425529,0.7065481,0.96008474

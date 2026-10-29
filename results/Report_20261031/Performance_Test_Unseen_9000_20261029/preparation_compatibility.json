@@ -1,0 +1,16 @@
+{
+  "prepared_reserve_and_new_raw_preparation_functions_identical": {
+    "to_mono": true,
+    "resample_to_target": true,
+    "trim_silence": true,
+    "normalize_loudness": true,
+    "preprocess_waveform": true,
+    "encode_flac": true
+  },
+  "source_hashes": {
+    "/home/mh/nusproj/Singlish/accent_classifier_data/scripts/cv_utils.py": "2f516db5df831150df13a23fcfcab8382c910480bcbea5f4f235d672eaab9913",
+    "/home/mh/nusproj/E1_Feature_Engineering/scripts/cv_utils.py": "c1d0fa69f3204a476d4d6d315efa8458988ab719f6bf4a0854e2f542d345a80c"
+  },
+  "acoustic_code_sha256": "5ae1ec829801ff5f3340dc64a4b2f1cc9e79de6deb56545637e2b9e92ae5c91f",
+  "same_audio_for_both_feature_branches": true
+}

@@ -1,0 +1,16 @@
+{
+  "created_before_predictions": true,
+  "seed": 20261029,
+  "target_clips": {"mnsc_part1": 3000, "mnsc_part2": 3000, "common_voice": 3000},
+  "exclude_speakers": "Every speaker in either training or validation of the fixed 40,000-clip study; enforce across MNSC PART1/PART2",
+  "allow_original_test_speakers": true,
+  "exclude_recordings": "Entire 40k study and previous 9,000-clip benchmark: normalized source IDs, source coordinates, available raw/PCM hashes and speaker-transcript pairs",
+  "preparation": "Mono 16 kHz; 40 dB RMS silence trim with 100 ms edge padding; retain 3–6 seconds after trimming (reject outside range); normalize to -20 dBFS RMS with 0.99 peak limit; PCM16 FLAC then decode for both feature branches",
+  "selection": "No model scores used. Seeded speaker round-robin over eligible candidates; maximum 30 clips per speaker per MNSC group and 10 per Common Voice speaker. MNSC candidates from seeded source-shard order. Common Voice candidates use local prepared reserves followed by local CV26 archive order until at least 4,500 eligible candidates; no accent quotas.",
+  "models": "The same four saved calibrated artifacts as Performance_Comparison_9000_20261029; verify hashes before use",
+  "threshold": 0.5,
+  "refitting": false,
+  "primary_comparison": "Fusion SVM minus Whisper SVM balanced accuracy",
+  "intervals": "2,000 paired whole-speaker bootstrap draws within class; seed 42; fitted models fixed",
+  "scope": "New recordings and speakers unseen during fitting; original test speakers may recur, so this is not independent of the study test. Corpus/class confounding remains. No claim about absence from Whisper pretraining."
+}

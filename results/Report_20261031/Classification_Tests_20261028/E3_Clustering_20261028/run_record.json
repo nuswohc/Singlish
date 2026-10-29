@@ -1,0 +1,335 @@
+{
+  "experiment": "E3 development-only clustering",
+  "status": "completed",
+  "working_notebook": "/home/mh/nusproj/singlish-whisper/notebooks/E3_01_unsupervised_learning_beginner.ipynb",
+  "reproduce_command": "/home/mh/miniconda3/envs/singlish-py314/bin/python scripts/run_e3_development.py",
+  "reproduce_working_directory": "/home/mh/nusproj/singlish-whisper",
+  "original_output_directory": "/home/mh/nusproj/singlish-whisper/outputs/e3_development_20261028",
+  "run": {
+    "status": "completed",
+    "experiment": "E3 development-only unsupervised exploration",
+    "started_utc": "2026-10-28T06:05:21.560265+00:00",
+    "python": "3.14.7",
+    "packages": {
+      "numpy": "2.5.3",
+      "pandas": "2.3.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "umap-learn": "0.5.12",
+      "numba": "0.67.0",
+      "matplotlib": "3.11.2",
+      "joblib": "1.6.0",
+      "nbformat": "5.11.1",
+      "nbclient": "0.11.0"
+    },
+    "settings": {
+      "analysis_splits": [
+        "train",
+        "validation"
+      ],
+      "pca_components": 50,
+      "pca_solver": "full",
+      "clusters": 2,
+      "kmeans_n_init": 10,
+      "seed": 42,
+      "stability_seeds": [
+        7,
+        19
+      ],
+      "silhouette_max_clips": 5000,
+      "umap_neighbors": 15,
+      "umap_min_dist": 0.1,
+      "umap_init": "random",
+      "speaker_mean_check": true
+    },
+    "settings_sha256": "50188e20fe821052f90d25c1bf452fa8b312dfab73e7f1de28a93576248928a7",
+    "input_audit": {
+      "status": "passed",
+      "cache_sha256": "bccf31584fd0af0d2b248ef8182cef4145894e93b965e2e60f734ed859d071cb",
+      "manifest_sha256": "f16d8116ee9e7e44da1233e18e0df1561386601b980a18c7a9e168431d8d9c0b",
+      "original_split_path": "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/e1_feature_study_accent_40000/speaker_splits.csv",
+      "original_split_sha256": "428937b39eb646a41e46b8ee3cdeb86652069802a675575892e6f17e289b8581",
+      "dataset_id": "899dd94a72cff7dc6536993ea0c91ce0aed927a80983050b781c0b71d2f0f4ba",
+      "audio_id": "98341df1b3defc45d15c48ce926ebbe8da4734d93e52d71f84e826d014462285",
+      "encoder_revision": "911407f4214e0e1d82085af863093ec0b66f9cd6",
+      "development_clips": 33881,
+      "development_speakers": 8443,
+      "excluded_test_clips": 6119,
+      "excluded_test_speakers": 1482,
+      "fit_test_clip_overlap": 0,
+      "fit_test_speaker_overlap": 0,
+      "fit_clip_ids_sha256": "6a9b8c422c4ae3e34a5f7e6a06792e025c8628b97c57fcea2a0f339ce8c6dc27",
+      "audio_redecoded_in_e3": false,
+      "encoder_rerun_in_e3": false,
+      "earlier_all_clip_exploration": true
+    },
+    "embedding_model": "openai/whisper-base.en",
+    "encoder_revision": "911407f4214e0e1d82085af863093ec0b66f9cd6",
+    "recordings": 33881,
+    "speakers": 8443,
+    "embedding_dimensions": 512,
+    "pca_variance_retained": 0.5967854857444763,
+    "silhouette_sample_clips": 5000,
+    "silhouette_score": 0.12715253233909607,
+    "accent_adjusted_rand_index": 0.18190265422696597,
+    "cluster_label_counts": [
+      {
+        "cluster": 0,
+        "Non-Singapore": 16308,
+        "Singapore": 9108,
+        "total_clips": 25416,
+        "Singapore_share": 0.3583569405,
+        "distinct_speakers": 8321
+      },
+      {
+        "cluster": 1,
+        "Non-Singapore": 607,
+        "Singapore": 7858,
+        "total_clips": 8465,
+        "Singapore_share": 0.9282929711,
+        "distinct_speakers": 1257
+      }
+    ],
+    "cluster_source_counts": [
+      {
+        "source": "common_voice",
+        "0": 15621,
+        "1": 337
+      },
+      {
+        "source": "mnsc",
+        "0": 9108,
+        "1": 7858
+      },
+      {
+        "source": "speech_accent_archive",
+        "0": 229,
+        "1": 50
+      },
+      {
+        "source": "speechocean762",
+        "0": 458,
+        "1": 220
+      }
+    ],
+    "initialization_stability": [
+      {
+        "seed": 42,
+        "ari_to_primary": 1.0,
+        "inertia": 9516438.0,
+        "iterations": 18
+      },
+      {
+        "seed": 7,
+        "ari_to_primary": 1.0,
+        "inertia": 9516438.0,
+        "iterations": 18
+      },
+      {
+        "seed": 19,
+        "ari_to_primary": 0.9998740477,
+        "inertia": 9516436.0,
+        "iterations": 20
+      }
+    ],
+    "speakers_with_clips_in_both_clusters": 1135,
+    "speaker_mean_check": {
+      "speakers": 8443,
+      "pca_variance_retained": 0.5885278582572937,
+      "silhouette_sample_speakers": 5000,
+      "silhouette_score": 0.09371225535869598,
+      "accent_adjusted_rand_index": -0.06143071747895283,
+      "cluster_labels": [
+        {
+          "cluster": 0,
+          "Non-Singapore": 2728,
+          "Singapore": 16
+        },
+        {
+          "cluster": 1,
+          "Non-Singapore": 4532,
+          "Singapore": 1167
+        }
+      ],
+      "cluster_sources": [
+        {
+          "source": "common_voice",
+          "0": 2711,
+          "1": 4396
+        },
+        {
+          "source": "mnsc",
+          "0": 16,
+          "1": 1167
+        },
+        {
+          "source": "speech_accent_archive",
+          "0": 0,
+          "1": 44
+        },
+        {
+          "source": "speechocean762",
+          "0": 17,
+          "1": 92
+        }
+      ]
+    },
+    "limits": [
+      "Exploratory development analysis, not held-out classification accuracy.",
+      "An earlier all-clip exploration included the already evaluated study test set.",
+      "All Singapore clips are MNSC, so source and class remain confounded.",
+      "K=2 is an imposed question, not evidence that two natural groups exist.",
+      "Silhouette uses a fixed sample; no inferential confidence interval is claimed.",
+      "Initialization checks do not measure uncertainty under new speakers or sources.",
+      "Speaker means change both representation and observation weights.",
+      "UMAP display distances and islands are not a validated accent distance."
+    ],
+    "finding": "Cluster 1 contains 92.83% Singapore clips, but includes only 46.32% of all development Singapore clips. The other Singapore clips are in the mixed cluster. The silhouette (0.1272), accent ARI (0.1819), and label counts show overlap. The two imposed clusters do not reproduce the two accent labels.",
+    "sensitivity_finding": "The tested initializations give almost identical partitions (minimum ARI to the primary run: 0.9999). The clip-level accent alignment does not persist in the speaker-mean check (accent ARI -0.0614). Aggregation changes representation and observation weights together, so this does not identify a cause.",
+    "seconds": 61.02899537600024
+  },
+  "execution": {
+    "status": "completed",
+    "python": "/home/mh/miniconda3/envs/singlish-py314/bin/python",
+    "started_utc": "2026-10-28T06:05:18.755910+00:00",
+    "last_completed_cell": 17,
+    "seconds": 66.47183333000066
+  },
+  "timing": [
+    {
+      "stage": "development_scaling_pca_kmeans",
+      "seconds": 1.597686218
+    },
+    {
+      "stage": "silhouette_and_initialization_checks",
+      "seconds": 0.69390802
+    },
+    {
+      "stage": "development_umap_display",
+      "seconds": 48.931948634
+    },
+    {
+      "stage": "speaker_mean_diagnostic",
+      "seconds": 1.039858734
+    },
+    {
+      "stage": "whole_notebook_before_final_save",
+      "seconds": 61.028995376
+    }
+  ],
+  "class_inventory": [
+    {
+      "known_label": "Non-Singapore",
+      "clips": 16915,
+      "speakers": 7260
+    },
+    {
+      "known_label": "Singapore",
+      "clips": 16966,
+      "speakers": 1183
+    }
+  ],
+  "source_inventory": [
+    {
+      "source": "common_voice",
+      "clips": 15958,
+      "speakers": 7107
+    },
+    {
+      "source": "mnsc",
+      "clips": 16966,
+      "speakers": 1183
+    },
+    {
+      "source": "speech_accent_archive",
+      "clips": 279,
+      "speakers": 44
+    },
+    {
+      "source": "speechocean762",
+      "clips": 678,
+      "speakers": 109
+    }
+  ],
+  "cluster_source_speakers": [
+    {
+      "source": "common_voice",
+      "cluster": 0,
+      "clips": 15621,
+      "speakers": 7024
+    },
+    {
+      "source": "common_voice",
+      "cluster": 1,
+      "clips": 337,
+      "speakers": 264
+    },
+    {
+      "source": "mnsc",
+      "cluster": 0,
+      "clips": 9108,
+      "speakers": 1166
+    },
+    {
+      "source": "mnsc",
+      "cluster": 1,
+      "clips": 7858,
+      "speakers": 920
+    },
+    {
+      "source": "speech_accent_archive",
+      "cluster": 0,
+      "clips": 229,
+      "speakers": 44
+    },
+    {
+      "source": "speech_accent_archive",
+      "cluster": 1,
+      "clips": 50,
+      "speakers": 17
+    },
+    {
+      "source": "speechocean762",
+      "cluster": 0,
+      "clips": 458,
+      "speakers": 87
+    },
+    {
+      "source": "speechocean762",
+      "cluster": 1,
+      "clips": 220,
+      "speakers": 56
+    }
+  ],
+  "source_files": [
+    {
+      "path": "/home/mh/nusproj/singlish-whisper/notebooks/E3_01_unsupervised_learning_beginner.ipynb",
+      "sha256": "f4a85e0a22e3669060b950f6b30aaf21a907cd51b1f975a8537cb2140c9544bb"
+    },
+    {
+      "path": "/home/mh/nusproj/singlish-whisper/results/E3_UNSUPERVISED_DEVELOPMENT_20261028.md",
+      "sha256": "a1a29f2558defa992c3b8ce1c721663eb4702862e9f383d09f0c4bde1b06d685"
+    },
+    {
+      "path": "/home/mh/nusproj/singlish-whisper/outputs/e3_development_20261028/clip_assignments.csv",
+      "sha256": "f33977fb1ac259e87e87aa49cd257066a46023a1f278c3876a4a175bf512b465"
+    },
+    {
+      "path": "/home/mh/nusproj/singlish-whisper/outputs/e3_development_20261028/speaker_mean_assignments.csv",
+      "sha256": "cb2020362459cfd6617bf5177e016e9ce9d7e1bd4953592b45df381ea6dbb226"
+    },
+    {
+      "path": "/home/mh/nusproj/singlish-whisper/outputs/e3_development_20261028/report.json",
+      "sha256": "d4d293cefce337a4ceef0033e5331b8a3e48f10c287bdb7d88e6419a7805ac72"
+    },
+    {
+      "path": "/home/mh/nusproj/singlish-whisper/outputs/e3_development_20261028/input_audit.json",
+      "sha256": "4d5152361438550c37310fd718d95e29657e685d655cda84d28a048db1f56686"
+    }
+  ],
+  "archived_sha256": {
+    "assignments.csv": "e4f011c72148ef16f37745b75cc8baebfa6a7a13318bb31e4c17940532f89649",
+    "notebook.ipynb": "f4a85e0a22e3669060b950f6b30aaf21a907cd51b1f975a8537cb2140c9544bb",
+    "report.md": "2ea390ad95bfb12be059ac50a0895d67f71574f71a1143da0d7b662a780f3cb1"
+  }
+}

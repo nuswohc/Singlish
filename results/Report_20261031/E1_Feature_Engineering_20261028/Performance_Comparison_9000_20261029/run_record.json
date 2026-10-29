@@ -1,0 +1,60 @@
+{
+  "status": "complete",
+  "completed_utc": "2026-10-28T17:04:12.421940+00:00",
+  "clips": 9000,
+  "speakers": 2684,
+  "threshold": 0.5,
+  "models_refitted": false,
+  "models_deployed": false,
+  "whisper_revision": "911407f4214e0e1d82085af863093ec0b66f9cd6",
+  "feature_protocol": "prepared PART1 and Common Voice caches; corrected trim/normalize/PCM16 PART2 acoustic and Whisper cache; all hashes verified",
+  "calibration": "saved sigmoid heads; no calibration fitting on performance data",
+  "interval_scope": "2,000 paired whole-speaker samples within class, seed 42; conditional on fitted models; retrospective test reuse; excludes fitting and selection uncertainty",
+  "input_hashes": {
+    "/home/mh/nusproj/Singlish/results/Perfomance_Test_20261023/metadata.json": "8f88aaee7c6af6f698a40d2805e9120fa141a82131f8778250f216827d04010e",
+    "/home/mh/nusproj/Singlish/results/Perfomance_Test_20261024/metadata.json": "9e0df00da87f5a0c116e5d3e7b99a19322055296c82be5007822c28299c4bcb3",
+    "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029/run_record.json": "a01e9f76e19d2e6fd35687b189e9793bfdfbf9d64961f99928eb05d1912a1cc0",
+    "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/e1_feature_study_accent_40000/speaker_splits.csv": "428937b39eb646a41e46b8ee3cdeb86652069802a675575892e6f17e289b8581",
+    "/home/mh/nusproj/Singlish/mvp/models/svm_65_c_261024_metadata.json": "686cd9bc7bc7f869a83bd98f1e941a1ea31127ae539db71ed60c5f4c0c6dd80f",
+    "/home/mh/nusproj/Singlish/mvp/models/fusion_svm_c_261024_metadata.json": "86f6bde819c653dc5cdf6eeac21583ac5766c1e2ac3f19b0c2b994509d9fa646",
+    "/home/mh/nusproj/Singlish/mvp/models/svm_65_c_261024.joblib": "804197fababe7b29819d7dee73ce3109651d4b17b6bf8417b92729c1de89b5c1",
+    "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029/whisper_full512_calibrated.joblib": "225cbbee27585c187a9a6f6f4a3dd4d771d98c68c2ac0967196bf48f3bf64225",
+    "/home/mh/nusproj/Singlish/mvp/models/fusion_svm_c_261024.joblib": "d2eb00c072bf8c9f2e465ad19e2ec52c214831dcbbc3f871537d023cdcfd589c",
+    "/home/mh/nusproj/singlish-whisper/outputs/e4_02_5_frozen_full512_vs_fusion_calibrated_20261029/fusion_full512_acoustic65_calibrated.joblib": "95a773c300f4c7b4c03aff0150282f0b89f6ec74c6a174e1236ae1edc67e938e",
+    "/home/mh/nusproj/Singlish/results/Perfomance_Test_20261023/manifests/mnsc_part1_unseen_3000.csv": "bc5d031e20ae8a0c01889b0ce066e4f0b1a7d8e72ea684dd0f383c435b56d72f",
+    "/home/mh/nusproj/Singlish/tmp/release-comparison-portable-cache/mnsc_part1_unseen_3000.npz": "ea201edf8294bcb70b363d712135901b764a7037c4aff7b93140dde6216b1cb1",
+    "/home/mh/nusproj/Singlish/results/Perfomance_Test_20261023/manifests/mnsc_part2_unseen_3000.csv": "f0ee52b01f9b52369de271a4e781e7a63445a06ca5aefc85a8f17ee32a7d30c3",
+    "/home/mh/nusproj/Singlish/outputs/performance_test_20261024_prepared/part2_preprocessing_features.npz": "d3abf9a76e95c3209ccd664de8024a819cc53c883aaccd2c07dac4a0810fd52b",
+    "/home/mh/nusproj/Singlish/results/Perfomance_Test_20261023/manifests/cv_unseen_3000.csv": "c490e6c57699b59df8393faf46689c530db60b577bfad8e800150d8510524217",
+    "/home/mh/nusproj/Singlish/tmp/release-comparison-portable-cache/cv_unseen_3000.npz": "b557ff4002cc4be10596b4056264838e8d3357bdd722a43db0d6b42d32ad5c32",
+    "/home/mh/nusproj/Singlish/results/Perfomance_Test_20261024/predictions.csv": "154c9e1e23d02545fae3c151c8ad6b89afeebedb0271bcc18ca327bb5974ea4e"
+  },
+  "source_files_unchanged": true,
+  "historical_replay": {
+    "SVM65": {
+      "class_differences": 0,
+      "max_abs_probability_difference": 1.1102230246251565e-16
+    },
+    "PCA32+65": {
+      "class_differences": 0,
+      "max_abs_probability_difference": 4.4864632586794073e-07
+    }
+  },
+  "prediction_seconds": {
+    "SVM65": 2.9375558460014872,
+    "Frozen Whisper (512)": 26.464174205000745,
+    "PCA32+65": 3.010861950002436,
+    "512+65": 17.530054729999392
+  },
+  "prediction_seconds_scope": "single whole-set call; diagnostic only, not a latency benchmark",
+  "code_sha256": "ec0bf8ef8fadef3e9c84a910b5e6c0f82016043024fd3e1eda4fe6869656e7a9",
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.7.0",
+    "matplotlib": "3.11.2"
+  }
+}

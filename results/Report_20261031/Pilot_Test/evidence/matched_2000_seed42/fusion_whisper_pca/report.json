@@ -1,0 +1,128 @@
+{
+  "model": "fusion_whisper_pca",
+  "dataset_fingerprint": "872f8ffa700bb810105b9796d6c0032c6d8c07bd9b3ffedfb6239a179d6fa8cb",
+  "seed": 42,
+  "shared_split": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/speaker_split.npz",
+  "positive_label": 1,
+  "label_meaning": {
+    "0": "Common Voice / non-Singapore",
+    "1": "MNSC / Singapore"
+  },
+  "validation": {
+    "selected": {
+      "candidate": "C=0.01",
+      "macro_f1": 0.9249882794186592,
+      "balanced_accuracy": 0.925
+    },
+    "trials": [
+      {
+        "candidate": "C=0.01",
+        "macro_f1": 0.9249882794186592,
+        "balanced_accuracy": 0.925
+      },
+      {
+        "candidate": "C=0.1",
+        "macro_f1": 0.9249882794186592,
+        "balanced_accuracy": 0.925
+      },
+      {
+        "candidate": "C=1",
+        "macro_f1": 0.9156043956043955,
+        "balanced_accuracy": 0.915625
+      },
+      {
+        "candidate": "C=10",
+        "macro_f1": 0.9156043956043955,
+        "balanced_accuracy": 0.915625
+      },
+      {
+        "candidate": "C=100",
+        "macro_f1": 0.9156043956043955,
+        "balanced_accuracy": 0.915625
+      }
+    ]
+  },
+  "test": {
+    "accuracy": 0.97,
+    "macro_f1": 0.97,
+    "balanced_accuracy": 0.97,
+    "roc_auc": 0.993125,
+    "errors": 12,
+    "confusion_matrix": [
+      [
+        194,
+        6
+      ],
+      [
+        6,
+        194
+      ]
+    ],
+    "confusion_matrix_labels": [
+      0,
+      1
+    ],
+    "per_class": {
+      "Non-Singapore": {
+        "precision": 0.97,
+        "recall": 0.97,
+        "f1-score": 0.97,
+        "support": 200.0
+      },
+      "Singapore": {
+        "precision": 0.97,
+        "recall": 0.97,
+        "f1-score": 0.97,
+        "support": 200.0
+      },
+      "accuracy": 0.97,
+      "macro avg": {
+        "precision": 0.97,
+        "recall": 0.97,
+        "f1-score": 0.97,
+        "support": 400.0
+      },
+      "weighted avg": {
+        "precision": 0.97,
+        "recall": 0.97,
+        "f1-score": 0.97,
+        "support": 400.0
+      }
+    },
+    "brier_score": 0.05775163695216179,
+    "speaker_bootstrap_ci95": {
+      "accuracy": [
+        0.9518003134988935,
+        0.9856459330143541
+      ],
+      "balanced_accuracy": [
+        0.9514242817950177,
+        0.9855984488821525
+      ],
+      "macro_f1": [
+        0.9516285353255834,
+        0.985569431691956
+      ]
+    }
+  },
+  "environment": {
+    "python": "3.12.13",
+    "packages": {
+      "numpy": "2.5.1",
+      "scipy": "1.18.0",
+      "scikit-learn": "1.9.0",
+      "librosa": "1.0.0",
+      "torch": "2.13.0+cu126",
+      "transformers": "4.57.6",
+      "nbclient": "0.11.0"
+    }
+  },
+  "uncertainty": "2000 speaker bootstrap samples, stratified by class. Conditional on this fitted model and split.",
+  "limitation": "Class and corpus are confounded. No independent recording-source test was run.",
+  "encoder": "openai/whisper-base.en",
+  "encoder_frozen": true,
+  "pooling": "mean over real audio encoder steps",
+  "pca_dimensions": 32,
+  "feature_columns": 32,
+  "primary_comparator": "Whisper full"
+}

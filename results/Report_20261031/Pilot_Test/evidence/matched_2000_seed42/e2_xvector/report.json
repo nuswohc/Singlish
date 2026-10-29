@@ -1,0 +1,143 @@
+{
+  "model": "e2_xvector",
+  "dataset_fingerprint": "872f8ffa700bb810105b9796d6c0032c6d8c07bd9b3ffedfb6239a179d6fa8cb",
+  "seed": 42,
+  "shared_split": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/speaker_split.npz",
+  "positive_label": 1,
+  "label_meaning": {
+    "0": "Common Voice / non-Singapore",
+    "1": "MNSC / Singapore"
+  },
+  "validation": {
+    "selected": {
+      "candidate": "C=100",
+      "macro_f1": 0.9874995116996758,
+      "balanced_accuracy": 0.9875
+    },
+    "trials": [
+      {
+        "candidate": "C=0.01",
+        "macro_f1": 0.978124786374867,
+        "balanced_accuracy": 0.9781249999999999
+      },
+      {
+        "candidate": "C=0.1",
+        "macro_f1": 0.9812492675495137,
+        "balanced_accuracy": 0.98125
+      },
+      {
+        "candidate": "C=1",
+        "macro_f1": 0.978123077223584,
+        "balanced_accuracy": 0.978125
+      },
+      {
+        "candidate": "C=10",
+        "macro_f1": 0.9843748474106193,
+        "balanced_accuracy": 0.984375
+      },
+      {
+        "candidate": "C=100",
+        "macro_f1": 0.9874995116996758,
+        "balanced_accuracy": 0.9875
+      }
+    ]
+  },
+  "test": {
+    "accuracy": 0.965,
+    "macro_f1": 0.9649991249781245,
+    "balanced_accuracy": 0.965,
+    "roc_auc": 0.9947250000000001,
+    "errors": 14,
+    "confusion_matrix": [
+      [
+        192,
+        8
+      ],
+      [
+        6,
+        194
+      ]
+    ],
+    "confusion_matrix_labels": [
+      0,
+      1
+    ],
+    "per_class": {
+      "Non-Singapore": {
+        "precision": 0.9696969696969697,
+        "recall": 0.96,
+        "f1-score": 0.964824120603015,
+        "support": 200.0
+      },
+      "Singapore": {
+        "precision": 0.9603960396039604,
+        "recall": 0.97,
+        "f1-score": 0.9651741293532339,
+        "support": 200.0
+      },
+      "accuracy": 0.965,
+      "macro avg": {
+        "precision": 0.965046504650465,
+        "recall": 0.965,
+        "f1-score": 0.9649991249781245,
+        "support": 400.0
+      },
+      "weighted avg": {
+        "precision": 0.9650465046504649,
+        "recall": 0.965,
+        "f1-score": 0.9649991249781245,
+        "support": 400.0
+      }
+    },
+    "brier_score": 0.026408977806568146,
+    "speaker_bootstrap_ci95": {
+      "accuracy": [
+        0.9448621553884712,
+        0.9824120603015075
+      ],
+      "balanced_accuracy": [
+        0.9447603435320134,
+        0.9822887786758576
+      ],
+      "macro_f1": [
+        0.9448618090452261,
+        0.9823722650421429
+      ]
+    }
+  },
+  "environment": {
+    "python": "3.14.7",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "librosa": "1.0.0",
+      "torch": "2.14.0",
+      "transformers": "4.57.6",
+      "nbclient": "0.11.0"
+    }
+  },
+  "uncertainty": "2000 speaker bootstrap samples, stratified by class. Conditional on this fitted model and split.",
+  "limitation": "Class and corpus are confounded. No independent recording-source test was run.",
+  "representation": {
+    "type": "x vector",
+    "dimension": 512,
+    "model": "speechbrain/spkrec-xvect-voxceleb",
+    "revision": "56895a2df401be4150a159f3a1c653f00051d477",
+    "checkpoint_sha256": {
+      "classifier.ckpt": "e84a7cf53ea54fb43298d650f4e2d2bfd9d49b28e7a6ef70aa7d21b05f7d1700",
+      "embedding_model.ckpt": "9d96cafa0ede1a84799b67dc9b5645f31f5b7d094e7e4775e5d5c12547883a93",
+      "hyperparams.yaml": "695372d672cb5506d4f267f8e10c54a8915ac14a2f37e23497bfee44100762c4",
+      "label_encoder.txt": "25876a0d95aa0e44f4f53ae20b2bd4ccad1ccefc67c69b8824bfafe1f4d66894",
+      "mean_var_norm_emb.ckpt": "d061fe599653c74757602c3cdba996fecc64c6188a422152714b922ebc5df640"
+    },
+    "pretraining": "VoxCeleb speaker recognition",
+    "frozen": true,
+    "length_normalized": true,
+    "embedding_cache_key": "87498b14b1a1e3139aba71a841125e5aa7d0c2800058321caeecdefa2fae0260"
+  },
+  "features": 512,
+  "preparation_sha256": "cee82f490ec24817ffdce8d1393b1e83fc550f85727cd6fa11c1908402f97fc1",
+  "training": "Representation fixed before validation; selected scaler and LR refit on train plus validation",
+  "comparison": "Retrospective extension of the existing 2000-clip pilot; test has been inspected before"
+}

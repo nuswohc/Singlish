@@ -1,0 +1,277 @@
+{
+  "created_utc": "2026-10-28T12:34:15.170557+00:00",
+  "source_project": "/home/mh/nusproj/singlish-whisper",
+  "source_results": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42",
+  "copied_files": 43,
+  "all_copy_hashes_verified": true,
+  "notebooks": [
+    {
+      "notebook": "E1_01_svm_beginner.ipynb",
+      "executed_code_cells": 7,
+      "errors": 0
+    },
+    {
+      "notebook": "E1_02_random_forest_beginner.ipynb",
+      "executed_code_cells": 8,
+      "errors": 0
+    },
+    {
+      "notebook": "E1_03_logistic_regression_beginner.ipynb",
+      "executed_code_cells": 7,
+      "errors": 0
+    },
+    {
+      "notebook": "E1_04_ivector_beginner.ipynb",
+      "executed_code_cells": 10,
+      "errors": 0
+    },
+    {
+      "notebook": "E2_01_whisper_classifier_matched_2000.ipynb",
+      "executed_code_cells": 5,
+      "errors": 0
+    },
+    {
+      "notebook": "E2_03_xvector_beginner.ipynb",
+      "executed_code_cells": 6,
+      "errors": 0
+    },
+    {
+      "notebook": "E2_04_ecapa_tdnn_beginner.ipynb",
+      "executed_code_cells": 6,
+      "errors": 0
+    },
+    {
+      "notebook": "E4_01_hybrid_ensemble_beginner.ipynb",
+      "executed_code_cells": 6,
+      "errors": 0
+    },
+    {
+      "notebook": "E4_02_whisper_e1_feature_fusion_beginner.ipynb",
+      "executed_code_cells": 7,
+      "errors": 0
+    },
+    {
+      "notebook": "E3_01_unsupervised_learning_matched_2000.ipynb",
+      "executed_code_cells": 6,
+      "errors": 0
+    }
+  ],
+  "files": [
+    {
+      "path": "notebooks/E1_01_svm_beginner.ipynb",
+      "source": "/home/mh/nusproj/singlish-whisper/notebooks/E1_01_svm_beginner.ipynb",
+      "sha256": "e82005937681c2be7f22dee14f82a48d5577dce0d557f4f162b54a0e136648c6"
+    },
+    {
+      "path": "notebooks/E1_02_random_forest_beginner.ipynb",
+      "source": "/home/mh/nusproj/singlish-whisper/notebooks/E1_02_random_forest_beginner.ipynb",
+      "sha256": "d29cef0289f021ee7f26b2345c2e95bf31df466ccf80c593eba6ac8c22cacfb9"
+    },
+    {
+      "path": "notebooks/E1_03_logistic_regression_beginner.ipynb",
+      "source": "/home/mh/nusproj/singlish-whisper/notebooks/E1_03_logistic_regression_beginner.ipynb",
+      "sha256": "36a3131cd6e80ec15b452ece726c48a11e0fcb0d77776fb5a211630c6ef1adc6"
+    },
+    {
+      "path": "notebooks/E1_04_ivector_beginner.ipynb",
+      "source": "/home/mh/nusproj/singlish-whisper/notebooks/E1_04_ivector_beginner.ipynb",
+      "sha256": "0f87f3679768a04d16a8e661eaf82d2334194ba42962f7b259bcd3956c0a8e08"
+    },
+    {
+      "path": "notebooks/E2_01_whisper_classifier_matched_2000.ipynb",
+      "source": "/home/mh/nusproj/singlish-whisper/notebooks/E2_01_whisper_classifier_matched_2000.ipynb",
+      "sha256": "d81e6114bb50c60d9a2dbc2d40dca7af8bd77c5a2f03ff2e1a5c810709d62d9c"
+    },
+    {
+      "path": "notebooks/E2_03_xvector_beginner.ipynb",
+      "source": "/home/mh/nusproj/singlish-whisper/notebooks/E2_03_xvector_beginner.ipynb",
+      "sha256": "c2d5991018f717ba05b23ab54e39c7e582a475e3fdd163236b1c57115f7f3a24"
+    },
+    {
+      "path": "notebooks/E2_04_ecapa_tdnn_beginner.ipynb",
+      "source": "/home/mh/nusproj/singlish-whisper/notebooks/E2_04_ecapa_tdnn_beginner.ipynb",
+      "sha256": "5a807cc10993dd57889c1ea7176fe5cae7f1a8ea874f91429aa2dad9e752d303"
+    },
+    {
+      "path": "notebooks/E4_01_hybrid_ensemble_beginner.ipynb",
+      "source": "/home/mh/nusproj/singlish-whisper/notebooks/E4_01_hybrid_ensemble_beginner.ipynb",
+      "sha256": "91d2c894d01377452b2b382186a4bb638794c3686b89815efacf197abf3fdca1"
+    },
+    {
+      "path": "notebooks/E4_02_whisper_e1_feature_fusion_beginner.ipynb",
+      "source": "/home/mh/nusproj/singlish-whisper/notebooks/E4_02_whisper_e1_feature_fusion_beginner.ipynb",
+      "sha256": "bafac5c6530ea96e4b3f7a0a3e51edf85c8e84b76614840593953c41ff53798b"
+    },
+    {
+      "path": "notebooks/experiment_common.py",
+      "source": "/home/mh/nusproj/singlish-whisper/notebooks/experiment_common.py",
+      "sha256": "4f6e53e10965c1d8a7f3536761b38e7dfd30b78817b8979e2e4da93ab6a5e803"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/comparison_with_embeddings.csv",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/comparison_with_embeddings.csv",
+      "sha256": "448152b5f65fd07a4ecae8beb0d03f504094a6be40a3f88b99b49fa0dee36b63"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/comparison_with_embeddings.png",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/comparison_with_embeddings.png",
+      "sha256": "76078457cac470341b4056dc79c0d502e062c1932240623d3ae4ccc3ff34afc4"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/split_manifest.csv",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/split_manifest.csv",
+      "sha256": "3fcb30d345834cd1d9623f0b726d2759963613955da6660eacc245969a441e29"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/split_summary.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/split_summary.json",
+      "sha256": "872dcd0b5f047d4400f449c7b35fbc1bd8e86e158de2de70635561cff9fc9793"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/verification.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/verification.json",
+      "sha256": "62efae869524f7ee51b461a4a55acf44ee8ffb4ba1b58ef810b83947c5bd825d"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/embedding_paired_vs_whisper.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/embedding_paired_vs_whisper.json",
+      "sha256": "5ad178c95847cb31eb5d4f567c484b23840fdebc884d1876381018db8aaa98fd"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/embedding_verification.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/embedding_verification.json",
+      "sha256": "b97e507f9c43979947f99706581a0620056faf33f4b576f409486dd79a5e5df7"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/e1_ivector/report.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/e1_ivector/report.json",
+      "sha256": "c965957ad0701250e67d2b4c1bcdc58c0a247c81ff28735d6ca698bac42d04bb"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/e1_ivector/test_predictions.csv",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/e1_ivector/test_predictions.csv",
+      "sha256": "d6763b42c92c1eb9d893fe74995889f85058ea2867ea64227555af818cadcc51"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/e1_logistic_regression/report.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/e1_logistic_regression/report.json",
+      "sha256": "019fa4cebfb418dcd2ceada04f8f5e8eefa878142683113de3e97373980594cc"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/e1_logistic_regression/test_predictions.csv",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/e1_logistic_regression/test_predictions.csv",
+      "sha256": "56ef25c2a8426a8651f204659cb719dcd1e00785b724f79cf235c42090f7989c"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/e1_random_forest/report.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/e1_random_forest/report.json",
+      "sha256": "1e5818acc8494f083f1e2e7e230edcbce6eb0550f9bd0798b88a375f7ca2b0b8"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/e1_random_forest/test_predictions.csv",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/e1_random_forest/test_predictions.csv",
+      "sha256": "26a432cd12780ab04588ddb3db84075a592f2f0674e0b7dddfb3157a63092a33"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/e1_svm/report.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/e1_svm/report.json",
+      "sha256": "2c0d1d576373b8363aafab3e5b32b3c91540c44a1641926de82366cb6049248b"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/e1_svm/test_predictions.csv",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/e1_svm/test_predictions.csv",
+      "sha256": "cbe487c7d2ad79082a6a8d56e5e7421e452fd5686e22ab943c724e6e1cef3ed8"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/e2_ecapa_tdnn/report.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/e2_ecapa_tdnn/report.json",
+      "sha256": "cd8ca69fedf267735d23e6964ddc4ce2e4678ec4ff987649ca36e70568ada900"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/e2_ecapa_tdnn/test_predictions.csv",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/e2_ecapa_tdnn/test_predictions.csv",
+      "sha256": "c252da14ab89bf4579151373e75d4a365c53025c9a8b4ebd7b723e6f62279430"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/e2_whisper/report.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/e2_whisper/report.json",
+      "sha256": "1fc206555068a33583efbac3a06972ffb48f6719217c339ad5dc79cf296a19a6"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/e2_whisper/test_predictions.csv",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/e2_whisper/test_predictions.csv",
+      "sha256": "d3c177601de2001d8d283803b610ae5e1dbdffcffcddd57a89f0add64dcd8192"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/e2_xvector/report.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/e2_xvector/report.json",
+      "sha256": "337343d648393ee6e3ca9c32f08d7001055dc788d6856b48d6bdcf02eec30a41"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/e2_xvector/test_predictions.csv",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/e2_xvector/test_predictions.csv",
+      "sha256": "a0c3d2fb6fbbba91f0c0cc52eaa33819fd03c0efd58904b8784d271be067edd4"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/feature_fusion/paired_differences.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/feature_fusion/paired_differences.json",
+      "sha256": "ed012f6ba0d5e1615a93ca1bb4b5f8e10ca4a6614ac59562615287bf863e1389"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/feature_fusion/report.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/feature_fusion/report.json",
+      "sha256": "4ba19aaffc8cbd6a83f82a9accdd35d015e11595f8b9bd509bdbd97fd328de6c"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/feature_fusion/test_predictions.csv",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/feature_fusion/test_predictions.csv",
+      "sha256": "abf821c4a72a0475304eca1679331d20f4df47b1f554b92ff1d4120d80670d78"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/fusion_whisper_pca/report.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/fusion_whisper_pca/report.json",
+      "sha256": "7afe3324bb468a4384eeb41c7f293535adbb3a5b6e9c33404fd933a43ad36f32"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/fusion_whisper_pca/test_predictions.csv",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/fusion_whisper_pca/test_predictions.csv",
+      "sha256": "7758652ecf9f831b55864652aeecdb5c9f5cae1ee2189741b1ceea7d8ee63220"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/weighted_vote/paired_differences.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/weighted_vote/paired_differences.json",
+      "sha256": "3fd5af7cb4bf65b184fcd00f52b7cd8c6876209426140c2a308c6c2e2e7643a9"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/weighted_vote/report.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/weighted_vote/report.json",
+      "sha256": "db768fa8e49e81510e9eeb895da21b43ef327039fc01972331ce451a03ea5877"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/weighted_vote/test_predictions.csv",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/weighted_vote/test_predictions.csv",
+      "sha256": "b50facd76be3f8215d6f2f327daaa3b09b45e2fd1e142e9e8cce2c1bd4c3bdd6"
+    },
+    {
+      "path": "notebooks/E3_01_unsupervised_learning_matched_2000.ipynb",
+      "source": "/home/mh/nusproj/singlish-whisper/notebooks/E3_01_unsupervised_learning_matched_2000.ipynb",
+      "sha256": "c03a0a99770b60dfcc83c438e3e2a41ef860e456f2c35edefb021edfc94ac82e"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/e3_unsupervised/report.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/e3_unsupervised/report.json",
+      "sha256": "389090db22bb8940b61595cac815522d0e26390abe47865118c9f997f6228ead"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/e3_unsupervised/assignments.csv",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/e3_unsupervised/assignments.csv",
+      "sha256": "138620cf197cf244f65db73cadcdec0cd816f58122c79379f05297f2bccbd12b"
+    },
+    {
+      "path": "evidence/matched_2000_seed42/e3_unsupervised/verification.json",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/matched_2000_seed42/e3_unsupervised/verification.json",
+      "sha256": "f96a11ddf728f99ba618089dfbcc81a905d0300bf587d78c24ca1d097b64bfc2"
+    }
+  ],
+  "snapshot_scope": "Lean results snapshot: ten executed notebooks and helper; ten supervised model reports and predictions; comparison, split manifest, paired intervals, historical verification; development-only E3 report, assignments and verification. Full scripts, caches and fitted pipelines remain in source_project."
+}

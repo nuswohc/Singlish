@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "dataset_fingerprint": "872f8ffa700bb810105b9796d6c0032c6d8c07bd9b3ffedfb6239a179d6fa8cb",
+  "clips": 2000,
+  "partitions": {
+    "train": 1280,
+    "validation": 320,
+    "test": 400
+  },
+  "test_speakers": 176,
+  "speaker_overlap": 0,
+  "notebooks": {
+    "E1_04_ivector_beginner.ipynb": {
+      "executed_code_cells": 10,
+      "errors": 0
+    },
+    "E2_03_xvector_beginner.ipynb": {
+      "executed_code_cells": 6,
+      "errors": 0
+    },
+    "E2_04_ecapa_tdnn_beginner.ipynb": {
+      "executed_code_cells": 6,
+      "errors": 0
+    }
+  },
+  "checks": [
+    "All 2000 audio hashes match the original pilot manifest",
+    "All new feature caches retain the original clip order, labels, and split indices",
+    "All ten compared systems use identical test clip IDs, speaker groups, labels and row order",
+    "All three notebooks executed without errors and retain inline charts",
+    "Saved metrics independently recomputed from predictions",
+    "Saved classifier predictions replay exactly; scalers fit only 1600 development clips",
+    "Head selection follows the shared validation rule",
+    "i-vector extractor fit identities match only the 1280 original training clips",
+    "Frozen neural embeddings are finite, unit length and checkpoint identified"
+  ],
+  "baseline_environment": {
+    "python": "3.14.7",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "librosa": "1.0.0",
+      "torch": "2.14.0",
+      "transformers": "4.57.6",
+      "nbclient": "0.11.0"
+    }
+  },
+  "extension_environment": {
+    "python": "3.14.7",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "librosa": "1.0.0",
+      "torch": "2.14.0",
+      "transformers": "4.57.6",
+      "nbclient": "0.11.0"
+    }
+  },
+  "generated_files_sha256": {
+    "notebooks/E1_04_ivector_beginner.ipynb": "0f87f3679768a04d16a8e661eaf82d2334194ba42962f7b259bcd3956c0a8e08",
+    "notebooks/E2_03_xvector_beginner.ipynb": "c2d5991018f717ba05b23ab54e39c7e582a475e3fdd163236b1c57115f7f3a24",
+    "notebooks/E2_04_ecapa_tdnn_beginner.ipynb": "5a807cc10993dd57889c1ea7176fe5cae7f1a8ea874f91429aa2dad9e752d303",
+    "scripts/run_pilot_embedding_extensions.py": "4315d294a44aa5e83904783a02e8da2c5d20a805ff0a54369e1731e8af50b213",
+    "scripts/verify_pilot_embedding_extensions.py": "4638dac868d1083e2259acdb6390057adfbe9c1b4d1ea16d42621fd7b46a81cd"
+  }
+}

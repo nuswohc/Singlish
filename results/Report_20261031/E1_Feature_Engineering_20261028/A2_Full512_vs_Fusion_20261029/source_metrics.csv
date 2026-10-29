@@ -1,0 +1,17 @@
+model,mode,source,clips,speakers,errors,correct_share
+Fusion SVM 512+65 (A2),calibrated,common_voice,2913,1241,20,0.9931342258839684
+Fusion SVM 512+65 (A2),calibrated,mnsc,3034,215,10,0.996704021094265
+Fusion SVM 512+65 (A2),calibrated,speech_accent_archive,50,8,3,0.94
+Fusion SVM 512+65 (A2),calibrated,speechocean762,122,18,13,0.8934426229508197
+Fusion SVM 512+65 (A2),raw,common_voice,2913,1241,27,0.9907312049433573
+Fusion SVM 512+65 (A2),raw,mnsc,3034,215,8,0.997363216875412
+Fusion SVM 512+65 (A2),raw,speech_accent_archive,50,8,3,0.94
+Fusion SVM 512+65 (A2),raw,speechocean762,122,18,17,0.860655737704918
+Whisper full512 SVM,calibrated,common_voice,2913,1241,22,0.9924476484723652
+Whisper full512 SVM,calibrated,mnsc,3034,215,34,0.988793671720501
+Whisper full512 SVM,calibrated,speech_accent_archive,50,8,1,0.98
+Whisper full512 SVM,calibrated,speechocean762,122,18,18,0.8524590163934426
+Whisper full512 SVM,raw,common_voice,2913,1241,25,0.9914177823549605
+Whisper full512 SVM,raw,mnsc,3034,215,33,0.9891232696110744
+Whisper full512 SVM,raw,speech_accent_archive,50,8,1,0.98
+Whisper full512 SVM,raw,speechocean762,122,18,19,0.8442622950819673

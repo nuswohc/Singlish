@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "fit_clips": 1600,
+  "fit_speakers": 707,
+  "excluded_test_clips": 400,
+  "fit_test_speaker_overlap": 0,
+  "checks": [
+    "All 2000 source audio hashes match the original pilot manifest.",
+    "Original cache key, encoder revision, clip order and saved split verified.",
+    "Scaling, PCA, K-means and UMAP use only development embeddings and no labels.",
+    "Speaker means include development speakers only.",
+    "Saved assignments replay exactly; ARI and silhouette recomputed.",
+    "No supervised pilot artifact changed."
+  ],
+  "artifacts_sha256": {
+    "report.json": "389090db22bb8940b61595cac815522d0e26390abe47865118c9f997f6228ead",
+    "assignments.csv": "138620cf197cf244f65db73cadcdec0cd816f58122c79379f05297f2bccbd12b"
+  },
+  "execution": {
+    "notebook": "E3_01_unsupervised_learning_matched_2000.ipynb",
+    "executed_code_cells": 6,
+    "saved_cell_errors": 0,
+    "inline_charts": 1,
+    "seconds": 22.270673156999692,
+    "notebook_sha256": "c03a0a99770b60dfcc83c438e3e2a41ef860e456f2c35edefb021edfc94ac82e"
+  },
+  "protected_source_files_unchanged": 147
+}

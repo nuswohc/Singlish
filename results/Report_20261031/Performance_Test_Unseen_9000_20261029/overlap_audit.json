@@ -1,0 +1,70 @@
+{
+  "status": "passed",
+  "clips": 9000,
+  "speakers": 1950,
+  "groups": [
+    {
+      "dataset": "mnsc_part1",
+      "clips": 3000,
+      "speakers": 157,
+      "training_validation_speaker_overlap": 0,
+      "clips_from_training_validation_speakers": 0,
+      "study_clip_id_overlap": 0,
+      "old_benchmark_clip_id_overlap": 0,
+      "recorded_hash_overlap": 0,
+      "source_coordinate_overlap": 0,
+      "speaker_transcript_overlap": 0,
+      "original_test_speakers": 157,
+      "clips_from_original_test_speakers": 3000,
+      "max_clips_per_speaker": 20,
+      "duration_min": 3.0,
+      "duration_max": 6.0,
+      "manifest_sha256": "c8f05be97034afbde25d53d2c791907d2ad3ff03aea2f5088381ac3c954c168f"
+    },
+    {
+      "dataset": "mnsc_part2",
+      "clips": 3000,
+      "speakers": 160,
+      "training_validation_speaker_overlap": 0,
+      "clips_from_training_validation_speakers": 0,
+      "study_clip_id_overlap": 0,
+      "old_benchmark_clip_id_overlap": 0,
+      "recorded_hash_overlap": 0,
+      "source_coordinate_overlap": 0,
+      "speaker_transcript_overlap": 0,
+      "original_test_speakers": 160,
+      "clips_from_original_test_speakers": 3000,
+      "max_clips_per_speaker": 20,
+      "duration_min": 3.0,
+      "duration_max": 6.0,
+      "manifest_sha256": "c3b440a3b0b70d5bb82356547477dbe8ae66db891fc877dfa08f1a60a32dbe77"
+    },
+    {
+      "dataset": "common_voice",
+      "clips": 3000,
+      "speakers": 1735,
+      "training_validation_speaker_overlap": 0,
+      "clips_from_training_validation_speakers": 0,
+      "study_clip_id_overlap": 0,
+      "old_benchmark_clip_id_overlap": 0,
+      "recorded_hash_overlap": 0,
+      "source_coordinate_overlap": 0,
+      "speaker_transcript_overlap": 0,
+      "original_test_speakers": 277,
+      "clips_from_original_test_speakers": 462,
+      "max_clips_per_speaker": 5,
+      "duration_min": 3.0,
+      "duration_max": 6.0,
+      "manifest_sha256": "cd9369804d1a240cba760cb4771bf564ec7513e8b64ff25c512ad90676466fe1"
+    }
+  ],
+  "study_and_old_benchmark_hashes": {
+    "accent_classifier_data/manifests/clips_40000.csv.gz": "87389b0aeb1ac273eff9e669f298b99bc3a73642ead1357d6690aecf5988aad4",
+    "results/Perfomance_Test_20261023/manifests/cv_unseen_3000.csv": "c490e6c57699b59df8393faf46689c530db60b577bfad8e800150d8510524217",
+    "results/Perfomance_Test_20261023/manifests/mnsc_part1_unseen_3000.csv": "bc5d031e20ae8a0c01889b0ce066e4f0b1a7d8e72ea684dd0f383c435b56d72f",
+    "results/Perfomance_Test_20261023/manifests/mnsc_part2_unseen_3000.csv": "f0ee52b01f9b52369de271a4e781e7a63445a06ca5aefc85a8f17ee32a7d30c3"
+  },
+  "manifest_sha256": "6e43a1cd6ca002b04a2368e532397f7efc18ae619f94f3ab716f66979e4b2770",
+  "protocol_sha256": "97cd6c5cbad993bc4bdeaff6843cc51bae232172d6f87cdc803c4460455ebe0c",
+  "scope": "Clip IDs, source coordinates, exact available hashes and normalized speaker-transcript pairs; not perceptual audio fingerprinting. Original test speakers allowed."
+}

@@ -1,0 +1,32 @@
+{
+  "candidates": 5400,
+  "selected": 3000,
+  "speakers": 160,
+  "scanned_shards": [
+    53,
+    490,
+    530,
+    242,
+    480,
+    152,
+    478,
+    485,
+    174,
+    336,
+    417,
+    109,
+    231,
+    497,
+    710,
+    85,
+    594,
+    463
+  ],
+  "seed": 20261031,
+  "exclusion_hashes": {
+    "accent_classifier_data/manifests/clips_40000.csv.gz": "87389b0aeb1ac273eff9e669f298b99bc3a73642ead1357d6690aecf5988aad4",
+    "results/Perfomance_Test_20261023/manifests/cv_unseen_3000.csv": "c490e6c57699b59df8393faf46689c530db60b577bfad8e800150d8510524217",
+    "results/Perfomance_Test_20261023/manifests/mnsc_part1_unseen_3000.csv": "bc5d031e20ae8a0c01889b0ce066e4f0b1a7d8e72ea684dd0f383c435b56d72f",
+    "results/Perfomance_Test_20261023/manifests/mnsc_part2_unseen_3000.csv": "f0ee52b01f9b52369de271a4e781e7a63445a06ca5aefc85a8f17ee32a7d30c3"
+  }
+}

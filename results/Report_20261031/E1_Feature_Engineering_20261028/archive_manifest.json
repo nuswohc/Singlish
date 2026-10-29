@@ -1,0 +1,250 @@
+{
+  "scope": "Review snapshot. Existing source notebooks and models are unchanged. Full caches and fitted binaries remain in the source projects.",
+  "copied_files": [
+    {
+      "path": "notebooks/E4_02_whisper_svm_concatenate_full.ipynb",
+      "source": "/home/mh/nusproj/E1_Feature_EngineeringV4/E4_02_whisper_svm_concatenate_full.ipynb",
+      "sha256": "748a0d293a18abffdc4123e340431cb1dbca2cc53f76e9f2821201d5cd54b6aa"
+    },
+    {
+      "path": "notebooks/E4_03_whisper_svm_calibrated_probability_full.ipynb",
+      "source": "/home/mh/nusproj/E1_Feature_EngineeringV4/E4_03_whisper_svm_calibrated_probability_full.ipynb",
+      "sha256": "77def5c0ba487d3c8436830479bfbe8e31926167328ba34ce6698ace10b9b167"
+    },
+    {
+      "path": "notebooks/E1_acoustic_91_feature_count_comparison.ipynb",
+      "source": "/home/mh/nusproj/E1_Feature_EngineeringV4/E1_acoustic_91_feature_count_comparison.ipynb",
+      "sha256": "0a20e5465daf51d5cc24f0999ed21d1f86c8a8a4117804593a454bf5d826718e"
+    },
+    {
+      "path": "notebooks/E4_02_1_tuned_acoustic_svm_whisper_and_fusion.ipynb",
+      "source": "/home/mh/nusproj/singlish-whisper/notebooks/E4_02_1_tuned_acoustic_svm_whisper_and_fusion.ipynb",
+      "sha256": "9369f0bc4c6b13bd6223a559bd6e433f64e6a90d92231411453c328d6f17ea0e"
+    },
+    {
+      "path": "notebooks/E4_02_2_finetuned_whisper_svm_and_fusion.ipynb",
+      "source": "/home/mh/nusproj/singlish-whisper/notebooks/E4_02_2_finetuned_whisper_svm_and_fusion.ipynb",
+      "sha256": "546c081b43e9e25c834bb2c41e418dba9eac98f617a992b0dfd4ababdcdad729"
+    },
+    {
+      "path": "notebooks/E4_02_3_fusion_enabled.ipynb",
+      "source": "/home/mh/nusproj/singlish-whisper/notebooks/E4_02_3_fusion_enabled.ipynb",
+      "sha256": "bfd7250b08925f19f8cd72b5650efdd3a2da748924e93005fab5f1a866dcfb6e"
+    },
+    {
+      "path": "notebooks/E4_02_4_finetuned_feature_ablation.ipynb",
+      "source": "/home/mh/nusproj/singlish-whisper/notebooks/E4_02_4_finetuned_feature_ablation.ipynb",
+      "sha256": "bddb2848138f9efb3a8e278a622d5474c1f6ec4005fe3ac8072c673ee4871ebd"
+    },
+    {
+      "path": "evidence/release_24_oct/model_metadata.json",
+      "source": "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_fusion_comparison_40000/model_metadata.json",
+      "sha256": "4b2922add8ba9298b9cefb4edbd14b0a27ab345c837b63640f066836dea27f5c"
+    },
+    {
+      "path": "evidence/release_24_oct/validation_C_trials.csv",
+      "source": "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_fusion_comparison_40000/validation_C_trials.csv",
+      "sha256": "c0d4d1c370727b22c2ebf6cd61391442325ef32d621970664a84ced4c10af9a5"
+    },
+    {
+      "path": "evidence/release_24_oct/speaker_fold_scores.csv",
+      "source": "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_fusion_comparison_40000/speaker_fold_scores.csv",
+      "sha256": "fb73d6180e2747cc0705e695a6ba2eed331acb2609d6454426c4dbd6319038d8"
+    },
+    {
+      "path": "evidence/release_24_oct/final_fit_times.csv",
+      "source": "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_fusion_comparison_40000/final_fit_times.csv",
+      "sha256": "3ade4406c2fd292dba40e6f67a0cdcbec51322ae9de76d5a9d7b54b04b865b0c"
+    },
+    {
+      "path": "evidence/release_24_oct/test_prediction_times.csv",
+      "source": "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_fusion_comparison_40000/test_prediction_times.csv",
+      "sha256": "1dd39b6bda200d177c2fa23492ee0460b8b1525b1bf1b08666dba1050255afba"
+    },
+    {
+      "path": "evidence/release_24_oct/fusion_svm_calibrated_metadata.json",
+      "source": "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_fusion_comparison_40000/calibrated_probability_testing/fusion_svm_calibrated_metadata.json",
+      "sha256": "86f6bde819c653dc5cdf6eeac21583ac5766c1e2ac3f19b0c2b994509d9fa646"
+    },
+    {
+      "path": "evidence/candidate_28_oct/model_metadata.json",
+      "source": "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_full_whisper_fusion_comparison_40000/model_metadata.json",
+      "sha256": "b0b1d26668068fba200d2ac3592bc79d7843e73785605e448386ea9dd5d8bbc0"
+    },
+    {
+      "path": "evidence/candidate_28_oct/validation_C_trials.csv",
+      "source": "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_full_whisper_fusion_comparison_40000/validation_C_trials.csv",
+      "sha256": "b8c1e427cbd785dd2451891f6a870a6a66b5a5cefb83950a2dfb44875eb2ca1a"
+    },
+    {
+      "path": "evidence/candidate_28_oct/speaker_fold_scores.csv",
+      "source": "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_full_whisper_fusion_comparison_40000/speaker_fold_scores.csv",
+      "sha256": "b70f0a74dda7133e20db517dda7af0f02e260774822d71884c678f7926e5d695"
+    },
+    {
+      "path": "evidence/candidate_28_oct/final_fit_times.csv",
+      "source": "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_full_whisper_fusion_comparison_40000/final_fit_times.csv",
+      "sha256": "ae42e8a2a23e7a046eb4eba5e41c0eabb743b14e2bada8620fdde3dc9cba1a3d"
+    },
+    {
+      "path": "evidence/candidate_28_oct/test_prediction_times.csv",
+      "source": "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_full_whisper_fusion_comparison_40000/test_prediction_times.csv",
+      "sha256": "f01e451089e164a4c34cb785d58ed5321844b732935e4a29eed692a67f1c3775"
+    },
+    {
+      "path": "evidence/candidate_28_oct/fusion_svm_calibrated_metadata.json",
+      "source": "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_full_whisper_fusion_comparison_40000/calibrated_probability_testing/fusion_svm_calibrated_metadata.json",
+      "sha256": "50237f83c2238623951159338936467cb129a9dd5ede019439c0478001072199"
+    },
+    {
+      "path": "evidence/context/A1/report.md",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/a1_tuned_acoustic_whisper_fusion_40000/report.md",
+      "sha256": "52f87d738fb1a715c98ad70fc34cbb6d9d17e09ad4b2811e0b4fc5b0ddc9f061"
+    },
+    {
+      "path": "evidence/context/A1/test_scores.csv",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/a1_tuned_acoustic_whisper_fusion_40000/test_scores.csv",
+      "sha256": "bcee85985dca2c20ade0b368002bff5367f24fe2b9231eab90dbab13b774bdf4"
+    },
+    {
+      "path": "evidence/context/E4_02_2/report.md",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_2_finetuned_whisper_svm_40000/report.md",
+      "sha256": "86ca2a7c1a4f6001031b4d2e997bcb95b6835d066089cc331a3de13eefa9d61a"
+    },
+    {
+      "path": "evidence/context/E4_02_2/test_scores.csv",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_2_finetuned_whisper_svm_40000/test_scores.csv",
+      "sha256": "8203dcbfb7219bd7e84490474fc59395440ca0a9c0aaa9abdb0d17bd3a1283aa"
+    },
+    {
+      "path": "evidence/context/E4_02_3/report.md",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_3_fusion_enabled_40000/report.md",
+      "sha256": "cf7dc25691160828af716cfcb23cd8fb522c1fcf5bee804efd78104077853ee1"
+    },
+    {
+      "path": "evidence/context/E4_02_3/test_scores.csv",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_3_fusion_enabled_40000/test_scores.csv",
+      "sha256": "62ac1a0ad2f1230913d57d615449bd88052aca151ebebcfb80501d9107f2213e"
+    },
+    {
+      "path": "evidence/context/E4_02_4/report.md",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_4_finetuned_feature_ablation_40000/report.md",
+      "sha256": "5cc1c3b4d37ba823012fb8d0270555e2e953c6bee48cffc55c7f1a6e3d9e9fa3"
+    },
+    {
+      "path": "evidence/context/E4_02_4/test_scores.csv",
+      "source": "/home/mh/nusproj/singlish-whisper/outputs/e4_02_4_finetuned_feature_ablation_40000/test_scores.csv",
+      "sha256": "5509e4b7baf2677c46aa4ef4180b27a2702afefee635d396862a1a05777de039"
+    }
+  ],
+  "notebooks": [
+    {
+      "name": "E1_acoustic_91_feature_count_comparison.ipynb",
+      "executed_code_cells": 16,
+      "code_cells": 16,
+      "saved_errors": 0
+    },
+    {
+      "name": "E4_02_1_tuned_acoustic_svm_whisper_and_fusion.ipynb",
+      "executed_code_cells": 10,
+      "code_cells": 10,
+      "saved_errors": 0
+    },
+    {
+      "name": "E4_02_2_finetuned_whisper_svm_and_fusion.ipynb",
+      "executed_code_cells": 10,
+      "code_cells": 10,
+      "saved_errors": 0
+    },
+    {
+      "name": "E4_02_3_fusion_enabled.ipynb",
+      "executed_code_cells": 10,
+      "code_cells": 10,
+      "saved_errors": 0
+    },
+    {
+      "name": "E4_02_4_finetuned_feature_ablation.ipynb",
+      "executed_code_cells": 8,
+      "code_cells": 8,
+      "saved_errors": 0
+    },
+    {
+      "name": "E4_02_whisper_svm_concatenate_full.ipynb",
+      "executed_code_cells": 11,
+      "code_cells": 11,
+      "saved_errors": 0
+    },
+    {
+      "name": "E4_03_whisper_svm_calibrated_probability_full.ipynb",
+      "executed_code_cells": 7,
+      "code_cells": 7,
+      "saved_errors": 0
+    }
+  ],
+  "review_run_utc": "2026-10-28T15:34:34.970916+00:00",
+  "generated_files": [
+    {
+      "path": "Fusion_Replacement_Review.md",
+      "sha256": "a4919f2394692eb56744d3e68e51625378cebd06ae258a20f192815f5384358e",
+      "original_sha256": "23421eaa9143ae96569f6145ad450447f03582e4aa9200eb9155022e037de5e6",
+      "note": "Command path updated after report consolidation; original_sha256 identifies the review as generated."
+    },
+    {
+      "path": "comparison/benchmark_metrics.csv",
+      "sha256": "bfe677b75af74030645a5af0b8f5c8d1b3279c8b5838ae9cbef23afd620b4a61"
+    },
+    {
+      "path": "comparison/benchmark_overlap.json",
+      "sha256": "3b916ddf901ff9981cc0642f3508879ed2cd10d67bd691e6e097fffe01b24117"
+    },
+    {
+      "path": "comparison/benchmark_predictions.csv",
+      "sha256": "2147b410a76223603c61fcb0e907e4ab0848746b19f91370da7614af0aedc3af"
+    },
+    {
+      "path": "comparison/internal_metrics.csv",
+      "sha256": "01407e9eeaa328ba3f7a22d664eebe14f3a9e119774c4ed30ea62b54fd54c571"
+    },
+    {
+      "path": "comparison/internal_predictions.csv",
+      "sha256": "a07fef20466cbb5262812722af6f84557e530029189d5e49b03c7bfb343ab9a8"
+    },
+    {
+      "path": "comparison/internal_source_metrics.csv",
+      "sha256": "ea810a93e880a0a892da194484e6ccbae9acc90f6f42ebfec1c95aa5befad5d1"
+    },
+    {
+      "path": "comparison/latency_samples.csv",
+      "sha256": "e3033598fed55d2ddfa820654ec9fc9455b12cb31ec5f536580753f1acb5ed9b"
+    },
+    {
+      "path": "comparison/latency_summary.csv",
+      "sha256": "74beb94bc39fcf7f16c365b0122245af27c3b7dcd9b225577ae8d66e008b9fde"
+    },
+    {
+      "path": "comparison/model_contracts.json",
+      "sha256": "e7a5498f5f95eeac6679ff7a162c811550a71a686469945e71700c0f7240b48c"
+    },
+    {
+      "path": "comparison/paired_comparisons.json",
+      "sha256": "9cf5e5fdf2b8251a914748d5e490135686dc34df9e8b0fac1ade9a282e37016c"
+    },
+    {
+      "path": "comparison/replacement_comparison.png",
+      "sha256": "6797dc0d8e31f045372b033d04eeca9b31d6b231e05009b127621e4fd2e92a54"
+    },
+    {
+      "path": "comparison/verification.json",
+      "sha256": "623cdf2a9808b55645cae72e0a5b950b49b59552db872b44a8cc6a68e686a683"
+    },
+    {
+      "path": "evidence/context_audit.json",
+      "sha256": "73cbef9e2e6782bce4543717eae3c7dcaee971bcf0132890635ff20ac7c99e6e"
+    },
+    {
+      "path": "review_models.py",
+      "sha256": "acb56046dfca05a05e23903da42979a0b792feeffe374df98ced2a155b3fdd13"
+    }
+  ],
+  "verification": "All copied and source hashes match; seven notebooks have saved execution counts and no errors; primary comparison predictions replay; no source or service file changed."
+}

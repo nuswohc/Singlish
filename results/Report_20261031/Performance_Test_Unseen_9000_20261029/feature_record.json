@@ -1,0 +1,23 @@
+{
+  "clips": 9000,
+  "feature_shapes": {
+    "acoustic": [
+      9000,
+      91
+    ],
+    "whisper": [
+      9000,
+      512
+    ]
+  },
+  "whisper_revision": "911407f4214e0e1d82085af863093ec0b66f9cd6",
+  "device": "CUDA bfloat16",
+  "pooling": "Mean real 20 ms encoder frames; ceil(samples/320)",
+  "feature_code_sha256": "5ae1ec829801ff5f3340dc64a4b2f1cc9e79de6deb56545637e2b9e92ae5c91f",
+  "cache_hashes": {
+    "mnsc_part1": "9fdbcb8eab56aac4c62932bbe96ad4c6e44ece862177ba8d990befeba51a6af9",
+    "mnsc_part2": "83aca944631dae7ff0b0203cc26c816e451ac20f785493adf79e2e68cf24a991",
+    "common_voice": "f64a5c156178ff077503bdc7b1f72af00f58b9a24d25b65dd49396692ca0dd04"
+  },
+  "seconds": 135.81184908000068
+}

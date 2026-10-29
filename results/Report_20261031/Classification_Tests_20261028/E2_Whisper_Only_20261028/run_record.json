@@ -1,0 +1,1088 @@
+{
+  "experiment": "E2 frozen Whisper controls on the final 40k dataset",
+  "status": "completed_controls_only_full_A1_pending",
+  "working_notebook": "/home/mh/nusproj/singlish-whisper/notebooks/E2_01_whisper_classifier_beginner.ipynb",
+  "reproduce_command": "/home/mh/miniconda3/envs/singlish-py314/bin/python scripts/run_frozen_whisper_40k.py",
+  "reproduce_working_directory": "/home/mh/nusproj/singlish-whisper",
+  "original_output_directory": "/home/mh/nusproj/singlish-whisper/outputs/frozen_whisper_40000_20261028",
+  "run": {
+    "bootstrap_repeats": 2000,
+    "calibrated_probability_comparison": false,
+    "dataset_id": "899dd94a72cff7dc6536993ea0c91ce0aed927a80983050b781c0b71d2f0f4ba",
+    "folds": 3,
+    "fusion_reference_predictions_sha256": "2ee1118712adc9ffd5588ea03e3eeec0f75b3c641fb71374e5672ab101baa756",
+    "helper_sha256": "2575187bf0e0e1c8cc1b0f285f2eba91ccefa8b329d7ac1f49d33c65e7b62d70",
+    "model": "openai/whisper-base.en",
+    "packages": {
+      "nbclient": "0.11.0",
+      "numpy": "2.5.3",
+      "pandas": "2.3.3",
+      "pyarrow": "25.0.1",
+      "scikit-learn": "1.9.1",
+      "soundfile": "0.14.0",
+      "torch": "2.14.0",
+      "transformers": "4.57.6"
+    },
+    "python": "3.14.7",
+    "raw_fusion_comparison": true,
+    "revision": "911407f4214e0e1d82085af863093ec0b66f9cd6",
+    "seed": 42,
+    "selected_C": {
+      "Whisper PCA32 SVM": 1.0,
+      "Whisper full512 SVM": 10.0
+    },
+    "whisper_provenance": {
+      "audio_id": "98341df1b3defc45d15c48ce926ebbe8da4734d93e52d71f84e826d014462285",
+      "cache_file_sha256": "bccf31584fd0af0d2b248ef8182cef4145894e93b965e2e60f734ed859d071cb",
+      "cache_id": "4fb592f4786ae83a4abeb3bc92a5c75ab3f178544f03585eef85373f82bae46b",
+      "cache_path": "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_fusion_comparison_40000/feature_cache/whisper_4fb592f4786ae83a4abeb3bc92a5c75ab3f178544f03585eef85373f82bae46b.npz",
+      "dataset_id": "899dd94a72cff7dc6536993ea0c91ce0aed927a80983050b781c0b71d2f0f4ba",
+      "decoded_audio_matches_reference": true,
+      "frozen": true,
+      "model": "openai/whisper-base.en",
+      "pooling": "mean_valid_encoder_frames_v1",
+      "resolved_revision": "911407f4214e0e1d82085af863093ec0b66f9cd6",
+      "reuse_mode": "verified original fusion cache",
+      "revision": "main",
+      "sample_rate": 16000,
+      "seconds": 403.3181304319987,
+      "torch_version": "2.14.0+cu130",
+      "transformers_version": "4.57.6",
+      "width": 512
+    }
+  },
+  "audio_audit": {
+    "clips_decoded": 40000,
+    "decoded_hash_matches": 40000,
+    "duplicate_decoded_audio": 0,
+    "encoded_hash_matches_original_cache": 40000,
+    "note": "Decoded PCM matches the fixed original reference. No new audio preparation applied.",
+    "reference_manifest_sha256": "87389b0aeb1ac273eff9e669f298b99bc3a73642ead1357d6690aecf5988aad4",
+    "seconds": 33.742558366000594,
+    "status": "passed"
+  },
+  "dataset_identity": {
+    "dataset_id": "899dd94a72cff7dc6536993ea0c91ce0aed927a80983050b781c0b71d2f0f4ba",
+    "original_split_sha256": "428937b39eb646a41e46b8ee3cdeb86652069802a675575892e6f17e289b8581",
+    "reference_manifest_sha256": "87389b0aeb1ac273eff9e669f298b99bc3a73642ead1357d6690aecf5988aad4",
+    "speaker_overlap": 0
+  },
+  "test_metrics": {
+    "Fusion SVM": {
+      "accuracy": 0.9867625428991665,
+      "balanced_accuracy": 0.9868201976732632,
+      "confusion_matrix": [
+        [
+          3023,
+          62
+        ],
+        [
+          19,
+          3015
+        ]
+      ],
+      "errors": 81,
+      "false_negative": 19,
+      "false_positive": 62,
+      "macro_f1": 0.986762520272302,
+      "non_sg_fpr": 0.020097244732576985,
+      "roc_auc": 0.9989700733662468,
+      "sg_recall": 0.9937376400791035,
+      "speaker_bootstrap_ci95": {
+        "balanced_accuracy": [
+          0.9821470087534508,
+          0.991080467372025
+        ],
+        "macro_f1": [
+          0.9819194313861525,
+          0.9911546410656797
+        ]
+      }
+    },
+    "SVM65": {
+      "accuracy": 0.966824644549763,
+      "balanced_accuracy": 0.9669299532366299,
+      "confusion_matrix": [
+        [
+          2944,
+          141
+        ],
+        [
+          62,
+          2972
+        ]
+      ],
+      "errors": 203,
+      "false_negative": 62,
+      "false_positive": 141,
+      "macro_f1": 0.966823949877698,
+      "non_sg_fpr": 0.045705024311183146,
+      "roc_auc": 0.9938567654107047,
+      "sg_recall": 0.979564930784443,
+      "speaker_bootstrap_ci95": {
+        "balanced_accuracy": [
+          0.9591007971312778,
+          0.9739496509213146
+        ],
+        "macro_f1": [
+          0.9590976373308959,
+          0.9739442856831803
+        ]
+      }
+    },
+    "Whisper PCA32 SVM": {
+      "accuracy": 0.9542408890341559,
+      "balanced_accuracy": 0.9542595051864926,
+      "confusion_matrix": [
+        [
+          2937,
+          148
+        ],
+        [
+          132,
+          2902
+        ]
+      ],
+      "errors": 280,
+      "false_negative": 132,
+      "false_positive": 148,
+      "macro_f1": 0.9542393918784509,
+      "non_sg_fpr": 0.047974068071312805,
+      "roc_auc": 0.9895603473972451,
+      "sg_recall": 0.956493078444298,
+      "speaker_bootstrap_ci95": {
+        "balanced_accuracy": [
+          0.9430143191922988,
+          0.964187741902931
+        ],
+        "macro_f1": [
+          0.9427697746729848,
+          0.9641555780947657
+        ]
+      }
+    },
+    "Whisper full512 SVM": {
+      "accuracy": 0.9872528190880863,
+      "balanced_accuracy": 0.9872682798622633,
+      "confusion_matrix": [
+        [
+          3040,
+          45
+        ],
+        [
+          33,
+          3001
+        ]
+      ],
+      "errors": 78,
+      "false_negative": 33,
+      "false_positive": 45,
+      "macro_f1": 0.9872523012427138,
+      "non_sg_fpr": 0.014586709886547812,
+      "roc_auc": 0.9990893055367104,
+      "sg_recall": 0.9891232696110744,
+      "speaker_bootstrap_ci95": {
+        "balanced_accuracy": [
+          0.9825244250702615,
+          0.9915761395142995
+        ],
+        "macro_f1": [
+          0.9823947193732667,
+          0.9915574700860196
+        ]
+      }
+    }
+  },
+  "paired_differences": {
+    "comparisons": {
+      "Fusion SVM minus Whisper PCA32 SVM": {
+        "balanced_accuracy": {
+          "ci95": [
+            0.022933502495162416,
+            0.043527209662912965
+          ],
+          "difference": 0.032560692486770626
+        },
+        "errors": {
+          "fusion_only_correct": 239,
+          "whisper_only_correct": 40
+        },
+        "macro_f1": {
+          "ci95": [
+            0.022817205236370992,
+            0.043527506939275755
+          ],
+          "difference": 0.032523128393851186
+        }
+      },
+      "Fusion SVM minus Whisper full512 SVM": {
+        "balanced_accuracy": {
+          "ci95": [
+            -0.0050546881699446876,
+            0.004208502085632172
+          ],
+          "difference": -0.00044808218900005414
+        },
+        "errors": {
+          "fusion_only_correct": 58,
+          "whisper_only_correct": 61
+        },
+        "macro_f1": {
+          "ci95": [
+            -0.005190608372410882,
+            0.004285484404871427
+          ],
+          "difference": -0.0004897809704117462
+        }
+      }
+    },
+    "method": "2,000 paired whole-speaker draws, stratified by class; seed 42",
+    "scope": "Fixed fitted models and split; not training or model-selection uncertainty."
+  },
+  "validation_trials": [
+    {
+      "model": "Whisper full512 SVM",
+      "C": 0.01,
+      "fit_seconds": 200.676169271,
+      "accuracy": 0.9358974359,
+      "balanced_accuracy": 0.9360417043,
+      "macro_f1": 0.9358912008,
+      "roc_auc": 0.9831158918,
+      "sg_recall": 0.9535962877,
+      "non_sg_fpr": 0.081512879,
+      "errors": 390,
+      "false_positive": 250,
+      "false_negative": 140
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "C": 0.1,
+      "fit_seconds": 88.10360348,
+      "accuracy": 0.9720578567,
+      "balanced_accuracy": 0.9721505318,
+      "macro_f1": 0.9720575547,
+      "roc_auc": 0.9968211868,
+      "sg_recall": 0.9834272456,
+      "non_sg_fpr": 0.0391261819,
+      "errors": 170,
+      "false_positive": 120,
+      "false_negative": 50
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "C": 1.0,
+      "fit_seconds": 43.169894145,
+      "accuracy": 0.9838921762,
+      "balanced_accuracy": 0.9839262114,
+      "macro_f1": 0.9838919255,
+      "roc_auc": 0.9990995488,
+      "sg_recall": 0.9880676168,
+      "non_sg_fpr": 0.020215194,
+      "errors": 98,
+      "false_positive": 62,
+      "false_negative": 36
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "C": 10.0,
+      "fit_seconds": 51.8920419,
+      "accuracy": 0.9873438527,
+      "balanced_accuracy": 0.9873632613,
+      "macro_f1": 0.9873434339,
+      "roc_auc": 0.9993270392,
+      "sg_recall": 0.9897248923,
+      "non_sg_fpr": 0.0149983697,
+      "errors": 77,
+      "false_positive": 46,
+      "false_negative": 31
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "C": 0.01,
+      "fit_seconds": 43.049519382,
+      "accuracy": 0.9301446417,
+      "balanced_accuracy": 0.9303547153,
+      "macro_f1": 0.9301222125,
+      "roc_auc": 0.9803030085,
+      "sg_recall": 0.9559164733,
+      "non_sg_fpr": 0.0952070427,
+      "errors": 425,
+      "false_positive": 292,
+      "false_negative": 133
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "C": 0.1,
+      "fit_seconds": 16.2572723,
+      "accuracy": 0.9423076923,
+      "balanced_accuracy": 0.9424078143,
+      "macro_f1": 0.9423065561,
+      "roc_auc": 0.9862621755,
+      "sg_recall": 0.954590653,
+      "non_sg_fpr": 0.0697750245,
+      "errors": 351,
+      "false_positive": 214,
+      "false_negative": 137
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "C": 1.0,
+      "fit_seconds": 9.615760286,
+      "accuracy": 0.9485535832,
+      "balanced_accuracy": 0.9486190038,
+      "macro_f1": 0.9485535818,
+      "roc_auc": 0.9891228263,
+      "sg_recall": 0.9565793835,
+      "non_sg_fpr": 0.0593413759,
+      "errors": 313,
+      "false_positive": 182,
+      "false_negative": 131
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "C": 10.0,
+      "fit_seconds": 11.778344567,
+      "accuracy": 0.9454306377,
+      "balanced_accuracy": 0.9454863912,
+      "macro_f1": 0.9454305847,
+      "roc_auc": 0.9881565596,
+      "sg_recall": 0.9522704674,
+      "non_sg_fpr": 0.061297685,
+      "errors": 332,
+      "false_positive": 188,
+      "false_negative": 144
+    }
+  ],
+  "speaker_fold_scores": [
+    {
+      "model": "Whisper full512 SVM",
+      "fold": 1,
+      "seconds": 81.864847967,
+      "accuracy": 0.987515495,
+      "balanced_accuracy": 0.9875150936,
+      "macro_f1": 0.9875154596,
+      "roc_auc": 0.9990857846,
+      "sg_recall": 0.9877984085,
+      "non_sg_fpr": 0.0127682213,
+      "errors": 141,
+      "false_positive": 72,
+      "false_negative": 69
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "fold": 1,
+      "seconds": 12.080412981,
+      "accuracy": 0.9544005667,
+      "balanced_accuracy": 0.9544016041,
+      "macro_f1": 0.9544005492,
+      "roc_auc": 0.9891125795,
+      "sg_recall": 0.9536693192,
+      "non_sg_fpr": 0.044866111,
+      "errors": 515,
+      "false_positive": 253,
+      "false_negative": 262
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "fold": 2,
+      "seconds": 81.011475054,
+      "accuracy": 0.9868956968,
+      "balanced_accuracy": 0.9868931234,
+      "macro_f1": 0.9868955637,
+      "roc_auc": 0.9991932836,
+      "sg_recall": 0.9885077793,
+      "non_sg_fpr": 0.0147215325,
+      "errors": 148,
+      "false_positive": 83,
+      "false_negative": 65
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "fold": 2,
+      "seconds": 8.500260374,
+      "accuracy": 0.9486452984,
+      "balanced_accuracy": 0.948639241,
+      "macro_f1": 0.948643849,
+      "roc_auc": 0.989827972,
+      "sg_recall": 0.9524398868,
+      "non_sg_fpr": 0.0551614048,
+      "errors": 580,
+      "false_positive": 311,
+      "false_negative": 269
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "fold": 3,
+      "seconds": 63.236979723,
+      "accuracy": 0.9867174356,
+      "balanced_accuracy": 0.9867142063,
+      "macro_f1": 0.9867172605,
+      "roc_auc": 0.9992083528,
+      "sg_recall": 0.9888594164,
+      "non_sg_fpr": 0.0154310039,
+      "errors": 150,
+      "false_positive": 87,
+      "false_negative": 63
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "fold": 3,
+      "seconds": 8.574452383,
+      "accuracy": 0.9528911715,
+      "balanced_accuracy": 0.952886266,
+      "macro_f1": 0.9528901339,
+      "roc_auc": 0.9907954392,
+      "sg_recall": 0.9561450044,
+      "non_sg_fpr": 0.0503724725,
+      "errors": 532,
+      "false_positive": 284,
+      "false_negative": 248
+    },
+    {
+      "model": "Fusion SVM",
+      "fold": 1,
+      "seconds": null,
+      "accuracy": 0.9883123783,
+      "balanced_accuracy": 0.988311853,
+      "macro_f1": 0.9883123416,
+      "roc_auc": 0.9993555366,
+      "sg_recall": 0.9886825818,
+      "non_sg_fpr": 0.0120588757,
+      "errors": 132,
+      "false_positive": 68,
+      "false_negative": 64
+    },
+    {
+      "model": "Fusion SVM",
+      "fold": 2,
+      "seconds": null,
+      "accuracy": 0.9857446432,
+      "balanced_accuracy": 0.9857351522,
+      "macro_f1": 0.9857438357,
+      "roc_auc": 0.9990383062,
+      "sg_recall": 0.9916902405,
+      "non_sg_fpr": 0.0202199361,
+      "errors": 161,
+      "false_positive": 114,
+      "false_negative": 47
+    },
+    {
+      "model": "Fusion SVM",
+      "fold": 3,
+      "seconds": null,
+      "accuracy": 0.9848578766,
+      "balanced_accuracy": 0.9848534433,
+      "macro_f1": 0.9848575797,
+      "roc_auc": 0.9990342155,
+      "sg_recall": 0.9877984085,
+      "non_sg_fpr": 0.0180915218,
+      "errors": 171,
+      "false_positive": 102,
+      "false_negative": 69
+    },
+    {
+      "model": "SVM65",
+      "fold": 1,
+      "seconds": null,
+      "accuracy": 0.9675934124,
+      "balanced_accuracy": 0.967580302,
+      "macro_f1": 0.9675897535,
+      "roc_auc": 0.9942629242,
+      "sg_recall": 0.9768346596,
+      "non_sg_fpr": 0.0416740557,
+      "errors": 366,
+      "false_positive": 235,
+      "false_negative": 131
+    },
+    {
+      "model": "SVM65",
+      "fold": 2,
+      "seconds": null,
+      "accuracy": 0.9618381441,
+      "balanced_accuracy": 0.9618082716,
+      "macro_f1": 0.9618224483,
+      "roc_auc": 0.9922705432,
+      "sg_recall": 0.9805516266,
+      "non_sg_fpr": 0.0569350834,
+      "errors": 431,
+      "false_positive": 321,
+      "false_negative": 110
+    },
+    {
+      "model": "SVM65",
+      "fold": 3,
+      "seconds": null,
+      "accuracy": 0.9647569291,
+      "balanced_accuracy": 0.9647405866,
+      "macro_f1": 0.964751589,
+      "roc_auc": 0.9934489,
+      "sg_recall": 0.975596817,
+      "non_sg_fpr": 0.0461156438,
+      "errors": 398,
+      "false_positive": 260,
+      "false_negative": 138
+    }
+  ],
+  "subgroup_scores": [
+    {
+      "model": "Fusion SVM",
+      "category": "source",
+      "group": "common_voice",
+      "clips": 2913,
+      "speakers": 1241,
+      "errors": 34,
+      "accuracy": 0.988328184,
+      "positive_class": false
+    },
+    {
+      "model": "Fusion SVM",
+      "category": "source",
+      "group": "mnsc",
+      "clips": 3034,
+      "speakers": 215,
+      "errors": 19,
+      "accuracy": 0.9937376401,
+      "positive_class": true
+    },
+    {
+      "model": "Fusion SVM",
+      "category": "source",
+      "group": "speech_accent_archive",
+      "clips": 50,
+      "speakers": 8,
+      "errors": 4,
+      "accuracy": 0.92,
+      "positive_class": false
+    },
+    {
+      "model": "Fusion SVM",
+      "category": "source",
+      "group": "speechocean762",
+      "clips": 122,
+      "speakers": 18,
+      "errors": 24,
+      "accuracy": 0.8032786885,
+      "positive_class": false
+    },
+    {
+      "model": "SVM65",
+      "category": "source",
+      "group": "common_voice",
+      "clips": 2913,
+      "speakers": 1241,
+      "errors": 72,
+      "accuracy": 0.9752832132,
+      "positive_class": false
+    },
+    {
+      "model": "SVM65",
+      "category": "source",
+      "group": "mnsc",
+      "clips": 3034,
+      "speakers": 215,
+      "errors": 62,
+      "accuracy": 0.9795649308,
+      "positive_class": true
+    },
+    {
+      "model": "SVM65",
+      "category": "source",
+      "group": "speech_accent_archive",
+      "clips": 50,
+      "speakers": 8,
+      "errors": 20,
+      "accuracy": 0.6,
+      "positive_class": false
+    },
+    {
+      "model": "SVM65",
+      "category": "source",
+      "group": "speechocean762",
+      "clips": 122,
+      "speakers": 18,
+      "errors": 49,
+      "accuracy": 0.5983606557,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "category": "source",
+      "group": "common_voice",
+      "clips": 2913,
+      "speakers": 1241,
+      "errors": 96,
+      "accuracy": 0.9670442842,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "category": "source",
+      "group": "mnsc",
+      "clips": 3034,
+      "speakers": 215,
+      "errors": 132,
+      "accuracy": 0.9564930784,
+      "positive_class": true
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "category": "source",
+      "group": "speech_accent_archive",
+      "clips": 50,
+      "speakers": 8,
+      "errors": 3,
+      "accuracy": 0.94,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "category": "source",
+      "group": "speechocean762",
+      "clips": 122,
+      "speakers": 18,
+      "errors": 49,
+      "accuracy": 0.5983606557,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "category": "source",
+      "group": "common_voice",
+      "clips": 2913,
+      "speakers": 1241,
+      "errors": 25,
+      "accuracy": 0.9914177824,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "category": "source",
+      "group": "mnsc",
+      "clips": 3034,
+      "speakers": 215,
+      "errors": 33,
+      "accuracy": 0.9891232696,
+      "positive_class": true
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "category": "source",
+      "group": "speech_accent_archive",
+      "clips": 50,
+      "speakers": 8,
+      "errors": 1,
+      "accuracy": 0.98,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "category": "source",
+      "group": "speechocean762",
+      "clips": 122,
+      "speakers": 18,
+      "errors": 19,
+      "accuracy": 0.8442622951,
+      "positive_class": false
+    },
+    {
+      "model": "Fusion SVM",
+      "category": "accent_group",
+      "group": "American",
+      "clips": 503,
+      "speakers": 438,
+      "errors": 4,
+      "accuracy": 0.9920477137,
+      "positive_class": false
+    },
+    {
+      "model": "Fusion SVM",
+      "category": "accent_group",
+      "group": "Australian",
+      "clips": 562,
+      "speakers": 109,
+      "errors": 1,
+      "accuracy": 0.9982206406,
+      "positive_class": false
+    },
+    {
+      "model": "Fusion SVM",
+      "category": "accent_group",
+      "group": "British",
+      "clips": 503,
+      "speakers": 334,
+      "errors": 3,
+      "accuracy": 0.9940357853,
+      "positive_class": false
+    },
+    {
+      "model": "Fusion SVM",
+      "category": "accent_group",
+      "group": "Filipino",
+      "clips": 571,
+      "speakers": 20,
+      "errors": 10,
+      "accuracy": 0.9824868651,
+      "positive_class": false
+    },
+    {
+      "model": "Fusion SVM",
+      "category": "accent_group",
+      "group": "Hong Kong",
+      "clips": 272,
+      "speakers": 27,
+      "errors": 9,
+      "accuracy": 0.9669117647,
+      "positive_class": false
+    },
+    {
+      "model": "Fusion SVM",
+      "category": "accent_group",
+      "group": "Korean",
+      "clips": 50,
+      "speakers": 8,
+      "errors": 4,
+      "accuracy": 0.92,
+      "positive_class": false
+    },
+    {
+      "model": "Fusion SVM",
+      "category": "accent_group",
+      "group": "Mainland Chinese",
+      "clips": 122,
+      "speakers": 18,
+      "errors": 24,
+      "accuracy": 0.8032786885,
+      "positive_class": false
+    },
+    {
+      "model": "Fusion SVM",
+      "category": "accent_group",
+      "group": "Singaporean",
+      "clips": 3034,
+      "speakers": 215,
+      "errors": 19,
+      "accuracy": 0.9937376401,
+      "positive_class": true
+    },
+    {
+      "model": "Fusion SVM",
+      "category": "accent_group",
+      "group": "South Asian",
+      "clips": 502,
+      "speakers": 313,
+      "errors": 7,
+      "accuracy": 0.9860557769,
+      "positive_class": false
+    },
+    {
+      "model": "SVM65",
+      "category": "accent_group",
+      "group": "American",
+      "clips": 503,
+      "speakers": 438,
+      "errors": 12,
+      "accuracy": 0.9761431412,
+      "positive_class": false
+    },
+    {
+      "model": "SVM65",
+      "category": "accent_group",
+      "group": "Australian",
+      "clips": 562,
+      "speakers": 109,
+      "errors": 7,
+      "accuracy": 0.987544484,
+      "positive_class": false
+    },
+    {
+      "model": "SVM65",
+      "category": "accent_group",
+      "group": "British",
+      "clips": 503,
+      "speakers": 334,
+      "errors": 14,
+      "accuracy": 0.972166998,
+      "positive_class": false
+    },
+    {
+      "model": "SVM65",
+      "category": "accent_group",
+      "group": "Filipino",
+      "clips": 571,
+      "speakers": 20,
+      "errors": 14,
+      "accuracy": 0.9754816112,
+      "positive_class": false
+    },
+    {
+      "model": "SVM65",
+      "category": "accent_group",
+      "group": "Hong Kong",
+      "clips": 272,
+      "speakers": 27,
+      "errors": 10,
+      "accuracy": 0.9632352941,
+      "positive_class": false
+    },
+    {
+      "model": "SVM65",
+      "category": "accent_group",
+      "group": "Korean",
+      "clips": 50,
+      "speakers": 8,
+      "errors": 20,
+      "accuracy": 0.6,
+      "positive_class": false
+    },
+    {
+      "model": "SVM65",
+      "category": "accent_group",
+      "group": "Mainland Chinese",
+      "clips": 122,
+      "speakers": 18,
+      "errors": 49,
+      "accuracy": 0.5983606557,
+      "positive_class": false
+    },
+    {
+      "model": "SVM65",
+      "category": "accent_group",
+      "group": "Singaporean",
+      "clips": 3034,
+      "speakers": 215,
+      "errors": 62,
+      "accuracy": 0.9795649308,
+      "positive_class": true
+    },
+    {
+      "model": "SVM65",
+      "category": "accent_group",
+      "group": "South Asian",
+      "clips": 502,
+      "speakers": 313,
+      "errors": 15,
+      "accuracy": 0.9701195219,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "category": "accent_group",
+      "group": "American",
+      "clips": 503,
+      "speakers": 438,
+      "errors": 7,
+      "accuracy": 0.986083499,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "category": "accent_group",
+      "group": "Australian",
+      "clips": 562,
+      "speakers": 109,
+      "errors": 4,
+      "accuracy": 0.9928825623,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "category": "accent_group",
+      "group": "British",
+      "clips": 503,
+      "speakers": 334,
+      "errors": 14,
+      "accuracy": 0.972166998,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "category": "accent_group",
+      "group": "Filipino",
+      "clips": 571,
+      "speakers": 20,
+      "errors": 9,
+      "accuracy": 0.9842381786,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "category": "accent_group",
+      "group": "Hong Kong",
+      "clips": 272,
+      "speakers": 27,
+      "errors": 44,
+      "accuracy": 0.8382352941,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "category": "accent_group",
+      "group": "Korean",
+      "clips": 50,
+      "speakers": 8,
+      "errors": 3,
+      "accuracy": 0.94,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "category": "accent_group",
+      "group": "Mainland Chinese",
+      "clips": 122,
+      "speakers": 18,
+      "errors": 49,
+      "accuracy": 0.5983606557,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "category": "accent_group",
+      "group": "Singaporean",
+      "clips": 3034,
+      "speakers": 215,
+      "errors": 132,
+      "accuracy": 0.9564930784,
+      "positive_class": true
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "category": "accent_group",
+      "group": "South Asian",
+      "clips": 502,
+      "speakers": 313,
+      "errors": 18,
+      "accuracy": 0.9641434263,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "category": "accent_group",
+      "group": "American",
+      "clips": 503,
+      "speakers": 438,
+      "errors": 2,
+      "accuracy": 0.9960238569,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "category": "accent_group",
+      "group": "Australian",
+      "clips": 562,
+      "speakers": 109,
+      "errors": 0,
+      "accuracy": 1.0,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "category": "accent_group",
+      "group": "British",
+      "clips": 503,
+      "speakers": 334,
+      "errors": 6,
+      "accuracy": 0.9880715706,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "category": "accent_group",
+      "group": "Filipino",
+      "clips": 571,
+      "speakers": 20,
+      "errors": 1,
+      "accuracy": 0.9982486865,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "category": "accent_group",
+      "group": "Hong Kong",
+      "clips": 272,
+      "speakers": 27,
+      "errors": 12,
+      "accuracy": 0.9558823529,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "category": "accent_group",
+      "group": "Korean",
+      "clips": 50,
+      "speakers": 8,
+      "errors": 1,
+      "accuracy": 0.98,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "category": "accent_group",
+      "group": "Mainland Chinese",
+      "clips": 122,
+      "speakers": 18,
+      "errors": 19,
+      "accuracy": 0.8442622951,
+      "positive_class": false
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "category": "accent_group",
+      "group": "Singaporean",
+      "clips": 3034,
+      "speakers": 215,
+      "errors": 33,
+      "accuracy": 0.9891232696,
+      "positive_class": true
+    },
+    {
+      "model": "Whisper full512 SVM",
+      "category": "accent_group",
+      "group": "South Asian",
+      "clips": 502,
+      "speakers": 313,
+      "errors": 4,
+      "accuracy": 0.9920318725,
+      "positive_class": false
+    }
+  ],
+  "timing": [
+    {
+      "model": "Whisper full512 SVM",
+      "final_fit_seconds": 50.497807488,
+      "test_predict_and_score_seconds": 27.010955352
+    },
+    {
+      "model": "Whisper PCA32 SVM",
+      "final_fit_seconds": 11.326246015,
+      "test_predict_and_score_seconds": 2.914207868
+    }
+  ],
+  "source_files": [
+    {
+      "path": "/home/mh/nusproj/singlish-whisper/notebooks/E2_01_whisper_classifier_beginner.ipynb",
+      "sha256": "2eecb95f9d194845874c41b5cfa64215754a4347d1da56c2231460f6cf61eced"
+    },
+    {
+      "path": "/home/mh/nusproj/singlish-whisper/notebooks/frozen_whisper_40k.py",
+      "sha256": "2575187bf0e0e1c8cc1b0f285f2eba91ccefa8b329d7ac1f49d33c65e7b62d70"
+    },
+    {
+      "path": "/home/mh/nusproj/singlish-whisper/results/FROZEN_WHISPER_40000_20261028.md",
+      "sha256": "792103c8c06a6f98ae9fa5ba50f4041eac08489aaf071a91dd1dad21bfb0b2a4"
+    },
+    {
+      "path": "/home/mh/nusproj/singlish-whisper/outputs/frozen_whisper_40000_20261028/test_predictions.csv",
+      "sha256": "1aff74b323c42cc0439104911a8d929a11429d9f1af527827feb10311c87efc2"
+    },
+    {
+      "path": "/home/mh/nusproj/singlish-whisper/outputs/frozen_whisper_40000_20261028/dataset_manifest.csv",
+      "sha256": "f16d8116ee9e7e44da1233e18e0df1561386601b980a18c7a9e168431d8d9c0b"
+    }
+  ],
+  "archived_sha256": {
+    "frozen_whisper_40k.py": "2575187bf0e0e1c8cc1b0f285f2eba91ccefa8b329d7ac1f49d33c65e7b62d70",
+    "notebook.ipynb": "2eecb95f9d194845874c41b5cfa64215754a4347d1da56c2231460f6cf61eced",
+    "predictions.csv": "1aff74b323c42cc0439104911a8d929a11429d9f1af527827feb10311c87efc2",
+    "report.md": "0926584d985c60cf81c175b047c0773a074c4f3faf9abbfb6982c556801aa7da"
+  }
+}

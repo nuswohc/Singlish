@@ -1,0 +1,98 @@
+{
+  "completed_utc": "2026-10-28T15:34:34.970916+00:00",
+  "status": "passed",
+  "source_files_unchanged": true,
+  "internal_replay": [
+    {
+      "model": "24 Oct PCA32+65",
+      "probability_max_abs_difference": 3.6502060474230547e-07,
+      "class_differences": 0,
+      "raw_score_max_abs_difference": 6.920431911972003e-07,
+      "test_predict_proba_seconds": 1.6960075099996175
+    },
+    {
+      "model": "28 Oct full512+65",
+      "probability_max_abs_difference": 1.1102230246251565e-16,
+      "class_differences": 0,
+      "raw_score_max_abs_difference": 8.881784197001252e-16,
+      "test_predict_proba_seconds": 10.139889019999828
+    }
+  ],
+  "runtime_compatibility": {
+    "status": "passed",
+    "loader": "mvp.models.EnsembleModel",
+    "file_changes": false,
+    "service_changes": false,
+    "scope": "Artifact, sidecar, feature contract and one cached prediction only; not an end-to-end service test"
+  },
+  "benchmark_release_prediction_differences": 0,
+  "source_hashes": {
+    "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_fusion_comparison_40000/model_metadata.json": "4b2922add8ba9298b9cefb4edbd14b0a27ab345c837b63640f066836dea27f5c",
+    "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_full_whisper_fusion_comparison_40000/model_metadata.json": "b0b1d26668068fba200d2ac3592bc79d7843e73785605e448386ea9dd5d8bbc0",
+    "/home/mh/nusproj/Singlish/mvp/models/fusion_svm_c_261024_metadata.json": "86f6bde819c653dc5cdf6eeac21583ac5766c1e2ac3f19b0c2b994509d9fa646",
+    "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_full_whisper_fusion_comparison_40000/calibrated_probability_testing/fusion_svm_calibrated_metadata.json": "50237f83c2238623951159338936467cb129a9dd5ede019439c0478001072199",
+    "/home/mh/nusproj/Singlish/results/Perfomance_Test_20261024/metadata.json": "9e0df00da87f5a0c116e5d3e7b99a19322055296c82be5007822c28299c4bcb3",
+    "/home/mh/nusproj/Singlish/mvp/models/fusion_svm_c_261024.joblib": "d2eb00c072bf8c9f2e465ad19e2ec52c214831dcbbc3f871537d023cdcfd589c",
+    "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_full_whisper_fusion_comparison_40000/calibrated_probability_testing/fusion_svm_calibrated.joblib": "e04f26b1c61e57978ba672c9b8680e277898499200b78fec6d80b1a2328db27f",
+    "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_full_whisper_fusion_comparison_40000/speaker_splits.csv": "428937b39eb646a41e46b8ee3cdeb86652069802a675575892e6f17e289b8581",
+    "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/e1_feature_study_accent_40000/acoustic_features_91.npz": "5bd24a1f3a26b05a02694ed4a1d4e3fc0b72524eaea45d1429276f0f71f2438d",
+    "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_fusion_comparison_40000/feature_cache/whisper_4fb592f4786ae83a4abeb3bc92a5c75ab3f178544f03585eef85373f82bae46b.npz": "bccf31584fd0af0d2b248ef8182cef4145894e93b965e2e60f734ed859d071cb",
+    "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_fusion_comparison_40000/calibrated_probability_testing/test_probability_predictions.csv": "9ca16e6112d26b6e2e4e1eaaf65366d92139fd6fdd3b690858aa5f115254bf2e",
+    "/home/mh/nusproj/E1_Feature_EngineeringV4/outputs/svm65_full_whisper_fusion_comparison_40000/calibrated_probability_testing/test_probability_predictions.csv": "f4c0ff6a0ffa96310affb4fba7dc4b8dc92ff1ab4eca247b3a6f044d67abec5a",
+    "/home/mh/nusproj/singlish-whisper/outputs/a1_tuned_acoustic_whisper_fusion_40000/predictions.csv": "ab55d7614ce8550389c48a34addba38faa2bcb419a7877753d90dccb5bee5842",
+    "/home/mh/nusproj/Singlish/results/Perfomance_Test_20261024/predictions.csv": "154c9e1e23d02545fae3c151c8ad6b89afeebedb0271bcc18ca327bb5974ea4e",
+    "/home/mh/nusproj/Singlish/results/Perfomance_Test_20261023/metadata.json": "8f88aaee7c6af6f698a40d2805e9120fa141a82131f8778250f216827d04010e",
+    "/home/mh/nusproj/Singlish/results/Perfomance_Test_20261023/manifests/mnsc_part1_unseen_3000.csv": "bc5d031e20ae8a0c01889b0ce066e4f0b1a7d8e72ea684dd0f383c435b56d72f",
+    "/home/mh/nusproj/Singlish/tmp/release-comparison-portable-cache/mnsc_part1_unseen_3000.npz": "ea201edf8294bcb70b363d712135901b764a7037c4aff7b93140dde6216b1cb1",
+    "/home/mh/nusproj/Singlish/results/Perfomance_Test_20261023/manifests/mnsc_part2_unseen_3000.csv": "f0ee52b01f9b52369de271a4e781e7a63445a06ca5aefc85a8f17ee32a7d30c3",
+    "/home/mh/nusproj/Singlish/tmp/release-comparison-portable-cache/mnsc_part2_unseen_3000.npz": "690c5981108b64cfaa676baf7cab44898ddbd647a07bcbb3285f80043a11531f",
+    "/home/mh/nusproj/Singlish/outputs/performance_test_20261024_prepared/part2_preprocessing_features.npz": "d3abf9a76e95c3209ccd664de8024a819cc53c883aaccd2c07dac4a0810fd52b",
+    "/home/mh/nusproj/Singlish/results/Perfomance_Test_20261023/manifests/cv_unseen_3000.csv": "c490e6c57699b59df8393faf46689c530db60b577bfad8e800150d8510524217",
+    "/home/mh/nusproj/Singlish/tmp/release-comparison-portable-cache/cv_unseen_3000.npz": "b557ff4002cc4be10596b4056264838e8d3357bdd722a43db0d6b42d32ad5c32",
+    "/home/mh/nusproj/Singlish/mvp/models.py": "91df803cd900c2a2b29153e2a82289dcf5c98c6d3c3a30d023a20cec90e1cd5e",
+    "/home/mh/nusproj/Singlish/mvp/models/manifest.json": "be845914eb386c30c465456f231d23abfd2589a98420d56ef7d126336d91fc8a"
+  },
+  "environment": {
+    "python": "3.14.7",
+    "sklearn": "1.9.1",
+    "numpy": "2.5.3",
+    "processor": "x86_64",
+    "platform": "Linux-7.0.0-38-generic-x86_64-with-glibc2.39",
+    "cpu_count": 8,
+    "blas": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 4,
+        "prefix": "libscipy_openblas",
+        "filepath": "/home/mh/miniconda3/envs/singlish-py314/lib/python3.14/site-packages/numpy.libs/libscipy_openblas64_-f48b354e.so",
+        "version": "0.3.34.106.0",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell"
+      },
+      {
+        "user_api": "openmp",
+        "internal_api": "openmp",
+        "num_threads": 4,
+        "prefix": "libgomp",
+        "filepath": "/home/mh/miniconda3/envs/singlish-py314/lib/python3.14/site-packages/scikit_learn.libs/libgomp-e985bcbb.so.1.0.0",
+        "version": null
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 4,
+        "prefix": "libscipy_openblas",
+        "filepath": "/home/mh/miniconda3/envs/singlish-py314/lib/python3.14/site-packages/scipy.libs/libscipy_openblas-5f890258.so",
+        "version": "0.3.31.dev",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell"
+      }
+    ]
+  },
+  "timing_method": "Warm cached-feature predict_proba; four BLAS threads; alternating order; five 256-clip batches and 60 single requests per model. No audio preparation, Whisper extraction, networking or concurrency included.",
+  "seconds": 48.23894257900065,
+  "script_sha256": "acb56046dfca05a05e23903da42979a0b792feeffe374df98ced2a155b3fdd13",
+  "threshold": 0.5,
+  "models_refitted": false
+}

@@ -1,0 +1,38 @@
+{
+  "status": "complete",
+  "completed_utc": "2026-10-29T03:29:31.358573+00:00",
+  "clips": 9000,
+  "speakers": 1950,
+  "threshold": 0.5,
+  "models_refitted": false,
+  "models_deployed": false,
+  "model_artifacts_unchanged": true,
+  "manifest_sha256": "6e43a1cd6ca002b04a2368e532397f7efc18ae619f94f3ab716f66979e4b2770",
+  "protocol_sha256": "97cd6c5cbad993bc4bdeaff6843cc51bae232172d6f87cdc803c4460455ebe0c",
+  "prediction_seconds": {
+    "SVM65": 3.076356333998774,
+    "Frozen Whisper (512)": 25.307409798999288,
+    "PCA32+65": 2.7902631420001853,
+    "512+65": 17.11582419899969
+  },
+  "prediction_seconds_scope": "One full-set call; excludes feature extraction; not service latency",
+  "code_hashes": {
+    "verify_results.py": "603514560c25a0415d4fc94a28e146a6c18530735f5dec35ce41e0ac68b2f2bf",
+    "write_report.py": "6bddaf13d5ac1d244513cc7b16cc78c4cf46395346888051e5e7cea9cf17a460",
+    "prepare_cv.py": "7794f72d2460f40efca82870947d228cfabdc74e6d7bb0768bfadae1e2b7d3ba",
+    "freeze_and_extract.py": "e8128c2f0cb00d306bc82ba5a819a00d56e02d7f662153758ae167c1f2733243",
+    "common.py": "3794dc35d48e1ad16c8cea36e87911611a16c90908293d106aad74bd994f2605",
+    "prepare_mnsc.py": "1e8c81e267d54ff1f56ce1c338b8d1adb8e28d83e967e40c381407911b8eded5",
+    "evaluate.py": "10f0bde70b116569677ca562c764b79ca9554708d8de211843210825eba589ec"
+  },
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "torch": "2.14.0",
+    "transformers": "4.57.6",
+    "librosa": "1.0.0",
+    "soundfile": "0.14.0"
+  }
+}

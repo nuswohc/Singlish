@@ -1,0 +1,32 @@
+{
+  "seed": 42,
+  "fingerprint": "872f8ffa700bb810105b9796d6c0032c6d8c07bd9b3ffedfb6239a179d6fa8cb",
+  "speaker_overlap": 0,
+  "method": "First outer grouped fold for test; first inner grouped fold for validation. Not full cross-validation.",
+  "partitions": {
+    "train": {
+      "clips": 1280,
+      "speakers": 566,
+      "label_counts": {
+        "0": 640,
+        "1": 640
+      }
+    },
+    "validation": {
+      "clips": 320,
+      "speakers": 141,
+      "label_counts": {
+        "0": 160,
+        "1": 160
+      }
+    },
+    "test": {
+      "clips": 400,
+      "speakers": 176,
+      "label_counts": {
+        "0": 200,
+        "1": 200
+      }
+    }
+  }
+}
