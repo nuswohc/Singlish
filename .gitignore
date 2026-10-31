@@ -20,6 +20,8 @@ tmp/
 Thumbs.db
 .idea/
 .vscode/
+whisper_fine-tuned_transcription/checkpoints/
+whisper_fine-tuned_transcription/models/
 
 # Audio and generated artifacts stay in Google Drive.
 data/
