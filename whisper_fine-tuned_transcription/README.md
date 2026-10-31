@@ -45,8 +45,7 @@ under `split.train_speakers`.
 
 ## Using the Google Drive data (skip the downloads)
 
-Our data files are on Google Drive: `https://drive.google.com/drive/u/0/folders/1hOHpdzoRaCrlRE5qO1AXh45U26f3UwHo`
-Open 2_Dataset_Google_Drive_Link.txt and click on the link under Dataset for Transcription Model.
+Our data files for the Transcription Model are on Google Drive: `https://drive.google.com/file/d/1N7H1w3fPltvVgubhAngiabqmWm_ZHmkj/view?usp=drive_link`
 
 Put the Drive folders and files into `data\` as shown below. If Google Drive gives you a .zip file,
 extract it first.
